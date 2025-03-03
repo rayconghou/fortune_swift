@@ -287,8 +287,324 @@ struct SidebarView: View {
 }
 
 // MARK: Sidebar Modals / Pages
-
 struct ReserveView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    // MARK: - Form Fields
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var emailConfirm: String = ""
+    @State private var discord: String = ""
+    @State private var instagramLink: String = ""
+    @State private var instagramConfirm: String = ""
+    @State private var ageGroup: String = ""
+    @State private var occupation: String = ""
+    @State private var whyFit: String = ""
+    @State private var goals: String = ""
+    @State private var cryptoExperience: String = ""
+    @State private var startingCapital: String = ""
+    @State private var agreedToTerms: Bool = false
+    @State private var showConfirmationPopup = false
+    
+    // 🔹 Tracks missing fields
+    @State private var validationErrors: [String: Bool] = [:]
+
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    
+                    // Header
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Reserve your membership.")
+                            .font(.custom("Inter", size: 26))
+                            .foregroundColor(.white)
+                            .bold()
+                        Text("7 simple answers.")
+                            .font(.custom("Inter", size: 16))
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.top, 40)
+                    
+                    Spacer()
+                    
+                    // MARK: - Contact Info
+                    Group {
+                        Text("Provide your contact information.")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CustomTextField(
+                            placeholder: "Enter your name",
+                            text: $name
+                        )
+                        showError("name")
+                        
+                        CustomTextField(
+                            placeholder: "Enter your email",
+                            text: $email
+                        )
+                        showError("email")
+                        
+                        CustomTextField(
+                            placeholder: "Confirm your email",
+                            text: $emailConfirm
+                        )
+                        showError("emailConfirm")
+                        
+                        CustomTextField(
+                            placeholder: "Enter your Discord",
+                            text: $discord
+                        )
+                        showError("discord")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 1
+                    Group {
+                        Text("1. What is your Instagram handle?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CustomTextField(
+                            placeholder: "Paste your profile link",
+                            text: $instagramLink
+                        )
+                        showError("instagramLink")
+                        
+                        CustomTextField(
+                            placeholder: "Confirm your Instagram",
+                            text: $instagramConfirm
+                        )
+                        showError("instagramConfirm")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 2
+                    Group {
+                        Text("2. What is your age group?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        AgeGroupRadioGroup(selectedAgeGroup: $ageGroup)
+                        showError("ageGroup")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 3
+                    Group {
+                        Text("3. What do you do for work?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CustomTextField(
+                            placeholder: "Enter your occupation",
+                            text: $occupation
+                        )
+                        showError("occupation")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 4
+                    Group {
+                        Text("4. Why do you think you're a great fit for Fortune Collective?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CustomTextEditor(
+                            placeholder: "Enter your message here",
+                            text: $whyFit
+                        )
+                        showError("whyFit")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 5
+                    Group {
+                        Text("5. Share a bit about your goals, what drives you, and what makes you determined to succeed:")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CustomTextEditor(
+                            placeholder: "Enter your message here",
+                            text: $goals
+                        )
+                        showError("goals")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 6
+                    Group {
+                        Text("6. How much crypto experience do you have?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        CryptoExperiencePicker(experience: $cryptoExperience)
+                        showError("cryptoExperience")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+
+                    // MARK: - Question 7
+                    Group {
+                        Text("7. How much is your starting capital?")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        StartingCapitalRadioGroup(selectedCapital: $startingCapital)
+                        showError("startingCapital")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+                    
+                    // MARK: - Acknowledgment
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Acknowledgment")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        Text("Admission to Fortune Collective is NOT free. By applying, you confirm that you’re ready to invest in connecting with 7-figure crypto traders and accessing top-tier strategies.")
+                            .font(.custom("Inter", size: 14))
+                            .foregroundColor(.gray)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        Toggle(isOn: $agreedToTerms) {
+                            HStack {
+                                Text("Agree to our ")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14))
+                                Button {
+                                    // link ?
+                                } label: {
+                                    Text("TOS & Privacy Policy.")
+                                        .foregroundColor(.gray)
+                                        .underline()
+                                        .font(.system(size: 14))
+                                }
+                            }
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        .foregroundColor(.white)
+                    }
+
+                    // MARK: - Apply Button
+                    Button(action: validateFields) {
+                        Text("Apply")
+                            .font(.custom("Inter", size: 18))
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(agreedToTerms ? Color.white.opacity(0.1) : Color.gray.opacity(0.2))
+                            .cornerRadius(8)
+                    }
+                    .disabled(!agreedToTerms)
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 40)
+            }
+            // MARK: - Confirmation Popup
+            if showConfirmationPopup {
+                Color.black.opacity(0.75).edgesIgnoringSafeArea(.all)
+                
+                VStack(spacing: 20) {
+                    Text("Application Submitted!")
+                        .font(.custom("Inter", size: 22))
+                        .foregroundColor(.white)
+                        .bold()
+                    
+                    Text("Thank you for completing your application.")
+                        .font(.custom("Inter", size: 16))
+                        .foregroundColor(.white)
+                    
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Return to Home")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue.cornerRadius(8))
+                    }
+                }
+                .padding(32)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.gray.opacity(0.9))
+                )
+                .padding(.horizontal, 40)
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Validation Logic
+    private func validateFields() {
+        let requiredFields: [String: String] = [
+            "name": name, "email": email, "emailConfirm": emailConfirm,
+            "discord": discord, "instagramLink": instagramLink,
+            "instagramConfirm": instagramConfirm, "ageGroup": ageGroup,
+            "occupation": occupation, "whyFit": whyFit, "goals": goals,
+            "cryptoExperience": cryptoExperience, "startingCapital": startingCapital
+        ]
+        
+        var errors = [String: Bool]()
+        for (key, value) in requiredFields {
+            errors[key] = value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        
+        validationErrors = errors
+        
+        if !errors.values.contains(true) {
+            showConfirmationPopup = true
+        }
+    }
+    
+    // MARK: - Error Message View
+    @ViewBuilder
+    private func showError(_ field: String) -> some View {
+        if validationErrors[field] ?? false {
+            Text("This field is required.")
+                .foregroundColor(.red)
+                .font(.custom("Inter", size: 14))
+        }
+    }
+}
+
+struct ReserveView2: View {
     @Environment(\.presentationMode) var presentationMode
     
     // MARK: - Form Fields
@@ -338,15 +654,18 @@ struct ReserveView: View {
                             .font(.custom("Inter", size: 26))
                             .foregroundColor(.white)
                             .bold()
+                            .padding(.top, -10)
                         Text("7 simple answers.")
                             .font(.custom("Inter", size: 16))
                             .foregroundColor(.gray)
                     }
                     .padding(.top, 40)
                     
-                    // MARK: - Question 1
+                    Spacer()
+                    
+                    // MARK: - Contact Info
                     Group {
-                        Text("1. Provide your contact information")
+                        Text("Provide your contact information.")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -373,10 +692,11 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 2
+                    // MARK: - Question 1
                     Group {
-                        Text("2. What is your Instagram handle?")
+                        Text("1. What is your Instagram handle?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -393,10 +713,11 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 3
+                    // MARK: - Question 2
                     Group {
-                        Text("3. What is your age group?")
+                        Text("2. What is your age group?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -407,10 +728,11 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 4
+                    // MARK: - Question 3
                     Group {
-                        Text("4. What do you do for work?")
+                        Text("3. What do you do for work?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -422,10 +744,11 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 5
+                    // MARK: - Question 4
                     Group {
-                        Text("5. Why do you think you're a great fit for Fortune Collective?")
+                        Text("4. Why do you think you're a great fit for Fortune Collective?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -437,10 +760,11 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 6
+                    // MARK: - Question 5
                     Group {
-                        Text("6. Share a bit about your goals, what drives you, and what makes you determined to succeed:")
+                        Text("5. Share a bit about your goals, what drives you, and what makes you determined to succeed:")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -457,18 +781,25 @@ struct ReserveView: View {
                     }
                     
                     Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
                     
-                    // MARK: - Question 7
+                    // MARK: - Question 6
                     Group {
-                        Text("7. How much crypto experience do you have?")
+                        Text("6. How much crypto experience do you have?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
                         
                         // A simple picker or text field
                         CryptoExperiencePicker(experience: $cryptoExperience)
-                        
-                        Text("How much is your starting capital?")
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 20)
+                    
+                    // MARK: - Question 7
+                    Group {
+                        Text("7. How much is your starting capital?")
                             .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
@@ -476,10 +807,13 @@ struct ReserveView: View {
                         StartingCapitalRadioGroup(selectedCapital: $startingCapital)
                     }
                     
+                    Divider().background(Color.white.opacity(0.2))
+                        .padding(.vertical, 12)
+                    
                     // MARK: - Acknowledgment
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Acknowledgment")
-                            .font(.custom("Inter", size: 16))
+                            .font(.custom("Inter", size: 18))
                             .foregroundColor(.white)
                             .bold()
                         
@@ -492,12 +826,14 @@ struct ReserveView: View {
                             HStack {
                                 Text("Agree to our ")
                                     .foregroundColor(.white)
+                                    .font(.system(size: 14))
                                 Button {
-                                    // Perhaps link to TOS
+                                    // link ?
                                 } label: {
-                                    Text("Terms of Service & Privacy Policy.")
-                                        .foregroundColor(.blue)
+                                    Text("TOS & Privacy Policy.")
+                                        .foregroundColor(.gray)
                                         .underline()
+                                        .font(.system(size: 14))
                                 }
                             }
                         }
@@ -594,31 +930,33 @@ struct CustomTextField: View {
 struct CustomTextEditor: View {
     let placeholder: String
     @Binding var text: String
-    
-    // A simple trick to show a placeholder in a TextEditor
-    @State private var showPlaceholder: Bool = false
-    
+
     var body: some View {
         ZStack(alignment: .topLeading) {
             if text.isEmpty {
                 Text(placeholder)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.gray.opacity(0.7))
                     .font(.custom("Inter", size: 16))
-                    .padding(.top, 8)
-                    .padding(.horizontal, 6)
+                    .padding(.top, 12)
+                    .padding(.horizontal, 12)
+                    .allowsHitTesting(false)
+                    .zIndex(2)
             }
+
             TextEditor(text: $text)
                 .font(.custom("Inter", size: 16))
-                .foregroundColor(.white)
                 .frame(minHeight: 100)
+                .foregroundColor(.white)
                 .padding(4)
-                .background(
+                .overlay(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color.white.opacity(0.05))
                 )
+                .zIndex(1)
         }
     }
 }
+
 
 // MARK: - Age Group Radio Buttons
 
