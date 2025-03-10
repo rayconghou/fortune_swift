@@ -6,6 +6,18 @@
 //
 
 import SwiftUI
+import Combine
+
+extension Double {
+    var asCurrency: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: self)) ?? "$\(self)"
+    }
+}
 
 // MARK: - Main ContentView with Splash Screen
 
@@ -315,10 +327,112 @@ struct SidebarView: View {
     }
 }
 
-// MARK: - SpottingView with Floating Trade Buttons
+// MARK: - Real-Time Crypto Updates with CoinGecko API
+
+class CryptoPriceViewModel: ObservableObject {
+    @Published var btcPrice: Double = 0.0
+    @Published var btc24hChange: Double = 0.0
+    
+    @Published var ethPrice: Double = 0.0
+    @Published var eth24hChange: Double = 0.0
+    
+    @Published var solPrice: Double = 0.0
+    @Published var sol24hChange: Double = 0.0
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    // Timer that automatically fires every 5 seconds (you can set to 10, etc):
+    private var fetchTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+    
+    init() {
+        // Immediately fetch on init:
+        fetchData()
+        
+        // Re-fetch whenever the timer fires:
+        fetchTimer
+            .sink { [weak self] _ in
+                self?.fetchData()
+            }
+            .store(in: &cancellables)
+    }
+    
+    /// Fetches BTC, ETH, and SOL in USD (and their 24h changes)
+    func fetchData() {
+        guard let url = URL(string:
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true"
+        ) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching data:", error)
+                return
+            }
+            guard let data = data else { return }
+            
+            if let dataString = String(data: data, encoding: .utf8) {
+                print("Received JSON: \(dataString)")
+            }
+            
+            do {
+                // JSON shape with &include_24hr_change=true looks like:
+                // {
+                //   "bitcoin":  { "usd": 22884.2, "usd_24h_change": -2.79133 ... },
+                //   "ethereum": { "usd": 1550.50, "usd_24h_change": 4.1234 ... },
+                //   "solana":   { "usd": 25.12,   "usd_24h_change": 0.5432 ... }
+                // }
+                let decoded = try JSONDecoder().decode(CoingeckoSimplePrice.self, from: data)
+                DispatchQueue.main.async {
+                    // Check that each coin is present; if not, log an error and avoid updating the UI.
+                    guard let bitcoin = decoded.bitcoin else {
+                        print("Error: 'bitcoin' field is missing in the JSON response.")
+                        return
+                    }
+                    guard let ethereum = decoded.ethereum else {
+                        print("Error: 'ethereum' field is missing in the JSON response.")
+                        return
+                    }
+                    guard let solana = decoded.solana else {
+                        print("Error: 'solana' field is missing in the JSON response.")
+                        return
+                    }
+                    
+                    self.btcPrice       = bitcoin.usd
+                    self.btc24hChange   = bitcoin.usd_24h_change
+                    self.ethPrice       = ethereum.usd
+                    self.eth24hChange   = ethereum.usd_24h_change
+                    self.solPrice       = solana.usd
+                    self.sol24hChange   = solana.usd_24h_change
+                }
+            } catch {
+                print("Decoding error:", error)
+            }
+        }.resume()
+    }
+}
+
+/// Matches the structure of the JSON from CoinGecko's /simple/price (with 24h change)
+struct CoingeckoSimplePrice: Decodable {
+    let bitcoin:  PriceInfo?
+    let ethereum: PriceInfo?
+    let solana:   PriceInfo?
+    
+    struct PriceInfo: Decodable {
+        let usd: Double
+        let usd_24h_change: Double
+    }
+}
+
+// MARK: - SpottingView
 
 struct SpottingView: View {
+    // If you need the hamburger logic from your code:
     @Binding var hideHamburger: Bool
+    
+    // 1) Create a single ViewModel instance for prices
+    @StateObject var priceVM = CryptoPriceViewModel()
+    
     @State private var scrollOffset: CGFloat = 0
     @State private var showBuyModal = false
     @State private var showSellModal = false
@@ -339,10 +453,29 @@ struct SpottingView: View {
                         .foregroundColor(.white)
                         .padding(.top, 30)
                     
-                    CryptoTrendCard(name: "Bitcoin", symbol: "BTC", price: "$55,234.67", change: "+2.35%", isPositive: true)
-                    CryptoTrendCard(name: "Ethereum", symbol: "ETH", price: "$3,120.45", change: "-0.76%", isPositive: false)
-                    CryptoTrendCard(name: "Solana", symbol: "SOL", price: "$109.82", change: "+5.21%", isPositive: true)
+                    // 2) Replace static prices with live data from the ViewModel:
+                    CryptoTrendCard(
+                        name: "Bitcoin",
+                        symbol: "BTC",
+                        price: priceVM.btcPrice,
+                        change: priceVM.btc24hChange
+                    )
                     
+                    CryptoTrendCard(
+                        name: "Ethereum",
+                        symbol: "ETH",
+                        price: priceVM.ethPrice,
+                        change: priceVM.eth24hChange
+                    )
+                    
+                    CryptoTrendCard(
+                        name: "Solana",
+                        symbol: "SOL",
+                        price: priceVM.solPrice,
+                        change: priceVM.sol24hChange
+                    )
+                    
+                    // Market News, etc...
                     Text("Market News")
                         .font(.title2)
                         .foregroundColor(.white)
@@ -364,7 +497,7 @@ struct SpottingView: View {
                 scrollOffset = value
             }
             
-            // Floating BUY & SELL buttons (styled similar to Coinbase)
+            // Floating BUY & SELL buttons
             HStack(spacing: 20) {
                 Button(action: { showBuyModal = true }) {
                     HStack {
@@ -378,6 +511,7 @@ struct SpottingView: View {
                     .foregroundColor(.white)
                     .cornerRadius(30)
                 }
+                
                 Button(action: { showSellModal = true }) {
                     HStack {
                         Image(systemName: "arrow.up.circle.fill")
@@ -403,6 +537,7 @@ struct SpottingView: View {
         }
     }
 }
+
 
 // MARK: - Other Tab Views
 
@@ -1424,12 +1559,18 @@ struct StartingCapitalRadioGroup: View {
 struct CryptoTrendCard: View {
     let name: String
     let symbol: String
-    let price: String
-    let change: String
-    let isPositive: Bool
+    let price: Double
+    /// This is the 24h change in percent (e.g. -3.12 means -3.12%)
+    let change: Double
     
     var body: some View {
+        // Decide if it’s positive or negative
+        let isPositive = change >= 0
+        // Format the numeric change to a percentage string
+        let changeString = String(format: "%.2f%%", change)
+        
         HStack {
+            // Left section: name + symbol
             VStack(alignment: .leading) {
                 Text(name)
                     .font(.headline)
@@ -1438,14 +1579,29 @@ struct CryptoTrendCard: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            
             Spacer()
+            
+            // Right section: price + 24h change with icon
             VStack(alignment: .trailing) {
-                Text(price)
+                // Current price formatted as currency:
+                Text(price.asCurrency)
                     .font(.headline)
                     .foregroundColor(.white)
-                Text(change)
-                    .font(.subheadline)
-                    .foregroundColor(isPositive ? .green : .red)
+                
+                HStack(spacing: 4) {
+                    // Icon: arrow up or down
+                    Image(systemName: isPositive ? "arrow.up.right" : "arrow.down.right")
+                        .resizable()
+                        .foregroundColor(isPositive ? .green : .red)
+                        .frame(width: 10, height: 10)
+                    
+                    // The text “+1.23%” or “-2.34%”
+                    Text(changeString)
+                        .font(.subheadline)
+                        .foregroundColor(isPositive ? .green : .red)
+                        .padding(.leading, 5)
+                }
             }
         }
         .padding()
