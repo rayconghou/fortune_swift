@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - Main ContentView with Splash Screen
+
 struct ContentView: View {
     @State private var hideSplash = false
     @State private var showFortune = false
@@ -67,29 +69,57 @@ struct ContentView: View {
     }
 }
 
+// MARK: - HomePageView with TabView and Sidebar
+
 struct HomePageView: View {
     @State private var showSidebar = false
     @State private var hideHamburger = false
+    @State private var showDegenMode = false
     
     var body: some View {
         ZStack {
             TabView {
-                HomeView(hideHamburger: $hideHamburger)
-                    .tabItem { Image(systemName: "house.fill") }
-                WalletView().tabItem { Image(systemName: "creditcard.fill") }
-                PortfolioView().tabItem { Image(systemName: "chart.bar.fill") }
-                ChatView().tabItem { Image(systemName: "bubble.left.and.bubble.right.fill") }
-                ExploreView().tabItem { Image(systemName: "magnifyingglass.circle.fill") }
+                // Left-most tab: Spotting
+                SpottingView(hideHamburger: $hideHamburger)
+                    .tabItem {
+                        Image(systemName: "binoculars.fill")
+                        Text("Spotting")
+                    }
+                // Second tab: Indexes
+                IndexesView()
+                    .tabItem {
+                        Image(systemName: "chart.xyaxis.line")
+                        Text("Indexes")
+                    }
+                // Middle (largest) tab: Maneki
+                ManekiView()
+                    .tabItem {
+                        Image(systemName: "cat.fill")
+                            .font(.system(size: 28))
+                        Text("Maneki")
+                    }
+                // Fourth tab: Portfolio
+                PortfolioView()
+                    .tabItem {
+                        Image(systemName: "chart.bar.fill")
+                        Text("Portfolio")
+                    }
+                // Right-most tab: Degen Mode
+                DegenView(isEnabled: $showDegenMode)
+                    .tabItem {
+                        Image(systemName: "flame.fill")
+                        Text("Degen")
+                    }
             }
             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.75 : 0)
             .animation(.easeInOut(duration: 0.3), value: showSidebar)
             
             if showSidebar {
-                SidebarView(showSidebar: $showSidebar)
+                SidebarView(showSidebar: $showSidebar, showDegenMode: $showDegenMode)
                     .transition(.move(edge: .leading))
             }
             
-            // Hamburger button appears only if sidebar is closed and hideHamburger is false
+            // Hamburger button shows only when sidebar is closed
             VStack {
                 HStack {
                     if !showSidebar && !hideHamburger {
@@ -114,12 +144,18 @@ struct HomePageView: View {
     }
 }
 
+// MARK: - Sidebar with Extra Options
+
 struct SidebarView: View {
     @Binding var showSidebar: Bool
+    @Binding var showDegenMode: Bool
+    @State private var showManekiIntro = false
+    @State private var showChatroom = false
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
+                // Close Button
                 HStack {
                     Button(action: { withAnimation { showSidebar.toggle() } }) {
                         Image(systemName: "xmark")
@@ -132,6 +168,7 @@ struct SidebarView: View {
                     Spacer()
                 }
                 VStack(alignment: .leading, spacing: 20) {
+                    // Profile
                     Button(action: { print("Profile button pressed") }) {
                         HStack(spacing: 15) {
                             Image(systemName: "person.crop.circle.fill")
@@ -158,6 +195,76 @@ struct SidebarView: View {
                         .frame(width: 20, height: 1)
                         .background(Color.white)
                         .padding(.leading, 30)
+                    
+                    // Degen Mode Toggle
+                    HStack {
+                        Image(systemName: "flame.fill")
+                        Text("Degen Mode")
+                            .font(.custom("Inter", size: 18))
+                        Spacer()
+                        Toggle("", isOn: $showDegenMode)
+                            .toggleStyle(SwitchToggleStyle(tint: .orange))
+                            .padding(.trailing, 30)
+                    }
+                    .padding(.leading, 30)
+                    .foregroundColor(.white)
+                    
+                    // Maneki Guide
+                    Button(action: { showManekiIntro = true }) {
+                        HStack {
+                            Image(systemName: "cat.fill")
+                            Text("Maneki Guide")
+                                .font(.custom("Inter", size: 18))
+                        }
+                        .padding(.leading, 30)
+                        .foregroundColor(.white)
+                    }
+                    .sheet(isPresented: $showManekiIntro) {
+                        ManekiIntroView()
+                    }
+                    
+                    // Chatroom
+                    Button(action: { showChatroom = true }) {
+                        HStack {
+                            Image(systemName: "bubble.left.and.bubble.right.fill")
+                            Text("Chatroom")
+                                .font(.custom("Inter", size: 18))
+                        }
+                        .padding(.leading, 30)
+                        .foregroundColor(.white)
+                    }
+                    .sheet(isPresented: $showChatroom) {
+                        ChatroomView()
+                    }
+                    
+                    // Community Hub
+                    NavigationLink(destination: CommunityHubView()) {
+                        HStack {
+                            Image(systemName: "person.3.fill")
+                            Text("Community Hub")
+                                .font(.custom("Inter", size: 18))
+                        }
+                        .padding(.leading, 30)
+                        .foregroundColor(.white)
+                    }
+                    
+                    // Newsletter
+                    NavigationLink(destination: NewsletterView()) {
+                        HStack {
+                            Image(systemName: "newspaper.fill")
+                            Text("Newsletter")
+                                .font(.custom("Inter", size: 18))
+                        }
+                        .padding(.leading, 30)
+                        .foregroundColor(.white)
+                    }
+                    
+                    Divider()
+                        .frame(width: 20, height: 1)
+                        .background(Color.white)
+                        .padding(.leading, 30)
+                    
+                    // Reserve / Apply
                     NavigationLink(destination: ReserveView()) {
                         HStack {
                             Image(systemName: "key")
@@ -167,10 +274,8 @@ struct SidebarView: View {
                         .padding(.leading, 30)
                         .foregroundColor(.white)
                     }
-                    Divider()
-                        .frame(width: 20, height: 1)
-                        .background(Color.white)
-                        .padding(.leading, 30)
+                    
+                    // Settings & Notifications
                     Button(action: { print("Settings button pressed") }) {
                         HStack {
                             Image(systemName: "gear")
@@ -189,15 +294,8 @@ struct SidebarView: View {
                         .padding(.leading, 30)
                         .foregroundColor(.white)
                     }
-                    NavigationLink(destination: AboutUsView()) {
-                        HStack {
-                            Image(systemName: "info.circle")
-                            Text("About Us")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.leading, 30)
-                        .foregroundColor(.white)
-                    }
+
+                    // Logout
                     Button(action: { print("Logout button pressed") }) {
                         HStack {
                             Image(systemName: "power")
@@ -207,6 +305,7 @@ struct SidebarView: View {
                         .padding(.leading, 30)
                         .foregroundColor(.red)
                     }
+                    
                     Spacer()
                 }
             }
@@ -216,126 +315,598 @@ struct SidebarView: View {
     }
 }
 
-// MARK: - HomeView with Floating Trade Buttons
-struct HomeView: View {
+// MARK: - SpottingView with Floating Trade Buttons
+
+struct SpottingView: View {
     @Binding var hideHamburger: Bool
     @State private var scrollOffset: CGFloat = 0
-    @State private var selectedTradeType: String = ""
-    @State private var showTradeOptions: Bool = false
-    @State private var selectedCoin: String? = nil
-    @State private var showPaymentOptions: Bool = false
-
+    @State private var showBuyModal = false
+    @State private var showSellModal = false
+    
     var body: some View {
-        NavigationStack {
-            ZStack(alignment: .top) {
-                // Main scrollable content.
-                ScrollView {
-                    // Use a GeometryReader to capture the scroll offset.
-                    GeometryReader { geo in
-                        Color.clear
-                            .preference(key: OffsetPreferenceKey.self,
-                                        value: geo.frame(in: .global).minY)
-                    }
-                    .frame(height: 1)
-                    
-                    VStack(spacing: 24) {
-                        // Your scroll content goes here.
-                        Text("Home Page Content")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .padding(.top, 100)
-                        ForEach(1...50, id: \.self) { idx in
-                            Text("Line \(idx)")
-                                .foregroundColor(.white)
-                        }
-                        .padding(.bottom, 80)
-                    }
+        ZStack(alignment: .bottom) {
+            ScrollView {
+                GeometryReader { geo in
+                    Color.clear
+                        .preference(key: OffsetPreferenceKey.self,
+                                    value: geo.frame(in: .global).minY)
                 }
-                .background(Color.black)
-                .onPreferenceChange(OffsetPreferenceKey.self) { value in
-                    scrollOffset = value
-                }
+                .frame(height: 1)
                 
-                // Floating header with BUY & SELL buttons.
-                TradeHeaderView { tradeType in
-                    selectedTradeType = tradeType
-                    showTradeOptions = true
+                VStack(spacing: 16) {
+                    Text("Market Trends")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(.top, 30)
+                    
+                    CryptoTrendCard(name: "Bitcoin", symbol: "BTC", price: "$55,234.67", change: "+2.35%", isPositive: true)
+                    CryptoTrendCard(name: "Ethereum", symbol: "ETH", price: "$3,120.45", change: "-0.76%", isPositive: false)
+                    CryptoTrendCard(name: "Solana", symbol: "SOL", price: "$109.82", change: "+5.21%", isPositive: true)
+                    
+                    Text("Market News")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .padding(.top, 20)
+                    
+                    NewsCard(title: "Bitcoin Reaches New All-Time High", time: "2 hours ago")
+                    NewsCard(title: "SEC Approves New Crypto ETF", time: "5 hours ago")
+                    NewsCard(title: "Major Bank Adopts Blockchain Technology", time: "1 day ago")
+                    
+                    // Extra bottom padding for floating buttons
+                    Spacer().frame(height: 75)
                 }
-                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+                .padding(.horizontal)
             }
-            // Confirmation dialog for selecting a coin.
-            .confirmationDialog("Choose Coin", isPresented: $showTradeOptions, titleVisibility: .visible) {
-                Button("Bitcoin") {
-                    selectedCoin = "Bitcoin"
-                    showPaymentOptions = true
-                }
-                Button("Solana") {
-                    selectedCoin = "Solana"
-                    showPaymentOptions = true
-                }
-                Button("Ethereum") {
-                    selectedCoin = "Ethereum"
-                    showPaymentOptions = true
-                }
-                Button("Cancel", role: .cancel) { }
+            .background(Color.black)
+            .onPreferenceChange(OffsetPreferenceKey.self) { value in
+                scrollOffset = value
             }
-            // Second confirmation dialog for choosing the payment method.
-            .confirmationDialog("Choose Payment Method", isPresented: $showPaymentOptions, titleVisibility: .visible) {
-                Button("Custodial Wallet") {
-                    // Handle the custodial wallet option.
-                    print("\(selectedTradeType) \(selectedCoin ?? "") with Custodial Wallet")
-                }
-                Button("Apple Pay") {
-                    // Handle the Apple Pay option.
-                    print("\(selectedTradeType) \(selectedCoin ?? "") with Apple Pay")
-                }
-                Button("Cancel", role: .cancel) { }
-            }
-        }
-    }
-}
-
-// MARK: - Floating Trade Header View
-struct TradeHeaderView: View {
-    // Callback returns the trade type selected ("BUY" or "SELL")
-    var tradeAction: (String) -> Void
-
-    var body: some View {
-        HStack(spacing: 20) {
-            Button(action: { tradeAction("BUY") }) {
-                Text("BUY")
-                    .font(.title)
-                    .bold()
+            
+            // Floating BUY & SELL buttons (styled similar to Coinbase)
+            HStack(spacing: 20) {
+                Button(action: { showBuyModal = true }) {
+                    HStack {
+                        Image(systemName: "arrow.down.circle.fill")
+                        Text("BUY")
+                            .fontWeight(.bold)
+                    }
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.green)
-                    .cornerRadius(10)
-            }
-            Button(action: { tradeAction("SELL") }) {
-                Text("SELL")
-                    .font(.title)
-                    .bold()
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+                }
+                Button(action: { showSellModal = true }) {
+                    HStack {
+                        Image(systemName: "arrow.up.circle.fill")
+                        Text("SELL")
+                            .fontWeight(.bold)
+                    }
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.red)
-                    .cornerRadius(10)
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+            .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+        }
+        .sheet(isPresented: $showBuyModal) {
+            BuyCryptoView()
+        }
+        .sheet(isPresented: $showSellModal) {
+            SellCryptoView()
+        }
+    }
+}
+
+// MARK: - Other Tab Views
+
+struct IndexesView: View {
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("Crypto Indexes")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top, 40)
+                
+                IndexCard(name: "DeFi Index", value: "2,345.67", change: "+1.2%")
+                IndexCard(name: "NFT Market Index", value: "785.32", change: "-0.5%")
+                IndexCard(name: "Metaverse Index", value: "432.89", change: "+3.7%")
+                IndexCard(name: "Layer 1 Index", value: "1,876.54", change: "+2.1%")
+                
+                Text("Historical Performance")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(height: 250)
+                    .overlay(Text("Index Performance Chart").foregroundColor(.white))
+                    .padding(.horizontal)
+            }
+            .padding(.bottom, 50)
+        }
+        .background(Color.black)
+    }
+}
+
+struct ManekiView: View {
+    @State private var userMessage = ""
+    @State private var messages: [ChatMessage] = [
+        ChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
+    ]
+    
+    var body: some View {
+        VStack {
+            Text("Maneki AI Assistant")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding(.top, 40)
+            
+            ScrollView {
+                LazyVStack(spacing: 15) {
+                    ForEach(messages) { message in
+                        ChatBubble(message: message)
+                    }
+                }
+                .padding()
+            }
+            
+            HStack {
+                TextField("Ask Maneki anything...", text: $userMessage)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(25)
+                    .foregroundColor(.white)
+                Button(action: sendMessage) {
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(.white)
+                        .padding(12)
+                        .background(Color.blue)
+                        .cornerRadius(25)
+                }
+            }
+            .padding()
+        }
+        .background(Color.black)
+    }
+    
+    func sendMessage() {
+        guard !userMessage.isEmpty else { return }
+        let newMsg = ChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
+        messages.append(newMsg)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let response = ChatMessage(id: messages.count + 1, content: "Based on current data, Bitcoin is showing a strong bullish pattern.", isFromUser: false)
+            messages.append(response)
+        }
+        userMessage = ""
+    }
+}
+
+struct PortfolioView: View {
+    // Stub asset data
+    let assets = [
+        Asset(name: "Bitcoin", symbol: "BTC", amount: 0.0, value: 0.0)
+    ]
+    
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("Your Portfolio")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top, 40)
+                
+                if assets.isEmpty || assets[0].amount == 0.0 {
+                    VStack(spacing: 20) {
+                        Image(systemName: "briefcase")
+                            .resizable()
+                            .frame(width: 70, height: 60)
+                            .foregroundColor(.gray)
+                            .padding(.top, 40)
+                        Text("No Assets Yet")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Text("Start your crypto journey by purchasing your first coin.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 40)
+                        Button(action: {
+                            // Navigate to buy screen if needed
+                        }) {
+                            Text("Buy Crypto")
+                                .fontWeight(.bold)
+                                .padding()
+                                .frame(width: 200)
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        .padding(.top, 20)
+                    }
+                    .padding(.vertical, 50)
+                } else {
+                    VStack(spacing: 15) {
+                        Text("Total Balance")
+                            .font(.headline)
+                            .foregroundColor(.gray)
+                        Text("$0.00")
+                            .font(.system(size: 42, weight: .bold))
+                            .foregroundColor(.white)
+                        HStack {
+                            Text("+$0.00")
+                                .font(.headline)
+                                .foregroundColor(.green)
+                            Text("(0.00%)")
+                                .font(.headline)
+                                .foregroundColor(.green)
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+                    
+                    Text("Your Assets")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    
+                    ForEach(assets) { asset in
+                        AssetRow(asset: asset)
+                    }
+                }
+                Spacer()
             }
         }
-        .padding(.horizontal)
-        // Adjust padding to account for the safe area at the top.
-        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top ?? 20)
-        .padding(.bottom, 10)
+        .background(Color.black)
     }
 }
 
-// MARK: - PreferenceKey to Track Scroll Offset
-struct OffsetPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
+struct DegenView: View {
+    @Binding var isEnabled: Bool
+    
+    var body: some View {
+        VStack {
+            if isEnabled {
+                Text("DEGEN MODE ACTIVE")
+                    .font(.largeTitle)
+                    .foregroundColor(.orange)
+                    .padding(.top, 20)
+                
+                Text("High-risk trading enabled")
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .padding(.bottom, 20)
+                
+                VStack(spacing: 20) {
+                    DegenTradingCard(title: "Leverage Trading", description: "Trade with up to 100x leverage")
+                    DegenTradingCard(title: "Options Trading", description: "Advanced derivatives market")
+                    DegenTradingCard(title: "Futures", description: "Perpetual contracts with high liquidity")
+                    DegenTradingCard(title: "Flash Loans", description: "DeFi protocol flash loans")
+                }
+//                .padding()
+            } else {
+                VStack(spacing: 20) {
+                    Image(systemName: "lock.fill")
+                        .resizable()
+                        .frame(width: 60, height: 80)
+                        .foregroundColor(.gray)
+                        .padding(.top, 50)
+                    
+                    Text("Degen Mode Disabled")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    Text("Enable Degen Mode from the sidebar to access advanced high-risk trading features.")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal, 30)
+                    
+                    Button(action: { isEnabled = true }) {
+                        Text("Enable Degen Mode")
+                            .fontWeight(.bold)
+                            .padding()
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    .padding(.top, 20)
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
     }
 }
 
+// MARK: - Modal Views for Trading
+
+struct BuyCryptoView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedCoin = "Bitcoin"
+    @State private var amount = ""
+    @State private var paymentMethod = "Custodial Wallet"
+    
+    let coins = ["Bitcoin", "Ethereum", "Solana"]
+    let paymentMethods = ["Custodial Wallet", "Apple Pay", "Bank Transfer"]
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 25) {
+                Text("Buy Cryptocurrency")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top, 20)
+                VStack(alignment: .leading) {
+                    Text("Select Coin")
+                        .foregroundColor(.gray)
+                    Picker("Coin", selection: $selectedCoin) {
+                        ForEach(coins, id: \.self) { coin in
+                            Text(coin).tag(coin)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                VStack(alignment: .leading) {
+                    Text("Enter Amount")
+                        .foregroundColor(.gray)
+                    HStack {
+                        Text("$")
+                            .foregroundColor(.white)
+                            .font(.title)
+                        TextField("0.00", text: $amount)
+                            .keyboardType(.decimalPad)
+                            .font(.title)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                VStack(alignment: .leading) {
+                    Text("Payment Method")
+                        .foregroundColor(.gray)
+                    Picker("Payment Method", selection: $paymentMethod) {
+                        ForEach(paymentMethods, id: \.self) { method in
+                            Text(method).tag(method)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                Spacer()
+                Button(action: {
+                    // Process purchase action
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Confirm Purchase")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(15)
+                        .padding(.horizontal)
+                }
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel")
+                        .foregroundColor(.gray)
+                }
+                .padding(.bottom, 30)
+            }
+            .background(Color.black)
+            .navigationBarHidden(true)
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+struct SellCryptoView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedCoin = "No Assets"
+    @State private var amount = ""
+    @State private var depositMethod = "Custodial Wallet"
+    
+    // Stub for available assets
+    let availableCoins = ["No Assets"]
+    let depositMethods = ["Custodial Wallet", "Bank Account"]
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 25) {
+                Text("Sell Cryptocurrency")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top, 20)
+                if availableCoins == ["No Assets"] {
+                    VStack(spacing: 20) {
+                        Image(systemName: "wallet.pass")
+                            .resizable()
+                            .frame(width: 60, height: 50)
+                            .foregroundColor(.gray)
+                        Text("No Assets Available")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Text("You don't have any crypto assets to sell at the moment. Purchase some first!")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal)
+                    }
+                    .padding(40)
+                } else {
+                    VStack(alignment: .leading) {
+                        Text("Select Asset")
+                            .foregroundColor(.gray)
+                        Picker("Asset", selection: $selectedCoin) {
+                            ForEach(availableCoins, id: \.self) { coin in
+                                Text(coin).tag(coin)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                    }
+                    .padding(.horizontal)
+                    VStack(alignment: .leading) {
+                        Text("Enter Amount")
+                            .foregroundColor(.gray)
+                        HStack {
+                            Text("$")
+                                .foregroundColor(.white)
+                                .font(.title)
+                            TextField("0.00", text: $amount)
+                                .keyboardType(.decimalPad)
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                    }
+                    .padding(.horizontal)
+                    VStack(alignment: .leading) {
+                        Text("Deposit To")
+                            .foregroundColor(.gray)
+                        Picker("Deposit Method", selection: $depositMethod) {
+                            ForEach(depositMethods, id: \.self) { method in
+                                Text(method).tag(method)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                    }
+                    .padding(.horizontal)
+                }
+                Spacer()
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel")
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 30)
+                }
+            }
+            .background(Color.black)
+            .navigationBarHidden(true)
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+// MARK: - Additional Views & Support Components
+
+struct ManekiIntroView: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 25) {
+                HStack {
+                    Spacer()
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .clipShape(Circle())
+                    }
+                }
+                .padding(.horizontal)
+                Image(systemName: "cat.fill")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .foregroundColor(.white)
+                Text("Welcome to Maneki!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                Text("Maneki is here to guide you through using Fortune Collective. Ask questions about market trends, portfolio tips, or get crypto insights.")
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
+            .padding()
+        }
+        .background(Color.black)
+    }
+}
+
+struct ChatroomView: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("Chatroom")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding()
+                Text("This feature is coming soon!")
+                    .foregroundColor(.gray)
+                Spacer()
+            }
+            .background(Color.black)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.white)
+            })
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+struct CommunityHubView: View {
+    var body: some View {
+        VStack {
+            Text("Community Hub")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding()
+            Text("Connect with other crypto enthusiasts!")
+                .foregroundColor(.gray)
+            Spacer()
+        }
+        .background(Color.black)
+    }
+}
+
+struct NewsletterView: View {
+    var body: some View {
+        VStack {
+            Text("Newsletter")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding()
+            Text("Subscribe for the latest crypto updates.")
+                .foregroundColor(.gray)
+            Spacer()
+        }
+        .background(Color.black)
+    }
+}
 
 struct MembershipApplication: Codable {
     let name: String
@@ -846,76 +1417,190 @@ struct StartingCapitalRadioGroup: View {
     }
 }
 
-struct AboutUsView: View {
-    @Environment(\.presentationMode) var presentationMode
+
+
+// MARK: - Support Views
+
+struct CryptoTrendCard: View {
+    let name: String
+    let symbol: String
+    let price: String
+    let change: String
+    let isPositive: Bool
+    
     var body: some View {
-        VStack {
-            Text("Meet our admins.")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-            Text("This is the Fortune Collective About Us page.")
-                .font(.body)
-                .padding()
+        HStack {
+            VStack(alignment: .leading) {
+                Text(name)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Text(symbol)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
             Spacer()
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    HStack { Image(systemName: "chevron.left") }
-                        .foregroundColor(.white)
-                }
+            VStack(alignment: .trailing) {
+                Text(price)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Text(change)
+                    .font(.subheadline)
+                    .foregroundColor(isPositive ? .green : .red)
             }
         }
-        .background(Color.black.ignoresSafeArea())
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(12)
     }
 }
 
-struct WalletView: View {
+struct NewsCard: View {
+    let title: String
+    let time: String
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Wallet Page")
-                    .font(.largeTitle)
-            }
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.bottom, 5)
+            Text(time)
+                .font(.caption)
+                .foregroundColor(.gray)
         }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(12)
     }
 }
 
-struct PortfolioView: View {
+struct IndexCard: View {
+    let name: String
+    let value: String
+    let change: String
+    
+    var isPositive: Bool {
+        return change.contains("+")
+    }
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Portfolio View")
-                    .font(.largeTitle)
+        HStack {
+            Text(name)
+                .font(.headline)
+                .foregroundColor(.white)
+            Spacer()
+            VStack(alignment: .trailing) {
+                Text(value)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Text(change)
+                    .font(.subheadline)
+                    .foregroundColor(isPositive ? .green : .red)
             }
         }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(12)
+        .padding(.horizontal)
     }
 }
 
-struct ChatView: View {
+struct DegenTradingCard: View {
+    let title: String
+    let description: String
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Chat View")
-                    .font(.largeTitle)
+        VStack(spacing: 10) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.white)
+            
+            Text(description)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+            
+            Button(action: {
+                // Action for trading option
+            }) {
+                Text("Start Trading")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 12)
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
         }
+        .frame(height: 90)
+        .frame(minWidth: 300)
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(12)
     }
 }
 
-struct ExploreView: View {
+struct Asset: Identifiable {
+    let id = UUID()
+    let name: String
+    let symbol: String
+    let amount: Double
+    let value: Double
+}
+
+struct AssetRow: View {
+    let asset: Asset
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Explore View")
-                    .font(.largeTitle)
-            }
+        HStack {
+            Text(asset.name)
+                .foregroundColor(.white)
+            Spacer()
+            Text("\(asset.amount, specifier: "%.4f") \(asset.symbol)")
+                .foregroundColor(.gray)
+            Text("$\(asset.value, specifier: "%.2f")")
+                .foregroundColor(.white)
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(12)
+        .padding(.horizontal)
+    }
+}
+
+struct ChatMessage: Identifiable {
+    let id: Int
+    let content: String
+    let isFromUser: Bool
+}
+
+struct ChatBubble: View {
+    let message: ChatMessage
+    var body: some View {
+        HStack {
+            if message.isFromUser { Spacer() }
+            Text(message.content)
+                .padding()
+                .background(message.isFromUser ? Color.blue : Color.gray.opacity(0.3))
+                .foregroundColor(.white)
+                .cornerRadius(18)
+                .frame(maxWidth: 280, alignment: message.isFromUser ? .trailing : .leading)
+            if !message.isFromUser { Spacer() }
         }
     }
 }
 
-#Preview {
-    ContentView()
+struct OffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
+
+// MARK: - Preview
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
