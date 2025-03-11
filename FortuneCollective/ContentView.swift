@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import PassKit
 
 extension Double {
     var asCurrency: String {
@@ -87,37 +88,45 @@ struct HomePageView: View {
     @State private var showSidebar = false
     @State private var hideHamburger = false
     @State private var showDegenMode = false
+    @State private var showManekiButton = true
+    @StateObject private var userProfile = UserProfileViewModel()
+    
+    @State private var selectedTab: Int = 0  // Track selected tab
     
     var body: some View {
         ZStack {
-            TabView {
-                // Left-most tab: Spotting
+            TabView(selection: $selectedTab) {
                 SpottingView(hideHamburger: $hideHamburger)
+                    .tag(0)
                     .tabItem {
                         Image(systemName: "binoculars.fill")
                         Text("Spotting")
                     }
-                // Second tab: Indexes
+                
                 IndexesView()
+                    .tag(1)
                     .tabItem {
                         Image(systemName: "chart.xyaxis.line")
                         Text("Indexes")
                     }
-                // Middle (largest) tab: Maneki
+                
                 ManekiView()
+                    .tag(2)
                     .tabItem {
                         Image(systemName: "cat.fill")
                             .font(.system(size: 28))
                         Text("Maneki")
                     }
-                // Fourth tab: Portfolio
+                
                 PortfolioView()
+                    .tag(3)
                     .tabItem {
                         Image(systemName: "chart.bar.fill")
                         Text("Portfolio")
                     }
-                // Right-most tab: Degen Mode
+                
                 DegenView(isEnabled: $showDegenMode)
+                    .tag(4)
                     .tabItem {
                         Image(systemName: "flame.fill")
                         Text("Degen")
@@ -126,43 +135,52 @@ struct HomePageView: View {
             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.75 : 0)
             .animation(.easeInOut(duration: 0.3), value: showSidebar)
             
-            if showSidebar {
-                SidebarView(showSidebar: $showSidebar, showDegenMode: $showDegenMode)
-                    .transition(.move(edge: .leading))
-            }
-            
-            // Hamburger button shows only when sidebar is closed
-            VStack {
-                HStack {
-                    if !showSidebar && !hideHamburger {
+            if !hideHamburger {
+                VStack {
+                    HStack {
                         Button(action: {
-                            withAnimation { showSidebar.toggle() }
+                            withAnimation {
+                                showSidebar.toggle()
+                            }
                         }) {
                             Image(systemName: "line.horizontal.3")
                                 .resizable()
                                 .frame(width: 30, height: 20)
                                 .foregroundColor(.white)
-                                .padding(.top, 60)
-                                .padding(.leading, 25)
-                                .padding(.bottom, 10)
+                                .padding()
                         }
+                        Spacer()
                     }
                     Spacer()
                 }
-                Spacer()
+                .padding(.leading, 5)
+                .padding(.top, 40)
+            }
+            
+            if showSidebar {
+                SidebarView(showSidebar: $showSidebar, showDegenMode: $showDegenMode, selectedTab: $selectedTab, userProfile: userProfile)
+                    .transition(.move(edge: .leading))
+                    .onAppear { withAnimation { showManekiButton = false } }
+                    .onDisappear { withAnimation { showManekiButton = true } }
             }
         }
         .preferredColorScheme(.dark)
     }
 }
 
+
+
+
 // MARK: - Sidebar with Extra Options
 
 struct SidebarView: View {
     @Binding var showSidebar: Bool
     @Binding var showDegenMode: Bool
+    @Binding var selectedTab: Int
     @State private var showManekiIntro = false
     @State private var showChatroom = false
+    @ObservedObject var userProfile: UserProfileViewModel
+    @State private var showProfileSettings = false
     
     var body: some View {
         NavigationStack {
@@ -180,29 +198,35 @@ struct SidebarView: View {
                     Spacer()
                 }
                 VStack(alignment: .leading, spacing: 20) {
-                    // Profile
-                    Button(action: { print("Profile button pressed") }) {
+                    // The Profile Row
+                    Button(action: {
+                        showProfileSettings = true
+                    }) {
                         HStack(spacing: 15) {
                             Image(systemName: "person.crop.circle.fill")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .foregroundColor(.white)
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("James Wang")
+                                Text(userProfile.name)
                                     .font(.custom("Inter", size: 20))
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                Text("Manage Profile")
+                                Text(userProfile.email)
                                     .font(.custom("Inter", size: 14))
                                     .foregroundColor(.gray)
                             }
                             Spacer()
                             Image(systemName: "chevron.right")
-                                .padding(.trailing, 30)
+                                .padding(.trailing, 35)
                                 .foregroundColor(.white)
                         }
                         .padding(.leading, 20)
                     }
+                    .sheet(isPresented: $showProfileSettings) {
+                        ProfileSettingsView(userProfile: userProfile)
+                    }
+                    
                     Divider()
                         .frame(width: 20, height: 1)
                         .background(Color.white)
@@ -221,7 +245,7 @@ struct SidebarView: View {
                     .padding(.leading, 30)
                     .foregroundColor(.white)
                     
-                    // Maneki Guide
+                    // Maneki Guide Button (Opens Modal)
                     Button(action: { showManekiIntro = true }) {
                         HStack {
                             Image(systemName: "cat.fill")
@@ -232,7 +256,8 @@ struct SidebarView: View {
                         .foregroundColor(.white)
                     }
                     .sheet(isPresented: $showManekiIntro) {
-                        ManekiIntroView()
+                        // Pass both selectedTab and showSidebar
+                        ManekiIntroView(selectedTab: $selectedTab, showSidebar: $showSidebar)
                     }
                     
                     // Chatroom
@@ -275,17 +300,7 @@ struct SidebarView: View {
                         .frame(width: 20, height: 1)
                         .background(Color.white)
                         .padding(.leading, 30)
-                    
-                    // Reserve / Apply
-                    NavigationLink(destination: ReserveView()) {
-                        HStack {
-                            Image(systemName: "key")
-                            Text("Reserve")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.leading, 30)
-                        .foregroundColor(.white)
-                    }
+                
                     
                     // Settings & Notifications
                     Button(action: { print("Settings button pressed") }) {
@@ -323,6 +338,108 @@ struct SidebarView: View {
             }
             .frame(width: UIScreen.main.bounds.width)
             .background(Color.black.edgesIgnoringSafeArea(.all))
+        }
+    }
+}
+
+// MARK: - Profile Modal
+
+class UserProfileViewModel: ObservableObject {
+    @Published var name: String
+    @Published var email: String
+    
+    init(name: String = "James Wang", email: String = "james@example.com") {
+        self.name = name
+        self.email = email
+    }
+}
+
+struct ProfileSettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var userProfile: UserProfileViewModel
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 40) {
+                Text("Profile Settings")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top, 20)
+                
+                // Name & Email
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Name").foregroundColor(.gray)
+                    TextField("Name", text: $userProfile.name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    Text("Email").foregroundColor(.gray)
+                    TextField("Email", text: $userProfile.email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                .padding(.horizontal, 20)
+                
+                // The mock Apple Pay button:
+                MockApplePayButton()
+                    .frame(width: 200, height: 44) // approximate size
+                
+                Spacer()
+                
+                // Dismiss button
+                Button("Done") {
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .foregroundColor(.blue)
+                .padding(.bottom, 50)
+                
+            }
+            .padding()
+            .background(Color.black)
+            .navigationBarHidden(true)
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+
+// MARK: - Apple Pay Integration (mockup as of 3/11)
+
+struct MockApplePayButton: UIViewRepresentable {
+    func makeUIView(context: Context) -> PKPaymentButton {
+        let button = PKPaymentButton(paymentButtonType: .buy, paymentButtonStyle: .black)
+        button.addTarget(context.coordinator, action: #selector(Coordinator.mockPaymentFlow), for: .touchUpInside)
+        return button
+    }
+    
+    func updateUIView(_ uiView: PKPaymentButton, context: Context) {
+        // No updates needed
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+    class Coordinator: NSObject {
+        @objc func mockPaymentFlow() {
+            print("User tapped the mock Apple Pay button.")
+            
+            let alert = UIAlertController(
+                title: "Mock Apple Pay",
+                message: "This is a prototype flow.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            
+            // Find the top-most view controller to present the alert
+            if let topVC = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .flatMap({ $0.windows })
+                .first(where: { $0.isKeyWindow })?
+                .rootViewController {
+                
+                DispatchQueue.main.async {
+                    topVC.present(alert, animated: true)
+                }
+            }
         }
     }
 }
@@ -448,9 +565,11 @@ struct SpottingView: View {
                 .frame(height: 1)
                 
                 VStack(spacing: 16) {
-                    Text("Market Trends")
-                        .font(.largeTitle)
+                    Text("Market Prices")
+                        .font(.title2)
                         .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
                         .padding(.top, 30)
                     
                     // 2) Replace static prices with live data from the ViewModel:
@@ -475,17 +594,33 @@ struct SpottingView: View {
                         change: priceVM.sol24hChange
                     )
                     
+                    Divider()
+                        .padding(.vertical, 20)
+                    
                     // Market News, etc...
                     Text("Market News")
                         .font(.title2)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
-                        .padding(.top, 20)
+//                        .padding(.top, 20)
                     
                     NewsCard(title: "Bitcoin Reaches New All-Time High", time: "2 hours ago")
                     NewsCard(title: "SEC Approves New Crypto ETF", time: "5 hours ago")
                     NewsCard(title: "Major Bank Adopts Blockchain Technology", time: "1 day ago")
+                    
+                    Divider()
+                        .padding(.vertical, 20)
+                    
+                    // TODO: Market Overview
+//                    Text("Market Overview")
+//                        .font(.title2)
+//                        .foregroundColor(.white)
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .padding(.horizontal)
+////                        .padding(.top, 20)
+                    
+                   // TODO: incorporate real-time tracking statistics of market cap, trading volume
                     
                     // Extra bottom padding for floating buttons
                     Spacer().frame(height: 75)
@@ -545,10 +680,12 @@ struct IndexesView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text("Crypto Indexes")
-                    .font(.largeTitle)
+                Text("Indexes")
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .padding(.top, 40)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    .padding(.top, 30)
                 
                 IndexCard(name: "DeFi Index", value: "2,345.67", change: "+1.2%")
                 IndexCard(name: "NFT Market Index", value: "785.32", change: "-0.5%")
@@ -559,13 +696,13 @@ struct IndexesView: View {
                     .font(.title2)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
+                    .padding(.horizontal, 30)
                 
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color.gray.opacity(0.2))
-                    .frame(height: 250)
+                    .frame(width: 350, height: 250)
                     .overlay(Text("Index Performance Chart").foregroundColor(.white))
-                    .padding(.horizontal)
+//                    .padding(.horizontal)
             }
             .padding(.bottom, 50)
         }
@@ -579,6 +716,15 @@ struct ManekiView: View {
         ChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
     ]
     
+    // 1) A list of example questions the user can tap:
+    private let exampleQuestions = [
+        "How do I start trading crypto?",
+        "What's the safest exchange?",
+        "Is now a good time to buy BTC?",
+        "Can you explain NFTs?",
+        "What are good long-term coins?"
+    ]
+    
     var body: some View {
         VStack {
             Text("Maneki AI Assistant")
@@ -586,6 +732,7 @@ struct ManekiView: View {
                 .foregroundColor(.white)
                 .padding(.top, 40)
             
+            // 2) The messages scrollable area
             ScrollView {
                 LazyVStack(spacing: 15) {
                     ForEach(messages) { message in
@@ -595,6 +742,30 @@ struct ManekiView: View {
                 .padding()
             }
             
+            // 3) Horizontal scroll of example questions
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(exampleQuestions, id: \.self) { question in
+                        Button {
+                            // On tap, set userMessage and send
+                            userMessage = question
+                            sendMessage()
+                        } label: {
+                            Text(question)
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(.white)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 12)
+                                .background(Color.gray.opacity(0.3))
+                                .cornerRadius(10)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+            .padding(.bottom, 5)
+            
+            // 4) The user message field + send button
             HStack {
                 TextField("Ask Maneki anything...", text: $userMessage)
                     .padding()
@@ -614,17 +785,25 @@ struct ManekiView: View {
         .background(Color.black)
     }
     
+    // Same as your existing send logic
     func sendMessage() {
         guard !userMessage.isEmpty else { return }
         let newMsg = ChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
         messages.append(newMsg)
+        
+        // Sample "AI response"
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let response = ChatMessage(id: messages.count + 1, content: "Based on current data, Bitcoin is showing a strong bullish pattern.", isFromUser: false)
+            let response = ChatMessage(
+                id: messages.count + 1,
+                content: "Here's some info on that: ...",
+                isFromUser: false
+            )
             messages.append(response)
         }
         userMessage = ""
     }
 }
+
 
 struct PortfolioView: View {
     // Stub asset data
@@ -954,12 +1133,16 @@ struct SellCryptoView: View {
 // MARK: - Additional Views & Support Components
 
 struct ManekiIntroView: View {
+    @Binding var selectedTab: Int
+    @Binding var showSidebar: Bool
     @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         ScrollView {
             VStack(spacing: 25) {
                 HStack {
                     Spacer()
+                    // Close Modal Button
                     Button(action: { presentationMode.wrappedValue.dismiss() }) {
                         Image(systemName: "xmark")
                             .foregroundColor(.white)
@@ -969,24 +1152,49 @@ struct ManekiIntroView: View {
                     }
                 }
                 .padding(.horizontal)
+
                 Image(systemName: "cat.fill")
                     .resizable()
                     .frame(width: 80, height: 80)
                     .foregroundColor(.white)
+
                 Text("Welcome to Maneki!")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+
                 Text("Maneki is here to guide you through using Fortune Collective. Ask questions about market trends, portfolio tips, or get crypto insights.")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
+
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()  // Close modal
+                    showSidebar = false  // Close sidebar
+                    selectedTab = 2  // Go to Maneki tab
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title2)
+                        Text("Go to Maneki")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                }
+                .padding(.horizontal, 30)
+
             }
             .padding()
         }
         .background(Color.black)
     }
 }
+
 
 struct ChatroomView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -1070,360 +1278,6 @@ struct AnyCodable: Codable {
         } else {
             let context = EncodingError.Context(codingPath: container.codingPath, debugDescription: "AnyCodable only supports String in this example.")
             throw EncodingError.invalidValue(value, context)
-        }
-    }
-}
-
-struct ReserveView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    // MARK: Form Fields
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var emailConfirm: String = ""
-    @State private var discord: String = ""
-    @State private var instagramLink: String = ""
-    @State private var instagramConfirm: String = ""
-    @State private var ageGroup: String = ""
-    @State private var occupation: String = ""
-    @State private var whyFit: String = ""
-    @State private var goals: String = ""
-    @State private var cryptoExperience: String = ""
-    @State private var startingCapital: String = ""
-    @State private var agreedToTerms: Bool = false
-    
-    @State private var showConfirmationPopup = false
-    @State private var validationErrors: [String: Bool] = [:]
-    
-    let fieldIDs = [
-        "name", "email", "emailConfirm", "discord",
-        "instagramLink", "instagramConfirm", "ageGroup",
-        "occupation", "whyFit", "goals", "cryptoExperience",
-        "startingCapital"
-    ]
-    .map { ($0, UUID()) }
-    .reduce(into: [String: UUID]()) { $0[$1.0] = $1.1 }
-    
-    var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            ScrollViewReader { proxy in
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
-                        // Title
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Reserve your membership.")
-                                .font(.custom("Inter", size: 26))
-                                .foregroundColor(.white)
-                                .bold()
-                            Text("7 simple answers.")
-                                .font(.custom("Inter", size: 16))
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.top, 40)
-                        
-                        // Contact Info
-                        Group {
-                            Text("Provide your contact information.")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CustomTextField(placeholder: "Enter your name", text: $name)
-                                .id(fieldIDs["name"])
-                            showError("name")
-                            CustomTextField(placeholder: "Enter your email", text: $email)
-                                .id(fieldIDs["email"])
-                            showError("email")
-                            CustomTextField(placeholder: "Confirm your email", text: $emailConfirm)
-                                .id(fieldIDs["emailConfirm"])
-                            showError("emailConfirm")
-                            CustomTextField(placeholder: "Enter your Discord", text: $discord)
-                                .id(fieldIDs["discord"])
-                            showError("discord")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("1. What is your Instagram handle?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CustomTextField(placeholder: "Paste your profile link", text: $instagramLink)
-                                .id(fieldIDs["instagramLink"])
-                            showError("instagramLink")
-                            CustomTextField(placeholder: "Confirm your Instagram", text: $instagramConfirm)
-                                .id(fieldIDs["instagramConfirm"])
-                            showError("instagramConfirm")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("2. What is your age group?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            AgeGroupRadioGroup(selectedAgeGroup: $ageGroup)
-                                .id(fieldIDs["ageGroup"])
-                            showError("ageGroup")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("3. What do you do for work?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CustomTextField(placeholder: "Enter your occupation", text: $occupation)
-                                .id(fieldIDs["occupation"])
-                            showError("occupation")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("4. Why do you think you're a great fit for Fortune Collective?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CustomTextEditor(placeholder: "Enter your message here", text: $whyFit)
-                                .id(fieldIDs["whyFit"])
-                            showError("whyFit")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("5. Share a bit about your goals, what drives you, and what makes you determined to succeed:")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CustomTextEditor(placeholder: "Enter your message here", text: $goals)
-                                .id(fieldIDs["goals"])
-                            showError("goals")
-                            Text("We accept fewer than 18% of applicants. Show us why you deserve to join Fortune Collective. The more effort you put in, the better your chances.")
-                                .font(.custom("Inter", size: 14))
-                                .foregroundColor(.gray)
-                                .padding(.top, 2)
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("6. How much crypto experience do you have?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            CryptoExperiencePicker(experience: $cryptoExperience)
-                                .id(fieldIDs["cryptoExperience"])
-                            showError("cryptoExperience")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        Group {
-                            Text("7. How much is your starting capital?")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            StartingCapitalRadioGroup(selectedCapital: $startingCapital)
-                                .id(fieldIDs["startingCapital"])
-                            showError("startingCapital")
-                        }
-                        
-                        Divider().background(Color.white.opacity(0.2))
-                            .padding(.vertical, 20)
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Acknowledgment")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .bold()
-                            Text("Admission to Fortune Collective is NOT free. By applying, you confirm that you’re ready to invest in connecting with 7-figure crypto traders and accessing top-tier strategies.")
-                                .font(.custom("Inter", size: 14))
-                                .foregroundColor(.gray)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Toggle(isOn: $agreedToTerms) {
-                                HStack {
-                                    Text("Agree to our ")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 14))
-                                    Button {
-                                        // Link to TOS if needed
-                                    } label: {
-                                        Text("TOS & Privacy Policy.")
-                                            .foregroundColor(.gray)
-                                            .underline()
-                                            .font(.system(size: 14))
-                                    }
-                                }
-                            }
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                            .foregroundColor(.white)
-                        }
-                        
-                        Button(action: {
-                            validateFields(proxy: proxy)
-                        }) {
-                            Text("Apply")
-                                .font(.custom("Inter", size: 18))
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(agreedToTerms ? Color.white.opacity(0.1) : Color.gray.opacity(0.2))
-                                .cornerRadius(8)
-                        }
-                        .disabled(!agreedToTerms)
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 40)
-                }
-            }
-            
-            if showConfirmationPopup {
-                Color.black.opacity(0.75).edgesIgnoringSafeArea(.all)
-                VStack(spacing: 20) {
-                    Text("Thank you for completing your application.")
-                        .font(.custom("Inter", size: 16))
-                        .foregroundColor(.white)
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Return to Home")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.gray.opacity(0.2).cornerRadius(8))
-                    }
-                }
-                .padding(32)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.gray.opacity(0.9))
-                )
-                .padding(.horizontal, 40)
-            }
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.white)
-                }
-            }
-        }
-    }
-    
-    private func validateFields(proxy: ScrollViewProxy) {
-        let orderedFields: [(key: String, value: String)] = [
-            ("name", name),
-            ("email", email),
-            ("emailConfirm", emailConfirm),
-            ("discord", discord),
-            ("instagramLink", instagramLink),
-            ("instagramConfirm", instagramConfirm),
-            ("ageGroup", ageGroup),
-            ("occupation", occupation),
-            ("whyFit", whyFit),
-            ("goals", goals),
-            ("cryptoExperience", cryptoExperience),
-            ("startingCapital", startingCapital)
-        ]
-        
-        var errors = [String: Bool]()
-        var firstErrorField: String?
-        
-        for field in orderedFields {
-            let isEmpty = field.value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            errors[field.key] = isEmpty
-            if isEmpty, firstErrorField == nil {
-                firstErrorField = field.key
-            }
-        }
-        
-        validationErrors = errors
-        
-        if let field = firstErrorField, let fieldID = fieldIDs[field] {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation {
-                    proxy.scrollTo(fieldID, anchor: .top)
-                }
-            }
-        } else {
-            // All fields are valid—build the survey data and call submitApplication
-            let surveyResponses: [String: AnyCodable] = [
-                "discord": AnyCodable(discord),
-                "instagramLink": AnyCodable(instagramLink),
-                "instagramConfirm": AnyCodable(instagramConfirm),
-                "ageGroup": AnyCodable(ageGroup),
-                "occupation": AnyCodable(occupation),
-                "whyFit": AnyCodable(whyFit),
-                "goals": AnyCodable(goals),
-                "cryptoExperience": AnyCodable(cryptoExperience),
-                "startingCapital": AnyCodable(startingCapital)
-            ]
-            
-            let application = MembershipApplication(name: name, email: email, surveyResponses: surveyResponses)
-            submitApplication(application) { success in
-                if success {
-                    // On success, display the confirmation popup.
-                    DispatchQueue.main.async {
-                        showConfirmationPopup = true
-                    }
-                } else {
-                    // Handle failure (e.g. show an error alert to the user)
-                    print("Submission failed")
-                }
-            }
-        }
-    }
-    
-    // Submits the application data to the backend
-    func submitApplication(_ application: MembershipApplication, completion: @escaping (Bool) -> Void) {
-        let formSubmitURL = "https://formsubmit.co/rayconghou@gmail.com" // Replace with your FormSubmit link
-        var request = URLRequest(url: URL(string: formSubmitURL)!)
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        let body = [
-            "name": application.name,
-            "email": application.email,
-            "message": "Why Fit: \(application.surveyResponses["whyFit"]?.value ?? "Not provided")"
-        ]
-        .map { "\($0.key)=\($0.value)" }
-        .joined(separator: "&")
-        .data(using: .utf8)
-
-        request.httpBody = body
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error submitting form: \(error)")
-                completion(false)
-            } else {
-                completion(true)
-            }
-        }.resume()
-    }
-
-    
-    @ViewBuilder
-    private func showError(_ field: String) -> some View {
-        if validationErrors[field] ?? false {
-            Text("This field is required.")
-                .foregroundColor(.red)
-                .font(.custom("Inter", size: 14))
         }
     }
 }
@@ -1570,7 +1424,13 @@ struct CryptoTrendCard: View {
         let changeString = String(format: "%.2f%%", change)
         
         HStack {
-            // Left section: name + symbol
+            // Left section: Crypto logo + name + symbol
+            Image(symbol.uppercased())  // Uses BTC, ETH, SOL image names
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30)
+                .clipShape(Circle()) // Ensures a round shape for consistency
+            
             VStack(alignment: .leading) {
                 Text(name)
                     .font(.headline)
@@ -1579,6 +1439,7 @@ struct CryptoTrendCard: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            .padding(.leading, 10)
             
             Spacer()
             
