@@ -27,6 +27,7 @@ struct ContentView: View {
     @State private var showFortune = false
     @State private var showCollective = false
     @State private var showBottomElements = false
+
     
     var body: some View {
         ZStack {
@@ -90,7 +91,6 @@ struct HomePageView: View {
     @State private var showDegenMode = false
     @State private var showManekiButton = true
     @StateObject private var userProfile = UserProfileViewModel()
-    
     @State private var selectedTab: Int = 0  // Track selected tab
     
     var body: some View {
@@ -679,13 +679,13 @@ struct SpottingView: View {
 struct IndexesView: View {
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 16) {
                 Text("Indexes")
                     .font(.title2)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
-                    .padding(.top, 30)
+                    .padding(.top, 35)
                 
                 IndexCard(name: "DeFi Index", value: "2,345.67", change: "+1.2%")
                 IndexCard(name: "NFT Market Index", value: "785.32", change: "-0.5%")
@@ -704,6 +704,7 @@ struct IndexesView: View {
                     .overlay(Text("Index Performance Chart").foregroundColor(.white))
 //                    .padding(.horizontal)
             }
+            .padding(.horizontal)
             .padding(.bottom, 50)
         }
         .background(Color.black)
@@ -727,7 +728,7 @@ struct ManekiView: View {
     
     var body: some View {
         VStack {
-            Text("Maneki AI Assistant")
+            Text("Maneki")
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .padding(.top, 40)
