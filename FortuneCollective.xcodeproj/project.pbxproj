@@ -22,9 +22,12 @@
 		C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA332D8114180058C4B2 /* IndexesView.swift */; };
 		C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA362D8114210058C4B2 /* ManekiView.swift */; };
 		C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA392D8114420058C4B2 /* PortfolioView.swift */; };
-		C319FA3F2D81145A0058C4B2 /* SpottingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3C2D81145A0058C4B2 /* SpottingView.swift */; };
+		C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3C2D81145A0058C4B2 /* SpotView.swift */; };
 		C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */; };
 		C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */; };
+		C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA432D836C2C0058C4B2 /* UserProfile.swift */; };
+		C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA452D836C5A0058C4B2 /* ApplePay.swift */; };
+		C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA482D836D120058C4B2 /* SharedUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +46,12 @@
 		C319FA332D8114180058C4B2 /* IndexesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexesView.swift; sourceTree = "<group>"; };
 		C319FA362D8114210058C4B2 /* ManekiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManekiView.swift; sourceTree = "<group>"; };
 		C319FA392D8114420058C4B2 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
-		C319FA3C2D81145A0058C4B2 /* SpottingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpottingView.swift; sourceTree = "<group>"; };
+		C319FA3C2D81145A0058C4B2 /* SpotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
 		C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellCryptoView.swift; sourceTree = "<group>"; };
 		C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCryptoView.swift; sourceTree = "<group>"; };
+		C319FA432D836C2C0058C4B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		C319FA452D836C5A0058C4B2 /* ApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
+		C319FA482D836D120058C4B2 /* SharedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,6 +69,7 @@
 		C319FA122D8112FF0058C4B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA432D836C2C0058C4B2 /* UserProfile.swift */,
 				C319FA152D8113070058C4B2 /* AnyCodable.swift */,
 				C319FA132D8113070058C4B2 /* Asset.swift */,
 				C319FA162D8113080058C4B2 /* ChatMessage.swift */,
@@ -74,6 +81,7 @@
 		C319FA1F2D8113660058C4B2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA452D836C5A0058C4B2 /* ApplePay.swift */,
 				C319FA1C2D81131B0058C4B2 /* CryptoPriceService.swift */,
 			);
 			path = API;
@@ -91,7 +99,8 @@
 		C319FA252D8113B10058C4B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C319FA3B2D8114530058C4B2 /* Spotting */,
+				C319FA472D836D070058C4B2 /* SharedUI */,
+				C319FA3B2D8114530058C4B2 /* Spot */,
 				C319FA382D8114280058C4B2 /* Portfolio */,
 				C319FA352D81141B0058C4B2 /* Maneki */,
 				C319FA322D8114130058C4B2 /* Indexes */,
@@ -144,14 +153,22 @@
 			path = Portfolio;
 			sourceTree = "<group>";
 		};
-		C319FA3B2D8114530058C4B2 /* Spotting */ = {
+		C319FA3B2D8114530058C4B2 /* Spot */ = {
 			isa = PBXGroup;
 			children = (
 				C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */,
 				C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */,
-				C319FA3C2D81145A0058C4B2 /* SpottingView.swift */,
+				C319FA3C2D81145A0058C4B2 /* SpotView.swift */,
 			);
-			path = Spotting;
+			path = Spot;
+			sourceTree = "<group>";
+		};
+		C319FA472D836D070058C4B2 /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA482D836D120058C4B2 /* SharedUIView.swift */,
+			);
+			path = SharedUI;
 			sourceTree = "<group>";
 		};
 		C388F8882D72437D003FFCFF = {
@@ -244,9 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C319FA3F2D81145A0058C4B2 /* SpottingView.swift in Sources */,
+				C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */,
+				C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */,
 				C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */,
 				C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */,
+				C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */,
 				C319FA2D2D8113E40058C4B2 /* SidebarView.swift in Sources */,
 				C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */,
 				C319FA312D81140F0058C4B2 /* DegenView.swift in Sources */,
@@ -260,6 +279,7 @@
 				C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */,
 				C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */,
 				C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */,
+				C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -178,3 +178,124 @@ struct SidebarView: View {
         }
     }
 }
+
+// MARK: - Additional Views & Support Components
+
+struct ManekiIntroView: View {
+    @Binding var selectedTab: Int
+    @Binding var showSidebar: Bool
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 25) {
+                HStack {
+                    Spacer()
+                    // Close Modal Button
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .clipShape(Circle())
+                    }
+                }
+                .padding(.horizontal)
+
+                Image(systemName: "cat.fill")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .foregroundColor(.white)
+
+                Text("Welcome to Maneki!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+
+                Text("Maneki is here to guide you through using Fortune Collective. Ask questions about market trends, portfolio tips, or get crypto insights.")
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()  // Close modal
+                    showSidebar = false  // Close sidebar
+                    selectedTab = 2  // Go to Maneki tab
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title2)
+                        Text("Go to Maneki")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                }
+                .padding(.horizontal, 30)
+
+            }
+            .padding()
+        }
+        .background(Color.black)
+    }
+}
+
+
+struct ChatroomView: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("Chatroom")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding()
+                Text("This feature is coming soon!")
+                    .foregroundColor(.gray)
+                Spacer()
+            }
+            .background(Color.black)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.white)
+            })
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+struct CommunityHubView: View {
+    var body: some View {
+        VStack {
+            Text("Community Hub")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding()
+            Text("Connect with other crypto enthusiasts!")
+                .foregroundColor(.gray)
+            Spacer()
+        }
+        .background(Color.black)
+    }
+}
+
+struct NewsletterView: View {
+    var body: some View {
+        VStack {
+            Text("Newsletter")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding()
+            Text("Subscribe for the latest crypto updates.")
+                .foregroundColor(.gray)
+            Spacer()
+        }
+        .background(Color.black)
+    }
+}
