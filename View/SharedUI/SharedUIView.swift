@@ -8,87 +8,25 @@
 import Foundation
 import SwiftUI
 
-// MARK: - Support Views
 
-struct CryptoTrendCard: View {
-    let name: String
-    let symbol: String
-    let price: Double
-    /// This is the 24h change in percent (e.g. -3.12 means -3.12%)
-    let change: Double
-    
-    var body: some View {
-        // Decide if it’s positive or negative
-        let isPositive = change >= 0
-        // Format the numeric change to a percentage string
-        let changeString = String(format: "%.2f%%", change)
-        
-        HStack {
-            // Left section: Crypto logo + name + symbol
-            Image(symbol.uppercased())  // Uses BTC, ETH, SOL image names
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
-                .clipShape(Circle()) // Ensures a round shape for consistency
-            
-            VStack(alignment: .leading) {
-                Text(name)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Text(symbol)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
-            .padding(.leading, 10)
-            
-            Spacer()
-            
-            // Right section: price + 24h change with icon
-            VStack(alignment: .trailing) {
-                // Current price formatted as currency:
-                Text(price.asCurrency)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                
-                HStack(spacing: 4) {
-                    // Icon: arrow up or down
-                    Image(systemName: isPositive ? "arrow.up.right" : "arrow.down.right")
-                        .resizable()
-                        .foregroundColor(isPositive ? .green : .red)
-                        .frame(width: 10, height: 10)
-                    
-                    // The text “+1.23%” or “-2.34%”
-                    Text(changeString)
-                        .font(.subheadline)
-                        .foregroundColor(isPositive ? .green : .red)
-                        .padding(.leading, 5)
-                }
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(12)
-    }
-}
-
+// MARK: - News Card Component
 struct NewsCard: View {
-    let title: String
-    let time: String
+    var title: String
+    var time: String
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.white)
-                .padding(.bottom, 5)
             Text(time)
-                .font(.caption)
+                .font(.subheadline)
                 .foregroundColor(.gray)
         }
         .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(12)
+        .background(Color(.systemGray6).opacity(0.1))
+        .cornerRadius(10)
+        .padding(.horizontal)
     }
 }
 

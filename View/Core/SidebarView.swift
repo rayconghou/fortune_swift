@@ -1,11 +1,3 @@
-//
-//  SidebarView.swift
-//  FortuneCollective
-//
-//  Created by Raymond Hou on 3/11/25.
-//
-
-import Foundation
 import SwiftUI
 
 // MARK: - Sidebar with Extra Options
@@ -16,26 +8,29 @@ struct SidebarView: View {
     @Binding var selectedTab: Int
     @State private var showManekiIntro = false
     @State private var showChatroom = false
+    @State private var showMarketNews = false  // New state for Market News modal
     @ObservedObject var userProfile: UserProfileViewModel
     @State private var showProfileSettings = false
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
-                // Close Button
-                HStack {
-                    Button(action: { withAnimation { showSidebar.toggle() } }) {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.white)
-                            .padding(.leading, 25)
-                            .padding(.bottom, 20)
-                    }
-                    Spacer()
-                }
+            ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    // The Profile Row
+                    
+                    // Close Button
+                    HStack {
+                        Button(action: { withAnimation { showSidebar.toggle() } }) {
+                            Image(systemName: "xmark")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.white)
+                                .padding(.leading, 25)
+                                .padding(.bottom, 20)
+                        }
+                        Spacer()
+                    }
+                    
+                    // Profile Row
                     Button(action: {
                         showProfileSettings = true
                     }) {
@@ -65,9 +60,9 @@ struct SidebarView: View {
                     }
                     
                     Divider()
-                        .frame(width: 20, height: 1)
+                        .frame(height: 1)
                         .background(Color.white)
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                     
                     // Degen Mode Toggle
                     HStack {
@@ -77,23 +72,21 @@ struct SidebarView: View {
                         Spacer()
                         Toggle("", isOn: $showDegenMode)
                             .toggleStyle(SwitchToggleStyle(tint: .orange))
-                            .padding(.trailing, 30)
                     }
-                    .padding(.leading, 30)
+                    .padding(.horizontal, 30)
                     .foregroundColor(.white)
                     
-                    // Maneki Guide Button (Opens Modal)
+                    // Maneki Guide Button
                     Button(action: { showManekiIntro = true }) {
                         HStack {
                             Image(systemName: "cat.fill")
                             Text("Maneki Guide")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
                     .sheet(isPresented: $showManekiIntro) {
-                        // Pass both selectedTab and showSidebar
                         ManekiIntroView(selectedTab: $selectedTab, showSidebar: $showSidebar)
                     }
                     
@@ -104,7 +97,7 @@ struct SidebarView: View {
                             Text("Chatroom")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
                     .sheet(isPresented: $showChatroom) {
@@ -118,7 +111,7 @@ struct SidebarView: View {
                             Text("Community Hub")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
                     
@@ -129,15 +122,28 @@ struct SidebarView: View {
                             Text("Newsletter")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
                     
+                    // Market News (New Sidebar Module)
+                    Button(action: { showMarketNews = true }) {
+                        HStack {
+                            Image(systemName: "newspaper.fill")
+                            Text("Market News")
+                                .font(.custom("Inter", size: 18))
+                        }
+                        .padding(.horizontal, 30)
+                        .foregroundColor(.white)
+                    }
+                    .sheet(isPresented: $showMarketNews) {
+                        MarketNewsView()
+                    }
+                    
                     Divider()
-                        .frame(width: 20, height: 1)
+                        .frame(height: 1)
                         .background(Color.white)
-                        .padding(.leading, 30)
-                
+                        .padding(.horizontal, 30)
                     
                     // Settings & Notifications
                     Button(action: { print("Settings button pressed") }) {
@@ -146,19 +152,20 @@ struct SidebarView: View {
                             Text("Settings")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
+                    
                     Button(action: { print("Notifications button pressed") }) {
                         HStack {
                             Image(systemName: "bell")
                             Text("Notifications")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.white)
                     }
-
+                    
                     // Logout
                     Button(action: { print("Logout button pressed") }) {
                         HStack {
@@ -166,16 +173,67 @@ struct SidebarView: View {
                             Text("Logout")
                                 .font(.custom("Inter", size: 18))
                         }
-                        .padding(.leading, 30)
+                        .padding(.horizontal, 30)
                         .foregroundColor(.red)
                     }
                     
                     Spacer()
                 }
             }
-            .frame(width: UIScreen.main.bounds.width)
             .background(Color.black.edgesIgnoringSafeArea(.all))
         }
+        // Gesture to allow swiping right to close the sidebar
+        .gesture(
+            DragGesture(minimumDistance: 20)
+                .onEnded { value in
+                    // If drag is rightward and exceeds a threshold, close the sidebar
+                    if value.translation.width < -50 {
+                        withAnimation {
+                            showSidebar = false
+                        }
+                    }
+                }
+        )
+    }
+}
+
+// MARK: - Market News Modal
+
+struct MarketNewsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Market News")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                    
+                    // News Cards displaying crypto and memecoin news
+                    NewsCard(title: "Bitcoin Reaches New All-Time High", time: "2 hours ago")
+                    NewsCard(title: "SEC Approves New Crypto ETF", time: "5 hours ago")
+                    NewsCard(title: "Major Bank Adopts Blockchain Technology", time: "1 day ago")
+                    
+                    // Additional memecoin news can be added here
+                }
+                .padding(.vertical)
+            }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
+            .navigationTitle("Crypto News")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -297,5 +355,17 @@ struct NewsletterView: View {
             Spacer()
         }
         .background(Color.black)
+    }
+}
+
+// MARK: - Preview
+
+struct SidebarView_Previews: PreviewProvider {
+    static var previews: some View {
+        SidebarView(showSidebar: .constant(true),
+                    showDegenMode: .constant(false),
+                    selectedTab: .constant(0),
+                    userProfile: UserProfileViewModel(name: "James Wang", email: "jameswang@example.com"))
+            .preferredColorScheme(.dark)
     }
 }

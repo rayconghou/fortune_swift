@@ -8,17 +8,6 @@
 import SwiftUI
 import Combine
 
-extension Double {
-    var asCurrency: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = "$"
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: self)) ?? "$\(self)"
-    }
-}
-
 // MARK: - Main ContentView with Splash Screen
 
 struct ContentView: View {
@@ -60,12 +49,6 @@ struct ContentView: View {
                     .font(.custom("Inter", size: 48))
                     .opacity(showFortune ? 1 : 0)
                     .animation(.easeIn(duration: 0.1).delay(0.3), value: showFortune)
-//                Text("COLLECTIVE")
-//                    .foregroundColor(.white)
-//                    .font(.custom("Inter", size: 24))
-//                    .opacity(showFortune ? 1 : 0)
-//                    .animation(.easeIn(duration: 0.1).delay(1.0), value: showFortune)
-//                    .padding(.bottom, 20)
                 VStack {
                     Divider()
                         .background(Color.white)

@@ -11,7 +11,7 @@ import SwiftUI
 struct PortfolioView: View {
     // Stub asset data
     let assets = [
-        Asset(name: "Bitcoin", symbol: "BTC", amount: 0.0, value: 0.0)
+        Asset(name: "Bitcoin", symbol: "BTC", amount: 1.0, value: 0.0)
     ]
     
     var body: some View {
@@ -87,5 +87,12 @@ struct PortfolioView: View {
             }
         }
         .background(Color.black)
+    }
+}
+
+struct PortfolioView_Previews: PreviewProvider {
+    static var previews: some View {
+        PortfolioView()
+            .preferredColorScheme(.dark)
     }
 }

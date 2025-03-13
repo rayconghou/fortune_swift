@@ -25,14 +25,12 @@ struct HomePageView: View {
                     .tag(0)
                     .tabItem {
                         Image(systemName: "binoculars.fill")
-                        Text("Spot")
                     }
                 
                 IndexesView()
                     .tag(1)
                     .tabItem {
                         Image(systemName: "chart.xyaxis.line")
-                        Text("Indexes")
                     }
                 
                 ManekiView()
@@ -40,21 +38,18 @@ struct HomePageView: View {
                     .tabItem {
                         Image(systemName: "cat.fill")
                             .font(.system(size: 28))
-                        Text("Maneki")
                     }
                 
                 PortfolioView()
                     .tag(3)
                     .tabItem {
                         Image(systemName: "chart.bar.fill")
-                        Text("Portfolio")
                     }
                 
                 DegenView(isEnabled: $showDegenMode)
                     .tag(4)
                     .tabItem {
                         Image(systemName: "flame.fill")
-                        Text("Degen")
                     }
             }
             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.75 : 0)

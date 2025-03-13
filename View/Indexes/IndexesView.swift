@@ -31,12 +31,13 @@ struct IndexesView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 24)
+                .padding(.top, 30)
                 .padding(.bottom, 8)
                 
                 // Tab Selection
                 IndexSourceTabView(selectedTab: $selectedTab)
                     .padding(.horizontal)
+                    .padding(.top, 10)
                 
                 // Content based on selected tab
                 ScrollView {

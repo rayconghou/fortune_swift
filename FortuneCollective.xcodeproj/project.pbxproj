@@ -11,7 +11,6 @@
 		C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA142D8113070058C4B2 /* CoinGecko.swift */; };
 		C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA152D8113070058C4B2 /* AnyCodable.swift */; };
 		C319FA1A2D8113080058C4B2 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA162D8113080058C4B2 /* ChatMessage.swift */; };
-		C319FA1D2D81131B0058C4B2 /* CryptoPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA1C2D81131B0058C4B2 /* CryptoPriceService.swift */; };
 		C319FA232D8113A80058C4B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C319FA212D8113A80058C4B2 /* Assets.xcassets */; };
 		C319FA242D8113A80058C4B2 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = C319FA222D8113A80058C4B2 /* Preview Content */; };
 		C319FA2B2D8113E40058C4B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA272D8113E40058C4B2 /* ContentView.swift */; };
@@ -28,6 +27,8 @@
 		C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA432D836C2C0058C4B2 /* UserProfile.swift */; };
 		C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA452D836C5A0058C4B2 /* ApplePay.swift */; };
 		C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA482D836D120058C4B2 /* SharedUIView.swift */; };
+		C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */; };
+		C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,6 @@
 		C319FA142D8113070058C4B2 /* CoinGecko.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinGecko.swift; sourceTree = "<group>"; };
 		C319FA152D8113070058C4B2 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		C319FA162D8113080058C4B2 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
-		C319FA1C2D81131B0058C4B2 /* CryptoPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPriceService.swift; sourceTree = "<group>"; };
 		C319FA212D8113A80058C4B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C319FA222D8113A80058C4B2 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		C319FA272D8113E40058C4B2 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		C319FA432D836C2C0058C4B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C319FA452D836C5A0058C4B2 /* ApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
 		C319FA482D836D120058C4B2 /* SharedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
+		C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketFetcher.swift; sourceTree = "<group>"; };
+		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,8 +83,8 @@
 		C319FA1F2D8113660058C4B2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */,
 				C319FA452D836C5A0058C4B2 /* ApplePay.swift */,
-				C319FA1C2D81131B0058C4B2 /* CryptoPriceService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -156,6 +158,7 @@
 		C319FA3B2D8114530058C4B2 /* Spot */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */,
 				C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */,
 				C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */,
 				C319FA3C2D81145A0058C4B2 /* SpotView.swift */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */,
+				C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */,
 				C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */,
 				C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */,
 				C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */,
@@ -272,10 +276,10 @@
 				C319FA1A2D8113080058C4B2 /* ChatMessage.swift in Sources */,
 				C319FA2B2D8113E40058C4B2 /* ContentView.swift in Sources */,
 				C319FA2C2D8113E40058C4B2 /* FortuneCollectiveApp.swift in Sources */,
-				C319FA1D2D81131B0058C4B2 /* CryptoPriceService.swift in Sources */,
 				C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */,
 				C319FA172D8113080058C4B2 /* Asset.swift in Sources */,
 				C319FA2E2D8113E40058C4B2 /* HomePageView.swift in Sources */,
+				C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */,
 				C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */,
 				C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */,
 				C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */,

@@ -3,101 +3,86 @@
 //  FortuneCollective
 //
 //  Created by Raymond Hou on 3/11/25.
+//  Updated for full market view and futuristic UI
 //
 
-import Foundation
 import SwiftUI
 
-// MARK: - SpotView
+enum SortOption: String, CaseIterable {
+    case rank = "Rank"
+    case marketCap = "Market Cap"
+}
 
 struct SpotView: View {
-    // If you need the hamburger logic from your code:
     @Binding var hideHamburger: Bool
-    
-    // 1) Create a single ViewModel instance for prices
-    @StateObject var priceVM = CryptoPriceViewModel()
-    
     @State private var scrollOffset: CGFloat = 0
     @State private var showBuyModal = false
     @State private var showSellModal = false
     
+    @StateObject var marketVM = CryptoMarketViewModel()
+    @State private var sortOption: SortOption = .rank
+
+    // Sorted coins based on selected option.
+    var sortedCoins: [Coin] {
+        switch sortOption {
+        case .rank:
+            return marketVM.coins.sorted { ($0.market_cap_rank ?? 9999) < ($1.market_cap_rank ?? 9999) }
+        case .marketCap:
+            return marketVM.coins.sorted { ($0.market_cap ?? 0) > ($1.market_cap ?? 0) }
+        }
+    }
+    
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ScrollView {
-                GeometryReader { geo in
-                    Color.clear
-                        .preference(key: OffsetPreferenceKey.self,
-                                    value: geo.frame(in: .global).minY)
+        NavigationStack {
+            VStack(spacing: 0) {
+                // Header
+                HStack {
+                    Text("Spot")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    Spacer()
+                    Button {
+                        // Open help or info as needed
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                    }
                 }
-                .frame(height: 1)
+                .padding()
+                .padding(.top, 16)
                 
-                VStack(spacing: 16) {
-                    Text("Market Prices")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                        .padding(.top, 30)
-                    
-                    // 2) Replace static prices with live data from the ViewModel:
-                    CryptoTrendCard(
-                        name: "Bitcoin",
-                        symbol: "BTC",
-                        price: priceVM.btcPrice,
-                        change: priceVM.btc24hChange
-                    )
-                    
-                    CryptoTrendCard(
-                        name: "Ethereum",
-                        symbol: "ETH",
-                        price: priceVM.ethPrice,
-                        change: priceVM.eth24hChange
-                    )
-                    
-                    CryptoTrendCard(
-                        name: "Solana",
-                        symbol: "SOL",
-                        price: priceVM.solPrice,
-                        change: priceVM.sol24hChange
-                    )
-                    
-                    Divider()
-                        .padding(.vertical, 20)
-                    
-                    // Market News, etc...
-                    Text("Market News")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-//                        .padding(.top, 20)
-                    
-                    NewsCard(title: "Bitcoin Reaches New All-Time High", time: "2 hours ago")
-                    NewsCard(title: "SEC Approves New Crypto ETF", time: "5 hours ago")
-                    NewsCard(title: "Major Bank Adopts Blockchain Technology", time: "1 day ago")
-                    
-                    Divider()
-                        .padding(.vertical, 20)
-                    
-                    // TODO: Market Overview
-//                    Text("Market Overview")
-//                        .font(.title2)
-//                        .foregroundColor(.white)
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding(.horizontal)
-////                        .padding(.top, 20)
-                    
-                   // TODO: incorporate real-time tracking statistics of market cap, trading volume
-                    
-                    // Extra bottom padding for floating buttons
-                    Spacer().frame(height: 75)
+//                // Sorting Picker
+//                Picker("Sort by", selection: $sortOption) {
+//                    ForEach(SortOption.allCases, id: \.self) { option in
+//                        Text(option.rawValue)
+//                    }
+//                }
+//                .pickerStyle(SegmentedPickerStyle())
+//                .padding(.horizontal)
+                
+                // List of coins in a scrollable view
+                ScrollView {
+                    LazyVStack(spacing: 16) {
+                        ForEach(sortedCoins) { coin in
+                            CryptoTrendCard(
+                                rank: coin.market_cap_rank ?? 0,
+                                name: coin.name,
+                                symbol: coin.symbol,
+                                imageUrl: coin.image,
+                                price: coin.current_price,
+                                change: coin.price_change_percentage_24h ?? 0,
+                                sparkline: coin.sparkline_in_7d?.price.last24Hours ?? coin.sparkline_in_7d?.price ?? []
+                            )
+                        }
+                    }
+                    .padding()
                 }
-                .padding(.horizontal)
+                .background(Color.black)
+                .padding(.top, -10)
             }
-            .background(Color.black)
-            .onPreferenceChange(OffsetPreferenceKey.self) { value in
-                scrollOffset = value
-            }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
             
             // Floating BUY & SELL buttons
             HStack(spacing: 20) {
@@ -130,12 +115,24 @@ struct SpotView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 20)
             .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+            .sheet(isPresented: $showBuyModal) {
+                BuyCryptoView()
+            }
+            .sheet(isPresented: $showSellModal) {
+                SellCryptoView()
+            }
         }
-        .sheet(isPresented: $showBuyModal) {
-            BuyCryptoView()
-        }
-        .sheet(isPresented: $showSellModal) {
-            SellCryptoView()
+    }
+}
+
+// Helper extension to extract the last 24 hours worth of sparkline data.
+// Assumes the sparkline contains at least 24 points; otherwise returns the full array.
+extension Array where Element == Double {
+    var last24Hours: [Double] {
+        if self.count >= 24 {
+            return Array(self.suffix(24))
+        } else {
+            return self
         }
     }
 }
@@ -144,5 +141,14 @@ struct OffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
+    }
+}
+
+// Preview (make sure to bind hideHamburger to a constant for previewing)
+struct SpotView_Previews: PreviewProvider {
+    @State static var hideHamburger = false
+    static var previews: some View {
+        SpotView(hideHamburger: $hideHamburger)
+            .preferredColorScheme(.dark)
     }
 }
