@@ -92,37 +92,6 @@ struct NewsCard: View {
     }
 }
 
-struct IndexCard: View {
-    let name: String
-    let value: String
-    let change: String
-    
-    var isPositive: Bool {
-        return change.contains("+")
-    }
-    
-    var body: some View {
-        HStack {
-            Text(name)
-                .font(.headline)
-                .foregroundColor(.white)
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(value)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Text(change)
-                    .font(.subheadline)
-                    .foregroundColor(isPositive ? .green : .red)
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(12)
-        .padding(.horizontal)
-    }
-}
-
 struct DegenTradingCard: View {
     let title: String
     let description: String

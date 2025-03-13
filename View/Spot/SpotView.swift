@@ -1,5 +1,5 @@
 //
-//  SpottingView.swift
+//  SpotView.swift
 //  FortuneCollective
 //
 //  Created by Raymond Hou on 3/11/25.
@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-// MARK: - SpottingView
+// MARK: - SpotView
 
-struct SpottingView: View {
+struct SpotView: View {
     // If you need the hamburger logic from your code:
     @Binding var hideHamburger: Bool
     

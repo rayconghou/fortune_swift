@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import Passkit
+import PassKit
 
 // MARK: - Apple Pay Integration (mockup as of 3/11)
 

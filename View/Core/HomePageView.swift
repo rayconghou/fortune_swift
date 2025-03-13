@@ -21,11 +21,11 @@ struct HomePageView: View {
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                SpottingView(hideHamburger: $hideHamburger)
+                SpotView(hideHamburger: $hideHamburger)
                     .tag(0)
                     .tabItem {
                         Image(systemName: "binoculars.fill")
-                        Text("Spotting")
+                        Text("Spot")
                     }
                 
                 IndexesView()
