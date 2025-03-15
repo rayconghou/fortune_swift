@@ -31,7 +31,7 @@ struct IndexesView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 30)
+                .padding(.top, 40)
                 .padding(.bottom, 8)
                 
                 // Tab Selection

@@ -51,7 +51,7 @@ struct SpotView: View {
                     }
                 }
                 .padding()
-                .padding(.top, 16)
+                .padding(.top, 20)
                 
 //                // Sorting Picker
 //                Picker("Sort by", selection: $sortOption) {
