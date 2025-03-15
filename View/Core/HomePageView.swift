@@ -67,7 +67,8 @@ struct HomePageView: View {
                                 .resizable()
                                 .frame(width: 30, height: 20)
                                 .foregroundColor(.white)
-                                .padding()
+                                .padding(.top, 25)
+                                .padding(.leading, 15)
                         }
                         Spacer()
                     }
@@ -85,5 +86,11 @@ struct HomePageView: View {
             }
         }
         .preferredColorScheme(.dark)
+    }
+}
+
+struct HomePageView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomePageView()
     }
 }

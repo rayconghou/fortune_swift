@@ -21,6 +21,18 @@ struct Coin: Codable, Identifiable {
     let market_cap_rank: Int?
     let price_change_percentage_24h: Double?
     let sparkline_in_7d: SparklineData?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case symbol
+        case name
+        case image
+        case current_price = "current_price"
+        case market_cap = "market_cap"
+        case market_cap_rank = "market_cap_rank"
+        case price_change_percentage_24h = "price_change_percentage_24h"
+        case sparkline_in_7d = "sparkline_in_7d"
+    }
 }
 
 struct SparklineData: Codable {
