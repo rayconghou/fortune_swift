@@ -24,63 +24,73 @@ struct ManekiView: View {
     ]
     
     var body: some View {
-        VStack {
-            Text("Maneki")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding(.top, 40)
-            
-            // 2) The messages scrollable area
-            ScrollView {
-                LazyVStack(spacing: 15) {
-                    ForEach(messages) { message in
-                        ChatBubble(message: message)
+        NavigationView {  // Ensure you're using NavigationView
+            VStack {
+                // Existing view content remains the same
+                
+                // Messages ScrollView
+                ScrollView {
+                    LazyVStack(spacing: 15) {
+                        ForEach(messages) { message in
+                            ChatBubble(message: message)
+                        }
+                    }
+                    .padding()
+                }
+                
+                // Example Questions ScrollView
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(exampleQuestions, id: \.self) { question in
+                            Button {
+                                userMessage = question
+                                sendMessage()
+                            } label: {
+                                Text(question)
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 12)
+                                    .background(Color.gray.opacity(0.3))
+                                    .cornerRadius(10)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .padding(.bottom, 5)
+                
+                // Message Input Area
+                HStack {
+                    TextField("Ask Maneki anything...", text: $userMessage)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(25)
+                        .foregroundColor(.white)
+                    Button(action: sendMessage) {
+                        Image(systemName: "paperplane.fill")
+                            .foregroundColor(.white)
+                            .padding(12)
+                            .background(Color.blue)
+                            .cornerRadius(25)
                     }
                 }
                 .padding()
             }
-            
-            // 3) Horizontal scroll of example questions
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(exampleQuestions, id: \.self) { question in
-                        Button {
-                            // On tap, set userMessage and send
-                            userMessage = question
-                            sendMessage()
-                        } label: {
-                            Text(question)
-                                .font(.system(size: 14, weight: .medium))
-                                .foregroundColor(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 12)
-                                .background(Color.gray.opacity(0.3))
-                                .cornerRadius(10)
-                        }
+            .navigationTitle("Maneki")  // Alternative to toolbar
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        // TODO: implement global notification system
+                    }) {
+                        Image(systemName: "bell")
+                            .foregroundColor(.white)
                     }
                 }
-                .padding(.horizontal)
             }
-            .padding(.bottom, 5)
-            
-            // 4) The user message field + send button
-            HStack {
-                TextField("Ask Maneki anything...", text: $userMessage)
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(25)
-                    .foregroundColor(.white)
-                Button(action: sendMessage) {
-                    Image(systemName: "paperplane.fill")
-                        .foregroundColor(.white)
-                        .padding(12)
-                        .background(Color.blue)
-                        .cornerRadius(25)
-                }
-            }
-            .padding()
+            .background(Color.black)
         }
-        .background(Color.black)
     }
     
     // Same as your existing send logic

@@ -1,60 +1,53 @@
-//
-//  HomePageView.swift
-//  FortuneCollective
-//
-//  Created by Raymond Hou on 3/11/25.
-//
-
 import Foundation
 import SwiftUI
-
-// MARK: - HomePageView with TabView and Sidebar
 
 struct HomePageView: View {
     @State private var showSidebar = false
     @State private var hideHamburger = false
     @State private var showDegenMode = false
     @State private var showManekiButton = true
+    @State private var hideSplashScreen = false
+    @State private var isDegenSplashActive = false
+    @State private var isExitingSplashActive = false
+    @State private var showFortune = false
+    @State private var showCollective = false
+    @State private var showBottomElements = false
     @StateObject private var userProfile = UserProfileViewModel()
-    @State private var selectedTab: Int = 0  // Track selected tab
+    @State private var selectedTab: Int = 0
+    
+    // Enum to represent different app modes
+    enum AppMode {
+        case standard
+        case degen
+    }
+    
+    @State private var currentMode: AppMode = .standard
     
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                SpotView(hideHamburger: $hideHamburger)
-                    .tag(0)
-                    .tabItem {
-                        Image(systemName: "binoculars.fill")
-                    }
-                
-                IndexesView()
-                    .tag(1)
-                    .tabItem {
-                        Image(systemName: "chart.xyaxis.line")
-                    }
-                
-                ManekiView()
-                    .tag(2)
-                    .tabItem {
-                        Image(systemName: "cat.fill")
-                            .font(.system(size: 28))
-                    }
-                
-                PortfolioView()
-                    .tag(3)
-                    .tabItem {
-                        Image(systemName: "chart.bar.fill")
-                    }
-                
-                DegenView(isEnabled: $showDegenMode)
-                    .tag(4)
-                    .tabItem {
-                        Image(systemName: "flame.fill")
-                    }
+                // Dynamically choose tabs based on current mode
+                switch currentMode {
+                case .standard:
+                    standardModeTabs
+                case .degen:
+                    degenModeTabs
+                }
             }
-            .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.75 : 0)
+            .disabled(showSidebar || isDegenSplashActive || isExitingSplashActive)
+            
+            // Existing Sidebar View
+            SidebarView(
+                showSidebar: $showSidebar,
+                showDegenMode: $showDegenMode,
+                selectedTab: $selectedTab,
+                userProfile: userProfile
+            )
+            .frame(width: UIScreen.main.bounds.width)
+            .offset(x: showSidebar ? 0 : -UIScreen.main.bounds.width)
             .animation(.easeInOut(duration: 0.3), value: showSidebar)
             
+            // Hamburger Menu
             if !hideHamburger {
                 VStack {
                     HStack {
@@ -67,25 +60,234 @@ struct HomePageView: View {
                                 .resizable()
                                 .frame(width: 30, height: 20)
                                 .foregroundColor(.white)
-                                .padding(.top, 25)
+                                .padding(.top, 40)
                                 .padding(.leading, 15)
                         }
                         Spacer()
                     }
                     Spacer()
                 }
+                .padding(.top, 25)
                 .padding(.leading, 5)
-                .padding(.top, 40)
+                .transition(.opacity)
             }
             
-            if showSidebar {
-                SidebarView(showSidebar: $showSidebar, showDegenMode: $showDegenMode, selectedTab: $selectedTab, userProfile: userProfile)
-                    .transition(.move(edge: .leading))
-                    .onAppear { withAnimation { showManekiButton = false } }
-                    .onDisappear { withAnimation { showManekiButton = true } }
+            // Degen Mode Splash Screen
+            if isDegenSplashActive {
+                DegenSplashScreen()
+                    .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
+                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
+                    .ignoresSafeArea()
+            }
+            
+            // Exit Splash Screen (using original splash screen logic)
+            if isExitingSplashActive {
+                exitSplashScreen
+                    .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
+                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
+                    .ignoresSafeArea()
             }
         }
         .preferredColorScheme(.dark)
+        .onChange(of: showSidebar) { oldValue, newValue in
+            withAnimation(.easeInOut(duration: 0.7)) {
+                hideHamburger = newValue
+            }
+        }
+        .onChange(of: showDegenMode) { oldValue, newValue in
+            if newValue {
+                activateDegenSplash()
+                currentMode = .degen
+            } else {
+                activateExitSplash()
+                currentMode = .standard
+            }
+        }
+    }
+    
+    // Exit Splash Screen View
+    private var exitSplashScreen: some View {
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("FORTUNE")
+                    .foregroundColor(.white)
+                    .font(.custom("Inter", size: 48))
+                    .opacity(showFortune ? 1 : 0)
+                    .animation(.easeIn(duration: 0.1).delay(0.3), value: showFortune)
+                VStack {
+                    Divider()
+                        .background(Color.white)
+                        .frame(width: 200, height: 5)
+                    Image("SplashScreenBranding")
+                        .resizable()
+                        .frame(width: 200, height: 210)
+                }
+                .opacity(showBottomElements ? 1 : 0)
+                .offset(y: showBottomElements ? 0 : 50)
+                .animation(.easeOut(duration: 0.5).delay(0.5), value: showBottomElements)
+            }
+        }
+    }
+    
+    // Standard Mode Tabs (previous implementation)
+    private var standardModeTabs: some View {
+        Group {
+            SpotView(hideHamburger: $hideHamburger)
+                .tag(0)
+                .tabItem {
+                    Image(systemName: "binoculars.fill")
+                }
+            
+            IndexesView()
+                .tag(1)
+                .tabItem {
+                    Image(systemName: "chart.xyaxis.line")
+                }
+            
+            ManekiView()
+                .tag(2)
+                .tabItem {
+                    Image(systemName: "cat.fill")
+                        .font(.system(size: 28))
+                }
+            
+            PortfolioView()
+                .tag(3)
+                .tabItem {
+                    Image(systemName: "chart.bar.fill")
+                }
+            
+            DegenView(isEnabled: $showDegenMode)
+                .tag(4)
+                .tabItem {
+                    Image(systemName: "flame.fill")
+                }
+                .onChange(of: selectedTab) { oldValue, newValue in
+                    if newValue == 4 && !showDegenMode {
+                        activateDegenSplash()
+                    }
+                }
+        }
+    }
+    
+    // Degen Mode Tabs (previous implementation)
+    private var degenModeTabs: some View {
+        Group {
+            DegenTrendingView()
+                .tag(0)
+                .tabItem {
+                    Image(systemName: "flame")
+                }
+            
+            DegenIndexesView()
+                .tag(1)
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                }
+            
+            DegenTradeView()
+                .tag(2)
+                .tabItem {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                }
+            
+            DegenPortfolioView()
+                .tag(3)
+                .tabItem {
+                    Image(systemName: "briefcase")
+                }
+            
+            WalletTrackerView()
+                .tag(4)
+                .tabItem {
+                    Image(systemName: "wallet.pass")
+                }
+        }
+    }
+    
+    // Existing activation method for Degen Splash
+    private func activateDegenSplash() {
+        isDegenSplashActive = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            showDegenMode = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation {
+                hideSplashScreen = true
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isDegenSplashActive = false
+            hideSplashScreen = false
+        }
+    }
+    
+    // New method for Exit Splash
+    private func activateExitSplash() {
+        isExitingSplashActive = true
+        selectedTab = 0  // Reset to SpotView
+        
+        // Replicate the original splash screen animation
+        showFortune = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            showCollective = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            showBottomElements = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation {
+                hideSplashScreen = true
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isExitingSplashActive = false
+            hideSplashScreen = false
+            showFortune = false
+            showCollective = false
+            showBottomElements = false
+        }
+    }
+}
+
+// Placeholder views for Degen Mode (you'll replace these with actual implementations)
+struct DegenTrendingView: View {
+    var body: some View {
+        Text("Degen Trending Coins")
+            .foregroundColor(.white)
+    }
+}
+
+struct DegenIndexesView: View {
+    var body: some View {
+        Text("Degen Crypto Indexes")
+            .foregroundColor(.white)
+    }
+}
+
+struct DegenTradeView: View {
+    var body: some View {
+        Text("Degen Trade Terminal")
+            .foregroundColor(.white)
+    }
+}
+
+struct DegenPortfolioView: View {
+    var body: some View {
+        Text("Degen Portfolio")
+            .foregroundColor(.white)
+    }
+}
+
+struct WalletTrackerView: View {
+    var body: some View {
+        Text("Wallet & Social Media Tracker")
+            .foregroundColor(.white)
     }
 }
 
