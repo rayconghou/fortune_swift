@@ -7,33 +7,8 @@ struct IndexesView: View {
     @State private var showManekiQuizModal = false
     
     var body: some View {
-        ZStack {
-            // Background
-            Color(UIColor.systemBackground)
-                .edgesIgnoringSafeArea(.all)
-            
+        NavigationStack {
             VStack(spacing: 0) {
-                // Header
-                HStack {
-                    Text("Indexes")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        // Open help or info
-                    }) {
-                        Image(systemName: "info.circle")
-                            .font(.title3)
-                            .foregroundColor(.primary)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top, 40)
-                .padding(.bottom, 8)
-                
                 // Tab Selection
                 IndexSourceTabView(selectedTab: $selectedTab)
                     .padding(.horizontal)
@@ -54,7 +29,25 @@ struct IndexesView: View {
                     .padding(.horizontal)
                     .padding(.vertical, 8)
                 }
+                .background(Color.black)
             }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Indexes")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        // TODO: implement global notification system
+                    }) {
+                        Image(systemName: "bell")
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
         }
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showManekiQuizModal) {

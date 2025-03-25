@@ -13,188 +13,175 @@ struct SidebarView: View {
     @State private var showProfileSettings = false
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    
-                    // Close Button
-                    HStack {
-                        Button(action: { withAnimation { showSidebar.toggle() } }) {
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .frame(width: 20, height: 20)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                
+                // Close Button
+                HStack {
+                    Button(action: { withAnimation { showSidebar.toggle() } }) {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .padding(.leading, 25)
+                            .padding(.top, 50)
+                    }
+                    Spacer()
+                }
+                
+                // Profile Row
+                Button(action: {
+                    showProfileSettings = true
+                }) {
+                    HStack(spacing: 15) {
+                        Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.white)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(userProfile.name)
+                                .font(.custom("Inter", size: 20))
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding(.leading, 25)
-                                .padding(.bottom, 20)
+                            Text(userProfile.email)
+                                .font(.custom("Inter", size: 14))
+                                .foregroundColor(.gray)
                         }
                         Spacer()
+                        Image(systemName: "chevron.right")
+                            .padding(.trailing, 35)
+                            .foregroundColor(.white)
                     }
-                    
-                    // Profile Row
-                    Button(action: {
-                        showProfileSettings = true
-                    }) {
-                        HStack(spacing: 15) {
-                            Image(systemName: "person.crop.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.white)
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(userProfile.name)
-                                    .font(.custom("Inter", size: 20))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                Text(userProfile.email)
-                                    .font(.custom("Inter", size: 14))
-                                    .foregroundColor(.gray)
-                            }
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .padding(.trailing, 35)
-                                .foregroundColor(.white)
-                        }
-                        .padding(.leading, 20)
-                    }
-                    .sheet(isPresented: $showProfileSettings) {
-                        ProfileSettingsView(userProfile: userProfile)
-                    }
-                    
-                    Divider()
-                        .frame(height: 1)
-                        .background(Color.white)
-                        .padding(.horizontal, 30)
-                    
-                    // Degen Mode Toggle
+                    .padding(.leading, 20)
+                }
+                .sheet(isPresented: $showProfileSettings) {
+                    ProfileSettingsView(userProfile: userProfile)
+                }
+                
+                Divider()
+                    .frame(height: 1)
+                    .background(Color.white)
+                    .padding(.horizontal, 30)
+                
+                // Degen Mode Toggle
+                HStack {
+                    Image(systemName: "flame.fill")
+                    Text("Degen Mode")
+                        .font(.custom("Inter", size: 18))
+                    Spacer()
+                    Toggle("", isOn: $showDegenMode)
+                        .toggleStyle(SwitchToggleStyle(tint: .orange))
+                }
+                .padding(.horizontal, 30)
+                .foregroundColor(.white)
+                
+                // Maneki Guide Button
+                Button(action: { showManekiIntro = true }) {
                     HStack {
-                        Image(systemName: "flame.fill")
-                        Text("Degen Mode")
+                        Image(systemName: "cat.fill")
+                        Text("Maneki Guide")
                             .font(.custom("Inter", size: 18))
-                        Spacer()
-                        Toggle("", isOn: $showDegenMode)
-                            .toggleStyle(SwitchToggleStyle(tint: .orange))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
-                    
-                    // Maneki Guide Button
-                    Button(action: { showManekiIntro = true }) {
-                        HStack {
-                            Image(systemName: "cat.fill")
-                            Text("Maneki Guide")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    .sheet(isPresented: $showManekiIntro) {
-                        ManekiIntroView(selectedTab: $selectedTab, showSidebar: $showSidebar)
-                    }
-                    
-                    // Chatroom
-                    Button(action: { showChatroom = true }) {
-                        HStack {
-                            Image(systemName: "bubble.left.and.bubble.right.fill")
-                            Text("Chatroom")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    .sheet(isPresented: $showChatroom) {
-                        ChatroomView()
-                    }
-                    
-                    // Community Hub
-                    NavigationLink(destination: CommunityHubView()) {
-                        HStack {
-                            Image(systemName: "person.3.fill")
-                            Text("Community Hub")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    
-                    // Newsletter
-                    NavigationLink(destination: NewsletterView()) {
-                        HStack {
-                            Image(systemName: "newspaper.fill")
-                            Text("Newsletter")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    
-                    // Market News (New Sidebar Module)
-                    Button(action: { showMarketNews = true }) {
-                        HStack {
-                            Image(systemName: "newspaper.fill")
-                            Text("Market News")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    .sheet(isPresented: $showMarketNews) {
-                        MarketNewsView()
-                    }
-                    
-                    Divider()
-                        .frame(height: 1)
-                        .background(Color.white)
-                        .padding(.horizontal, 30)
-                    
-                    // Settings & Notifications
-                    Button(action: { print("Settings button pressed") }) {
-                        HStack {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    
-                    Button(action: { print("Notifications button pressed") }) {
-                        HStack {
-                            Image(systemName: "bell")
-                            Text("Notifications")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.white)
-                    }
-                    
-                    // Logout
-                    Button(action: { print("Logout button pressed") }) {
-                        HStack {
-                            Image(systemName: "power")
-                            Text("Logout")
-                                .font(.custom("Inter", size: 18))
-                        }
-                        .padding(.horizontal, 30)
-                        .foregroundColor(.red)
-                    }
-                    
-                    Spacer()
                 }
+                .sheet(isPresented: $showManekiIntro) {
+                    ManekiIntroView(selectedTab: $selectedTab, showSidebar: $showSidebar)
+                }
+                
+                // Chatroom
+                Button(action: { showChatroom = true }) {
+                    HStack {
+                        Image(systemName: "bubble.left.and.bubble.right.fill")
+                        Text("Chatroom")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                .sheet(isPresented: $showChatroom) {
+                    ChatroomView()
+                }
+                
+                // Community Hub
+                NavigationLink(destination: CommunityHubView()) {
+                    HStack {
+                        Image(systemName: "person.3.fill")
+                        Text("Community Hub")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                
+                // Newsletter
+                NavigationLink(destination: NewsletterView()) {
+                    HStack {
+                        Image(systemName: "newspaper.fill")
+                        Text("Newsletter")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                
+                // Market News (New Sidebar Module)
+                Button(action: { showMarketNews = true }) {
+                    HStack {
+                        Image(systemName: "newspaper.fill")
+                        Text("Market News")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                .sheet(isPresented: $showMarketNews) {
+                    MarketNewsView()
+                }
+                
+                Divider()
+                    .frame(height: 1)
+                    .background(Color.white)
+                    .padding(.horizontal, 30)
+                
+                // Settings & Notifications
+                Button(action: { print("Settings button pressed") }) {
+                    HStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                
+                Button(action: { print("Notifications button pressed") }) {
+                    HStack {
+                        Image(systemName: "bell")
+                        Text("Notifications")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.white)
+                }
+                
+                // Logout
+                Button(action: { print("Logout button pressed") }) {
+                    HStack {
+                        Image(systemName: "power")
+                        Text("Logout")
+                            .font(.custom("Inter", size: 18))
+                    }
+                    .padding(.horizontal, 30)
+                    .foregroundColor(.red)
+                }
+                
+                Spacer()
             }
-            .background(Color.black.edgesIgnoringSafeArea(.all))
         }
-        // Gesture to allow swiping right to close the sidebar
-        .gesture(
-            DragGesture(minimumDistance: 20)
-                .onEnded { value in
-                    // If drag is rightward and exceeds a threshold, close the sidebar
-                    if value.translation.width < -50 {
-                        withAnimation {
-                            showSidebar = false
-                        }
-                    }
-                }
-        )
+        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
+
 }
 
 // MARK: - Market News Modal

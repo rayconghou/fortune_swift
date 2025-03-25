@@ -36,6 +36,7 @@
 		C319FA5A2D8619240058C4B2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA592D8619240058C4B2 /* FirebaseDatabase */; };
 		C319FA5C2D8619240058C4B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5B2D8619240058C4B2 /* FirebaseFirestore */; };
 		C319FA5E2D8619240058C4B2 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */; };
+		C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketFetcher.swift; sourceTree = "<group>"; };
 		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenSplashScreenView.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C319FA302D81140F0058C4B2 /* DegenView.swift */,
+				C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */,
 			);
 			path = Degen;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				C319FA2C2D8113E40058C4B2 /* FortuneCollectiveApp.swift in Sources */,
 				C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */,
 				C319FA172D8113080058C4B2 /* Asset.swift in Sources */,
+				C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */,
 				C319FA2E2D8113E40058C4B2 /* HomePageView.swift in Sources */,
 				C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */,
 				C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */,

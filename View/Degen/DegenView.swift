@@ -8,60 +8,114 @@
 import Foundation
 import SwiftUI
 
+// MARK: - DegenView Main Structure
 struct DegenView: View {
     @Binding var isEnabled: Bool
+    @State private var selectedTab: DegenTab = .trending
+    
+    // Enum to define Degen Tabs
+    enum DegenTab {
+        case trending
+        case indexes
+        case trade
+        case portfolio
+        case walletTracker
+    }
     
     var body: some View {
-        VStack {
-            if isEnabled {
-                Text("DEGEN MODE ACTIVE")
-                    .font(.largeTitle)
-                    .foregroundColor(.orange)
-                    .padding(.top, 20)
+        ZStack {
+            // Dark background with casino-like vibe
+            Color.black.edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                // Top Header
+                headerView
                 
-                Text("High-risk trading enabled")
-                    .font(.title3)
+                // Main Content Based on Selected Tab
+                mainContentView
+                
+                // Bottom Navigation Bar
+                bottomNavigationBar
+            }
+        }
+    }
+    
+    // MARK: - Header View
+    private var headerView: some View {
+        HStack {
+            Text("DEGEN MODE")
+                .font(.system(size: 24, weight: .bold))
+                .foregroundColor(.orange)
+            
+            Spacer()
+            
+            // Quick toggle or additional controls
+            Button(action: { isEnabled.toggle() }) {
+                Image(systemName: "bolt.fill")
                     .foregroundColor(.white)
-                    .padding(.bottom, 20)
-                
-                VStack(spacing: 20) {
-                    DegenTradingCard(title: "Leverage Trading", description: "Trade with up to 100x leverage")
-                    DegenTradingCard(title: "Options Trading", description: "Advanced derivatives market")
-                    DegenTradingCard(title: "Futures", description: "Perpetual contracts with high liquidity")
-                    DegenTradingCard(title: "Flash Loans", description: "DeFi protocol flash loans")
-                }
-//                .padding()
-            } else {
-                VStack(spacing: 20) {
-                    Image(systemName: "lock.fill")
-                        .resizable()
-                        .frame(width: 60, height: 80)
-                        .foregroundColor(.gray)
-                        .padding(.top, 50)
-                    
-                    Text("Degen Mode Disabled")
-                        .font(.title)
-                        .foregroundColor(.white)
-                    
-                    Text("Enable Degen Mode from the sidebar to access advanced high-risk trading features.")
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, 30)
-                    
-                    Button(action: { isEnabled = true }) {
-                        Text("Enable Degen Mode")
-                            .fontWeight(.bold)
-                            .padding()
-                            .background(Color.orange)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    .padding(.top, 20)
-                }
+                    .padding(8)
+                    .background(Color.orange.opacity(0.2))
+                    .cornerRadius(10)
             }
         }
         .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+    }
+    
+    // MARK: - Main Content View
+    private var mainContentView: some View {
+        Group {
+            switch selectedTab {
+            case .trending:
+                DegenTrendingView()
+            case .indexes:
+                DegenIndexesView()
+            case .trade:
+                DegenTradeView()
+            case .portfolio:
+                DegenPortfolioView()
+            case .walletTracker:
+                WalletTrackerView()
+            }
+        }
+        .transition(.asymmetric(insertion: .move(edge: .trailing),
+                                removal: .move(edge: .leading)))
+        .animation(.default, value: selectedTab)
+    }
+    
+    // MARK: - Bottom Navigation Bar
+    private var bottomNavigationBar: some View {
+        HStack(spacing: 30) {
+            tabBarItem(tab: .trending, icon: "flame", label: "Trending")
+            tabBarItem(tab: .indexes, icon: "chart.bar", label: "Indexes")
+            tabBarItem(tab: .trade, icon: "arrow.triangle.2.circlepath", label: "Trade")
+            tabBarItem(tab: .portfolio, icon: "briefcase", label: "Portfolio")
+            tabBarItem(tab: .walletTracker, icon: "wallet.pass", label: "Wallet")
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+    }
+    
+    // MARK: - Tab Bar Item Helper
+    private func tabBarItem(tab: DegenTab, icon: String, label: String) -> some View {
+        VStack {
+            Image(systemName: icon)
+                .foregroundColor(selectedTab == tab ? .orange : .white.opacity(0.6))
+                .font(.system(size: 20))
+            
+            Text(label)
+                .font(.caption)
+                .foregroundColor(selectedTab == tab ? .orange : .white.opacity(0.6))
+        }
+        .onTapGesture {
+            selectedTab = tab
+        }
+    }
+}
+
+
+// MARK: - Preview
+struct DegenView_Previews: PreviewProvider {
+    static var previews: some View {
+        DegenView(isEnabled: .constant(true))
     }
 }

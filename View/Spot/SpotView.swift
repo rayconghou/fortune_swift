@@ -18,54 +18,68 @@ struct SpotView: View {
     @State private var scrollOffset: CGFloat = 0
     @State private var showBuyModal = false
     @State private var showSellModal = false
+    @State private var searchText = ""
     
     @StateObject var marketVM = CryptoMarketViewModel()
     @State private var sortOption: SortOption = .rank
 
-    // Sorted coins based on selected option.
-    var sortedCoins: [Coin] {
-        switch sortOption {
+    // Sorted and filtered coins based on selected option and search text
+    var filteredCoins: [Coin] {
+        let sorted = switch sortOption {
         case .rank:
-            return marketVM.coins.sorted { ($0.market_cap_rank ?? 9999) < ($1.market_cap_rank ?? 9999) }
+            marketVM.coins.sorted { ($0.market_cap_rank ?? 9999) < ($1.market_cap_rank ?? 9999) }
         case .marketCap:
-            return marketVM.coins.sorted { ($0.market_cap ?? 0) > ($1.market_cap ?? 0) }
+            marketVM.coins.sorted { ($0.market_cap ?? 0) > ($1.market_cap ?? 0) }
+        }
+        
+        if searchText.isEmpty {
+            return sorted
+        } else {
+            return sorted.filter {
+                $0.name.localizedCaseInsensitiveContains(searchText) ||
+                $0.symbol.localizedCaseInsensitiveContains(searchText)
+            }
         }
     }
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Header
+                // Search Bar
                 HStack {
-                    Text("Spot")
-                        .font(.title)
-                        .fontWeight(.bold)
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                    
+                    TextField("Search coins", text: $searchText)
                         .foregroundColor(.white)
-                    Spacer()
-                    Button {
-                        // Open help or info as needed
-                    } label: {
-                        Image(systemName: "info.circle")
-                            .font(.title3)
-                            .foregroundColor(.white)
+                    
+                    if !searchText.isEmpty {
+                        Button(action: {
+                            searchText = ""
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
                     }
+                    
+                    Button(action: {
+                        // TODO: Maneki can provide info
+                    }) {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.leading, 4)
                 }
-                .padding()
-                .padding(.top, 20)
-                
-//                // Sorting Picker
-//                Picker("Sort by", selection: $sortOption) {
-//                    ForEach(SortOption.allCases, id: \.self) { option in
-//                        Text(option.rawValue)
-//                    }
-//                }
-//                .pickerStyle(SegmentedPickerStyle())
-//                .padding(.horizontal)
+                .padding(.vertical, 10)
+                .padding(.horizontal)
+                .background(Color.clear)
+                .cornerRadius(10)
+                .padding(.top, -40)
                 
                 // List of coins in a scrollable view
                 ScrollView {
                     LazyVStack(spacing: 16) {
-                        ForEach(sortedCoins) { coin in
+                        ForEach(filteredCoins) { coin in
                             CryptoTrendCard(
                                 rank: coin.market_cap_rank ?? 0,
                                 name: coin.name,
@@ -80,46 +94,62 @@ struct SpotView: View {
                     .padding()
                 }
                 .background(Color.black)
-                .padding(.top, -10)
+                
+                // Floating BUY & SELL buttons
+                HStack(spacing: 20) {
+                    Button(action: { showBuyModal = true }) {
+                        HStack {
+                            Image(systemName: "arrow.down.circle.fill")
+                            Text("BUY")
+                                .fontWeight(.bold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(30)
+                    }
+                    
+                    Button(action: { showSellModal = true }) {
+                        HStack {
+                            Image(systemName: "arrow.up.circle.fill")
+                            Text("SELL")
+                                .fontWeight(.bold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(30)
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+                .sheet(isPresented: $showBuyModal) {
+                    BuyCryptoView()
+                }
+                .sheet(isPresented: $showSellModal) {
+                    SellCryptoView()
+                }
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
-            
-            // Floating BUY & SELL buttons
-            HStack(spacing: 20) {
-                Button(action: { showBuyModal = true }) {
+            .toolbar {
+                ToolbarItem(placement: .principal) {
                     HStack {
-                        Image(systemName: "arrow.down.circle.fill")
-                        Text("BUY")
-                            .fontWeight(.bold)
+                        Text("Spot")
+                            .font(.headline)
+                            .foregroundColor(.white)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(30)
                 }
-                
-                Button(action: { showSellModal = true }) {
-                    HStack {
-                        Image(systemName: "arrow.up.circle.fill")
-                        Text("SELL")
-                            .fontWeight(.bold)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        // TODO: implement global notification system
+                    }) {
+                        Image(systemName: "bell")
+                            .foregroundColor(.white)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(30)
                 }
-            }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
-            .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
-            .sheet(isPresented: $showBuyModal) {
-                BuyCryptoView()
-            }
-            .sheet(isPresented: $showSellModal) {
-                SellCryptoView()
             }
         }
     }
