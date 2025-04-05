@@ -37,6 +37,22 @@
 		C319FA5C2D8619240058C4B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5B2D8619240058C4B2 /* FirebaseFirestore */; };
 		C319FA5E2D8619240058C4B2 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */; };
 		C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */; };
+		C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA622D99B7F50058C4B2 /* AuthManager.swift */; };
+		C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA642D99BC130058C4B2 /* AuthView.swift */; };
+		C319FA672D99C4D50058C4B2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA662D99C4D50058C4B2 /* AuthViewModel.swift */; };
+		C319FA692D9B18390058C4B2 /* DegenTrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */; };
+		C319FA732D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA722D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift */; };
+		C319FA752D9B4B110058C4B2 /* DegenTrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA742D9B4B110058C4B2 /* DegenTrendingViewModel.swift */; };
+		C319FA772D9B53660058C4B2 /* DegenTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA762D9B53650058C4B2 /* DegenTradeView.swift */; };
+		C319FA792D9B54B20058C4B2 /* DegenTradeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA782D9B54B20058C4B2 /* DegenTradeModels.swift */; };
+		C319FA7B2D9B55920058C4B2 /* WalletSocialMediaTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA7A2D9B55920058C4B2 /* WalletSocialMediaTracker.swift */; };
+		C319FA7E2D9B61170058C4B2 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA7D2D9B61170058C4B2 /* WalletViewModel.swift */; };
+		C319FA812D9B62210058C4B2 /* CreatePINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA802D9B62210058C4B2 /* CreatePINView.swift */; };
+		C319FA842D9B623A0058C4B2 /* ConfirmPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA832D9B623A0058C4B2 /* ConfirmPINView.swift */; };
+		C319FA872D9B63DB0058C4B2 /* BIometricSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA862D9B63DB0058C4B2 /* BIometricSetupView.swift */; };
+		C319FA8A2D9B63F90058C4B2 /* SetupCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA892D9B63F90058C4B2 /* SetupCompleteView.swift */; };
+		C319FA8D2D9B66530058C4B2 /* BridgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA8C2D9B66530058C4B2 /* BridgeService.swift */; };
+		C319FA8F2D9B66E80058C4B2 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA8E2D9B66E80058C4B2 /* WalletService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +80,22 @@
 		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenSplashScreenView.swift; sourceTree = "<group>"; };
+		C319FA622D99B7F50058C4B2 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C319FA642D99BC130058C4B2 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C319FA662D99C4D50058C4B2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenTrendingView.swift; sourceTree = "<group>"; };
+		C319FA722D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexScreenerTokenProfile.swift; sourceTree = "<group>"; };
+		C319FA742D9B4B110058C4B2 /* DegenTrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenTrendingViewModel.swift; sourceTree = "<group>"; };
+		C319FA762D9B53650058C4B2 /* DegenTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenTradeView.swift; sourceTree = "<group>"; };
+		C319FA782D9B54B20058C4B2 /* DegenTradeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenTradeModels.swift; sourceTree = "<group>"; };
+		C319FA7A2D9B55920058C4B2 /* WalletSocialMediaTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSocialMediaTracker.swift; sourceTree = "<group>"; };
+		C319FA7D2D9B61170058C4B2 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		C319FA802D9B62210058C4B2 /* CreatePINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePINView.swift; sourceTree = "<group>"; };
+		C319FA832D9B623A0058C4B2 /* ConfirmPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPINView.swift; sourceTree = "<group>"; };
+		C319FA862D9B63DB0058C4B2 /* BIometricSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIometricSetupView.swift; sourceTree = "<group>"; };
+		C319FA892D9B63F90058C4B2 /* SetupCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCompleteView.swift; sourceTree = "<group>"; };
+		C319FA8C2D9B66530058C4B2 /* BridgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeService.swift; sourceTree = "<group>"; };
+		C319FA8E2D9B66E80058C4B2 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +131,8 @@
 		C319FA1F2D8113660058C4B2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA742D9B4B110058C4B2 /* DegenTrendingViewModel.swift */,
+				C319FA722D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift */,
 				C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */,
 				C319FA452D836C5A0058C4B2 /* ApplePay.swift */,
 			);
@@ -142,6 +176,13 @@
 		C319FA2F2D8114020058C4B2 /* Degen */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA8B2D9B663F0058C4B2 /* DegenTrade */,
+				C319FA882D9B63F00058C4B2 /* SetupComplete */,
+				C319FA852D9B62590058C4B2 /* BiometricSetup */,
+				C319FA822D9B622E0058C4B2 /* ConfirmPIN */,
+				C319FA7F2D9B62150058C4B2 /* CreatePIN */,
+				C319FA7C2D9B5F5B0058C4B2 /* WalletSocialMediaTracker */,
+				C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */,
 				C319FA302D81140F0058C4B2 /* DegenView.swift */,
 				C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */,
 			);
@@ -191,9 +232,72 @@
 			path = SharedUI;
 			sourceTree = "<group>";
 		};
+		C319FA612D99B7E70058C4B2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA662D99C4D50058C4B2 /* AuthViewModel.swift */,
+				C319FA642D99BC130058C4B2 /* AuthView.swift */,
+				C319FA622D99B7F50058C4B2 /* AuthManager.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C319FA7C2D9B5F5B0058C4B2 /* WalletSocialMediaTracker */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA7D2D9B61170058C4B2 /* WalletViewModel.swift */,
+				C319FA7A2D9B55920058C4B2 /* WalletSocialMediaTracker.swift */,
+			);
+			path = WalletSocialMediaTracker;
+			sourceTree = "<group>";
+		};
+		C319FA7F2D9B62150058C4B2 /* CreatePIN */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA802D9B62210058C4B2 /* CreatePINView.swift */,
+			);
+			path = CreatePIN;
+			sourceTree = "<group>";
+		};
+		C319FA822D9B622E0058C4B2 /* ConfirmPIN */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA832D9B623A0058C4B2 /* ConfirmPINView.swift */,
+			);
+			path = ConfirmPIN;
+			sourceTree = "<group>";
+		};
+		C319FA852D9B62590058C4B2 /* BiometricSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA862D9B63DB0058C4B2 /* BIometricSetupView.swift */,
+			);
+			path = BiometricSetup;
+			sourceTree = "<group>";
+		};
+		C319FA882D9B63F00058C4B2 /* SetupComplete */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA892D9B63F90058C4B2 /* SetupCompleteView.swift */,
+			);
+			path = SetupComplete;
+			sourceTree = "<group>";
+		};
+		C319FA8B2D9B663F0058C4B2 /* DegenTrade */ = {
+			isa = PBXGroup;
+			children = (
+				C319FA8E2D9B66E80058C4B2 /* WalletService.swift */,
+				C319FA8C2D9B66530058C4B2 /* BridgeService.swift */,
+				C319FA782D9B54B20058C4B2 /* DegenTradeModels.swift */,
+				C319FA762D9B53650058C4B2 /* DegenTradeView.swift */,
+			);
+			path = DegenTrade;
+			sourceTree = "<group>";
+		};
 		C388F8882D72437D003FFCFF = {
 			isa = PBXGroup;
 			children = (
+				C319FA612D99B7E70058C4B2 /* Auth */,
 				C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */,
 				C319FA252D8113B10058C4B2 /* View */,
 				C319FA202D81139F0058C4B2 /* Supporting */,
@@ -296,10 +400,20 @@
 			files = (
 				C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */,
 				C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */,
+				C319FA732D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift in Sources */,
 				C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */,
+				C319FA8A2D9B63F90058C4B2 /* SetupCompleteView.swift in Sources */,
+				C319FA8F2D9B66E80058C4B2 /* WalletService.swift in Sources */,
+				C319FA812D9B62210058C4B2 /* CreatePINView.swift in Sources */,
 				C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */,
+				C319FA7B2D9B55920058C4B2 /* WalletSocialMediaTracker.swift in Sources */,
+				C319FA772D9B53660058C4B2 /* DegenTradeView.swift in Sources */,
+				C319FA752D9B4B110058C4B2 /* DegenTrendingViewModel.swift in Sources */,
 				C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */,
 				C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */,
+				C319FA8D2D9B66530058C4B2 /* BridgeService.swift in Sources */,
+				C319FA792D9B54B20058C4B2 /* DegenTradeModels.swift in Sources */,
+				C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */,
 				C319FA2D2D8113E40058C4B2 /* SidebarView.swift in Sources */,
 				C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */,
 				C319FA312D81140F0058C4B2 /* DegenView.swift in Sources */,
@@ -309,10 +423,16 @@
 				C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */,
 				C319FA172D8113080058C4B2 /* Asset.swift in Sources */,
 				C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */,
+				C319FA872D9B63DB0058C4B2 /* BIometricSetupView.swift in Sources */,
 				C319FA2E2D8113E40058C4B2 /* HomePageView.swift in Sources */,
 				C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */,
+				C319FA842D9B623A0058C4B2 /* ConfirmPINView.swift in Sources */,
 				C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */,
+				C319FA7E2D9B61170058C4B2 /* WalletViewModel.swift in Sources */,
+				C319FA692D9B18390058C4B2 /* DegenTrendingView.swift in Sources */,
 				C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */,
+				C319FA672D99C4D50058C4B2 /* AuthViewModel.swift in Sources */,
+				C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */,
 				C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */,
 				C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */,
 			);

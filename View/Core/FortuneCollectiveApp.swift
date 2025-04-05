@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct FortuneCollectiveApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isLoggedIn {
+                ContentView()
+                    .environmentObject(authViewModel)
+            } else {
+                AuthView()
+                    .environmentObject(authViewModel)
+            }
         }
     }
 }

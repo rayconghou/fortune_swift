@@ -13,6 +13,7 @@ struct HomePageView: View {
     @State private var showCollective = false
     @State private var showBottomElements = false
     @StateObject private var userProfile = UserProfileViewModel()
+    @StateObject private var tradingWalletViewModel = TradingWalletViewModel()
     @State private var selectedTab: Int = 0
     
     // Enum to represent different app modes
@@ -99,7 +100,17 @@ struct HomePageView: View {
                 activateDegenSplash()
                 currentMode = .degen
             } else {
+                // Prepare for exit before showing the splash
+                selectedTab = 0
+                
+                // Activate exit splash first
                 activateExitSplash()
+                
+                // Close sidebar silently in the background
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    showSidebar = false
+                }
+                
                 currentMode = .standard
             }
         }
@@ -180,7 +191,7 @@ struct HomePageView: View {
                     Image(systemName: "flame")
                 }
             
-            DegenIndexesView()
+            IndexesView()
                 .tag(1)
                 .tabItem {
                     Image(systemName: "chart.bar")
@@ -192,17 +203,18 @@ struct HomePageView: View {
                     Image(systemName: "arrow.triangle.2.circlepath")
                 }
             
-            DegenPortfolioView()
+            PortfolioView()
                 .tag(3)
                 .tabItem {
                     Image(systemName: "briefcase")
                 }
             
-            WalletTrackerView()
+            WalletSocialMediaTrackerView()
                 .tag(4)
                 .tabItem {
                     Image(systemName: "wallet.pass")
                 }
+                .environmentObject(tradingWalletViewModel)
         }
     }
     
@@ -229,7 +241,6 @@ struct HomePageView: View {
     // New method for Exit Splash
     private func activateExitSplash() {
         isExitingSplashActive = true
-        selectedTab = 0  // Reset to SpotView
         
         // Replicate the original splash screen animation
         showFortune = true
@@ -249,19 +260,13 @@ struct HomePageView: View {
             isExitingSplashActive = false
             hideSplashScreen = false
             showFortune = false
-            showCollective = false
             showBottomElements = false
         }
     }
 }
 
 // Placeholder views for Degen Mode (you'll replace these with actual implementations)
-struct DegenTrendingView: View {
-    var body: some View {
-        Text("Degen Trending Coins")
-            .foregroundColor(.white)
-    }
-}
+
 
 struct DegenIndexesView: View {
     var body: some View {
@@ -270,23 +275,9 @@ struct DegenIndexesView: View {
     }
 }
 
-struct DegenTradeView: View {
-    var body: some View {
-        Text("Degen Trade Terminal")
-            .foregroundColor(.white)
-    }
-}
-
 struct DegenPortfolioView: View {
     var body: some View {
         Text("Degen Portfolio")
-            .foregroundColor(.white)
-    }
-}
-
-struct WalletTrackerView: View {
-    var body: some View {
-        Text("Wallet & Social Media Tracker")
             .foregroundColor(.white)
     }
 }

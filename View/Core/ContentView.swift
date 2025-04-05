@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import FirebaseAuth
 
 // MARK: - Main ContentView with Splash Screen
 
@@ -15,15 +16,22 @@ struct ContentView: View {
     @State private var showFortune = false
     @State private var showCollective = false
     @State private var showBottomElements = false
+    @State private var isSignedIn = false
 
     
     var body: some View {
         ZStack {
-            HomePageView()
-            
-            splashScreen
-                .offset(y: hideSplash ? -UIScreen.main.bounds.height : 0)
-                .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplash)
+            if hideSplash {
+                if isSignedIn {
+                    HomePageView()
+                } else {
+                    AuthView()
+                }
+            } else {
+                splashScreen
+                    .offset(y: hideSplash ? -UIScreen.main.bounds.height : 0)
+                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplash)
+            }
         }
         .ignoresSafeArea()
         .onAppear {
@@ -34,8 +42,9 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 showBottomElements = true
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation { hideSplash = true }
+                checkAuthState()
             }
         }
     }
@@ -61,6 +70,16 @@ struct ContentView: View {
                 .offset(y: showBottomElements ? 0 : 50)
                 .animation(.easeOut(duration: 0.5).delay(0.5), value: showBottomElements)
             }
+        }
+    }
+    
+    func checkAuthState() {
+        if let user = Auth.auth().currentUser {
+            print("User is signed in as: \(user.email ?? "")")
+            isSignedIn = true
+        } else {
+            print("User is not signed in.")
+            isSignedIn = false
         }
     }
 }
