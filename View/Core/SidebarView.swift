@@ -3,14 +3,19 @@ import SwiftUI
 // MARK: - Sidebar with Extra Options
 
 struct SidebarView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @Binding var showSidebar: Bool
     @Binding var showDegenMode: Bool
     @Binding var selectedTab: Int
     @State private var showManekiIntro = false
     @State private var showChatroom = false
-    @State private var showMarketNews = false  // New state for Market News modal
-    @ObservedObject var userProfile: UserProfileViewModel
+    @State private var showMarketNews = false
+    @State private var showSettings = false
+    @State private var showNotifications = false
     @State private var showProfileSettings = false
+    @State private var isDegenSplashActive = false
+    @State private var hideSplashScreen = false
+    @ObservedObject var userProfile: UserProfileViewModel
     
     var body: some View {
         ScrollView {
@@ -69,12 +74,22 @@ struct SidebarView: View {
                     Text("Degen Mode")
                         .font(.custom("Inter", size: 18))
                     Spacer()
-                    Toggle("", isOn: $showDegenMode)
-                        .toggleStyle(SwitchToggleStyle(tint: .orange))
+                    Toggle("", isOn: Binding(
+                        get: { showDegenMode },
+                        set: { newValue in
+                            if newValue {
+                                activateDegenSplash()
+                            } else {
+                                // Existing logic for turning off Degen Mode
+                                showDegenMode = false
+                            }
+                        }
+                    ))
+                    .toggleStyle(SwitchToggleStyle(tint: .orange))
                 }
                 .padding(.horizontal, 30)
                 .foregroundColor(.white)
-                
+
                 // Maneki Guide Button
                 Button(action: { showManekiIntro = true }) {
                     HStack {
@@ -166,7 +181,9 @@ struct SidebarView: View {
                 }
                 
                 // Logout
-                Button(action: { print("Logout button pressed") }) {
+                Button(action: {
+                    authViewModel.signOut()
+                }) {
                     HStack {
                         Image(systemName: "power")
                         Text("Logout")
@@ -180,6 +197,27 @@ struct SidebarView: View {
             }
         }
         .background(Color.black.edgesIgnoringSafeArea(.all))
+    }
+    
+    // Activation method for Degen Splash Screen
+    private func activateDegenSplash() {
+        // Close sidebar silently in the background
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            showSidebar = false
+        }
+        
+        // Activate splash screen
+        isDegenSplashActive = true
+        
+        // Ensure Degen Mode is activated after a short delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            showDegenMode = true
+        }
+        
+        // Automatically dismiss splash screen after animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            isDegenSplashActive = false
+        }
     }
 
 }

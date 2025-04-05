@@ -11,6 +11,7 @@ import SwiftUI
 // MARK: - DegenView Main Structure
 struct DegenView: View {
     @Binding var isEnabled: Bool
+    @State private var hideHamburger = false
     @State private var selectedTab: DegenTab = .trending
     
     // Enum to define Degen Tabs
@@ -66,15 +67,18 @@ struct DegenView: View {
         Group {
             switch selectedTab {
             case .trending:
-                DegenTrendingView()
+//                DegenTrendingView()
+                SpotView(hideHamburger: $hideHamburger)
             case .indexes:
-                DegenIndexesView()
+//                DegenIndexesView()
+                IndexesView()
             case .trade:
                 DegenTradeView()
             case .portfolio:
-                DegenPortfolioView()
+//                DegenPortfolioView()
+                PortfolioView()
             case .walletTracker:
-                WalletTrackerView()
+                WalletSocialMediaTrackerView()
             }
         }
         .transition(.asymmetric(insertion: .move(edge: .trailing),
