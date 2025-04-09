@@ -36,51 +36,55 @@ struct DegenTradeView: View {
     }
     
     var body: some View {
-        ZStack {
-            // Background
-            backgroundColor.ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                // Header
-                headerView
+        NavigationView {
+            ZStack {
+                // Background
+                backgroundColor.ignoresSafeArea()
                 
-                // Chain Selector
-                chainSelectorView
-                
-                // Main Content
-                if viewModel.isLoading {
-                    loadingView
-                } else if viewModel.tokens.isEmpty {
-                    emptyStateView
-                } else {
-                    tokenListView
-                }
-            }
-            
-            // Bridge Modal
-            if showBridgeModal {
-                bridgeModalView
-            }
-            
-            // Floating action button
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        showBridgeModal = true
-                    }) {
-                        Image(systemName: "arrow.left.arrow.right")
-                            .font(.system(size: 20, weight: .bold))
-                            .padding()
-                            .background(accentColor)
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                            .shadow(color: accentColor.opacity(0.5), radius: 10)
+                VStack(spacing: 0) {
+                    // Header
+                    headerView
+                    
+                    // Chain Selector
+                    chainSelectorView
+                    
+                    // Main Content
+                    if viewModel.isLoading {
+                        loadingView
+                    } else if viewModel.tokens.isEmpty {
+                        emptyStateView
+                    } else {
+                        tokenListView
                     }
-                    .padding()
+                }
+                
+                // Bridge Modal
+                if showBridgeModal {
+                    bridgeModalView
+                }
+                
+                // Floating action button
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            showBridgeModal = true
+                        }) {
+                            Image(systemName: "arrow.left.arrow.right")
+                                .font(.system(size: 20, weight: .bold))
+                                .padding()
+                                .background(accentColor)
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                                .shadow(color: accentColor.opacity(0.5), radius: 10)
+                        }
+                        .padding()
+                    }
                 }
             }
+            .navigationTitle("Trade")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
             viewModel.fetchTokens(for: selectedChain)
@@ -90,11 +94,12 @@ struct DegenTradeView: View {
     // MARK: - Subviews
     
     var headerView: some View {
-        VStack(spacing: 8) {
-            HStack {
-                Text("Degen Trader")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(.white)
+        VStack(spacing: 0) {
+            HStack() {
+                SearchBar(text: $searchText, placeholderText: "Search tokens...", backgroundColor: Color(hex: "171D2B"), textColor: .white, accentColor: accentColor)
+                    .onChange(of: searchText) { _ in
+                        viewModel.filterTokens(searchText)
+                    }
                 
                 Spacer()
                 
@@ -111,21 +116,7 @@ struct DegenTradeView: View {
                         .rotationEffect(.degrees(isRefreshing ? 360 : 0))
                         .animation(isRefreshing ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isRefreshing)
                 }
-                
-                Button(action: {
-                    // Open settings
-                }) {
-                    Image(systemName: "gear")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.white)
-                        .padding(.leading, 16)
-                }
             }
-            
-            SearchBar(text: $searchText, placeholderText: "Search tokens...", backgroundColor: Color(hex: "171D2B"), textColor: .white, accentColor: accentColor)
-                .onChange(of: searchText) { _ in
-                    viewModel.filterTokens(searchText)
-                }
         }
         .padding()
         .background(Color(hex: "0F131F"))

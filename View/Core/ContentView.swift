@@ -21,17 +21,18 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if hideSplash {
+            Group {
                 if isSignedIn {
                     HomePageView()
                 } else {
                     AuthView()
                 }
-            } else {
-                splashScreen
-                    .offset(y: hideSplash ? -UIScreen.main.bounds.height : 0)
-                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplash)
             }
+            .zIndex(0)
+            
+            splashScreen
+                .offset(y: hideSplash ? -UIScreen.main.bounds.height : 0)
+                .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplash)
         }
         .ignoresSafeArea()
         .onAppear {

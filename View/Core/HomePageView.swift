@@ -5,6 +5,8 @@ struct HomePageView: View {
     @State private var showSidebar = false
     @State private var hideHamburger = false
     @State private var showDegenMode = false
+    @State private var showDegenExitConfirmation = false
+    @State private var degenExitTabTag = 99
     @State private var showManekiButton = true
     @State private var hideSplashScreen = false
     @State private var isDegenSplashActive = false
@@ -73,6 +75,73 @@ struct HomePageView: View {
                 .transition(.opacity)
             }
             
+            if showDegenExitConfirmation {
+                Color.black.opacity(0.6)
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+
+                VStack(spacing: 20) {
+                    Text("Leave Degen Mode?")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.white)
+
+                    Text("You’re about to exit Degen Mode and return to the standard app.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+
+                    HStack(spacing: 16) {
+                        Button(action: {
+                            // Cancel — stay in degen mode
+                            showDegenExitConfirmation = false
+                        }) {
+                            Text("Cancel")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.gray.opacity(0.4))
+                                .cornerRadius(10)
+                        }
+
+                        Button(action: {
+                            showDegenExitConfirmation = false
+                            
+                            // Prepare for exit before showing the splash
+                            selectedTab = 0
+                            
+                            // Activate exit splash first
+                            activateExitSplash()
+                            
+                            // Close sidebar silently in the background
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                showSidebar = false
+                            }
+                            
+                            currentMode = .standard
+                            showDegenMode = false
+                        }) {
+                            Text("Confirm")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                        }
+                    }
+                    .padding(.horizontal)
+
+                }
+                .padding()
+                .background(Color(hex: "171D2B"))
+                .cornerRadius(20)
+                .padding(.horizontal, 40)
+                .transition(.scale)
+                .zIndex(999)
+            }
+            
             // Degen Mode Splash Screen
             if isDegenSplashActive {
                 DegenSplashScreen()
@@ -99,19 +168,12 @@ struct HomePageView: View {
             if newValue {
                 activateDegenSplash()
                 currentMode = .degen
-            } else {
-                // Prepare for exit before showing the splash
-                selectedTab = 0
-                
-                // Activate exit splash first
-                activateExitSplash()
-                
-                // Close sidebar silently in the background
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    showSidebar = false
-                }
-                
-                currentMode = .standard
+            }
+        }
+        .onChange(of: selectedTab) { oldValue, newValue in
+            if currentMode == .degen && newValue == degenExitTabTag {
+                selectedTab = oldValue
+                requestExitDegenMode()
             }
         }
     }
@@ -191,11 +253,12 @@ struct HomePageView: View {
                     Image(systemName: "flame")
                 }
             
-            IndexesView()
+            WalletSocialMediaTrackerView()
                 .tag(1)
                 .tabItem {
-                    Image(systemName: "chart.bar")
+                    Image(systemName: "wallet.pass")
                 }
+                .environmentObject(tradingWalletViewModel)
             
             DegenTradeView()
                 .tag(2)
@@ -209,12 +272,19 @@ struct HomePageView: View {
                     Image(systemName: "briefcase")
                 }
             
-            WalletSocialMediaTrackerView()
-                .tag(4)
+            //TODO: create another toggle feature for turning off degen modew when in degen mode, it will cause a modal warning pop to appear, asking the user to confirm leaving degen mode, would turn off degen mode
+            Color.clear
+                .tag(degenExitTabTag)
                 .tabItem {
-                    Image(systemName: "wallet.pass")
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
                 }
-                .environmentObject(tradingWalletViewModel)
+            
+        }
+    }
+    
+    private func requestExitDegenMode() {
+        if !showDegenExitConfirmation {
+            showDegenExitConfirmation = true
         }
     }
     

@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ManekiView: View {
     @State private var userMessage = ""
-    @State private var messages: [ChatMessage] = [
-        ChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
+    @State private var messages: [ManekiChatMessage] = [
+        ManekiChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
     ]
     
     // 1) A list of example questions the user can tap:
@@ -32,7 +32,7 @@ struct ManekiView: View {
                 ScrollView {
                     LazyVStack(spacing: 15) {
                         ForEach(messages) { message in
-                            ChatBubble(message: message)
+                            ManekiChatBubble(message: message)
                         }
                     }
                     .padding()
@@ -96,12 +96,12 @@ struct ManekiView: View {
     // Same as your existing send logic
     func sendMessage() {
         guard !userMessage.isEmpty else { return }
-        let newMsg = ChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
+        let newMsg = ManekiChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
         messages.append(newMsg)
         
         // Sample "AI response"
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let response = ChatMessage(
+            let response = ManekiChatMessage(
                 id: messages.count + 1,
                 content: "Here's some info on that: ...",
                 isFromUser: false
