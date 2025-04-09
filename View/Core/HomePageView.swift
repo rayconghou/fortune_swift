@@ -6,6 +6,7 @@ struct HomePageView: View {
     @State private var hideHamburger = false
     @State private var showDegenMode = false
     @State private var showDegenExitConfirmation = false
+    @State private var degenEntryTabTag = 98
     @State private var degenExitTabTag = 99
     @State private var showManekiButton = true
     @State private var hideSplashScreen = false
@@ -174,6 +175,9 @@ struct HomePageView: View {
             if currentMode == .degen && newValue == degenExitTabTag {
                 selectedTab = oldValue
                 requestExitDegenMode()
+            } else if currentMode == .standard && newValue == degenEntryTabTag {
+                selectedTab = oldValue
+                activateDegenSplash()
             }
         }
     }
@@ -231,15 +235,10 @@ struct HomePageView: View {
                     Image(systemName: "chart.bar.fill")
                 }
             
-            DegenView(isEnabled: $showDegenMode)
-                .tag(4)
+            Color.clear
+                .tag(degenEntryTabTag)
                 .tabItem {
                     Image(systemName: "flame.fill")
-                }
-                .onChange(of: selectedTab) { oldValue, newValue in
-                    if newValue == 4 && !showDegenMode {
-                        activateDegenSplash()
-                    }
                 }
         }
     }

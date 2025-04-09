@@ -15,6 +15,7 @@ enum SortOption: String, CaseIterable {
 
 struct SpotView: View {
     @Binding var hideHamburger: Bool
+    @State private var selectedCoin: Coin? = nil
     @State private var scrollOffset: CGFloat = 0
     @State private var showBuyModal = false
     @State private var showSellModal = false
@@ -77,63 +78,84 @@ struct SpotView: View {
                 .padding(.top, -40)
                 
                 // List of coins in a scrollable view
-                ScrollView {
-                    LazyVStack(spacing: 16) {
-                        ForEach(filteredCoins) { coin in
-                            CryptoTrendCard(
-                                rank: coin.market_cap_rank ?? 0,
-                                name: coin.name,
-                                symbol: coin.symbol,
-                                imageUrl: coin.image,
-                                price: coin.current_price,
-                                change: coin.price_change_percentage_24h ?? 0,
-                                sparkline: coin.sparkline_in_7d?.price.last24Hours ?? coin.sparkline_in_7d?.price ?? []
-                            )
+                ZStack {
+                    ScrollView {
+                        LazyVStack(spacing: 16) {
+                            ForEach(filteredCoins) { coin in
+                                CryptoTrendCard(
+                                    rank: coin.market_cap_rank ?? 0,
+                                    name: coin.name,
+                                    symbol: coin.symbol,
+                                    imageUrl: coin.image,
+                                    price: coin.current_price,
+                                    change: coin.price_change_percentage_24h ?? 0,
+                                    sparkline: coin.sparkline_in_7d?.price.last24Hours ?? coin.sparkline_in_7d?.price ?? []
+                                )
+                                .onTapGesture {
+                                    selectedCoin = coin
+                                }
+                            }
                         }
-                    }
-                    .padding()
-                }
-                .background(Color.black)
-                
-                // Floating BUY & SELL buttons
-                HStack(spacing: 20) {
-                    Button(action: { showBuyModal = true }) {
-                        HStack {
-                            Image(systemName: "arrow.down.circle.fill")
-                            Text("BUY")
-                                .fontWeight(.bold)
-                        }
-                        .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(30)
                     }
                     
-                    Button(action: { showSellModal = true }) {
-                        HStack {
-                            Image(systemName: "arrow.up.circle.fill")
-                            Text("SELL")
-                                .fontWeight(.bold)
+                    // Floating BUY & SELL buttons
+                    VStack() {
+                        Spacer()
+                        
+                        HStack(spacing: 20) {
+                            // BUY BUTTON
+                            Button(action: { showBuyModal = true }) {
+                                Text("Buy")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 14)
+                                    .frame(maxWidth: .infinity)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .fill(Color(hex: "0C0C0C")) // dark opaque
+                                            .shadow(color: Color.white.opacity(0.08), radius: 10, x: 0, y: 6)
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                                    )
+                            }
+
+                            // SELL BUTTON
+                            Button(action: { showSellModal = true }) {
+                                Text("Sell")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 14)
+                                    .frame(maxWidth: .infinity)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .fill(Color(hex: "2C2C2C")) // lighter gray opaque
+                                            .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 6)
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                                    )
+                            }
                         }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(30)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
+                        .sheet(isPresented: $showBuyModal) {
+                            BuyCryptoView()
+                        }
+                        .sheet(isPresented: $showSellModal) {
+                            SellCryptoView()
+                        }
                     }
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
-                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
-                .sheet(isPresented: $showBuyModal) {
-                    BuyCryptoView()
-                }
-                .sheet(isPresented: $showSellModal) {
-                    SellCryptoView()
-                }
+                .background(Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
+            .sheet(item: $selectedCoin) { coin in
+                CoinDetailModalView(coin: coin, marketVM: marketVM)
+            }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {

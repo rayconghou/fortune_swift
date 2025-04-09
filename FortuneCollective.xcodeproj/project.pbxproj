@@ -17,7 +17,6 @@
 		C319FA2C2D8113E40058C4B2 /* FortuneCollectiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA282D8113E40058C4B2 /* FortuneCollectiveApp.swift */; };
 		C319FA2D2D8113E40058C4B2 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA292D8113E40058C4B2 /* SidebarView.swift */; };
 		C319FA2E2D8113E40058C4B2 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA2A2D8113E40058C4B2 /* HomePageView.swift */; };
-		C319FA312D81140F0058C4B2 /* DegenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA302D81140F0058C4B2 /* DegenView.swift */; };
 		C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA332D8114180058C4B2 /* IndexesView.swift */; };
 		C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA362D8114210058C4B2 /* ManekiView.swift */; };
 		C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA392D8114420058C4B2 /* PortfolioView.swift */; };
@@ -68,7 +67,6 @@
 		C319FA282D8113E40058C4B2 /* FortuneCollectiveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortuneCollectiveApp.swift; sourceTree = "<group>"; };
 		C319FA292D8113E40058C4B2 /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		C319FA2A2D8113E40058C4B2 /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
-		C319FA302D81140F0058C4B2 /* DegenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegenView.swift; sourceTree = "<group>"; };
 		C319FA332D8114180058C4B2 /* IndexesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexesView.swift; sourceTree = "<group>"; };
 		C319FA362D8114210058C4B2 /* ManekiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManekiView.swift; sourceTree = "<group>"; };
 		C319FA392D8114420058C4B2 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			children = (
 				C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */,
 				C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */,
-				C319FA302D81140F0058C4B2 /* DegenView.swift */,
 				C319FA8B2D9B663F0058C4B2 /* DegenTrade */,
 				C319FA882D9B63F00058C4B2 /* SetupComplete */,
 				C319FA852D9B62590058C4B2 /* BiometricSetup */,
@@ -422,7 +419,6 @@
 				C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */,
 				C319FA2D2D8113E40058C4B2 /* SidebarView.swift in Sources */,
 				C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */,
-				C319FA312D81140F0058C4B2 /* DegenView.swift in Sources */,
 				C319FA1A2D8113080058C4B2 /* Chat.swift in Sources */,
 				C319FA2B2D8113E40058C4B2 /* ContentView.swift in Sources */,
 				C319FA2C2D8113E40058C4B2 /* FortuneCollectiveApp.swift in Sources */,
