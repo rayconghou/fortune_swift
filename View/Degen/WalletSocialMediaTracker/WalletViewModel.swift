@@ -49,6 +49,16 @@ class TradingWalletViewModel: ObservableObject {
         case setupComplete
     }
     
+    init() {
+        if let storedPin = KeychainHelper.read(forKey: "userPin") {
+            self.pin = storedPin
+            self.currentStep = .confirmPin
+        } else {
+            self.currentStep = .createPin
+        }
+    }
+
+    
     // MARK: PIN Flow
     func appendPin(digit: String) {
         switch currentStep {
@@ -92,6 +102,7 @@ class TradingWalletViewModel: ObservableObject {
     
     private func validatePins() {
         if pin == confirmPin {
+            KeychainHelper.save(pin, forKey: "userPin")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 withAnimation(.spring(response: 0.3)) {
                     self.currentStep = .biometricSetup
@@ -118,21 +129,27 @@ class TradingWalletViewModel: ObservableObject {
         withAnimation {
             isScanningFace = true
         }
-        
+
         // Simulate face scanning
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.biometricEnabled = true
             withAnimation {
                 self.isScanningFace = false
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.spring(response: 0.3)) {
-                    self.currentStep = .setupComplete
+
+            if let storedPin = KeychainHelper.read(forKey: "userPin") {
+                self.authenticated = true
+                self.walletSetupComplete = true
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation(.spring(response: 0.3)) {
+                        self.currentStep = .setupComplete
+                    }
                 }
             }
         }
     }
+
     
     func completeSetup() {
         // The user has completely set up their wallet
@@ -217,21 +234,25 @@ struct PinDot: View {
     }
 }
 
+/// Progress bar for sentiment visualization
 struct SentimentProgressBar: View {
     var value: Double
     var color: Color
     
     var body: some View {
-        GeometryReader { geo in
+        GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(Color.gray.opacity(0.2))
-                    .frame(width: geo.size.width, height: 8)
+                Rectangle()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .opacity(0.2)
+                    .foregroundColor(Color.gray)
                 
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(color)
-                    .frame(width: min(CGFloat(value) * geo.size.width, geo.size.width), height: 8)
+                Rectangle()
+                    .frame(width: min(CGFloat(self.value) * geometry.size.width, geometry.size.width), height: geometry.size.height)
+                    .foregroundColor(color)
+                    .animation(.linear, value: value)
             }
+            .cornerRadius(45)
         }
     }
 }

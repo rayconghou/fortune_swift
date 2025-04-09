@@ -129,17 +129,6 @@ struct SidebarView: View {
                     .foregroundColor(.white)
                 }
                 
-                // Newsletter
-                NavigationLink(destination: NewsletterView()) {
-                    HStack {
-                        Image(systemName: "newspaper.fill")
-                        Text("Newsletter")
-                            .font(.custom("Inter", size: 18))
-                    }
-                    .padding(.horizontal, 30)
-                    .foregroundColor(.white)
-                }
-                
                 // Market News (New Sidebar Module)
                 Button(action: { showMarketNews = true }) {
                     HStack {
@@ -328,31 +317,6 @@ struct ManekiIntroView: View {
 }
 
 
-struct ChatroomView: View {
-    @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("Chatroom")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding()
-                Text("This feature is coming soon!")
-                    .foregroundColor(.gray)
-                Spacer()
-            }
-            .background(Color.black)
-            .navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.white)
-            })
-        }
-        .preferredColorScheme(.dark)
-    }
-}
-
 struct CommunityHubView: View {
     var body: some View {
         VStack {
@@ -368,20 +332,6 @@ struct CommunityHubView: View {
     }
 }
 
-struct NewsletterView: View {
-    var body: some View {
-        VStack {
-            Text("Newsletter")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding()
-            Text("Subscribe for the latest crypto updates.")
-                .foregroundColor(.gray)
-            Spacer()
-        }
-        .background(Color.black)
-    }
-}
 
 // MARK: - Preview
 
