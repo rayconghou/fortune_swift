@@ -12,53 +12,55 @@ struct ConfirmPINView: View {
     @ObservedObject var viewModel: TradingWalletViewModel
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            VStack(spacing: 16) {
-                Image(systemName: "shield.fill")
-                    .font(.system(size: 60))
-                    .foregroundColor(.blue)
-                    .symbolEffect(.pulse, options: .repeating)
+        NavigationStack {
+            VStack {
+                Spacer()
                 
-                Text("Confirm Your PIN")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                
-                Text("Enter your 6-digit PIN again to confirm.")
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal)
-            }
-            
-            Spacer().frame(height: 40)
-            
-            // PIN Dots
-            HStack(spacing: 16) {
-                ForEach(0..<6, id: \.self) { index in
-                    PinDot(
-                        isFilled: index < viewModel.confirmPin.count,
-                        error: viewModel.pinError
-                    )
+                VStack(spacing: 16) {
+                    Image(systemName: "shield.fill")
+                        .font(.system(size: 60))
+                        .foregroundColor(.blue)
+                        .symbolEffect(.pulse, options: .repeating)
+                    
+                    Text("Confirm Your PIN")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    
+                    Text("Enter your 6-digit PIN again to confirm.")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal)
                 }
+                
+                Spacer().frame(height: 40)
+                
+                // PIN Dots
+                HStack(spacing: 16) {
+                    ForEach(0..<6, id: \.self) { index in
+                        PinDot(
+                            isFilled: index < viewModel.confirmPin.count,
+                            error: viewModel.pinError
+                        )
+                    }
+                }
+                
+                if viewModel.showPin && !viewModel.confirmPin.isEmpty {
+                    Text(viewModel.confirmPin)
+                        .font(.title3)
+                        .foregroundColor(.blue)
+                        .padding(.top, 8)
+                        .transition(.opacity)
+                }
+                
+                Spacer()
+                
+                numberPad
+                    .padding(.bottom)
             }
-            
-            if viewModel.showPin && !viewModel.confirmPin.isEmpty {
-                Text(viewModel.confirmPin)
-                    .font(.title3)
-                    .foregroundColor(.blue)
-                    .padding(.top, 8)
-                    .transition(.opacity)
-            }
-            
-            Spacer()
-            
-            numberPad
-                .padding(.bottom)
+            .padding()
+            .navigationTitle("Tracker")
+//            .transition(.opacity.combined(with: .move(edge: .leading)))
         }
-        .padding()
-        .navigationTitle("SentimentTrader")
-        .transition(.opacity.combined(with: .move(edge: .leading)))
     }
     
     var numberPad: some View {

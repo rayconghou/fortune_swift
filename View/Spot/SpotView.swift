@@ -62,14 +62,6 @@ struct SpotView: View {
                                 .foregroundColor(.gray)
                         }
                     }
-                    
-                    Button(action: {
-                        // TODO: Maneki can provide info
-                    }) {
-                        Image(systemName: "info.circle")
-                            .foregroundColor(.gray)
-                    }
-                    .padding(.leading, 4)
                 }
                 .padding(.vertical, 10)
                 .padding(.horizontal)
@@ -158,18 +150,22 @@ struct SpotView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Spot")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
+                    Text("Spot")
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        // TODO: implement global notification system
-                    }) {
-                        Image(systemName: "bell")
-                            .foregroundColor(.white)
+                    HStack(spacing: 16) {
+                        Button(action: {
+                            // Trigger notifications
+                        }) {
+                            Image(systemName: "bell")
+                                .foregroundColor(.white)
+                        }
+                        Button(action: {
+                            // Show info sheet or view
+                        }) {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }

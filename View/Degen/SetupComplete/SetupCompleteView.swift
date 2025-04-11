@@ -77,7 +77,8 @@ struct SetupCompleteView: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("SentimentTrader")
-        .transition(.opacity.combined(with: .move(edge: .leading)))
+        .navigationTitle("Tracker")
+        .navigationBarTitleDisplayMode(.inline)
+//        .transition(.opacity.combined(with: .move(edge: .leading)))
     }
 }
