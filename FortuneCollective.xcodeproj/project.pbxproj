@@ -54,6 +54,9 @@
 		C319FA8F2D9B66E80058C4B2 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA8E2D9B66E80058C4B2 /* WalletService.swift */; };
 		C319FA912DA0CB090058C4B2 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */; };
 		C319FA942DA611F10058C4B2 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA932DA611F10058C4B2 /* ChatroomView.swift */; };
+		C319FA962DA71F420058C4B2 /* CreateIndexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA952DA71F420058C4B2 /* CreateIndexes.swift */; };
+		C319FA982DA7395E0058C4B2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA972DA7395E0058C4B2 /* News.swift */; };
+		C319FA9A2DA743270058C4B2 /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA992DA743270058C4B2 /* Tweets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +101,9 @@
 		C319FA8E2D9B66E80058C4B2 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		C319FA932DA611F10058C4B2 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
+		C319FA952DA71F420058C4B2 /* CreateIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIndexes.swift; sourceTree = "<group>"; };
+		C319FA972DA7395E0058C4B2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C319FA992DA743270058C4B2 /* Tweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +127,7 @@
 		C319FA122D8112FF0058C4B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA972DA7395E0058C4B2 /* News.swift */,
 				C319FA432D836C2C0058C4B2 /* UserProfile.swift */,
 				C319FA152D8113070058C4B2 /* AnyCodable.swift */,
 				C319FA132D8113070058C4B2 /* Asset.swift */,
@@ -192,6 +199,7 @@
 		C319FA322D8114130058C4B2 /* Indexes */ = {
 			isa = PBXGroup;
 			children = (
+				C319FA952DA71F420058C4B2 /* CreateIndexes.swift */,
 				C319FA332D8114180058C4B2 /* IndexesView.swift */,
 			);
 			path = Indexes;
@@ -246,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				C319FA7D2D9B61170058C4B2 /* WalletViewModel.swift */,
+				C319FA992DA743270058C4B2 /* Tweets.swift */,
 				C319FA7A2D9B55920058C4B2 /* WalletSocialMediaTracker.swift */,
 			);
 			path = WalletSocialMediaTracker;
@@ -419,6 +428,7 @@
 				C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */,
 				C319FA2D2D8113E40058C4B2 /* SidebarView.swift in Sources */,
 				C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */,
+				C319FA982DA7395E0058C4B2 /* News.swift in Sources */,
 				C319FA1A2D8113080058C4B2 /* Chat.swift in Sources */,
 				C319FA2B2D8113E40058C4B2 /* ContentView.swift in Sources */,
 				C319FA2C2D8113E40058C4B2 /* FortuneCollectiveApp.swift in Sources */,
@@ -427,12 +437,14 @@
 				C319FA172D8113080058C4B2 /* Asset.swift in Sources */,
 				C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */,
 				C319FA872D9B63DB0058C4B2 /* BIometricSetupView.swift in Sources */,
+				C319FA962DA71F420058C4B2 /* CreateIndexes.swift in Sources */,
 				C319FA2E2D8113E40058C4B2 /* HomePageView.swift in Sources */,
 				C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */,
 				C319FA842D9B623A0058C4B2 /* ConfirmPINView.swift in Sources */,
 				C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */,
 				C319FA7E2D9B61170058C4B2 /* WalletViewModel.swift in Sources */,
 				C319FA942DA611F10058C4B2 /* ChatroomView.swift in Sources */,
+				C319FA9A2DA743270058C4B2 /* Tweets.swift in Sources */,
 				C319FA692D9B18390058C4B2 /* DegenTrendingView.swift in Sources */,
 				C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */,
 				C319FA672D99C4D50058C4B2 /* AuthViewModel.swift in Sources */,

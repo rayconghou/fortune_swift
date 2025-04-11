@@ -5,6 +5,7 @@ import SwiftUI
 struct IndexesView: View {
     @State private var selectedTab: IndexSourceTab = .handpicked
     @State private var showManekiQuizModal = false
+    @State private var showCreateIndexSheet = false
     
     var body: some View {
         NavigationStack {
@@ -23,7 +24,7 @@ struct IndexesView: View {
                         case .maneki:
                             ManekiCuratedIndexesView(showQuizModal: $showManekiQuizModal)
                         case .community:
-                            CommunityIndexesView()
+                            CommunityIndexesView(showCreateIndexSheet: $showCreateIndexSheet)
                         }
                     }
                     .padding(.horizontal)
@@ -32,18 +33,22 @@ struct IndexesView: View {
                 .background(Color.black)
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
+            .navigationTitle("Indexes")
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Indexes")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        // TODO: implement global notification system
-                    }) {
-                        Image(systemName: "bell")
-                            .foregroundColor(.white)
+                    HStack(spacing: 16) {
+                        Button(action: {
+                            // Trigger notifications
+                        }) {
+                            Image(systemName: "bell")
+                                .foregroundColor(.white)
+                        }
+                        Button(action: {
+                            // Show info sheet or view
+                        }) {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }
@@ -52,6 +57,9 @@ struct IndexesView: View {
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showManekiQuizModal) {
             ManekiQuizModalView()
+        }
+        .sheet(isPresented: $showCreateIndexSheet) {
+            CreateIndexView()
         }
     }
 }
@@ -263,6 +271,7 @@ struct ManekiCuratedIndexesView: View {
 // MARK: - Community Indexes Tab
 struct CommunityIndexesView: View {
     @State private var selectedTimeFrame: TimeFrame = .month
+    @Binding var showCreateIndexSheet: Bool
     
     var body: some View {
         VStack(spacing: 16) {
@@ -312,7 +321,7 @@ struct CommunityIndexesView: View {
             }
             
             Button(action: {
-                // Action to create new index
+                showCreateIndexSheet = true
             }) {
                 HStack {
                     Image(systemName: "plus.circle.fill")

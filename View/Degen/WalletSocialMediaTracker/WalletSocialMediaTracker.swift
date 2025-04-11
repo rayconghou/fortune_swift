@@ -12,6 +12,7 @@ import SwiftUI
 /// - If user already has a wallet: show the main wallet+sentiment with toggle
 struct WalletSocialMediaTrackerView: View {
     @EnvironmentObject var viewModel: TradingWalletViewModel
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -21,10 +22,29 @@ struct WalletSocialMediaTrackerView: View {
             } else {
                 // Show the main wallet/sentiment screen with toggle
                 ToggleableContentView(viewModel: viewModel)
-                    .navigationBarTitle("SentimentTrader", displayMode: .inline)
+                    .navigationTitle("Tracker")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            HStack(spacing: 16) {
+                                Button(action: {
+                                    // Trigger notifications
+                                }) {
+                                    Image(systemName: "bell")
+                                        .foregroundColor(.white)
+                                }
+                                Button(action: {
+                                    // Show info sheet or view
+                                }) {
+                                    Image(systemName: "info.circle")
+                                        .foregroundColor(.white)
+                                }
+                            }                        }
+                    }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .preferredColorScheme(.dark)
     }
     
     @ViewBuilder
@@ -32,12 +52,88 @@ struct WalletSocialMediaTrackerView: View {
         switch viewModel.currentStep {
         case .createPin:
             CreatePINView(viewModel: viewModel)
+                .navigationTitle("Tracker")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Trigger notifications
+                            }) {
+                                Image(systemName: "bell")
+                                    .foregroundColor(.white)
+                            }
+                            Button(action: {
+                                // Show info sheet or view
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.white)
+                            }
+                        }                        }
+                }
         case .confirmPin:
             ConfirmPINView(viewModel: viewModel)
+                .navigationTitle("Tracker")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Trigger notifications
+                            }) {
+                                Image(systemName: "bell")
+                                    .foregroundColor(.white)
+                            }
+                            Button(action: {
+                                // Show info sheet or view
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.white)
+                            }
+                        }                        }
+                }
         case .biometricSetup:
             BiometricSetupView(viewModel: viewModel)
+                .navigationTitle("Tracker")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Trigger notifications
+                            }) {
+                                Image(systemName: "bell")
+                                    .foregroundColor(.white)
+                            }
+                            Button(action: {
+                                // Show info sheet or view
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.white)
+                            }
+                        }                        }
+                }
         case .setupComplete:
             SetupCompleteView(viewModel: viewModel)
+                .navigationTitle("Tracker")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Trigger notifications
+                            }) {
+                                Image(systemName: "bell")
+                                    .foregroundColor(.white)
+                            }
+                            Button(action: {
+                                // Show info sheet or view
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.white)
+                            }
+                        }                        }
+                }
         }
     }
 }
@@ -58,18 +154,20 @@ struct ToggleableContentView: View {
             // Custom toggle selector at the top
             ModeToggleSelector(selectedMode: $selectedMode)
                 .padding(.horizontal)
-                .padding(.top, 12)
-                .padding(.bottom, 8)
+                .padding(.top, 16)
+                .padding(.bottom, 12)
             
             // Dynamic content based on selection
             if selectedMode == .wallet {
                 WalletView(viewModel: viewModel, selectedAsset: $selectedAsset)
+                    .transition(.asymmetric(insertion: .move(edge: .leading), removal: .opacity))
             } else {
                 SentimentAnalysisView(viewModel: viewModel, selectedAsset: $selectedAsset)
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
             }
         }
         .animation(.easeInOut(duration: 0.3), value: selectedMode)
-        .background(Color(UIColor.systemBackground))
+        .background(Color("BackgroundDark", bundle: .main) ?? Color(UIColor.systemBackground))
     }
 }
 
@@ -88,23 +186,30 @@ struct ModeToggleSelector: View {
                 }) {
                     ZStack {
                         if selectedMode == mode {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(LinearGradient(
-                                    gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ))
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color.blue, Color.purple.opacity(0.8)]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
                                 .matchedGeometryEffect(id: "ToggleBackground", in: animation)
-                                .shadow(color: Color.blue.opacity(0.3), radius: 4, x: 0, y: 2)
+                                .shadow(color: Color.blue.opacity(0.4), radius: 6, x: 0, y: 3)
                         }
                         
-                        HStack(spacing: 6) {
+                        HStack(spacing: 8) {
                             Image(systemName: mode == .wallet ? "creditcard.fill" : "bubble.left.and.bubble.right.fill")
-                                .font(.subheadline)
+                                .font(.callout)
+                                .foregroundStyle(
+                                    selectedMode == mode ?
+                                    LinearGradient(colors: [.white, .white.opacity(0.8)], startPoint: .top, endPoint: .bottom) :
+                                    LinearGradient(colors: [.gray.opacity(0.8), .gray.opacity(0.6)], startPoint: .top, endPoint: .bottom)
+                                )
                             
                             Text(mode.rawValue)
                                 .fontWeight(.medium)
-                                .font(.subheadline)
+                                .font(.callout)
                         }
                         .foregroundColor(selectedMode == mode ? .white : .gray)
                         .padding(.vertical, 12)
@@ -114,10 +219,18 @@ struct ModeToggleSelector: View {
             }
         }
         .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(UIColor.secondarySystemBackground))
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.secondarySystemBackground))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(LinearGradient(
+                            colors: [.white.opacity(0.1), .clear],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ), lineWidth: 0.5)
+                )
         )
-        .frame(height: 44)
+        .frame(height: 48)
     }
 }
 
@@ -125,277 +238,558 @@ struct ModeToggleSelector: View {
 struct WalletView: View {
     @ObservedObject var viewModel: TradingWalletViewModel
     @Binding var selectedAsset: DegenAsset?
+    @State private var selectedWallet: TrackedWallet?
+    @State private var showingAddWalletSheet = false
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                // Card-like balance display
-                BalanceCard(balance: viewModel.walletBalance)
-                    .padding(.horizontal)
-                    .padding(.top, 16)
-                
-                // Section header
-                SectionHeader(title: "Your Assets", action: {})
-                    .padding(.horizontal)
-                
-                // List of assets
-                LazyVStack(spacing: 12) {
-                    ForEach(viewModel.assets) { asset in
-                        AssetCardView(
-                            asset: asset,
-                            isSelected: (asset == selectedAsset),
-                            onTap: {
-                                withAnimation {
-                                    if selectedAsset == asset {
-                                        selectedAsset = nil
-                                    } else {
-                                        selectedAsset = asset
-                                    }
-                                }
-                            }
-                        )
-                        .padding(.horizontal)
-                    }
-                }
-                .padding(.bottom, 24)
-            }
-        }
-    }
-}
-
-/// Card displaying wallet balance with visual flair
-struct BalanceCard: View {
-    var balance: Double
-    
-    var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 20) {
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Total Balance")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    Text("$\(String(format: "%.2f", balance))")
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                }
+                Text("Tracked Wallets")
+                    .font(.system(.title2, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.leading)
                 
                 Spacer()
                 
-                Image(systemName: "creditcard.fill")
-                    .font(.title)
-                    .foregroundColor(.white.opacity(0.8))
-            }
-            
-            Divider()
-                .background(Color.white.opacity(0.3))
-            
-            HStack {
-                Label("Last updated 5m ago", systemImage: "clock.fill")
-                    .font(.caption)
-                    .foregroundColor(.white.opacity(0.8))
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Label("Refresh", systemImage: "arrow.clockwise")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-            }
-        }
-        .padding(20)
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color.blue, Color.purple.opacity(0.8)]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        )
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 0, y: 5)
-    }
-}
-
-/// Asset card with improved visual design
-struct AssetCardView: View {
-    var asset: DegenAsset
-    var isSelected: Bool
-    var onTap: () -> Void
-    
-    var body: some View {
-        Button(action: onTap) {
-            HStack(spacing: 16) {
-                // Asset icon
-                ZStack {
-                    Circle()
-                        .fill(LinearGradient(
-                            gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.purple.opacity(0.2)]),
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ))
-                        .frame(width: 48, height: 48)
-                    
-                    Text(asset.symbol)
-                        .foregroundColor(.blue)
-                        .fontWeight(.bold)
-                        .font(.subheadline)
-                }
-                
-                // Asset info
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(asset.name)
-                        .font(.headline)
-                        .foregroundColor(Color(UIColor.label))
-                    
-                    HStack(spacing: 8) {
-                        Text("$\(String(format: "%.2f", asset.price))")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                Button(action: {
+                    showingAddWalletSheet = true
+                }) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "plus")
+                            .font(.footnote)
                         
-                        Text(asset.changeText)
-                            .font(.subheadline)
-                            .foregroundColor(asset.changeColor)
+                        Text("Add")
+                            .font(.footnote)
+                            .fontWeight(.medium)
                     }
-                }
-                
-                Spacer()
-                
-                // Asset sentiment indicator
-                SentimentBubble(sentiment: asset.sentiment)
-                    .frame(width: 44, height: 44)
-            }
-            .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(UIColor.secondarySystemBackground))
-                    .shadow(color: isSelected ? Color.blue.opacity(0.3) : Color.black.opacity(0.05),
-                            radius: isSelected ? 8 : 4,
-                            x: 0,
-                            y: isSelected ? 4 : 2)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(isSelected ? Color.blue.opacity(0.5) : Color.clear, lineWidth: 2)
-            )
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
-
-/// Section header with title and optional action
-struct SectionHeader: View {
-    var title: String
-    var action: () -> Void
-    
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(Color(UIColor.label))
-            
-            Spacer()
-            
-            Button(action: action) {
-                Image(systemName: "slider.horizontal.3")
-                    .foregroundColor(.blue)
-            }
-        }
-        .padding(.vertical, 8)
-    }
-}
-
-/// The sentiment analysis view showing Twitter trends
-struct SentimentAnalysisView: View {
-    @ObservedObject var viewModel: TradingWalletViewModel
-    @Binding var selectedAsset: DegenAsset?
-    @State private var selectedFilter: SentimentFilter = .trending
-    
-    enum SentimentFilter: String, CaseIterable {
-        case trending = "Trending"
-        case celebrities = "Celebrities"
-        case whales = "Whales"
-    }
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            // Filter tabs
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(SentimentFilter.allCases, id: \.self) { filter in
-                        FilterChip(
-                            title: filter.rawValue,
-                            isSelected: selectedFilter == filter,
-                            action: {
-                                withAnimation {
-                                    selectedFilter = filter
-                                }
-                            }
-                        )
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 12)
-            }
-            
-            // Asset filter chip row
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    AssetFilterChip(
-                        title: "All Assets",
-                        isSelected: selectedAsset == nil,
-                        action: {
-                            withAnimation {
-                                selectedAsset = nil
-                            }
-                        }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(
+                        Capsule()
+                            .fill(
+                                LinearGradient(
+                                    colors: [.blue.opacity(0.7), .purple.opacity(0.7)],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
                     )
-                    
-                    ForEach(viewModel.assets) { asset in
-                        AssetFilterChip(
-                            title: asset.symbol,
-                            isSelected: selectedAsset == asset,
-                            action: {
-                                withAnimation {
-                                    if selectedAsset == asset {
-                                        selectedAsset = nil
-                                    } else {
-                                        selectedAsset = asset
-                                    }
-                                }
-                            }
-                        )
-                    }
+                    .foregroundColor(.white)
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 12)
+                .padding(.trailing)
             }
-            
-            // Sentiment tweets
+            .padding(.top, 8)
+
             ScrollView {
                 LazyVStack(spacing: 16) {
-                    if let asset = selectedAsset {
-                        // Show tweets for selected asset
-                        ForEach(0..<5) { _ in
-                            TweetCard(
-                                asset: asset,
-                                influencerType: selectedFilter
-                            )
+                    ForEach(viewModel.trackedWallets) { wallet in
+                        Button(action: {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                if selectedWallet == wallet {
+                                    selectedWallet = nil
+                                } else {
+                                    selectedWallet = wallet
+                                }
+                            }
+                        }) {
+                            TrackedWalletCard(wallet: wallet, isSelected: wallet == selectedWallet)
+                                .padding(.horizontal)
                         }
-                    } else {
-                        // Show tweets for all assets
-                        ForEach(viewModel.assets) { asset in
-                            TweetCard(
-                                asset: asset,
-                                influencerType: selectedFilter
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .padding(.bottom, 24)
+            }
+            
+            if let wallet = selectedWallet {
+                HStack {
+                    Text("Wallet Analytics")
+                        .font(.system(.headline, design: .rounded))
+                        .fontWeight(.semibold)
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [.white, .white.opacity(0.7)],
+                                startPoint: .leading,
+                                endPoint: .trailing
                             )
+                        )
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        withAnimation {
+                            selectedWallet = nil
                         }
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                            .font(.footnote)
                     }
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 24)
+                
+                WalletDetailView(wallet: wallet)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .padding(.horizontal)
             }
         }
+        .sheet(isPresented: $showingAddWalletSheet) {
+            AddPublicWalletView(viewModel: viewModel)
+        }
+    }
+}
+
+struct TrackedWalletCard: View {
+    let wallet: TrackedWallet
+    let isSelected: Bool
+
+    var body: some View {
+        HStack {
+            Image(systemName: "wallet.pass.fill")
+                .font(.title2)
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [.blue, .purple],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .padding(.trailing, 6)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(wallet.label)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                
+                Text(wallet.shortAddress)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+
+            Spacer()
+
+            VStack(alignment: .trailing, spacing: 6) {
+                Text(wallet.formattedBalance)
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                
+                Text(wallet.pnlText)
+                    .font(.caption)
+                    .foregroundColor(wallet.pnlColor)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 2)
+                    .background(wallet.pnlColor.opacity(0.15))
+                    .cornerRadius(4)
+            }
+
+            Image(systemName: isSelected ? "chevron.down.circle.fill" : "chevron.right.circle.fill")
+                .foregroundColor(isSelected ? .blue : .gray.opacity(0.7))
+                .font(.footnote)
+                .padding(.leading, 4)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.secondarySystemBackground))
+                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(isSelected ? 0.2 : 0.05),
+                                    Color.clear
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ),
+                            lineWidth: 1
+                        )
+                )
+        )
+        .scaleEffect(isSelected ? 1.02 : 1.0)
+        .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
+    }
+}
+
+struct WalletDetailView: View {
+    let wallet: TrackedWallet
+    @State private var selectedTimeframe: TimeFrame = .week
+    
+    enum TimeFrame: String, CaseIterable {
+        case day = "24H"
+        case week = "7D"
+        case month = "30D"
+        case year = "1Y"
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            // Performance chart mock
+            HStack {
+                ForEach(TimeFrame.allCases, id: \.self) { timeframe in
+                    Button(action: {
+                        withAnimation {
+                            selectedTimeframe = timeframe
+                        }
+                    }) {
+                        Text(timeframe.rawValue)
+                            .font(.caption)
+                            .fontWeight(selectedTimeframe == timeframe ? .bold : .medium)
+                            .foregroundColor(selectedTimeframe == timeframe ? .white : .gray)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(
+                                selectedTimeframe == timeframe ?
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [.blue.opacity(0.7), .purple.opacity(0.7)],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    ) : nil
+                            )
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            
+            // Mock chart
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color("CardBackgroundDark", bundle: .main) ?? Color.black.opacity(0.3))
+                .frame(height: 120)
+                .overlay(
+                    ZStack {
+                        // This is a placeholder for where you'd put actual chart data
+                        Path { path in
+                            let width: CGFloat = UIScreen.main.bounds.width - 80
+                            let height: CGFloat = 80
+                            
+                            // Mock data points
+                            let points = [
+                                CGPoint(x: 0, y: height * 0.5),
+                                CGPoint(x: width * 0.2, y: height * 0.4),
+                                CGPoint(x: width * 0.4, y: height * 0.7),
+                                CGPoint(x: width * 0.6, y: height * 0.3),
+                                CGPoint(x: width * 0.8, y: height * 0.5),
+                                CGPoint(x: width, y: height * 0.2)
+                            ]
+                            
+                            path.move(to: points[0])
+                            for point in points.dropFirst() {
+                                path.addLine(to: point)
+                            }
+                        }
+                        .stroke(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ),
+                            lineWidth: 3
+                        )
+                        
+                        // Gradient fill below the line
+                        LinearGradient(
+                            colors: [.blue.opacity(0.3), .purple.opacity(0.1), .clear],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .mask(
+                            Path { path in
+                                let width: CGFloat = UIScreen.main.bounds.width - 80
+                                let height: CGFloat = 80
+                                
+                                // Mock data points
+                                let points = [
+                                    CGPoint(x: 0, y: height * 0.5),
+                                    CGPoint(x: width * 0.2, y: height * 0.4),
+                                    CGPoint(x: width * 0.4, y: height * 0.7),
+                                    CGPoint(x: width * 0.6, y: height * 0.3),
+                                    CGPoint(x: width * 0.8, y: height * 0.5),
+                                    CGPoint(x: width, y: height * 0.2)
+                                ]
+                                
+                                path.move(to: CGPoint(x: 0, y: height))
+                                path.addLine(to: points[0])
+                                for point in points.dropFirst() {
+                                    path.addLine(to: point)
+                                }
+                                path.addLine(to: CGPoint(x: width, y: height))
+                                path.closeSubpath()
+                            }
+                        )
+                    }
+                    .padding()
+                )
+            
+            // Wallet stats
+            VStack(spacing: 16) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Total Balance")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(wallet.formattedBalance)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("Performance")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(wallet.pnlText)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(wallet.pnlColor)
+                    }
+                }
+                
+                Divider()
+                    .background(Color.gray.opacity(0.3))
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Transactions")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text("\(wallet.transactions.count)")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("Activity")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(wallet.transactionFrequency)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                    }
+                }
+                
+                Button(action: {
+                    // Action to view full details
+                }) {
+                    Text("View Transactions")
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(
+                                    LinearGradient(
+                                        colors: [.blue.opacity(0.7), .purple.opacity(0.7)],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                        )
+                }
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.tertiarySystemBackground))
+                    .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(
+                                LinearGradient(
+                                    colors: [Color.white.opacity(0.1), Color.clear],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                ),
+                                lineWidth: 1
+                            )
+                    )
+            )
+        }
+        .padding(.bottom, 24)
+    }
+}
+
+struct AddPublicWalletView: View {
+    @ObservedObject var viewModel: TradingWalletViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @FocusState private var isAddressFieldFocused: Bool
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                // Background gradient
+                LinearGradient(
+                    colors: [Color.black, Color(hex: "101318")],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+                
+                VStack(spacing: 24) {
+                    Image(systemName: "wallet.pass.fill")
+                        .font(.system(size: 60))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .padding(.top, 40)
+                    
+                    Text("Add New Wallet")
+                        .font(.system(.title2, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    
+                    VStack(spacing: 20) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Wallet Address")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .padding(.leading, 4)
+                            
+                            TextField("", text: $viewModel.newWalletAddress)
+                                .font(.system(.body, design: .monospaced))
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.secondarySystemBackground))
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(
+                                            LinearGradient(
+                                                colors: [Color.white.opacity(0.1), Color.clear],
+                                                startPoint: .top,
+                                                endPoint: .bottom
+                                            ),
+                                            lineWidth: 1
+                                        )
+                                )
+                                .focused($isAddressFieldFocused)
+                                .onAppear {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        isAddressFieldFocused = true
+                                    }
+                                }
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Wallet Label (Optional)")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .padding(.leading, 4)
+                            
+                            TextField("", text: $viewModel.newWalletLabel)
+                                .placeholder(when: viewModel.newWalletLabel.isEmpty) {
+                                    Text("My Trading Wallet")
+                                        .foregroundColor(.gray.opacity(0.5))
+                                }
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.secondarySystemBackground))
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(
+                                            LinearGradient(
+                                                colors: [Color.white.opacity(0.1), Color.clear],
+                                                startPoint: .top,
+                                                endPoint: .bottom
+                                            ),
+                                            lineWidth: 1
+                                        )
+                                )
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    
+                    // Support for QR code scanning
+                    Button(action: {
+                        // QR code scanning action would go here
+                    }) {
+                        HStack {
+                            Image(systemName: "qrcode.viewfinder")
+                            Text("Scan QR Code")
+                        }
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 24)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.secondarySystemBackground))
+                        )
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        viewModel.addCustomWallet()
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Import Wallet")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(
+                                        LinearGradient(
+                                            colors: viewModel.newWalletAddress.isEmpty ?
+                                                    [.gray.opacity(0.3), .gray.opacity(0.2)] :
+                                                    [.blue, .purple.opacity(0.8)],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .shadow(color: viewModel.newWalletAddress.isEmpty ?
+                                            Color.clear :
+                                            Color.blue.opacity(0.3),
+                                            radius: 8, x: 0, y: 4)
+                            )
+                    }
+                    .disabled(viewModel.newWalletAddress.isEmpty)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 24)
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                leading: Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                        .padding(8)
+                        .background(
+                            Circle()
+                                .fill(Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.tertiarySystemBackground))
+                        )
+                }
+            )
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -412,29 +806,29 @@ struct FilterChip: View {
                 .fontWeight(isSelected ? .semibold : .regular)
                 .foregroundColor(isSelected ? .white : Color(UIColor.secondaryLabel))
                 .padding(.horizontal, 16)
-                .padding(.vertical, 8)
+                .padding(.vertical, 10)
                 .background(
                     Capsule()
-                        .background(isSelected ?
-                              AnyView(
-                                  LinearGradient(
-                                      gradient: Gradient(colors: [Color.blue, Color.purple]),
-                                      startPoint: .leading,
-                                      endPoint: .trailing
-                                  )
-                                  .clipShape(Capsule())
-                              ) :
-                              AnyView(
-                                  Color(UIColor.tertiarySystemBackground)
-                                      .clipShape(Capsule())
-                              )
+                        .foregroundColor(.clear) // Needed to keep shape layout
+                        .background(
+                            isSelected
+                            ? AnyView(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue, Color.purple]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            : AnyView(
+                                Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.tertiarySystemBackground)
+                            )
                         )
+                        .shadow(color: isSelected ? Color.blue.opacity(0.4) : Color.clear, radius: 6, x: 0, y: 3)
                 )
                 .overlay(
                     Capsule()
                         .stroke(isSelected ? Color.clear : Color.gray.opacity(0.2), lineWidth: 1)
                 )
-                .shadow(color: isSelected ? Color.blue.opacity(0.3) : Color.clear, radius: 4, x: 0, y: 2)
         }
     }
 }
@@ -452,10 +846,10 @@ struct AssetFilterChip: View {
                 .fontWeight(isSelected ? .semibold : .regular)
                 .foregroundColor(isSelected ? .blue : Color(UIColor.secondaryLabel))
                 .padding(.horizontal, 12)
-                .padding(.vertical, 6)
+                .padding(.vertical, 8)
                 .background(
                     Capsule()
-                        .fill(isSelected ? Color.blue.opacity(0.1) : Color(UIColor.tertiarySystemBackground))
+                        .fill(isSelected ? Color.blue.opacity(0.15) : Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.tertiarySystemBackground))
                 )
                 .overlay(
                     Capsule()
@@ -465,201 +859,16 @@ struct AssetFilterChip: View {
     }
 }
 
-/// Twitter-like card for sentiment analysis
-struct TweetCard: View {
-    var asset: DegenAsset
-    var influencerType: SentimentAnalysisView.SentimentFilter
-    
-    // Sample data
-    private var influencerName: String {
-        switch influencerType {
-        case .celebrities:
-            return ["Elon Musk", "Mark Cuban", "Cathie Wood", "Chamath Palihapitiya", "Tim Draper"].randomElement()!
-        case .whales:
-            return ["Whale_Trader", "DefiGiant", "CryptoWhale", "TokenMaster", "BlockchainMonster"].randomElement()!
-        case .trending:
-            return ["@\(asset.symbol)Fan", "CryptoInsider", "MarketWatcher", "TradingPro", "FinanceGuru"].randomElement()!
-        }
-    }
-    
-    private var username: String {
-        "@\(influencerName.replacingOccurrences(of: " ", with: ""))"
-    }
-    
-    private var tweetTime: String {
-        let times = ["2m", "15m", "32m", "1h", "3h", "5h"]
-        return times.randomElement()!
-    }
-    
-    private var tweetContent: String {
-        let bullishTweets = [
-            "$\(asset.symbol) looking really strong today. Technical indicators suggest possible breakout soon. #bullish",
-            "Just increased my position in $\(asset.symbol). The fundamentals are better than ever. Long term hold.",
-            "The team behind $\(asset.symbol) just announced a major partnership. This is huge news! 🚀",
-            "$\(asset.symbol) chart forming a classic cup and handle. Expecting major movement in the next few days.",
-            "Been following $\(asset.symbol) for months. This is the accumulation phase before the next leg up."
-        ]
-        
-        let bearishTweets = [
-            "Not liking what I'm seeing with $\(asset.symbol). Volume dropping off, might be time to take profits.",
-            "$\(asset.symbol) showing weakness at key resistance levels. Proceed with caution.",
-            "Just reduced my exposure to $\(asset.symbol). Risk/reward ratio isn't favorable right now.",
-            "The latest news about $\(asset.symbol) is concerning. Might test support levels soon.",
-            "$\(asset.symbol) technicals looking bearish on the 4h chart. Watch closely."
-        ]
-        
-        return asset.sentiment > 50 ? bullishTweets.randomElement()! : bearishTweets.randomElement()!
-    }
-    
-    private var engagementNumbers: (likes: Int, retweets: Int) {
-        let magnitude = influencerType == .celebrities ? 1000 : 100
-        return (
-            likes: Int.random(in: 1...40) * magnitude,
-            retweets: Int.random(in: 1...15) * magnitude
-        )
-    }
-    
-    private var sentimentIcon: String {
-        asset.sentiment > 65 ? "arrow.up.circle.fill" :
-            (asset.sentiment < 35 ? "arrow.down.circle.fill" : "minus.circle.fill")
-    }
-    
-    private var sentimentColor: Color {
-        asset.sentiment > 65 ? .green :
-            (asset.sentiment < 35 ? .red : .orange)
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // Header with influencer info
-            HStack(spacing: 12) {
-                // Profile pic placeholder
-                ZStack {
-                    Circle()
-                        .fill(LinearGradient(
-                            gradient: Gradient(colors: [.blue.opacity(0.7), .purple.opacity(0.7)]),
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ))
-                        .frame(width: 44, height: 44)
-                    
-                    Text(String(influencerName.prefix(1)))
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                }
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack {
-                        Text(influencerName)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                        
-                        if influencerType == .celebrities || influencerType == .whales {
-                            Image(systemName: "checkmark.seal.fill")
-                                .font(.caption)
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    
-                    HStack(spacing: 4) {
-                        Text(username)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        
-                        Text("•")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        
-                        Text(tweetTime)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                }
-                
-                Spacer()
-                
-                // Sentiment indicator
-                Image(systemName: sentimentIcon)
-                    .foregroundColor(sentimentColor)
-                    .font(.headline)
-            }
-            
-            // Tweet content
-            Text(tweetContent)
-                .font(.subheadline)
-                .lineSpacing(4)
-            
-            // Asset tag
-            HStack {
-                Text("$\(asset.symbol)")
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundColor(.blue)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Color.blue.opacity(0.1))
-                    .cornerRadius(6)
-                
-                Spacer()
-            }
-            
-            // Tweet engagement stats
-            HStack(spacing: 16) {
-                Label("\(engagementNumbers.likes)", systemImage: "heart")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                
-                Label("\(engagementNumbers.retweets)", systemImage: "arrow.2.squarepath")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(.caption)
-                        .foregroundColor(.blue)
-                }
-            }
-        }
-        .padding(16)
-        .background(Color(UIColor.secondarySystemBackground))
-        .cornerRadius(16)
-        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 2)
-    }
-}
-
-/// Sentiment bubble component (keep the existing one with slight updates)
-struct SentimentBubble: View {
-    var sentiment: Int
-    
-    var color: Color {
-        if sentiment > 70 {
-            return Color.green
-        } else if sentiment > 50 {
-            return Color.blue
-        } else if sentiment > 30 {
-            return Color.orange
-        } else {
-            return Color.red
-        }
-    }
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(color.opacity(0.2))
-            
-            Circle()
-                .stroke(color, lineWidth: 2)
-            
-            Text("\(sentiment)%")
-                .font(.caption)
-                .fontWeight(.bold)
-                .foregroundColor(color)
+// Helper extensions
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content
+    ) -> some View {
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
         }
     }
 }
-
-

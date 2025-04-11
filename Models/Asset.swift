@@ -29,7 +29,7 @@ struct AssetRow: View {
     var body: some View {
         HStack(spacing: 16) {
             // Asset image from CoinGecko
-            if let imageUrl = asset.imageUrl, !imageUrl.isEmpty {
+            if let imageUrl = Optional(asset.imageUrl), !imageUrl.isEmpty {
                 AsyncImage(url: URL(string: imageUrl)) { phase in
                     switch phase {
                     case .empty:
@@ -113,6 +113,7 @@ struct AssetHolding {
     let amount: Double
 }
 
+
 struct PortfolioAsset: Identifiable {
     let id: String
     let name: String
@@ -121,5 +122,5 @@ struct PortfolioAsset: Identifiable {
     let currentPrice: Double
     let totalValue: Double
     let priceChangePercentage: Double
-    let imageUrl: String?
+    let imageUrl: String
 }

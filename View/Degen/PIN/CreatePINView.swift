@@ -54,7 +54,7 @@ struct CreatePINView: View {
                 .padding(.bottom)
         }
         .padding()
-        .navigationTitle("SentimentTrader")
+        .navigationTitle("Tracker")
         .transition(.opacity.combined(with: .move(edge: .leading)))
     }
     
