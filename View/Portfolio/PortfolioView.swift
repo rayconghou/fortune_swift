@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct PortfolioView: View {
+    var hamburgerAction: () -> Void
     @State private var selectedTimeframe: Timeframe = .week
     @StateObject private var viewModel = PortfolioViewModel()
     @State private var showWalletSheet = false
     @State private var isDeposit = true
     
     var body: some View {
-        NavigationView {
+        ZStack(alignment: .top) {
             ScrollView {
                 VStack(spacing: 20) {
                     // Main balance card
@@ -234,27 +235,13 @@ struct PortfolioView: View {
                 }
                 .padding(.vertical)
             }
-            .background(Color.black.edgesIgnoringSafeArea(.all))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Portfolio")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            // Trigger notifications
-                        }) {
-                            Image(systemName: "bell")
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            // Show info sheet or view
-                        }) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-            }
+            
+            // Blurred toolbar overlay
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .frame(height: 100)
+                .ignoresSafeArea()
+                .opacity(0.95)
         }
         .onAppear {
             viewModel.fetchData()
@@ -1052,7 +1039,7 @@ struct PortfolioCoin: Codable {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView()
+        PortfolioView(hamburgerAction: {})
             .preferredColorScheme(.dark)
     }
 }

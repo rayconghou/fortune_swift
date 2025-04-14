@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ManekiView: View {
+    var hamburgerAction: () -> Void
     @State private var userMessage = ""
     @State private var messages: [ManekiChatMessage] = [
         ManekiChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
@@ -23,11 +24,11 @@ struct ManekiView: View {
         "What are good long-term coins?"
     ]
     
+    @State private var scrollOffset: CGFloat = 0
+    
     var body: some View {
-        NavigationView {  // Ensure you're using NavigationView
+        ZStack(alignment: .top) {
             VStack {
-                // Existing view content remains the same
-                
                 // Messages ScrollView
                 ScrollView {
                     LazyVStack(spacing: 15) {
@@ -59,7 +60,7 @@ struct ManekiView: View {
                     .padding(.horizontal)
                 }
                 .padding(.bottom, 5)
-                
+
                 // Message Input Area
                 HStack {
                     TextField("Ask Maneki anything...", text: $userMessage)
@@ -77,27 +78,14 @@ struct ManekiView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Maneki")  // Alternative to toolbar
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            // Trigger notifications
-                        }) {
-                            Image(systemName: "bell")
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            // Show info sheet or view
-                        }) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-            }
             .background(Color.black)
+            
+            // Blurred toolbar overlay
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .frame(height: 100)
+                .ignoresSafeArea()
+                .opacity(0.95)
         }
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SetupCompleteView: View {
-    @ObservedObject var viewModel: TradingWalletViewModel
+    @ObservedObject var viewModel: SecureSignInFlowViewModel
     
     var body: some View {
         VStack {
@@ -77,8 +77,6 @@ struct SetupCompleteView: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("Tracker")
         .navigationBarTitleDisplayMode(.inline)
-//        .transition(.opacity.combined(with: .move(edge: .leading)))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CreatePINView: View {
-    @ObservedObject var viewModel: TradingWalletViewModel
+    @ObservedObject var viewModel: SecureSignInFlowViewModel
     
     var body: some View {
         VStack {
@@ -54,8 +54,6 @@ struct CreatePINView: View {
                 .padding(.bottom)
         }
         .padding()
-        .navigationTitle("Tracker")
-        .transition(.opacity.combined(with: .move(edge: .leading)))
     }
     
     var numberPad: some View {

@@ -29,7 +29,6 @@ struct SidebarView: View {
                             .frame(width: 20, height: 20)
                             .foregroundColor(.white)
                             .padding(.leading, 25)
-                            .padding(.top, 50)
                     }
                     Spacer()
                 }
@@ -185,7 +184,12 @@ struct SidebarView: View {
                 Spacer()
             }
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .background(Color.black)
+        // .edgesIgnoringSafeArea(.all)
+        // .frame(maxWidth: .infinity, maxHeight: .infinity)
+        // .offset(x: showSidebar ? 0 : -UIScreen.main.bounds.width)
+        // .animation(.easeInOut(duration: 0.3), value: showSidebar)
+        // .zIndex(1)
     }
     
     // Activation method for Degen Splash Screen

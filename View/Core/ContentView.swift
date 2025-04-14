@@ -17,13 +17,15 @@ struct ContentView: View {
     @State private var showCollective = false
     @State private var showBottomElements = false
     @State private var isSignedIn = false
+    @StateObject private var securityViewModel = SecureSignInFlowViewModel()
 
     
     var body: some View {
         ZStack {
             Group {
                 if isSignedIn {
-                    HomePageView()
+                    SecureSignInFlowView()
+                        .environmentObject(securityViewModel)
                 } else {
                     AuthView()
                 }
@@ -52,24 +54,52 @@ struct ContentView: View {
     
     var splashScreen: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
+            // Gradient background instead of flat black
+            LinearGradient(
+                gradient: Gradient(colors: [Color(hex: "121212"), Color(hex: "000000")]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 30) {
+                // Main title with better typography and animation
                 Text("FORTUNE")
                     .foregroundColor(.white)
-                    .font(.custom("Inter", size: 48))
+                    .font(.custom("Inter", size: 54))
+                    .fontWeight(.bold)
+                    .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
                     .opacity(showFortune ? 1 : 0)
-                    .animation(.easeIn(duration: 0.1).delay(0.3), value: showFortune)
-                VStack {
+                    .scaleEffect(showFortune ? 1 : 0.8)
+                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showFortune)
+                
+                // Bottom elements with improved animations and layout
+                VStack(spacing: 24) {
                     Divider()
-                        .background(Color.white)
-                        .frame(width: 200, height: 5)
+                        .frame(width: 120, height: 2)
+                        .background(Color.white.opacity(0.8))
+                    
                     Image("SplashScreenBranding")
                         .resizable()
-                        .frame(width: 200, height: 210)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 220, height: 230)
                 }
                 .opacity(showBottomElements ? 1 : 0)
-                .offset(y: showBottomElements ? 0 : 50)
-                .animation(.easeOut(duration: 0.5).delay(0.5), value: showBottomElements)
+                .offset(y: showBottomElements ? 0 : 30)
+                .animation(.spring(response: 0.7, dampingFraction: 0.8).delay(0.7), value: showBottomElements)
+            }
+            .padding(.vertical, 50)
+        }
+        .onAppear {
+            // Sequence the animations
+            withAnimation {
+                showFortune = true
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                withAnimation {
+                    showBottomElements = true
+                }
             }
         }
     }
