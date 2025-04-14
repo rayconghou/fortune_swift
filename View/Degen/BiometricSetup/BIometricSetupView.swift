@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct BiometricSetupView: View {
-    @ObservedObject var viewModel: TradingWalletViewModel
+    @ObservedObject var viewModel: SecureSignInFlowViewModel
     
     var body: some View {
         NavigationStack {
@@ -69,8 +69,6 @@ struct BiometricSetupView: View {
                     .padding(.bottom)
             }
             .padding()
-            .navigationTitle("Tracker")
-//            .transition(.opacity.combined(with: .move(edge: .leading)))
         }
     }
 }

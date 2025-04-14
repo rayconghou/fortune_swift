@@ -15,6 +15,7 @@ enum SortOption: String, CaseIterable {
 
 struct SpotView: View {
     @Binding var hideHamburger: Bool
+    var hamburgerAction: () -> Void
     @State private var selectedCoin: Coin? = nil
     @State private var scrollOffset: CGFloat = 0
     @State private var showBuyModal = false
@@ -44,131 +45,107 @@ struct SpotView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                // Search Bar
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                    
-                    TextField("Search coins", text: $searchText)
-                        .foregroundColor(.white)
-                    
-                    if !searchText.isEmpty {
-                        Button(action: {
-                            searchText = ""
-                        }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal)
-                .background(Color.clear)
-                .cornerRadius(10)
-                .padding(.top, -40)
+        VStack(spacing: 0) {
+            // Search Bar
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
                 
-                // List of coins in a scrollable view
-                ZStack {
-                    ScrollView {
-                        LazyVStack(spacing: 16) {
-                            ForEach(filteredCoins) { coin in
-                                CryptoTrendCard(
-                                    rank: coin.market_cap_rank ?? 0,
-                                    name: coin.name,
-                                    symbol: coin.symbol,
-                                    imageUrl: coin.image,
-                                    price: coin.current_price,
-                                    change: coin.price_change_percentage_24h ?? 0,
-                                    sparkline: coin.sparkline_in_7d?.price.last24Hours ?? coin.sparkline_in_7d?.price ?? []
-                                )
-                                .onTapGesture {
-                                    selectedCoin = coin
-                                }
+                TextField("Search coins", text: $searchText)
+                    .foregroundColor(.white)
+                
+                if !searchText.isEmpty {
+                    Button(action: {
+                        searchText = ""
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal)
+            .background(Color.clear)
+            .cornerRadius(10)
+            
+            // List of coins in a scrollable view
+            ZStack {
+                ScrollView {
+                    LazyVStack(spacing: 16) {
+                        ForEach(filteredCoins) { coin in
+                            CryptoTrendCard(
+                                rank: coin.market_cap_rank ?? 0,
+                                name: coin.name,
+                                symbol: coin.symbol,
+                                imageUrl: coin.image,
+                                price: coin.current_price,
+                                change: coin.price_change_percentage_24h ?? 0,
+                                sparkline: coin.sparkline_in_7d?.price.last24Hours ?? coin.sparkline_in_7d?.price ?? []
+                            )
+                            .onTapGesture {
+                                selectedCoin = coin
                             }
                         }
-                        .padding()
                     }
+                    .padding()
+                }
+                
+                // Floating BUY & SELL buttons
+                VStack() {
+                    Spacer()
                     
-                    // Floating BUY & SELL buttons
-                    VStack() {
-                        Spacer()
-                        
-                        HStack(spacing: 20) {
-                            // BUY BUTTON
-                            Button(action: { showBuyModal = true }) {
-                                Text("Buy")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .padding(.vertical, 14)
-                                    .frame(maxWidth: .infinity)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 30)
-                                            .fill(Color(hex: "0C0C0C")) // dark opaque
-                                            .shadow(color: Color.white.opacity(0.08), radius: 10, x: 0, y: 6)
-                                    )
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 30)
-                                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
-                                    )
-                            }
+                    HStack(spacing: 20) {
+                        // BUY BUTTON
+                        Button(action: { showBuyModal = true }) {
+                            Text("Buy")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 14)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .fill(Color(hex: "0C0C0C")) // dark opaque
+                                        .shadow(color: Color.white.opacity(0.08), radius: 10, x: 0, y: 6)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                                )
+                        }
 
-                            // SELL BUTTON
-                            Button(action: { showSellModal = true }) {
-                                Text("Sell")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .padding(.vertical, 14)
-                                    .frame(maxWidth: .infinity)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 30)
-                                            .fill(Color(hex: "2C2C2C")) // lighter gray opaque
-                                            .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 6)
-                                    )
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 30)
-                                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
-                                    )
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
-                        .sheet(isPresented: $showBuyModal) {
-                            BuyCryptoView()
-                        }
-                        .sheet(isPresented: $showSellModal) {
-                            SellCryptoView()
+                        // SELL BUTTON
+                        Button(action: { showSellModal = true }) {
+                            Text("Sell")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 14)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .fill(Color(hex: "2C2C2C")) // lighter gray opaque
+                                        .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 6)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                                )
                         }
                     }
-                }
-                .background(Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
-            }
-            .background(Color.black.edgesIgnoringSafeArea(.all))
-            .sheet(item: $selectedCoin) { coin in
-                CoinDetailModalView(coin: coin, marketVM: marketVM)
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Spot")
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            // Trigger notifications
-                        }) {
-                            Image(systemName: "bell")
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            // Show info sheet or view
-                        }) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.white)
-                        }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                    .sheet(isPresented: $showBuyModal) {
+                        BuyCryptoView()
+                    }
+                    .sheet(isPresented: $showSellModal) {
+                        SellCryptoView()
                     }
                 }
             }
+            .background(Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
+        }
+        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .sheet(item: $selectedCoin) { coin in
+            CoinDetailModalView(coin: coin, marketVM: marketVM)
         }
     }
 }
@@ -196,7 +173,7 @@ struct OffsetPreferenceKey: PreferenceKey {
 struct SpotView_Previews: PreviewProvider {
     @State static var hideHamburger = false
     static var previews: some View {
-        SpotView(hideHamburger: $hideHamburger)
+        SpotView(hideHamburger: $hideHamburger, hamburgerAction: {})
             .preferredColorScheme(.dark)
     }
 }

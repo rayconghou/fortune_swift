@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
+import LocalAuthentication
 
 struct ConfirmPINView: View {
-    @ObservedObject var viewModel: TradingWalletViewModel
+    @ObservedObject var viewModel: SecureSignInFlowViewModel
+    @State private var biometricAttempted = false
     
     var body: some View {
         NavigationStack {
@@ -58,8 +60,34 @@ struct ConfirmPINView: View {
                     .padding(.bottom)
             }
             .padding()
-            .navigationTitle("Tracker")
-//            .transition(.opacity.combined(with: .move(edge: .leading)))
+            .onAppear {
+                if !biometricAttempted {
+                    biometricAttempted = true
+                    runBiometricAuthentication()
+                }
+            }
+        }
+    }
+    
+    /// Automatically trigger biometric authentication
+        private func runBiometricAuthentication() {
+        if BiometricAuthManager.shared.canUseBiometricAuthentication() {
+            BiometricAuthManager.shared.authenticateWithBiometrics { success, error in
+                if success {
+                    DispatchQueue.main.async {
+                        // You may want to mark biometric as verified in your view model.
+                        viewModel.biometricVerified = true
+                        // Since biometric confirms the identity, you could automatically
+                        // move to the next step in your onboarding flow.
+                        viewModel.authenticated = true
+                    }
+                } else {
+                    // Optionally you can alert the user or simply log the error.
+                    print("Biometric authentication failed: \(error?.localizedDescription ?? "Unknown error")")
+                }
+            }
+        } else {
+            print("Biometric authentication not available.")
         }
     }
     

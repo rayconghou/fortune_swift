@@ -16,125 +16,29 @@ struct WalletSocialMediaTrackerView: View {
     
     var body: some View {
         NavigationStack {
-            if !viewModel.walletSetupComplete {
-                // Show the onboarding flow
-                onboardingFlow
-            } else {
-                // Show the main wallet/sentiment screen with toggle
-                ToggleableContentView(viewModel: viewModel)
-                    .navigationTitle("Tracker")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            HStack(spacing: 16) {
-                                Button(action: {
-                                    // Trigger notifications
-                                }) {
-                                    Image(systemName: "bell")
-                                        .foregroundColor(.white)
-                                }
-                                Button(action: {
-                                    // Show info sheet or view
-                                }) {
-                                    Image(systemName: "info.circle")
-                                        .foregroundColor(.white)
-                                }
-                            }                        }
-                    }
-            }
+            ToggleableContentView(viewModel: viewModel)
+                .navigationTitle("Tracker")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Trigger notifications
+                            }) {
+                                Image(systemName: "bell")
+                                    .foregroundColor(.white)
+                            }
+                            Button(action: {
+                                // Show info sheet or view
+                            }) {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.white)
+                            }
+                        }                        }
+                }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .preferredColorScheme(.dark)
-    }
-    
-    @ViewBuilder
-    private var onboardingFlow: some View {
-        switch viewModel.currentStep {
-        case .createPin:
-            CreatePINView(viewModel: viewModel)
-                .navigationTitle("Tracker")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        HStack(spacing: 16) {
-                            Button(action: {
-                                // Trigger notifications
-                            }) {
-                                Image(systemName: "bell")
-                                    .foregroundColor(.white)
-                            }
-                            Button(action: {
-                                // Show info sheet or view
-                            }) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.white)
-                            }
-                        }                        }
-                }
-        case .confirmPin:
-            ConfirmPINView(viewModel: viewModel)
-                .navigationTitle("Tracker")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        HStack(spacing: 16) {
-                            Button(action: {
-                                // Trigger notifications
-                            }) {
-                                Image(systemName: "bell")
-                                    .foregroundColor(.white)
-                            }
-                            Button(action: {
-                                // Show info sheet or view
-                            }) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.white)
-                            }
-                        }                        }
-                }
-        case .biometricSetup:
-            BiometricSetupView(viewModel: viewModel)
-                .navigationTitle("Tracker")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        HStack(spacing: 16) {
-                            Button(action: {
-                                // Trigger notifications
-                            }) {
-                                Image(systemName: "bell")
-                                    .foregroundColor(.white)
-                            }
-                            Button(action: {
-                                // Show info sheet or view
-                            }) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.white)
-                            }
-                        }                        }
-                }
-        case .setupComplete:
-            SetupCompleteView(viewModel: viewModel)
-                .navigationTitle("Tracker")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        HStack(spacing: 16) {
-                            Button(action: {
-                                // Trigger notifications
-                            }) {
-                                Image(systemName: "bell")
-                                    .foregroundColor(.white)
-                            }
-                            Button(action: {
-                                // Show info sheet or view
-                            }) {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.white)
-                            }
-                        }                        }
-                }
-        }
     }
 }
 

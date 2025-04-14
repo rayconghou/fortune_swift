@@ -83,27 +83,6 @@ struct DegenTradeView: View {
                     }
                 }
             }
-            .navigationTitle("Trade")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            // Action for notifications
-                        }) {
-                            Image(systemName: "bell")
-                                .foregroundColor(.white)
-                        }
-
-                        Button(action: {
-                            // Action for info
-                        }) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-            }
         }
         .onAppear {
             viewModel.fetchTokens(for: selectedChain)
@@ -119,22 +98,6 @@ struct DegenTradeView: View {
                     .onChange(of: searchText) { _ in
                         viewModel.filterTokens(searchText)
                     }
-                
-//                Spacer()
-//                
-//                Button(action: {
-//                    isRefreshing = true
-//                    viewModel.fetchTokens(for: selectedChain)
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                        isRefreshing = false
-//                    }
-//                }) {
-//                    Image(systemName: "arrow.clockwise")
-//                        .font(.system(size: 16, weight: .medium))
-//                        .foregroundColor(.white)
-//                        .rotationEffect(.degrees(isRefreshing ? 360 : 0))
-//                        .animation(isRefreshing ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isRefreshing)
-//                }
             }
         }
         .padding()

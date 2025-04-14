@@ -3,6 +3,7 @@ import SwiftUI
 
 // MARK: - Main Index View
 struct IndexesView: View {
+    var hamburgerAction: () -> Void
     @State private var selectedTab: IndexSourceTab = .handpicked
     @State private var showManekiQuizModal = false
     @State private var showCreateIndexSheet = false
@@ -13,7 +14,7 @@ struct IndexesView: View {
                 // Tab Selection
                 IndexSourceTabView(selectedTab: $selectedTab)
                     .padding(.horizontal)
-                    .padding(.top, 10)
+                    .padding(.top, 4)
                 
                 // Content based on selected tab
                 ScrollView {
@@ -28,31 +29,13 @@ struct IndexesView: View {
                         }
                     }
                     .padding(.horizontal)
-                    .padding(.vertical, 8)
+                    .padding(.bottom, 16)
                 }
                 .background(Color.black)
+                .scrollContentBackground(.hidden)
+                .ignoresSafeArea(edges: .top)
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
-            .navigationTitle("Indexes")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            // Trigger notifications
-                        }) {
-                            Image(systemName: "bell")
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            // Show info sheet or view
-                        }) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
         }
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showManekiQuizModal) {
@@ -551,7 +534,7 @@ struct ManekiQuizModalView: View {
 // MARK: - Preview
 struct IndexesView_Previews: PreviewProvider {
     static var previews: some View {
-        IndexesView()
+        IndexesView(hamburgerAction: {})
             .preferredColorScheme(.dark)
     }
 }

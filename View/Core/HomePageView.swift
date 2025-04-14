@@ -16,6 +16,7 @@ struct HomePageView: View {
     @State private var showFortune = false
     @State private var showCollective = false
     @State private var showBottomElements = false
+    @State private var showToolbar = true // New state for toolbar visibility
     @StateObject private var userProfile = UserProfileViewModel()
     @StateObject private var tradingWalletViewModel = TradingWalletViewModel()
     @State private var selectedTab: Int = 0
@@ -29,145 +30,341 @@ struct HomePageView: View {
     @State private var currentMode: AppMode = .standard
     
     var body: some View {
-        ZStack {
-            TabView(selection: $selectedTab) {
-                // Dynamically choose tabs based on current mode
-                switch currentMode {
-                case .standard:
-                    standardModeTabs
-                case .degen:
-                    degenModeTabs
-                }
-            }
-            .disabled(showSidebar || isDegenSplashActive || isExitingSplashActive || showDegenEntryWarning || showDegenExitConfirmation)
-            
-            // Existing Sidebar View
-            SidebarView(
-                showSidebar: $showSidebar,
-                showDegenMode: $showDegenMode,
-                selectedTab: $selectedTab,
-                userProfile: userProfile
-            )
-            .frame(width: UIScreen.main.bounds.width)
-            .offset(x: showSidebar ? 0 : -UIScreen.main.bounds.width)
-            .animation(.easeInOut(duration: 0.3), value: showSidebar)
-            
-            // Hamburger Menu
-            if !hideHamburger {
-                VStack {
-                    HStack {
-                        Button(action: {
-                            withAnimation {
+        NavigationStack{
+            ZStack {
+                TabView(selection: $selectedTab) {
+                    if currentMode == .standard {
+                        SpotView(hideHamburger: $hideHamburger, hamburgerAction: {
+                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
                                 showSidebar.toggle()
                             }
-                        }) {
-                            Image(systemName: "line.horizontal.3")
-                                .resizable()
-                                .frame(width: 30, height: 20)
-                                .foregroundColor(.white)
-                                .padding(.top, 40)
-                                .padding(.leading, 15)
+                        })
+                        .tag(0)
+                        .tabItem {
+                            Image(systemName: "binoculars.fill")
                         }
-                        Spacer()
+                        .scaleEffect(showSidebar ? 0.95 : 1.0)
+                        .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                        .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                        .overlay {
+                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                Rectangle()
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(0.95)
+                            }
+                        }
+
+                        IndexesView(hamburgerAction: {
+                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
+                                showSidebar.toggle()
+                            }
+                        })
+                        .tag(1)
+                        .tabItem {
+                            Image(systemName: "chart.xyaxis.line")
+                        }
+                        .scaleEffect(showSidebar ? 0.95 : 1.0)
+                        .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                        .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                        .overlay {
+                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                Rectangle()
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(0.95)
+                            }
+                        }
+
+                        ManekiView(hamburgerAction: {
+                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
+                                showSidebar.toggle()
+                            }
+                        })
+                        .tag(2)
+                        .tabItem {
+                            Image(systemName: "cat.fill")
+                        }
+                        .scaleEffect(showSidebar ? 0.95 : 1.0)
+                        .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                        .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                        .overlay {
+                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                Rectangle()
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(0.95)
+                            }
+                        }
+
+                        PortfolioView(hamburgerAction: {
+                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
+                                showSidebar.toggle()
+                            }
+                        })
+                        .tag(3)
+                        .tabItem {
+                            Image(systemName: "chart.bar.fill")
+                        }
+                        .scaleEffect(showSidebar ? 0.95 : 1.0)
+                        .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                        .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                        .overlay {
+                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                Rectangle()
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(0.95)
+                            }
+                        }
+
+                        Color.clear
+                            .tag(degenEntryTabTag)
+                            .tabItem {
+                                Image(systemName: "flame.fill")
+                            }
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
+                    } else {
+                        DegenTrendingView()
+                            .tag(0)
+                            .tabItem {
+                                Image(systemName: "flame")
+                            }
+                            .scaleEffect(showSidebar ? 0.95 : 1.0)
+                            .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                            .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
+
+                        WalletSocialMediaTrackerView()
+                            .tag(1)
+                            .tabItem {
+                                Image(systemName: "wallet.pass")
+                            }
+                            .environmentObject(tradingWalletViewModel)
+                            .scaleEffect(showSidebar ? 0.95 : 1.0)
+                            .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                            .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
+
+                        DegenTradeView()
+                            .tag(2)
+                            .tabItem {
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                            }
+                            .padding(.top, -8)
+                            .scaleEffect(showSidebar ? 0.95 : 1.0)
+                            .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                            .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
+
+                        PortfolioView(hamburgerAction: {
+                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
+                                showSidebar.toggle()
+                            }
+                        })
+                            .tag(3)
+                            .tabItem {
+                                Image(systemName: "briefcase")
+                            }
+                            .scaleEffect(showSidebar ? 0.95 : 1.0)
+                            .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                            .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
+
+                        Color.clear
+                            .tag(degenExitTabTag)
+                            .tabItem {
+                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                            }
+                            .overlay {
+                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                                    Rectangle()
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.95)
+                                }
+                            }
                     }
-                    Spacer()
                 }
-                .padding(.top, 25)
-                .padding(.leading, 5)
-                .transition(.opacity)
-            }
-            
-            // Overlay for Popups
-            if showDegenExitConfirmation || showDegenEntryWarning {
-                Color.black.opacity(0.7)
-                    .ignoresSafeArea()
-                    .transition(.opacity)
-            }
-            
-            // Entry Warning Popup (New)
-            if showDegenEntryWarning {
-                DegenEntryWarningView(
-                    isPresented: $showDegenEntryWarning,
-                    onAccept: {
-                        showDegenEntryWarning = false
-                        
-                        // Close sidebar silently in the background if open
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                            showSidebar = false
-                        }
-                        
-                        // Activate degen splash animation and mode change
-                        activateDegenSplash()
+                .scaleEffect(showSidebar ? 0.95 : 1.0)
+                .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
+                .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                .overlay {
+                    if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                        Rectangle()
+                            .fill(.ultraThinMaterial)
+                            .opacity(0.95)
                     }
-                )
-                .transition(.scale(scale: 0.9).combined(with: .opacity))
-                .zIndex(999)
-            }
-            
-            // Exit Confirmation Popup (Updated)
-            if showDegenExitConfirmation {
-                DegenExitConfirmationView(
-                    isPresented: $showDegenExitConfirmation,
-                    onConfirm: {
-                        showDegenExitConfirmation = false
-                        
-                        // Prepare for exit before showing the splash
-                        selectedTab = 0
-                        
-                        // Activate exit splash first
-                        activateExitSplash()
-                        
-                        // Close sidebar silently in the background
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                            showSidebar = false
+                }
+                .toolbar {
+                    if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button(action: { showSidebar.toggle() }) {
+                                Image(systemName: "line.horizontal.3").foregroundColor(.white)
+                            }
                         }
-                        
-                        currentMode = .standard
-                        showDegenMode = false
+                        ToolbarItem(placement: .principal) {
+                            Text(selectedTabTitle)
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            HStack(spacing: 16) {
+                                Button(action: {}) {
+                                    Image(systemName: "bell").foregroundColor(.white)
+                                }
+                                Button(action: {}) {
+                                    Image(systemName: "info.circle").foregroundColor(.white)
+                                }
+                            }
+                        }
                     }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .disabled(showSidebar || isDegenSplashActive || isExitingSplashActive || showDegenEntryWarning || showDegenExitConfirmation)
+                .toolbarBackground(.hidden, for: .navigationBar)
+                .edgesIgnoringSafeArea(.top)
+                .overlay(alignment: .top) {
+                    Group {
+                        if showToolbar && !showSidebar {
+                            Rectangle()
+                                .fill(.ultraThinMaterial)
+                                .frame(height: 100)
+                                .ignoresSafeArea()
+                                .opacity(0.95)
+                                .offset(y: showToolbar ? 0 : -50)
+                                .animation(.spring(response: 0.3, dampingFraction: 0.8), value: showToolbar)
+                        }
+                    }
+                }
+                
+                // Existing Sidebar View
+                SidebarView(
+                    showSidebar: $showSidebar,
+                    showDegenMode: $showDegenMode,
+                    selectedTab: $selectedTab,
+                    userProfile: userProfile
                 )
-                .transition(.scale(scale: 0.9).combined(with: .opacity))
-                .zIndex(999)
-            }
-            
-            // Degen Mode Splash Screen
-            if isDegenSplashActive {
-                DegenSplashScreen()
-                    .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
-                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
-                    .ignoresSafeArea()
-            }
-            
-            // Exit Splash Screen (using original splash screen logic)
-            if isExitingSplashActive {
-                exitSplashScreen
-                    .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
-                    .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
-                    .ignoresSafeArea()
-            }
-        }
-        .preferredColorScheme(.dark)
-        .onChange(of: showSidebar) { oldValue, newValue in
-            withAnimation(.easeInOut(duration: 0.7)) {
-                hideHamburger = newValue
-            }
-        }
-        .onChange(of: showDegenMode) { oldValue, newValue in
-            if newValue && currentMode == .standard {
-                // Instead of immediately activating, show the warning first
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                    showDegenEntryWarning = true
+                .frame(width: UIScreen.main.bounds.width)
+                .offset(x: showSidebar ? 0 : -UIScreen.main.bounds.width)
+                .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
+                .padding(.top, 8)
+                
+                // Overlay for Popups
+                if showDegenExitConfirmation || showDegenEntryWarning {
+                    Color.black.opacity(0.7)
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+                }
+                
+                // Entry Warning Popup (New)
+                if showDegenEntryWarning {
+                    DegenEntryWarningView(
+                        isPresented: $showDegenEntryWarning,
+                        onAccept: {
+                            showDegenEntryWarning = false
+                            
+                            // Close sidebar silently in the background if open
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                showSidebar = false
+                            }
+                            
+                            // Activate degen splash animation and mode change
+                            activateDegenSplash()
+                        }
+                    )
+                    .transition(.scale(scale: 0.9).combined(with: .opacity))
+                    .zIndex(999)
+                }
+                
+                // Exit Confirmation Popup (Updated)
+                if showDegenExitConfirmation {
+                    DegenExitConfirmationView(
+                        isPresented: $showDegenExitConfirmation,
+                        onConfirm: {
+                            showDegenExitConfirmation = false
+                            
+                            // Prepare for exit before showing the splash
+                            selectedTab = 0
+                            
+                            // Activate exit splash first
+                            activateExitSplash()
+                            
+                            // Close sidebar silently in the background
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                showSidebar = false
+                            }
+                            
+                            currentMode = .standard
+                            showDegenMode = false
+                        }
+                    )
+                    .transition(.scale(scale: 0.9).combined(with: .opacity))
+                    .zIndex(999)
+                }
+                
+                // Degen Mode Splash Screen
+                if isDegenSplashActive {
+                    DegenSplashScreen()
+                        .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
+                        .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
+                        .ignoresSafeArea()
+                }
+                
+                // Exit Splash Screen (using original splash screen logic)
+                if isExitingSplashActive {
+                    exitSplashScreen
+                        .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
+                        .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
+                        .ignoresSafeArea()
                 }
             }
-        }
-        .onChange(of: selectedTab) { oldValue, newValue in
-            if currentMode == .degen && newValue == degenExitTabTag {
-                selectedTab = oldValue
-                requestExitDegenMode()
-            } else if currentMode == .standard && newValue == degenEntryTabTag {
-                selectedTab = oldValue
+            .preferredColorScheme(.dark)
+            .onChange(of: showSidebar) { oldValue, newValue in
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                    showDegenEntryWarning = true
+                    hideHamburger = newValue
+                }
+            }
+            .onChange(of: showDegenMode) { oldValue, newValue in
+                if newValue && currentMode == .standard {
+                    // Instead of immediately activating, show the warning first
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                        showDegenEntryWarning = true
+                    }
+                }
+            }
+            .onChange(of: selectedTab) { oldValue, newValue in
+                if currentMode == .degen && newValue == degenExitTabTag {
+                    selectedTab = oldValue
+                    requestExitDegenMode()
+                } else if currentMode == .standard && newValue == degenEntryTabTag {
+                    selectedTab = oldValue
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                        showDegenEntryWarning = true
+                    }
                 }
             }
         }
@@ -176,98 +373,74 @@ struct HomePageView: View {
     // Exit Splash Screen View
     private var exitSplashScreen: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
+            // Gradient background instead of flat black
+            LinearGradient(
+                gradient: Gradient(colors: [Color(hex: "121212"), Color(hex: "000000")]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 30) {
+                // Main title with better typography and animation
                 Text("FORTUNE")
                     .foregroundColor(.white)
-                    .font(.custom("Inter", size: 48))
+                    .font(.custom("Inter", size: 54))
+                    .fontWeight(.bold)
+                    .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
                     .opacity(showFortune ? 1 : 0)
-                    .animation(.easeIn(duration: 0.1).delay(0.3), value: showFortune)
-                VStack {
+                    .scaleEffect(showFortune ? 1 : 0.8)
+                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showFortune)
+                
+                // Bottom elements with improved animations and layout
+                VStack(spacing: 24) {
                     Divider()
-                        .background(Color.white)
-                        .frame(width: 200, height: 5)
+                        .frame(width: 120, height: 2)
+                        .background(Color.white.opacity(0.8))
+                    
                     Image("SplashScreenBranding")
                         .resizable()
-                        .frame(width: 200, height: 210)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 220, height: 230)
                 }
                 .opacity(showBottomElements ? 1 : 0)
-                .offset(y: showBottomElements ? 0 : 50)
-                .animation(.easeOut(duration: 0.5).delay(0.5), value: showBottomElements)
+                .offset(y: showBottomElements ? 0 : 30)
+                .animation(.spring(response: 0.7, dampingFraction: 0.8).delay(0.7), value: showBottomElements)
+            }
+            .padding(.vertical, 50)
+        }
+        .onAppear {
+            // Sequence the animations
+            withAnimation {
+                showFortune = true
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                withAnimation {
+                    showBottomElements = true
+                }
             }
         }
     }
     
-    // Standard Mode Tabs
-    private var standardModeTabs: some View {
-        Group {
-            SpotView(hideHamburger: $hideHamburger)
-                .tag(0)
-                .tabItem {
-                    Image(systemName: "binoculars.fill")
-                }
-            
-            IndexesView()
-                .tag(1)
-                .tabItem {
-                    Image(systemName: "chart.xyaxis.line")
-                }
-            
-            ManekiView()
-                .tag(2)
-                .tabItem {
-                    Image(systemName: "cat.fill")
-                        .font(.system(size: 28))
-                }
-            
-            PortfolioView()
-                .tag(3)
-                .tabItem {
-                    Image(systemName: "chart.bar.fill")
-                }
-            
-            Color.clear
-                .tag(degenEntryTabTag)
-                .tabItem {
-                    Image(systemName: "flame.fill")
-                }
+    private var selectedTabTitle: String {
+      if currentMode == .standard {
+        switch selectedTab {
+        case 0: return "Spot"
+        case 1: return "Indexes"
+        case 2: return "Maneki"
+        case 3: return "Portfolio"
+        default: return ""
         }
-    }
-    
-    // Degen Mode Tabs
-    private var degenModeTabs: some View {
-        Group {
-            DegenTrendingView()
-                .tag(0)
-                .tabItem {
-                    Image(systemName: "flame")
-                }
-            
-            WalletSocialMediaTrackerView()
-                .tag(1)
-                .tabItem {
-                    Image(systemName: "wallet.pass")
-                }
-                .environmentObject(tradingWalletViewModel)
-            
-            DegenTradeView()
-                .tag(2)
-                .tabItem {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                }
-            
-            PortfolioView()
-                .tag(3)
-                .tabItem {
-                    Image(systemName: "briefcase")
-                }
-            
-            Color.clear
-                .tag(degenExitTabTag)
-                .tabItem {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
-                }
+      } else {
+        switch selectedTab {
+        case 0: return "Trending"
+        case 1: return "Wallet Tracker"
+        case 2: return "Trade"
+        case 3: return "Portfolio"
+        default: return ""
         }
+      }
     }
     
     private func requestExitDegenMode() {
@@ -280,6 +453,11 @@ struct HomePageView: View {
     
     // Existing activation method for Degen Splash
     private func activateDegenSplash() {
+        // Hide toolbar before showing splash
+        withAnimation {
+            showToolbar = false
+        }
+        
         isDegenSplashActive = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -287,20 +465,31 @@ struct HomePageView: View {
             currentMode = .degen
         }
         
+        // Start the slide-up animation after a short delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            withAnimation {
+            withAnimation(.easeInOut(duration: 1.5)) {
                 hideSplashScreen = true
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        // Wait for the full animation to complete before showing toolbar and content
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             isDegenSplashActive = false
             hideSplashScreen = false
+            // Show toolbar after splash screen animation fully completes
+            withAnimation {
+                showToolbar = true
+            }
         }
     }
     
     // Method for Exit Splash
     private func activateExitSplash() {
+        // Hide toolbar before exit splash
+        withAnimation {
+            showToolbar = false
+        }
+        
         isExitingSplashActive = true
         
         // Replicate the original splash screen animation
@@ -311,17 +500,24 @@ struct HomePageView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             showBottomElements = true
         }
+        
+        // Start the slide-up animation after a short delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            withAnimation {
+            withAnimation(.easeInOut(duration: 1.5)) {
                 hideSplashScreen = true
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        // Wait for the full animation to complete before showing toolbar and content
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             isExitingSplashActive = false
             hideSplashScreen = false
             showFortune = false
             showBottomElements = false
+            // Show toolbar after splash screen animation fully completes
+            withAnimation {
+                showToolbar = true
+            }
         }
     }
 }

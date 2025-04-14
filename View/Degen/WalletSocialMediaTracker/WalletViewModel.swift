@@ -17,24 +17,6 @@ import LocalAuthentication
 import Combine
 
 class TradingWalletViewModel: ObservableObject {
-    // MARK: Onboarding / Authentication
-    @Published var pin: String = ""
-    @Published var confirmPin: String = ""
-    @Published var showPin: Bool = false
-    @Published var biometricEnabled: Bool = false
-    
-    // If user is "fully done" setting up a wallet
-    @Published var walletSetupComplete: Bool = false
-    
-    // If user wants to re-lock and re-ask for Face ID each time, you can use this:
-    @Published var authenticated: Bool = false
-    
-    @Published var pinError: Bool = false
-    @Published var isScanningFace: Bool = false
-    
-    // For demonstration, we show which step of the onboarding
-    @Published var currentStep: OnboardingStep = .createPin
-    
     // MARK: Wallet Data
     @Published var walletBalance: Double = 178532.65
     @Published var assets: [DegenAsset] = [
@@ -68,13 +50,6 @@ class TradingWalletViewModel: ObservableObject {
     // Cancellables for API requests
     private var cancellables = Set<AnyCancellable>()
     
-    enum OnboardingStep {
-        case createPin
-        case confirmPin
-        case biometricSetup
-        case setupComplete
-    }
-    
     enum TimeFilter: String, CaseIterable, Identifiable {
         case hour = "1H"
         case day = "24H"
@@ -95,13 +70,6 @@ class TradingWalletViewModel: ObservableObject {
     }
     
     init() {
-        // Authentication checks
-        if let storedPin = KeychainHelper.read(forKey: "userPin") {
-            self.pin = storedPin
-            self.currentStep = .confirmPin
-        } else {
-            self.currentStep = .createPin
-        }
         
         // Load demo data
         loadPresetWallets()
@@ -416,105 +384,6 @@ class TradingWalletViewModel: ObservableObject {
         }
         
         return entries.reversed()
-    }
-    
-    // MARK: PIN Flow
-    func appendPin(digit: String) {
-        switch currentStep {
-        case .createPin:
-            if pin.count < 6 {
-                pin += digit
-                if pin.count == 6 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        withAnimation(.spring(response: 0.3)) {
-                            self.currentStep = .confirmPin
-                        }
-                    }
-                }
-            }
-        case .confirmPin:
-            if confirmPin.count < 6 {
-                confirmPin += digit
-                if confirmPin.count == 6 {
-                    validatePins()
-                }
-            }
-        default:
-            break
-        }
-    }
-    
-    func deleteLastDigit() {
-        switch currentStep {
-        case .createPin:
-            if !pin.isEmpty {
-                pin.removeLast()
-            }
-        case .confirmPin:
-            if !confirmPin.isEmpty {
-                confirmPin.removeLast()
-            }
-        default:
-            break
-        }
-    }
-    
-    private func validatePins() {
-        if pin == confirmPin {
-            KeychainHelper.save(pin, forKey: "userPin")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                withAnimation(.spring(response: 0.3)) {
-                    self.currentStep = .biometricSetup
-                }
-            }
-        } else {
-            // mismatch => shake dots
-            withAnimation(.spring(response: 0.3)) {
-                pinError = true
-            }
-            confirmPin = ""
-            
-            // Reset error state after a short delay
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                withAnimation {
-                    self.pinError = false
-                }
-            }
-        }
-    }
-    
-    // MARK: Biometric Flow
-    func startBiometricSetup() {
-        withAnimation {
-            isScanningFace = true
-        }
-
-        // Simulate face scanning
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.biometricEnabled = true
-            withAnimation {
-                self.isScanningFace = false
-            }
-
-            if let storedPin = KeychainHelper.read(forKey: "userPin") {
-                self.authenticated = true
-                self.walletSetupComplete = true
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(.spring(response: 0.3)) {
-                        self.currentStep = .setupComplete
-                    }
-                }
-            }
-        }
-    }
-    
-    func completeSetup() {
-        // The user has completely set up their wallet
-        withAnimation(.spring(response: 0.3)) {
-            self.authenticated = true
-            self.walletSetupComplete = true
-        }
     }
 }
 
@@ -838,135 +707,6 @@ struct DegenAsset: Identifiable, Equatable {
     
     static func == (lhs: DegenAsset, rhs: DegenAsset) -> Bool {
         lhs.id == rhs.id
-    }
-}
-
-// MARK: - KeychainHelper
-
-struct KeychainHelper {
-    
-    static func save(_ value: String, forKey key: String) {
-        if let data = value.data(using: .utf8) {
-            let query: [String: Any] = [
-                kSecClass as String: kSecClassGenericPassword,
-                kSecAttrAccount as String: key,
-                kSecValueData as String: data
-            ]
-            
-            // Delete any existing entry
-            SecItemDelete(query as CFDictionary)
-            
-            // Add new entry
-            SecItemAdd(query as CFDictionary, nil)
-        }
-    }
-    
-    static func read(forKey key: String) -> String? {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key,
-            kSecReturnData as String: true,
-            kSecMatchLimit as String: kSecMatchLimitOne
-        ]
-        
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        
-        if status == errSecSuccess, let data = result as? Data, let string = String(data: data, encoding: .utf8) {
-            return string
-        }
-        
-        return nil
-    }
-    
-    static func delete(forKey key: String) {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key
-        ]
-        
-        SecItemDelete(query as CFDictionary)
-    }
-}
-
-// MARK: - Authentication Methods
-
-extension TradingWalletViewModel {
-    
-    func authenticate() {
-        let context = LAContext()
-        var error: NSError?
-        
-        // Check if biometric authentication is available
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            // Begin authentication
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate to access your wallet") { [weak self] success, error in
-                DispatchQueue.main.async {
-                    if success {
-                        withAnimation {
-                            self?.authenticated = true
-                        }
-                    } else {
-                        // Show fallback to PIN entry
-                        self?.promptForPIN()
-                    }
-                }
-            }
-        } else {
-            // Biometric auth not available, use PIN
-            promptForPIN()
-        }
-    }
-    
-    func promptForPIN() {
-        // Reset PIN entry for verification
-        self.confirmPin = ""
-        withAnimation {
-            self.currentStep = .confirmPin
-        }
-    }
-    
-    func verifyPIN() -> Bool {
-        if let storedPIN = KeychainHelper.read(forKey: "userPin"), confirmPin == storedPIN {
-            withAnimation {
-                self.authenticated = true
-            }
-            return true
-        } else {
-            withAnimation(.spring(response: 0.3)) {
-                pinError = true
-            }
-            confirmPin = ""
-            
-            // Reset error state after delay
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                withAnimation {
-                    self.pinError = false
-                }
-            }
-            return false
-        }
-    }
-    
-    func lockWallet() {
-        withAnimation {
-            self.authenticated = false
-            self.confirmPin = ""
-        }
-    }
-    
-    func resetWallet() {
-        // Reset all wallet data (for development/testing)
-        KeychainHelper.delete(forKey: "userPin")
-        self.pin = ""
-        self.confirmPin = ""
-        self.biometricEnabled = false
-        self.walletSetupComplete = false
-        self.authenticated = false
-        
-        withAnimation {
-            self.currentStep = .createPin
-        }
     }
 }
 
