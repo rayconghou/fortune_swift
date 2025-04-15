@@ -46,13 +46,6 @@ struct HomePageView: View {
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                        .overlay {
-                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                Rectangle()
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(0.95)
-                            }
-                        }
 
                         IndexesView(hamburgerAction: {
                             withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
@@ -66,13 +59,6 @@ struct HomePageView: View {
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                        .overlay {
-                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                Rectangle()
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(0.95)
-                            }
-                        }
 
                         ManekiView(hamburgerAction: {
                             withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
@@ -86,14 +72,7 @@ struct HomePageView: View {
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                        .overlay {
-                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                Rectangle()
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(0.95)
-                            }
-                        }
-
+                        
                         PortfolioView(hamburgerAction: {
                             withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
                                 showSidebar.toggle()
@@ -106,25 +85,11 @@ struct HomePageView: View {
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                        .overlay {
-                            if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                Rectangle()
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(0.95)
-                            }
-                        }
 
                         Color.clear
                             .tag(degenEntryTabTag)
                             .tabItem {
                                 Image(systemName: "flame.fill")
-                            }
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
                             }
                     } else {
                         DegenTrendingView()
@@ -135,13 +100,6 @@ struct HomePageView: View {
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
-                            }
 
                         WalletSocialMediaTrackerView()
                             .tag(1)
@@ -152,13 +110,6 @@ struct HomePageView: View {
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
-                            }
 
                         DegenTradeView()
                             .tag(2)
@@ -169,13 +120,6 @@ struct HomePageView: View {
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
-                            }
 
                         PortfolioView(hamburgerAction: {
                             withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
@@ -189,38 +133,17 @@ struct HomePageView: View {
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
-                            }
 
                         Color.clear
                             .tag(degenExitTabTag)
                             .tabItem {
                                 Image(systemName: "rectangle.portrait.and.arrow.right")
                             }
-                            .overlay {
-                                if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                                    Rectangle()
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(0.95)
-                                }
-                            }
                     }
                 }
                 .scaleEffect(showSidebar ? 0.95 : 1.0)
                 .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                 .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                .overlay {
-                    if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                        Rectangle()
-                            .fill(.ultraThinMaterial)
-                            .opacity(0.95)
-                    }
-                }
                 .toolbar {
                     if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
                         ToolbarItem(placement: .navigationBarLeading) {
@@ -247,19 +170,6 @@ struct HomePageView: View {
                 .disabled(showSidebar || isDegenSplashActive || isExitingSplashActive || showDegenEntryWarning || showDegenExitConfirmation)
                 .toolbarBackground(.hidden, for: .navigationBar)
                 .edgesIgnoringSafeArea(.top)
-                .overlay(alignment: .top) {
-                    Group {
-                        if showToolbar && !showSidebar {
-                            Rectangle()
-                                .fill(.ultraThinMaterial)
-                                .frame(height: 100)
-                                .ignoresSafeArea()
-                                .opacity(0.95)
-                                .offset(y: showToolbar ? 0 : -50)
-                                .animation(.spring(response: 0.3, dampingFraction: 0.8), value: showToolbar)
-                        }
-                    }
-                }
                 
                 // Existing Sidebar View
                 SidebarView(
