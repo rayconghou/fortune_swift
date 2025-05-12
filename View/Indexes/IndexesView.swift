@@ -5,6 +5,7 @@ import SwiftUI
 struct IndexesView: View {
     var hamburgerAction: () -> Void
     @State private var selectedTab: IndexSourceTab = .handpicked
+    @StateObject private var viewModel = LeaderboardViewModel()
     @State private var showManekiQuizModal = false
     @State private var showCreateIndexSheet = false
     
@@ -25,7 +26,7 @@ struct IndexesView: View {
                         case .maneki:
                             ManekiCuratedIndexesView(showQuizModal: $showManekiQuizModal)
                         case .community:
-                            CommunityIndexesView(showCreateIndexSheet: $showCreateIndexSheet)
+                            CommunityIndexesView(showCreateIndexSheet: $showCreateIndexSheet, viewModel: viewModel)
                         }
                     }
                     .padding(.horizontal)
@@ -42,8 +43,13 @@ struct IndexesView: View {
             ManekiQuizModalView()
         }
         .sheet(isPresented: $showCreateIndexSheet) {
-            CreateIndexView()
+            CreateIndexView(
+                selectedTab: $selectedTab,
+                leaderboardVM: viewModel,
+                isPresented: $showCreateIndexSheet
+            )
         }
+
     }
 }
 
@@ -255,6 +261,7 @@ struct ManekiCuratedIndexesView: View {
 struct CommunityIndexesView: View {
     @State private var selectedTimeFrame: TimeFrame = .month
     @Binding var showCreateIndexSheet: Bool
+    @ObservedObject var viewModel: LeaderboardViewModel
     
     var body: some View {
         VStack(spacing: 16) {
@@ -293,13 +300,15 @@ struct CommunityIndexesView: View {
             }
             .padding(.horizontal, 8)
             
-            // Leaderboard Items
-            ForEach(1...5, id: \.self) { index in
+            Text("Leaderboard count: \(viewModel.leaderboard.count)")
+                .foregroundColor(.green)
+            
+            ForEach(Array(viewModel.leaderboard.prefix(5).enumerated()), id: \.element.id) { index, item in
                 LeaderboardItem(
-                    rank: index,
-                    name: "Community Index \(index)",
-                    roi: index % 2 == 0 ? "+\(20 + index).5%" : "+\(25 - index).8%",
-                    creator: "user\(100 + index)"
+                    rank: index + 1,
+                    name: item.index_name,
+                    roi: item.formattedROI,
+                    creator: item.creator
                 )
             }
             
@@ -331,6 +340,10 @@ struct CommunityIndexesView: View {
             .padding(.top, 8)
             
             Spacer(minLength: 50)
+        }
+        .onAppear {
+            print("community indexes appeard")
+            viewModel.fetchLeaderboard()
         }
     }
 }
@@ -407,6 +420,61 @@ struct LeaderboardItem: View {
         )
     }
 }
+
+struct LeaderboardIndex: Codable, Identifiable {
+    var id: UUID { UUID() } // ← This makes a random UUID for each row
+    let index_name: String
+    let roi: Double
+    let creator: String
+
+    var formattedROI: String {
+        String(format: roi >= 0 ? "+%.1f%%" : "%.1f%%", roi)
+    }
+}
+
+class LeaderboardViewModel: ObservableObject {
+    @Published var leaderboard: [LeaderboardIndex] = []
+
+    func fetchLeaderboard() {
+        print("🔍 Attempting to fetch leaderboard...")
+
+        guard let url = URL(string: "http://localhost:3001/api/leaderboard") else {
+            print("❌ Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("❌ Network error:", error)
+                return
+            }
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("📡 Status Code:", httpResponse.statusCode)
+            }
+
+            guard let data = data else {
+                print("❌ No data received")
+                return
+            }
+
+            do {
+                let decoded = try JSONDecoder().decode([LeaderboardIndex].self, from: data)
+                DispatchQueue.main.async {
+                    self.leaderboard = decoded
+                    print("✅ Leaderboard fetched:", decoded)
+                }
+            } catch {
+                print("❌ Decoding error:", error)
+                if let raw = String(data: data, encoding: .utf8) {
+                    print("📄 Raw response body:", raw)
+                }
+            }
+        }.resume()
+    }
+}
+
+
 
 // MARK: - Maneki Quiz Modal
 struct ManekiQuizModalView: View {

@@ -11,6 +11,9 @@ import SwiftUI
 // MARK: - Custom Index Creation Flow
 struct CreateIndexView: View {
     @Environment(\.dismiss) private var dismiss
+    @Binding var selectedTab: IndexSourceTab
+    @ObservedObject var leaderboardVM: LeaderboardViewModel
+    @Binding var isPresented: Bool
     @State private var indexName = ""
     @State private var indexDescription = ""
     @State private var selectedCategory: IndexCategory = .all
@@ -122,7 +125,13 @@ struct CreateIndexView: View {
                 }
             }
             .sheet(isPresented: $showingPreview) {
-                IndexCreatedView(indexName: indexName, coins: selectedCoins)
+                IndexCreatedView(
+                    selectedTab: $selectedTab,
+                    isPresented: $isPresented,
+                    leaderboardVM: leaderboardVM,
+                    indexName: indexName,
+                    coins: selectedCoins
+                )
             }
         }
         .preferredColorScheme(.dark)
@@ -424,6 +433,39 @@ struct CreateIndexView: View {
         }
         
         return filtered
+    }
+    
+    private func submitIndexToBackend() {
+        guard let url = URL(string: "http://localhost:3001/api/indexes") else { return }
+
+        let coinPayload = selectedCoins.map { ["symbol": $0.symbol, "allocation": $0.allocation] }
+
+        let payload: [String: Any] = [
+            "index_name": indexName,
+            "description": indexDescription,
+            "category": selectedCategory.rawValue,
+            "coins": coinPayload,
+            "creator": "demo_user" // Replace with actual user if needed
+        ]
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: payload, options: [])
+        } catch {
+            print("Encoding failed:", error)
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("POST failed:", error)
+            } else {
+                print("Index created and submitted to backend.")
+            }
+        }.resume()
     }
 }
 
@@ -834,6 +876,9 @@ struct MetricCard: View {
 // MARK: - Success View
 struct IndexCreatedView: View {
     @Environment(\.dismiss) private var dismiss
+    @Binding var selectedTab: IndexSourceTab
+    @Binding var isPresented: Bool
+    @ObservedObject var leaderboardVM: LeaderboardViewModel
     let indexName: String
     let coins: [CoinIndex]
     
@@ -913,7 +958,9 @@ struct IndexCreatedView: View {
             .padding(.top, 16)
             
             Button(action: {
-                dismiss()
+                leaderboardVM.fetchLeaderboard()
+                selectedTab = .community
+                isPresented = false
             }) {
                 Text("Back to Indexes")
                     .foregroundColor(.secondary)
@@ -922,7 +969,48 @@ struct IndexCreatedView: View {
             Spacer()
         }
         .padding(.bottom, 32)
+        .onAppear {
+            submitIndexToBackend()
+        }
     }
+    
+    private func submitIndexToBackend() {
+        print("🟡 Submitting index to backend...")
+
+        guard let url = URL(string: "http://localhost:3001/api/indexes") else { return }
+
+        let coinPayload = coins.map { ["symbol": $0.symbol, "allocation": $0.allocation] }
+
+        let payload: [String: Any] = [
+            "index_name": indexName,
+            "description": "",
+            "category": "AI",
+            "coins": coinPayload,
+            "creator": "demo_user"
+        ]
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: payload, options: [])
+        } catch {
+            print("Encoding failed:", error)
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            print("✅ Submission complete")
+            if let data = data {
+                print("📄 Response: \(String(decoding: data, as: UTF8.self))")
+            }
+            if let error = error {
+                print("❌ Submission error: \(error)")
+            }
+        }.resume()
+    }
+
 }
 
 // MARK: - Model Types
