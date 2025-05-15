@@ -92,18 +92,56 @@ struct ManekiView: View {
     // Same as your existing send logic
     func sendMessage() {
         guard !userMessage.isEmpty else { return }
+
+        // Append the user's message to the list
         let newMsg = ManekiChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
         messages.append(newMsg)
-        
-        // Sample "AI response"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let response = ManekiChatMessage(
-                id: messages.count + 1,
-                content: "Here's some info on that: ...",
-                isFromUser: false
-            )
-            messages.append(response)
-        }
-        userMessage = ""
+
+        // Build the full message history for context
+        let history = messages.map { $0.content }
+        userMessage = "" // clear input
+
+        // Prepare request to your backend
+        guard let url = URL(string: "http://localhost:3001/api/maneki-chat") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let requestBody: [String: Any] = ["messages": history]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
+
+        // Send API call
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("❌ API error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                print("❌ No data received")
+                return
+            }
+
+            // 🔍 Debug: Print raw JSON response
+            if let raw = String(data: data, encoding: .utf8) {
+                print("🧾 Raw response from API:", raw)
+            }
+
+            // Now try decoding
+            if let result = try? JSONDecoder().decode(ChatResponse.self, from: data) {
+                DispatchQueue.main.async {
+                    let aiMessage = ManekiChatMessage(id: messages.count + 1, content: result.response, isFromUser: false)
+                    messages.append(aiMessage)
+                }
+            } else {
+                print("❌ Failed to decode. Raw JSON printed above.")
+            }
+        }.resume()
+
     }
+
+}
+
+struct ChatResponse: Decodable {
+    let response: String
 }
