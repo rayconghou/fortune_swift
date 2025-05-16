@@ -7,25 +7,44 @@
 
 import Foundation
 
-/// Represents each "latest" token profile from DexScreener
-struct DexScreenerTokenProfile: Codable, Identifiable {
-    // If the API returns an array, each item presumably has these fields:
+/// A link structure within a token profile
+// 1) New Codable for each link entry
+struct DexScreenerLink: Codable {
+    let label: String?
+    let type: String?
     let url: String
-    let chainId: String
+}
+
+// 2) Your existing token profile, updated
+struct DexScreenerTokenProfile: Identifiable, Codable {
+    // assume you already had these:
     let tokenAddress: String
-    let icon: String?
-    let header: String?
+    let chainId: String
     let description: String?
+    let icon: String?
+
+    // add:
     let links: [DexScreenerLink]?
 
-    // Conform to Identifiable for SwiftUI ForEach
-    var id: String { "\(chainId)-\(tokenAddress)" }
+    // for Identifiable conformance
+    var id: String { tokenAddress }
+
+    // 3) Computed properties to pull out just the URLs you care about
+    var websiteURL: URL? {
+        guard let link = links?.first(where: { $0.label?.lowercased() == "website" }),
+              let url = URL(string: link.url) else { return nil }
+        return url
+    }
+    var twitterURL: URL? {
+        guard let link = links?.first(where: { $0.type?.lowercased() == "twitter" }),
+              let url = URL(string: link.url) else { return nil }
+        return url
+    }
+    var telegramURL: URL? {
+        guard let link = links?.first(where: { $0.type?.lowercased() == "telegram" }),
+              let url = URL(string: link.url) else { return nil }
+        return url
+    }
 }
 
-/// A link structure within a token profile
-struct DexScreenerLink: Codable {
-    let type: String?
-    let label: String?
-    let url: String?
-}
 
