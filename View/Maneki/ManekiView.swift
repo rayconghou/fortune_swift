@@ -14,8 +14,8 @@ struct ManekiView: View {
     @State private var messages: [ManekiChatMessage] = [
         ManekiChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
     ]
-    
-    // 1) A list of example questions the user can tap:
+    @State private var isLoading = false
+
     private let exampleQuestions = [
         "How do I start trading crypto?",
         "What's the safest exchange?",
@@ -23,26 +23,51 @@ struct ManekiView: View {
         "Can you explain NFTs?",
         "What are good long-term coins?"
     ]
-    
-    @State private var scrollOffset: CGFloat = 0
-    
+
+    @Namespace private var scrollAnchor
+
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
-                // Messages ScrollView
-                ScrollView {
-                    LazyVStack(spacing: 15) {
-                        ForEach(messages) { message in
-                            ManekiChatBubble(message: message)
+                ScrollViewReader { scrollProxy in
+                    ScrollView {
+                        LazyVStack(spacing: 15) {
+                            ForEach(messages) { message in
+                                if message.isFromUser {
+                                    ManekiChatBubble(message: message)
+                                } else {
+                                    ManekiResponseView(content: message.content)
+                                }
+                            }
+
+                            if isLoading {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                            }
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(scrollAnchor)
+                        }
+                        .padding()
+                        .onChange(of: messages.count) { _ in
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                withAnimation {
+                                    scrollProxy.scrollTo(scrollAnchor, anchor: .bottom)
+                                }
+                            }
                         }
                     }
-                    .padding()
+                    .padding(.vertical, 6)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(16)
+                    .padding(.horizontal, 10)
                 }
-                
-                // Example Questions ScrollView
+
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        ForEach(exampleQuestions, id: \.self) { question in
+                        ForEach(exampleQuestions, id: \ .self ) { question in
                             Button {
                                 userMessage = question
                                 sendMessage()
@@ -61,7 +86,6 @@ struct ManekiView: View {
                 }
                 .padding(.bottom, 5)
 
-                // Message Input Area
                 HStack {
                     TextField("Ask Maneki anything...", text: $userMessage)
                         .padding()
@@ -79,8 +103,7 @@ struct ManekiView: View {
                 .padding()
             }
             .background(Color.black)
-            
-            // Blurred toolbar overlay
+
             Rectangle()
                 .fill(.ultraThinMaterial)
                 .frame(height: 100)
@@ -88,60 +111,189 @@ struct ManekiView: View {
                 .opacity(0.95)
         }
     }
-    
-    // Same as your existing send logic
+
     func sendMessage() {
         guard !userMessage.isEmpty else { return }
+        isLoading = true
 
-        // Append the user's message to the list
-        let newMsg = ManekiChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
-        messages.append(newMsg)
+        let userMsg = ManekiChatMessage(id: messages.count + 1, content: userMessage, isFromUser: true)
+        messages.append(userMsg)
+        userMessage = ""
 
-        // Build the full message history for context
-        let history = messages.map { $0.content }
-        userMessage = "" // clear input
+        let userMessageCount = messages.filter { $0.isFromUser }.count
+        var history: [String]
 
-        // Prepare request to your backend
+        if userMessageCount == 1 {
+            history = [userMsg.content]
+        } else {
+            let prunedMessages = messages.drop(while: { !$0.isFromUser })
+            var cleaned: [String] = []
+            var lastSenderWasUser: Bool? = nil
+
+            for msg in prunedMessages {
+                if lastSenderWasUser == nil || msg.isFromUser != lastSenderWasUser {
+                    cleaned.append(msg.content)
+                    lastSenderWasUser = msg.isFromUser
+                }
+            }
+
+            if lastSenderWasUser == false {
+                cleaned.removeLast()
+            }
+
+            if cleaned.count % 2 == 0 {
+                cleaned.removeLast()
+            }
+
+            history = cleaned
+        }
+
         guard let url = URL(string: "http://localhost:3001/api/maneki-chat") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: ["messages": history])
 
-        let requestBody: [String: Any] = ["messages": history]
-        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
-
-        // Send API call
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("❌ API error: \(error.localizedDescription)")
-                return
+            DispatchQueue.main.async {
+                isLoading = false
             }
-            
-            guard let data = data else {
-                print("❌ No data received")
+
+            if let error = error {
+                DispatchQueue.main.async {
+                    let errorMsg = ManekiChatMessage(id: messages.count + 1, content: "⚠️ Network error: \(error.localizedDescription)", isFromUser: false)
+                    messages.append(errorMsg)
+                }
                 return
             }
 
-            // 🔍 Debug: Print raw JSON response
+            guard let data = data else { return }
+
             if let raw = String(data: data, encoding: .utf8) {
                 print("🧾 Raw response from API:", raw)
             }
 
-            // Now try decoding
             if let result = try? JSONDecoder().decode(ChatResponse.self, from: data) {
                 DispatchQueue.main.async {
-                    let aiMessage = ManekiChatMessage(id: messages.count + 1, content: result.response, isFromUser: false)
-                    messages.append(aiMessage)
+                    let clean = result.response
+                        .replacingOccurrences(of: "\\n", with: "\n")
+                        .replacingOccurrences(of: "\\\"", with: "\"")
+                        .trimmingCharacters(in: CharacterSet(charactersIn: "\""))
+
+                    let aiMessage = ManekiChatMessage(id: messages.count + 1, content: clean, isFromUser: false)
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        messages.append(aiMessage)
+                    }
                 }
-            } else {
-                print("❌ Failed to decode. Raw JSON printed above.")
+            } else if let errorDict = try? JSONDecoder().decode([String: String].self, from: data),
+                      let errorMessage = errorDict["error"] {
+                DispatchQueue.main.async {
+                    let errorMsg = ManekiChatMessage(id: messages.count + 1, content: "⚠️ \(errorMessage)", isFromUser: false)
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        messages.append(errorMsg)
+                    }
+                }
             }
         }.resume()
-
     }
-
 }
 
 struct ChatResponse: Decodable {
     let response: String
+}
+
+
+struct ManekiResponseView: View {
+    let content: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            ForEach(parseIntoBlocks(from: content), id: \.self) { block in
+                VStack(alignment: .leading, spacing: 6) {
+                    if let header = block.header {
+                        Text(header)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+
+                    }
+                    Text(block.body)
+                        .font(.body)
+                        .foregroundColor(.white.opacity(0.9))
+                        .multilineTextAlignment(.leading)
+                }
+            }
+        }
+        .padding()
+        .background(Color.white.opacity(0.05))
+        .cornerRadius(14)
+        .padding(.horizontal, 4)
+        .padding(.vertical, 8)
+    }
+
+    struct Block: Hashable {
+        let header: String?
+        let body: String
+    }
+
+    func parseIntoBlocks(from input: String) -> [Block] {
+        var blocks: [Block] = []
+
+        let cleaned = input
+            .replacingOccurrences(of: "\\n", with: "\n")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .trimmingCharacters(in: CharacterSet(charactersIn: "\""))
+
+        let lines = cleaned
+            .components(separatedBy: .newlines)
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+
+        var currentHeader: String? = nil
+        var currentBody: String = ""
+
+        for i in 0..<lines.count {
+            let line = lines[i]
+
+            if line.hasPrefix("###") {
+                if !currentBody.isEmpty || currentHeader != nil {
+                    blocks.append(Block(header: currentHeader, body: currentBody.trimmingCharacters(in: .whitespaces)))
+                    currentBody = ""
+                }
+                currentHeader = line.replacingOccurrences(of: "###", with: "").trimmingCharacters(in: .whitespaces)
+            } else if let range = line.range(of: #"^\d+\.\s+\*\*(.*?)\*\*"#, options: .regularExpression) {
+                if !currentBody.isEmpty {
+                    blocks.append(Block(header: currentHeader, body: currentBody.trimmingCharacters(in: .whitespaces)))
+                    currentBody = ""
+                }
+                let matched = String(line[range])
+                let title = matched
+                    .replacingOccurrences(of: #"^\d+\.\s+"#, with: "", options: .regularExpression)
+                    .replacingOccurrences(of: "**", with: "")
+                currentHeader = title
+                currentBody = line.replacingOccurrences(of: matched, with: "").trimmingCharacters(in: .whitespaces)
+            } else if line.hasPrefix("**") && line.hasSuffix("**") {
+                if !currentBody.isEmpty {
+                    blocks.append(Block(header: currentHeader, body: currentBody.trimmingCharacters(in: .whitespaces)))
+                    currentBody = ""
+                }
+                currentHeader = line.replacingOccurrences(of: "**", with: "")
+            } else if line.hasPrefix("- ") {
+                currentBody += (currentBody.isEmpty ? "" : "\n") + "• " + line.dropFirst(2)
+            } else if line == ":" || line.hasPrefix(": ") {
+                // Colon line — append to header if available
+                currentHeader = (currentHeader ?? "") + line.replacingOccurrences(of: ":", with: "")
+            } else {
+                currentBody += (currentBody.isEmpty ? "" : "\n") + line
+            }
+        }
+
+        if !currentBody.isEmpty || currentHeader != nil {
+            blocks.append(Block(header: currentHeader, body: currentBody.trimmingCharacters(in: .whitespaces)))
+        }
+
+        return blocks
+    }
+
 }

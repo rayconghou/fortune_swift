@@ -36,56 +36,55 @@ struct DegenTradeView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                // Background
-                backgroundColor.ignoresSafeArea()
+        ZStack {
+            // Background
+            backgroundColor.ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                // Header
+                headerView
                 
-                VStack(spacing: 0) {
-                    // Header
-                    headerView
-                    
-                    // Chain Selector
-                    chainSelectorView
-                    
-                    // Main Content
-                    if viewModel.isLoading {
-                        loadingView
-                    } else if viewModel.tokens.isEmpty {
-                        emptyStateView
-                    } else {
-                        tokenListView
-                    }
+                // Chain Selector
+                chainSelectorView
+                
+                // Main Content
+                if viewModel.isLoading {
+                    loadingView
+                } else if viewModel.tokens.isEmpty {
+                    emptyStateView
+                } else {
+                    tokenListView
                 }
-                
-                // Bridge Modal
-                if showBridgeModal {
-                    bridgeModalView
-                }
-                
-                // Floating action button
-                VStack {
+            }
+            
+            // Bridge Modal
+            if showBridgeModal {
+                bridgeModalView
+            }
+            
+            // Floating action button
+            VStack {
+                Spacer()
+                HStack {
                     Spacer()
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            showBridgeModal = true
-                        }) {
-                            Image(systemName: "arrow.left.arrow.right")
-                                .font(.system(size: 20, weight: .bold))
-                                .padding()
-                                .background(accentColor)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                                .shadow(color: accentColor.opacity(0.5), radius: 10)
-                        }
-                        .padding()
+                    Button(action: {
+                        showBridgeModal = true
+                    }) {
+                        Image(systemName: "arrow.left.arrow.right")
+                            .font(.system(size: 20, weight: .bold))
+                            .padding()
+                            .background(accentColor)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: accentColor.opacity(0.5), radius: 10)
                     }
+                    .padding()
                 }
             }
         }
         .onAppear {
             viewModel.fetchTokens(for: selectedChain)
+            showBridgeModal = false
         }
     }
     
@@ -415,42 +414,50 @@ struct TokenCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Text(token.symbol)
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.white)
-                    
+                        .fixedSize(horizontal: true, vertical: false)
+
                     if token.isNew {
                         Text("NEW")
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(.black)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
+                            .padding(.horizontal, 4)
+                            .padding(.vertical, 1)
                             .background(Color.green)
                             .cornerRadius(4)
+                            .fixedSize(horizontal: true, vertical: false)
                     }
                 }
-                
+
                 Text(token.name)
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
                     .lineLimit(1)
+                    .truncationMode(.tail)
+
             }
             
             Spacer()
             
             // Token metrics
             VStack(alignment: .trailing, spacing: 4) {
-                Text("$\(token.priceFormatted)")
+                Text("\(token.priceFormatted)")
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
-                
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+
                 HStack(spacing: 4) {
                     Image(systemName: token.priceChangePercentage >= 0 ? "arrow.up" : "arrow.down")
                         .font(.system(size: 10))
                         .foregroundColor(token.priceChangePercentage >= 0 ? .green : .red)
-                    
+
                     Text("\(abs(token.priceChangePercentage), specifier: "%.2f")%")
                         .font(.system(size: 12))
                         .foregroundColor(token.priceChangePercentage >= 0 ? .green : .red)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
                 }
             }
             
@@ -465,7 +472,9 @@ struct TokenCard: View {
                     .padding(.vertical, 8)
                     .background(accentColor)
                     .cornerRadius(8)
+                    .fixedSize(horizontal: true, vertical: false)
             }
+            .frame(width: 75)
         }
         .padding(16)
         .background(Color(hex: "171D2B"))

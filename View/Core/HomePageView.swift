@@ -116,7 +116,6 @@ struct HomePageView: View {
                             .tabItem {
                                 Image(systemName: "arrow.triangle.2.circlepath")
                             }
-                            .padding(.top, -8)
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
