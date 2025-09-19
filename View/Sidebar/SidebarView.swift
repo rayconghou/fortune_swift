@@ -171,6 +171,7 @@ struct SidebarView: View {
                 // Logout
                 Button(action: {
                     authViewModel.signOut()
+                    print("test")
                 }) {
                     HStack {
                         Image(systemName: "power")

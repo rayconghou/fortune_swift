@@ -9,23 +9,27 @@ import SwiftUI
 import Combine
 import FirebaseAuth
 
+import AWSSQS
+
 // MARK: - Main ContentView with Splash Screen
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State private var hideSplash = false
     @State private var showFortune = false
     @State private var showCollective = false
     @State private var showBottomElements = false
     @State private var isSignedIn = false
-    @StateObject private var securityViewModel = SecureSignInFlowViewModel()
-
+    @StateObject static var securityViewModel = SecureSignInFlowViewModel()
     
     var body: some View {
         ZStack {
             Group {
-                if isSignedIn {
+//                Change to: if authView.SOMETHING
+                if authViewModel.isLoggedIn {
                     SecureSignInFlowView()
-                        .environmentObject(securityViewModel)
+                        .environmentObject(ContentView.securityViewModel)
                 } else {
                     AuthView()
                 }
@@ -121,5 +125,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(AuthViewModel())
     }
 }

@@ -21,10 +21,6 @@ class AuthViewModel: ObservableObject {
     }
 
     func signOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Sign-out failed:", error)
-        }
+        AuthManager.shared.signOut()
     }
 }
