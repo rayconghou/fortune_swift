@@ -22,14 +22,17 @@ struct ContentView: View {
     @State private var showBottomElements = false
     @State private var isSignedIn = false
     @StateObject static var securityViewModel = SecureSignInFlowViewModel()
+    @State static var webSocketManager: WebSocketManager = WebSocketManager()
     
     var body: some View {
         ZStack {
             Group {
-//                Change to: if authView.SOMETHING
                 if authViewModel.isLoggedIn {
-                    SecureSignInFlowView()
-                        .environmentObject(ContentView.securityViewModel)
+                    if let userProfile = AuthManager.shared.userProfile {
+                        SecureSignInFlowView(userProfile: userProfile)
+                            .environmentObject(ContentView.securityViewModel)
+                    }
+//                    Add loading while getting userprofile
                 } else {
                     AuthView()
                 }
@@ -43,6 +46,12 @@ struct ContentView: View {
         .ignoresSafeArea()
         .onAppear {
             showFortune = true
+            
+            // Start connecting
+            if let url = URL(string: "wss://6kmh7sue9j.execute-api.us-east-2.amazonaws.com/production/") {
+                ContentView.webSocketManager.connect(url:  url)
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 showCollective = true
             }
@@ -51,7 +60,7 @@ struct ContentView: View {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation { hideSplash = true }
-                checkAuthState()
+                //                checkAuthState()
             }
         }
     }
@@ -99,7 +108,6 @@ struct ContentView: View {
             withAnimation {
                 showFortune = true
             }
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 withAnimation {
                     showBottomElements = true
@@ -108,15 +116,16 @@ struct ContentView: View {
         }
     }
     
-    func checkAuthState() {
-        if let user = Auth.auth().currentUser {
-            print("User is signed in as: \(user.email ?? "")")
-            isSignedIn = true
-        } else {
-            print("User is not signed in.")
-            isSignedIn = false
-        }
-    }
+//    func checkAuthState() {
+//        if let user = Auth.auth().currentUser {
+//            print("User is signed in as: \(user.email ?? "")")
+//            isSignedIn = true
+//        } else {
+//            print("User is not signed in.")
+//            isSignedIn = false
+//        }
+//    }
+
 }
 
 
