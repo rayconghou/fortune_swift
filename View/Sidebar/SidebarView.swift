@@ -43,7 +43,7 @@ struct SidebarView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.white)
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(userProfile.name)
+                            Text(userProfile.username)
                                 .font(.custom("Inter", size: 20))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
@@ -344,7 +344,7 @@ struct SidebarView_Previews: PreviewProvider {
         SidebarView(showSidebar: .constant(true),
                     showDegenMode: .constant(false),
                     selectedTab: .constant(0),
-                    userProfile: UserProfileViewModel(name: "James Wang", email: "jameswang@example.com"))
+                    userProfile: UserProfileViewModel(email: "jameswang@example.com", username: "James Wang"))
             .preferredColorScheme(.dark)
     }
 }

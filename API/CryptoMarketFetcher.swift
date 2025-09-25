@@ -776,15 +776,16 @@ class CryptoMarketViewModel: ObservableObject {
     @Published var selectedCoinDetail: CoinDetail?
     
     init() {
-        fetchData()
-        fetchTimer
-            .sink { [weak self] _ in
-                self?.fetchData()
-            }
-            .store(in: &cancellables)
+//        fetchData()
+//        fetchTimer
+//            .sink { [weak self] _ in
+//                self?.fetchData()
+//            }
+//            .store(in: &cancellables)
     }
     
     func fetchData() {
+        
         guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true") else {
             return
         }

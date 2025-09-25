@@ -11,11 +11,11 @@ import SwiftUI
 // MARK: - Profile Modal
 
 class UserProfileViewModel: ObservableObject {
-    @Published var name: String
+    @Published var username: String
     @Published var email: String
     
-    init(name: String = "James Wang", email: String = "james@example.com") {
-        self.name = name
+    init(email: String = "james@example.com", username: String = "James Wang") {
+        self.username = username
         self.email = email
     }
 }
@@ -35,7 +35,7 @@ struct ProfileSettingsView: View {
                 // Name & Email
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Name").foregroundColor(.gray)
-                    TextField("Name", text: $userProfile.name)
+                    TextField("Name", text: $userProfile.username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Text("Email").foregroundColor(.gray)

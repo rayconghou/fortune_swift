@@ -17,7 +17,7 @@ struct HomePageView: View {
     @State private var showCollective = false
     @State private var showBottomElements = false
     @State private var showToolbar = true // New state for toolbar visibility
-    @StateObject private var userProfile = UserProfileViewModel()
+    @State private var userProfile: UserProfileViewModel
     @StateObject private var tradingWalletViewModel = TradingWalletViewModel()
     @State private var selectedTab: Int = 0
     
@@ -28,6 +28,17 @@ struct HomePageView: View {
     }
     
     @State private var currentMode: AppMode = .standard
+    
+    // ISSUE WEHRE userProfile is reffed before init()
+    
+//    TEMP
+    init () {
+        userProfile = UserProfileViewModel()
+    }
+    
+    init (userProfile: UserProfileViewModel) {
+        self.userProfile = userProfile
+    }
     
     var body: some View {
         NavigationStack{

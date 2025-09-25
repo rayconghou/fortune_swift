@@ -10,13 +10,19 @@ import SwiftUI
 
 struct SecureSignInFlowView: View {
     @EnvironmentObject var securityViewModel: SecureSignInFlowViewModel
+    
+    @State private var userProfile : UserProfileViewModel
+    
+    init (userProfile: UserProfileViewModel) {
+        self.userProfile = userProfile
+    }
 
     var body: some View {
         NavigationStack {
             if !securityViewModel.authenticated {
                 onboardingFlow
             } else {
-                HomePageView()
+                HomePageView(userProfile: userProfile)
             }
         }
     }

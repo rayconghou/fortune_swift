@@ -4,6 +4,7 @@ import SwiftUI
 struct AuthView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var email = ""
+    @State private var username = ""
     @State private var password = ""
     @State private var message = ""
     @State private var loading = false
@@ -28,20 +29,46 @@ struct AuthView: View {
                 .background(Color.gray.opacity(0.15))
                 .cornerRadius(8)
                 .padding(.horizontal)
+            
+            if isNewUser {
+                TextField("Enter your name", text: $username)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color.gray.opacity(0.15))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+            }
 
             Button(action: {
                 loading = true
-                let authAction = isNewUser
-                    ? AuthManager.shared.signUp
-                    : AuthManager.shared.signIn
-
-                authAction(email, password) { result in
+                
+                func reactToResult(result: Result<Void, Error>) {
                     loading = false
                     switch result {
                     case .success:
-                        authViewModel.isLoggedIn = true
+//                        authViewModel.isLoggedIn = true
+                        break
                     case .failure(let error):
                         message = "Error: \(error.localizedDescription)"
+                    }
+                }
+                
+                if isNewUser {
+                    AuthManager.shared.signUp(email: email, password: password, username: username) {result in
+                        let userProfile = UserProfileViewModel(email: email, username: username)
+                        
+                        AuthManager.shared.userProfile = userProfile
+                        switch result {
+                        case .success:
+                            break
+                        case .failure:
+                            AuthManager.shared.userProfile = nil
+                        }
+                        reactToResult(result: result)
+                    }
+                } else {
+                    AuthManager.shared.signIn(email: email, password: password) {result in
+                        reactToResult(result: result)
                     }
                 }
             }) {
