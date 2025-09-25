@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C300AE652E84CF0900C63E96 /* AWSSQS in Frameworks */ = {isa = PBXBuildFile; productRef = C300AE642E84CF0900C63E96 /* AWSSQS */; };
 		C319FA172D8113080058C4B2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA132D8113070058C4B2 /* Asset.swift */; };
 		C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA142D8113070058C4B2 /* CoinGecko.swift */; };
 		C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA152D8113070058C4B2 /* AnyCodable.swift */; };
@@ -59,6 +60,7 @@
 		C319FA9A2DA743270058C4B2 /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA992DA743270058C4B2 /* Tweets.swift */; };
 		C319FAA22DAD55BB0058C4B2 /* SecureSignInFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA12DAD55BB0058C4B2 /* SecureSignInFlowView.swift */; };
 		C319FAA42DAD64E70058C4B2 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */; };
+		C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,7 @@
 		C319FA992DA743270058C4B2 /* Tweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		C319FAA12DAD55BB0058C4B2 /* SecureSignInFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecureSignInFlowView.swift; path = ../SecureSignInFlowView.swift; sourceTree = "<group>"; };
 		C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
+		C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* FortuneCollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneCollective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +121,7 @@
 			files = (
 				C319FA542D8619240058C4B2 /* FirebaseAnalytics in Frameworks */,
 				C319FA582D8619240058C4B2 /* FirebaseAuthCombine-Community in Frameworks */,
+				C300AE652E84CF0900C63E96 /* AWSSQS in Frameworks */,
 				C319FA5A2D8619240058C4B2 /* FirebaseDatabase in Frameworks */,
 				C319FA5E2D8619240058C4B2 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				C319FA5C2D8619240058C4B2 /* FirebaseFirestore in Frameworks */,
@@ -144,6 +148,7 @@
 		C319FA1F2D8113660058C4B2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */,
 				C319FA742D9B4B110058C4B2 /* DegenTrendingViewModel.swift */,
 				C319FA722D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift */,
 				C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */,
@@ -356,6 +361,7 @@
 				C319FA592D8619240058C4B2 /* FirebaseDatabase */,
 				C319FA5B2D8619240058C4B2 /* FirebaseFirestore */,
 				C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */,
+				C300AE642E84CF0900C63E96 /* AWSSQS */,
 			);
 			productName = FortuneCollective;
 			productReference = C388F8912D72437D003FFCFF /* FortuneCollective.app */;
@@ -388,6 +394,7 @@
 			mainGroup = C388F8882D72437D003FFCFF;
 			packageReferences = (
 				C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
 			);
 			productRefGroup = C388F8922D72437D003FFCFF /* Products */;
 			projectDirPath = "";
@@ -459,6 +466,7 @@
 				C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */,
 				C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */,
 				C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */,
+				C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +679,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/awslabs/aws-sdk-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.49;
+			};
+		};
 		C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -682,6 +698,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C300AE642E84CF0900C63E96 /* AWSSQS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
+			productName = AWSSQS;
+		};
 		C319FA532D8619240058C4B2 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

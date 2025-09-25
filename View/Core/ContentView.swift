@@ -31,26 +31,62 @@ struct ContentView: View {
                     if let userProfile = AuthManager.shared.userProfile {
                         SecureSignInFlowView(userProfile: userProfile)
                             .environmentObject(ContentView.securityViewModel)
+                    } else {
+                        // Loading state - will be replaced by mock profile after splash
+                        VStack(spacing: 20) {
+                            ProgressView()
+                                .scaleEffect(1.5)
+                                .tint(.white)
+                            Text("Loading...")
+                                .foregroundColor(.white)
+                                .padding(.top, 20)
+                            
+                            Text("Frontend Development Mode")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                                .padding(.top, 5)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.black)
                     }
-//                    Add loading while getting userprofile
                 } else {
-                    AuthView()
+                    // Fallback to AuthView with debug info
+                    VStack {
+                        AuthView()
+                        
+                        // Debug info
+                        VStack {
+                            Text("Debug Info:")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("isLoggedIn: \(authViewModel.isLoggedIn ? "true" : "false")")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("hideSplash: \(hideSplash ? "true" : "false")")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                        .padding()
+                    }
                 }
             }
             .zIndex(0)
             
             splashScreen
-                .offset(y: hideSplash ? -UIScreen.main.bounds.height : 0)
-                .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplash)
+                .opacity(hideSplash ? 0 : 1)
         }
         .ignoresSafeArea()
         .onAppear {
             showFortune = true
             
-            // Start connecting
-            if let url = URL(string: "wss://6kmh7sue9j.execute-api.us-east-2.amazonaws.com/production/") {
-                ContentView.webSocketManager.connect(url:  url)
-            }
+            // Debug authentication state
+            print("Auth state on appear - isLoggedIn: \(authViewModel.isLoggedIn)")
+            print("User profile: \(AuthManager.shared.userProfile?.email ?? "nil")")
+            
+            // Start connecting - COMMENTED OUT FOR FRONTEND DEVELOPMENT
+            // if let url = URL(string: "wss://6kmh7sue9j.execute-api.us-east-2.amazonaws.com/production/") {
+            //     ContentView.webSocketManager.connect(url:  url)
+            // }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 showCollective = true
@@ -60,59 +96,44 @@ struct ContentView: View {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation { hideSplash = true }
-                //                checkAuthState()
+                print("Splash hidden - Auth state: \(authViewModel.isLoggedIn)")
+                print("User profile after splash: \(AuthManager.shared.userProfile?.email ?? "nil")")
+                
+                // MOCK: Create user profile for frontend development
+                if authViewModel.isLoggedIn && AuthManager.shared.userProfile == nil {
+                    AuthManager.shared.userProfile = UserProfileViewModel(
+                        email: Auth.auth().currentUser?.email ?? "demo@example.com",
+                        username: "Demo User"
+                    )
+                    print("Created mock user profile for frontend development")
+                }
             }
         }
     }
     
     var splashScreen: some View {
         ZStack {
-            // Gradient background instead of flat black
-            LinearGradient(
-                gradient: Gradient(colors: [Color(hex: "121212"), Color(hex: "000000")]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
+            // Custom background color #050715
+            Color(hex: "050715")
+                .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 30) {
-                // Main title with better typography and animation
-                Text("FORTUNE")
-                    .foregroundColor(.white)
-                    .font(.custom("Inter", size: 54))
-                    .fontWeight(.bold)
-                    .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
-                    .opacity(showFortune ? 1 : 0)
-                    .scaleEffect(showFortune ? 1 : 0.8)
-                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showFortune)
-                
-                // Bottom elements with improved animations and layout
-                VStack(spacing: 24) {
-                    Divider()
-                        .frame(width: 120, height: 2)
-                        .background(Color.white.opacity(0.8))
-                    
-                    Image("SplashScreenBranding")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 220, height: 230)
-                }
-                .opacity(showBottomElements ? 1 : 0)
-                .offset(y: showBottomElements ? 0 : 30)
-                .animation(.spring(response: 0.7, dampingFraction: 0.8).delay(0.7), value: showBottomElements)
+            // NormalSplashBackground asset overlay
+            Image("NormalSplashBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 40) {
+                // DOJO Logo and Text from SplashScreenBranding asset
+                Image("SplashScreenBranding")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250, height: 250)
             }
             .padding(.vertical, 50)
         }
         .onAppear {
-            // Sequence the animations
-            withAnimation {
-                showFortune = true
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                withAnimation {
-                    showBottomElements = true
-                }
-            }
+            // No animations - just show immediately
         }
     }
     
@@ -130,10 +151,44 @@ struct ContentView: View {
 
 
 
+
 // MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(AuthViewModel())
     }
+}
+
+// MARK: - DOJO Splash Preview
+struct DojoSplashPreview: View {
+    @State private var showFortune = false
+    
+    var body: some View {
+        ZStack {
+            Color(hex: "050715")
+                .edgesIgnoringSafeArea(.all)
+            
+            // NormalSplashBackground asset overlay
+            Image("NormalSplashBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 40) {
+                // DOJO Logo and Text from SplashScreenBranding asset
+                Image("SplashScreenBranding")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250, height: 250)
+            }
+        }
+        .onAppear {
+            // No animations - just show immediately
+        }
+    }
+}
+
+#Preview("DOJO Splash") {
+    DojoSplashPreview()
 }

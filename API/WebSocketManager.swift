@@ -55,16 +55,39 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
                             throw WebSocketError.badResponse
                         }
                         
+                        // Handle different message types
+                        if text.contains("error") || text.contains("Failed") {
+                            print("Backend error received: \(text)")
+                            // Don't try to decode error messages as user profile
+                            return
+                        }
+                        
                         struct userProperties: Decodable {
                             let email: String
                             let username: String
                         }
                         
+                        struct errorResponse: Decodable {
+                            let message: String
+                            let error: String
+                        }
+                        
                         do {
+                            // Try to decode as user profile first
                             let userProfileProperties = try decoder.decode(userProperties.self, from: jsonData)
-                            AuthManager.shared.userProfile = UserProfileViewModel(email: userProfileProperties.email, username: userProfileProperties.username)
+                            DispatchQueue.main.async {
+                                AuthManager.shared.userProfile = UserProfileViewModel(email: userProfileProperties.email, username: userProfileProperties.username)
+                                print("User profile loaded: \(userProfileProperties.email)")
+                            }
                         } catch {
-                            print("Error decoding JSON: \(error.localizedDescription)")
+                            // If that fails, try to decode as error response
+                            do {
+                                let errorResponse = try decoder.decode(errorResponse.self, from: jsonData)
+                                print("Backend error: \(errorResponse.message) - \(errorResponse.error)")
+                            } catch {
+                                print("Error decoding JSON: \(error.localizedDescription)")
+                                print("Raw message: \(text)")
+                            }
                         }
                     }
                     

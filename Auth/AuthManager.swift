@@ -22,9 +22,10 @@ class AuthManager: ObservableObject {
             } else {
                 print("Auth signed in")
                 if let user = Auth.auth().currentUser {
-                    Task {
-                        await self.addUserToDB(firebase_uid: user.uid, email: email, username: username)
-                    }
+                    // COMMENTED OUT FOR FRONTEND DEVELOPMENT
+                    // Task {
+                    //     await self.addUserToDB(firebase_uid: user.uid, email: email, username: username)
+                    // }
                     
                     completion(.success(()))
                 } else {
