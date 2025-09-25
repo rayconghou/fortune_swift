@@ -1,6 +1,6 @@
 //
-//  FortuneCollectiveApp.swift
-//  FortuneCollective
+//  DojoApp.swift
+//  Dojo
 //
 //  Created by Raymond Hou on 2/28/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseCore
 
 @main
-struct FortuneCollectiveApp: App {
+struct DojoApp: App {
     @StateObject var authViewModel = AuthViewModel()
     
     init() {

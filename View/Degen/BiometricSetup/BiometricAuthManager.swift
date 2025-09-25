@@ -1,6 +1,6 @@
 //
 //  BiometricAuthManager.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 4/14/25.
 //

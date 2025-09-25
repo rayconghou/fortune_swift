@@ -12,7 +12,7 @@ struct AuthView: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            Text(isNewUser ? "Create Account" : "Sign In to Fortune")
+            Text(isNewUser ? "Create Account" : "Sign In to Dojo")
                 .font(.title)
                 .bold()
 

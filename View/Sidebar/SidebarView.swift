@@ -288,7 +288,7 @@ struct ManekiIntroView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                Text("Maneki is here to guide you through using Fortune Collective. Ask questions about market trends, portfolio tips, or get crypto insights.")
+                Text("Maneki is here to guide you through using Dojo. Ask questions about market trends, portfolio tips, or get crypto insights.")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)

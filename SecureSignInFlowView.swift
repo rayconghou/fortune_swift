@@ -1,6 +1,6 @@
 //
 //  SecureSignInFlowView.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 4/13/25.
 //
@@ -42,7 +42,7 @@ struct SecureSignInFlowView: View {
 
 //
 //  SecureSignInModel.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 4/13/25.
 //

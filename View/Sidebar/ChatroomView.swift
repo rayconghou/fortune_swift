@@ -1,6 +1,6 @@
 //
 //  Chatroom.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 4/8/25.
 //

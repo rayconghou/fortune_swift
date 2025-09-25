@@ -208,7 +208,7 @@ struct HandpickedIndexesView: View {
                 .padding(.top, 8)
             
             IndexCard(name: "AI Memes Index", value: "1,428.67", change: "+5.2%", iconName: "brain")
-            IndexCard(name: "Fortune AI Select", value: "785.32", change: "+2.8%", iconName: "sparkles")
+            IndexCard(name: "Dojo AI Select", value: "785.32", change: "+2.8%", iconName: "sparkles")
             IndexCard(name: "AI Blue Chips", value: "2,432.89", change: "+3.7%", iconName: "crown")
             IndexCard(name: "AI Microcaps", value: "476.54", change: "-1.9%", iconName: "atom")
             

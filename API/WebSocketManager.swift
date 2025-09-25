@@ -1,6 +1,6 @@
 //
 //  WebSocketManager.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Hugh on 9/20/25.
 //

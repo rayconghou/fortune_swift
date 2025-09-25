@@ -1,6 +1,6 @@
 //
 //  CreateIndexes.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 4/9/25.
 //

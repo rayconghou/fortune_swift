@@ -1,6 +1,6 @@
 //
 //  AuthViewModel.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 3/30/25.
 //

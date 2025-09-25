@@ -1,6 +1,6 @@
 //
 //  CryptoMarketViewModel.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 3/13/25.
 //  Updated to fetch the full coin list with sparkline data from CoinGecko

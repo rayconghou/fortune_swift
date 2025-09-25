@@ -1,6 +1,6 @@
 //
 //  SpotView.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 3/11/25.
 //  Updated for full market view and futuristic UI

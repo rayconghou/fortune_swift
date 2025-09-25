@@ -1,6 +1,6 @@
 //
 //  Asset.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 3/11/25.
 //

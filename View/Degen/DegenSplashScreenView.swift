@@ -1,6 +1,6 @@
 //
 //  DegenSplashScreenView.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 3/25/25.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DegenSplashScreen: View {
-    @State private var showFortune = false
+    @State private var showDojo = false
     @State private var showBottomElements = false
     
     var body: some View {
@@ -30,14 +30,14 @@ struct DegenSplashScreen: View {
                     Text("DEGEN")
                         .font(.system(size: 56, weight: .black))
                         .foregroundColor(.white)
-                        .opacity(showFortune ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.4).delay(0.2), value: showFortune)
+                        .opacity(showDojo ? 1 : 0)
+                        .animation(.easeInOut(duration: 0.4).delay(0.2), value: showDojo)
                     
                     Text("MODE")
                         .font(.system(size: 40, weight: .heavy))
                         .foregroundColor(.cyan)
-                        .opacity(showFortune ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.4).delay(0.3), value: showFortune)
+                        .opacity(showDojo ? 1 : 0)
+                        .animation(.easeInOut(duration: 0.4).delay(0.3), value: showDojo)
                 }
                 
                 VStack {
@@ -66,7 +66,7 @@ struct DegenSplashScreen: View {
         .onAppear {
             // Trigger animations
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                showFortune = true
+                showDojo = true
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

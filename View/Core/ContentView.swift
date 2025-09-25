@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FortuneCollective
+//  Dojo
 //
 //  Created by Raymond Hou on 2/28/25.
 //
@@ -17,8 +17,8 @@ struct ContentView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     
     @State private var hideSplash = false
-    @State private var showFortune = false
-    @State private var showCollective = false
+    @State private var showDojo = false
+    @State private var showLogo = false
     @State private var showBottomElements = false
     @State private var isSignedIn = false
     @StateObject static var securityViewModel = SecureSignInFlowViewModel()
@@ -77,7 +77,7 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
         .onAppear {
-            showFortune = true
+            showDojo = true
             
             // Debug authentication state
             print("Auth state on appear - isLoggedIn: \(authViewModel.isLoggedIn)")
@@ -89,7 +89,7 @@ struct ContentView: View {
             // }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                showCollective = true
+                showLogo = true
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 showBottomElements = true
@@ -162,7 +162,7 @@ struct ContentView_Previews: PreviewProvider {
 
 // MARK: - DOJO Splash Preview
 struct DojoSplashPreview: View {
-    @State private var showFortune = false
+    @State private var showDojo = false
     
     var body: some View {
         ZStack {

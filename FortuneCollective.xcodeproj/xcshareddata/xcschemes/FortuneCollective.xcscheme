@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C388F8902D72437D003FFCFF"
-               BuildableName = "FortuneCollective.app"
-               BlueprintName = "FortuneCollective"
+               BuildableName = "Dojo.app"
+               BlueprintName = "Dojo"
                ReferencedContainer = "container:FortuneCollective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C388F8902D72437D003FFCFF"
-            BuildableName = "FortuneCollective.app"
-            BlueprintName = "FortuneCollective"
+            BuildableName = "Dojo.app"
+            BlueprintName = "Dojo"
             ReferencedContainer = "container:FortuneCollective.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C388F8902D72437D003FFCFF"
-            BuildableName = "FortuneCollective.app"
-            BlueprintName = "FortuneCollective"
+            BuildableName = "Dojo.app"
+            BlueprintName = "Dojo"
             ReferencedContainer = "container:FortuneCollective.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

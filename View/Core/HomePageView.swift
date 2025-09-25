@@ -13,8 +13,8 @@ struct HomePageView: View {
     @State private var hideSplashScreen = false
     @State private var isDegenSplashActive = false
     @State private var isExitingSplashActive = false
-    @State private var showFortune = false
-    @State private var showCollective = false
+    @State private var showDojo = false
+    @State private var showLogo = false
     @State private var showBottomElements = false
     @State private var showToolbar = true // New state for toolbar visibility
     @State private var userProfile: UserProfileViewModel
@@ -303,14 +303,14 @@ struct HomePageView: View {
             
             VStack(spacing: 30) {
                 // Main title with better typography and animation
-                Text("FORTUNE")
+                Text("DOJO")
                     .foregroundColor(.white)
                     .font(.custom("Inter", size: 54))
                     .fontWeight(.bold)
                     .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
-                    .opacity(showFortune ? 1 : 0)
-                    .scaleEffect(showFortune ? 1 : 0.8)
-                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showFortune)
+                    .opacity(showDojo ? 1 : 0)
+                    .scaleEffect(showDojo ? 1 : 0.8)
+                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showDojo)
                 
                 // Bottom elements with improved animations and layout
                 VStack(spacing: 24) {
@@ -332,7 +332,7 @@ struct HomePageView: View {
         .onAppear {
             // Sequence the animations
             withAnimation {
-                showFortune = true
+                showDojo = true
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
@@ -413,9 +413,9 @@ struct HomePageView: View {
         isExitingSplashActive = true
         
         // Replicate the original splash screen animation
-        showFortune = true
+        showDojo = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            showCollective = true
+            showLogo = true
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             showBottomElements = true
@@ -432,7 +432,7 @@ struct HomePageView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             isExitingSplashActive = false
             hideSplashScreen = false
-            showFortune = false
+            showDojo = false
             showBottomElements = false
             // Show toolbar after splash screen animation fully completes
             withAnimation {
