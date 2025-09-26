@@ -154,28 +154,6 @@ struct HomePageView: View {
                 .scaleEffect(showSidebar ? 0.95 : 1.0)
                 .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                 .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
-                .toolbar {
-                    if showToolbar && !showSidebar && !isDegenSplashActive && !isExitingSplashActive {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button(action: { showSidebar.toggle() }) {
-                                Image(systemName: "line.horizontal.3").foregroundColor(.white)
-                            }
-                        }
-                        ToolbarItem(placement: .principal) {
-                            Text(selectedTabTitle)
-                        }
-                        ToolbarItem(placement: .topBarTrailing) {
-                            HStack(spacing: 16) {
-                                Button(action: {}) {
-                                    Image(systemName: "bell").foregroundColor(.white)
-                                }
-                                Button(action: {}) {
-                                    Image(systemName: "info.circle").foregroundColor(.white)
-                                }
-                            }
-                        }
-                    }
-                }
                 .navigationBarTitleDisplayMode(.inline)
                 .disabled(showSidebar || isDegenSplashActive || isExitingSplashActive || showDegenEntryWarning || showDegenExitConfirmation)
                 .toolbarBackground(.hidden, for: .navigationBar)

@@ -105,10 +105,47 @@ struct CoinDetailModalView: View {
                 }
             }
             
-            // Floating action button
+            // Floating action buttons
             VStack {
                 Spacer()
-                buyButton
+                HStack(spacing: 16) {
+                    // Buy Button
+                    Button(action: {}) {
+                        Text("Buy \(coin.name)")
+                            .font(.custom("Satoshi-Bold", size: 18))
+                            .foregroundColor(.white)
+                            .frame(height: 56)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                        Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                    ]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .cornerRadius(28)
+                            .shadow(color: Color.blue.opacity(0.4), radius: 10, x: 0, y: 4)
+                    }
+                    
+                    // Sell Button
+                    Button(action: {}) {
+                        Text("Sell \(coin.name)")
+                            .font(.custom("Satoshi-Bold", size: 18))
+                            .foregroundColor(.white)
+                            .frame(height: 56)
+                            .frame(maxWidth: .infinity)
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(28)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 28)
+                                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                            )
+                    }
+                }
+                .padding(.horizontal, 24)
             }
             .padding(.bottom, 16)
         }
@@ -555,19 +592,6 @@ struct CoinDetailModalView: View {
         .cornerRadius(8)
     }
     
-    private var buyButton: some View {
-        Button(action: {}) {
-            Text("Buy Bitcoin")
-                .font(.headline)
-                .foregroundColor(.white)
-                .frame(height: 56)
-                .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(28)
-                .padding(.horizontal, 24)
-                .shadow(color: Color.blue.opacity(0.4), radius: 10, x: 0, y: 4)
-        }
-    }
 }
 
 // MARK: - Supporting Views

@@ -15,6 +15,7 @@ struct ManekiView: View {
         ManekiChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
     ]
     @State private var isLoading = false
+    @State private var searchText = ""
 
     private let exampleQuestions = [
         "How do I start trading crypto?",
@@ -28,7 +29,22 @@ struct ManekiView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            VStack {
+            VStack(spacing: 0) {
+                // TopBar with profile, search, notifications, and hamburger menu
+                TopBar(
+                    searchText: $searchText,
+                    onHamburgerTap: hamburgerAction,
+                    onNotificationTap: {
+                        // TODO: Implement notification action
+                        print("Notification tapped")
+                    },
+                    onProfileTap: {
+                        // TODO: Implement profile action
+                        print("Profile tapped")
+                    }
+                )
+                
+                VStack {
                 ScrollViewReader { scrollProxy in
                     ScrollView {
                         LazyVStack(spacing: 15) {
@@ -101,14 +117,9 @@ struct ManekiView: View {
                     }
                 }
                 .padding()
+                }
             }
             .background(Color.black)
-
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .frame(height: 100)
-                .ignoresSafeArea()
-                .opacity(0.95)
         }
     }
 

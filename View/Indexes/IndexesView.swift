@@ -8,10 +8,25 @@ struct IndexesView: View {
     @StateObject private var viewModel = LeaderboardViewModel()
     @State private var showManekiQuizModal = false
     @State private var showCreateIndexSheet = false
+    @State private var searchText = ""
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                // TopBar with profile, search, notifications, and hamburger menu
+                TopBar(
+                    searchText: $searchText,
+                    onHamburgerTap: hamburgerAction,
+                    onNotificationTap: {
+                        // TODO: Implement notification action
+                        print("Notification tapped")
+                    },
+                    onProfileTap: {
+                        // TODO: Implement profile action
+                        print("Profile tapped")
+                    }
+                )
+                
                 // Tab Selection
                 IndexSourceTabView(selectedTab: $selectedTab)
                     .padding(.horizontal)

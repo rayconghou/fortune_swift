@@ -14,10 +14,26 @@ struct PortfolioView: View {
     @StateObject private var viewModel = PortfolioViewModel()
     @State private var showWalletSheet = false
     @State private var isDeposit = true
+    @State private var searchText = ""
     
     var body: some View {
         ZStack(alignment: .top) {
-            ScrollView {
+            VStack(spacing: 0) {
+                // TopBar with profile, search, notifications, and hamburger menu
+                TopBar(
+                    searchText: $searchText,
+                    onHamburgerTap: hamburgerAction,
+                    onNotificationTap: {
+                        // TODO: Implement notification action
+                        print("Notification tapped")
+                    },
+                    onProfileTap: {
+                        // TODO: Implement profile action
+                        print("Profile tapped")
+                    }
+                )
+                
+                ScrollView {
                 VStack(spacing: 20) {
                     // Main balance card
                     VStack(spacing: 10) {
@@ -235,13 +251,6 @@ struct PortfolioView: View {
                 }
                 .padding(.vertical)
             }
-            
-            // Blurred toolbar overlay
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .frame(height: 100)
-                .ignoresSafeArea()
-                .opacity(0.95)
         }
         .onAppear {
             viewModel.fetchData()
@@ -1037,6 +1046,8 @@ struct PortfolioCoin: Codable {
     let price_change_percentage_24h: Double?
 }
 
+
+}
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {

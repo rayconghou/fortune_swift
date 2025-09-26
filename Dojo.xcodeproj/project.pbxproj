@@ -27,6 +27,8 @@
 		C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA432D836C2C0058C4B2 /* UserProfile.swift */; };
 		C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA452D836C5A0058C4B2 /* ApplePay.swift */; };
 		C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA482D836D120058C4B2 /* SharedUIView.swift */; };
+		C319FA972D9B7A000058C4B2 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA962D9B7A000058C4B2 /* TopBar.swift */; };
+		C319FA992D9B7B000058C4B2 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA982D9B7B000058C4B2 /* EditProfileView.swift */; };
 		C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */; };
 		C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */; };
 		C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */; };
@@ -85,6 +87,8 @@
 		C319FA432D836C2C0058C4B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C319FA452D836C5A0058C4B2 /* ApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
 		C319FA482D836D120058C4B2 /* SharedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
+		C319FA962D9B7A000058C4B2 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		C319FA982D9B7B000058C4B2 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketFetcher.swift; sourceTree = "<group>"; };
 		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				C319FA482D836D120058C4B2 /* SharedUIView.swift */,
+				C319FA962D9B7A000058C4B2 /* TopBar.swift */,
+				C319FA982D9B7B000058C4B2 /* EditProfileView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -444,6 +450,8 @@
 				C319FA752D9B4B110058C4B2 /* DegenTrendingViewModel.swift in Sources */,
 				C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */,
 				C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */,
+				C319FA972D9B7A000058C4B2 /* TopBar.swift in Sources */,
+				C319FA992D9B7B000058C4B2 /* EditProfileView.swift in Sources */,
 				C319FA8D2D9B66530058C4B2 /* BridgeService.swift in Sources */,
 				C319FA792D9B54B20058C4B2 /* DegenTradeModels.swift in Sources */,
 				C319FAA42DAD64E70058C4B2 /* BiometricAuthManager.swift in Sources */,
