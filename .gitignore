@@ -19,3 +19,7 @@ DerivedData/
 *.perspectivev3
 *.xcuserstate
 project.xcworkspace/
+
+# Sensitive configuration files
+GoogleService-Info.plist
+GoogleService-Info-*.plist
