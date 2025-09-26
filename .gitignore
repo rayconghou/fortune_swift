@@ -23,3 +23,17 @@ project.xcworkspace/
 # Sensitive configuration files
 GoogleService-Info.plist
 GoogleService-Info-*.plist
+
+# User-specific Xcode files
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

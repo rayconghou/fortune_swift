@@ -100,7 +100,7 @@ struct TransactionRequest: Codable {
 
 class LiFiBridgeService {
     private let baseURL = "https://li.fi/api/v1"
-    private let apiKey = "YOUR_LIFI_API_KEY" // You'll need to get this from Li.Fi
+    private let apiKey = ProcessInfo.processInfo.environment["LIFI_API_KEY"] ?? "YOUR_LIFI_API_KEY" // Set LIFI_API_KEY environment variable
     
     func getQuote(fromChain: Chain, toChain: Chain, amount: String, walletAddress: String) async throws -> LiFiQuoteResponse {
         // Convert chain identifiers to Li.Fi chain IDs
