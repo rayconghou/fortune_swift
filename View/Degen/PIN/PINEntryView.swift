@@ -45,7 +45,7 @@ struct PINEntryView: View {
                     
                     // Greeting text
                     Text("Good evening, James")
-                        .font(.system(size: 28, weight: .medium))
+                        .font(.satoshiMedium28)
                         .foregroundColor(.white)
                 }
                 .modifier(ShakeEffect(animatableData: viewModel.pinError ? 1 : 0))
@@ -130,7 +130,7 @@ struct PINEntryView: View {
                     // This should integrate with Firebase Auth to send password reset email
                     // Handle forgot passcode
                 }
-                .font(.system(size: 16, weight: .regular))
+                .font(.satoshiRegular16)
                 .foregroundColor(.white)
                 .padding(.bottom, 40)
             }
@@ -192,7 +192,7 @@ struct NumberPadButton: View {
                     .frame(width: 100, height: 60)
                 
                 Text(number)
-                    .font(.system(size: 28, weight: .bold))
+                    .font(.satoshiBold28)
                     .foregroundColor(.white)
             }
         }

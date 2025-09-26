@@ -42,12 +42,12 @@ struct ConfirmPINView: View {
                     
                     // Title text
                     Text("Confirm Your PIN")
-                        .font(.system(size: 28, weight: .medium))
+                        .font(.satoshiMedium28)
                         .foregroundColor(.white)
                         .padding(.top, 20)
                     
                     Text("Enter your 6-digit PIN again to confirm")
-                        .font(.system(size: 16))
+                        .font(.satoshiRegular16)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 40)

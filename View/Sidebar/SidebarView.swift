@@ -44,11 +44,10 @@ struct SidebarView: View {
                             .foregroundColor(.white)
                         VStack(alignment: .leading, spacing: 4) {
                             Text(userProfile.username)
-                                .font(.custom("Inter", size: 20))
-                                .fontWeight(.bold)
+                                .font(.satoshiBold20)
                                 .foregroundColor(.white)
                             Text(userProfile.email)
-                                .font(.custom("Inter", size: 14))
+                                .font(.satoshiRegular14)
                                 .foregroundColor(.gray)
                         }
                         Spacer()
@@ -71,7 +70,7 @@ struct SidebarView: View {
                 HStack {
                     Image(systemName: "flame.fill")
                     Text("Degen Mode")
-                        .font(.custom("Inter", size: 18))
+                        .font(.satoshiRegular18)
                     Spacer()
                     Toggle("", isOn: Binding(
                         get: { showDegenMode },
@@ -94,7 +93,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "cat.fill")
                         Text("Maneki Guide")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -108,7 +107,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "bubble.left.and.bubble.right.fill")
                         Text("Chatroom")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -122,7 +121,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "person.3.fill")
                         Text("Community Hub")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -133,7 +132,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "newspaper.fill")
                         Text("Market News")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -152,7 +151,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "gear")
                         Text("Settings")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -162,7 +161,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "bell")
                         Text("Notifications")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -175,7 +174,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "power")
                         Text("Logout")
-                            .font(.custom("Inter", size: 18))
+                            .font(.satoshiRegular18)
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.red)
