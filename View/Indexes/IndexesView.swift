@@ -110,7 +110,7 @@ struct IndexCard: View {
                         .foregroundColor(.primary)
                     
                     Text(value)
-                        .font(.system(size: 24, weight: .bold))
+                        .font(.satoshiBold24)
                         .foregroundColor(.primary)
                     
                     HStack(spacing: 4) {

@@ -28,13 +28,13 @@ struct DegenSplashScreen: View {
             VStack(spacing: 20) {
                 VStack(spacing: 10) {
                     Text("DEGEN")
-                        .font(.system(size: 56, weight: .black))
+                        .font(.ninja48)
                         .foregroundColor(.white)
                         .opacity(showDojo ? 1 : 0)
                         .animation(.easeInOut(duration: 0.4).delay(0.2), value: showDojo)
                     
                     Text("MODE")
-                        .font(.system(size: 40, weight: .heavy))
+                        .font(.ninja32)
                         .foregroundColor(.cyan)
                         .opacity(showDojo ? 1 : 0)
                         .animation(.easeInOut(duration: 0.4).delay(0.3), value: showDojo)

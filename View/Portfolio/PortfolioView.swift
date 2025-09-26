@@ -55,7 +55,7 @@ struct PortfolioView: View {
                         }
                         
                         Text("$\(viewModel.totalBalance, specifier: "%.2f")")
-                            .font(.system(size: 38, weight: .bold))
+                            .font(.satoshiBold48)
                             .foregroundColor(.white)
                         
                         HStack {
@@ -526,7 +526,7 @@ struct WalletManagementView: View {
                             .foregroundColor(.white)
                         
                         TextField("0.00", text: $amount)
-                            .font(.system(size: 32, weight: .bold))
+                            .font(.satoshiBold32)
                             .keyboardType(.decimalPad)
                             .foregroundColor(.white)
                     }

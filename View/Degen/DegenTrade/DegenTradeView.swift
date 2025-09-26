@@ -185,7 +185,7 @@ struct DegenTradeView: View {
                 // Header
                 HStack {
                     Text("Bridge Assets")
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.ninja20)
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -288,7 +288,7 @@ struct DegenTradeView: View {
                     viewModel.executeBridge()
                 }) {
                     Text("Bridge Now")
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.ninjaRegular)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -466,7 +466,7 @@ struct TokenCard: View {
                 // Action to trade token
             }) {
                 Text("Trade")
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.ninjaRegular)
                     .foregroundColor(.white)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
