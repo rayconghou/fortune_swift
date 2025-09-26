@@ -1,8 +1,0 @@
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/HTTPClient.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/Lock.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/OtlpHttpExporterBase.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/StableOtlpHTTPExporterBase.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/logs/OtlpHttpLogExporter.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/metric/OltpHTTPMetricExporter.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/metric/StableOtlpHTTPMetricExporter.swift
-/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/Exporters/OpenTelemetryProtocolHttp/trace/OtlpHttpTraceExporter.swift

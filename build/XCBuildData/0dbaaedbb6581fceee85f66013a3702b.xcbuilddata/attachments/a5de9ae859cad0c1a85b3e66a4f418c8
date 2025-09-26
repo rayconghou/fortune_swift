@@ -1,4 +1,0 @@
-module SmithyCBOR {
-header "SmithyCBOR-Swift.h"
-export *
-}

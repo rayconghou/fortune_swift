@@ -1,4 +1,0 @@
-module InternalAWSSTS {
-header "InternalAWSSTS-Swift.h"
-export *
-}

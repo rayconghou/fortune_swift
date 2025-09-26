@@ -1,4 +1,0 @@
-module SmithyIdentity {
-header "SmithyIdentity-Swift.h"
-export *
-}

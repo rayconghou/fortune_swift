@@ -1,4 +1,0 @@
-module OpenTelemetrySdk {
-header "OpenTelemetrySdk-Swift.h"
-export *
-}

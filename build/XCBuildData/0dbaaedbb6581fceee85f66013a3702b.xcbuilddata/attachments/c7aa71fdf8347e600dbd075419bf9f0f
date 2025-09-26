@@ -1,4 +1,0 @@
-module OpenTelemetryProtocolExporterCommon {
-header "OpenTelemetryProtocolExporterCommon-Swift.h"
-export *
-}

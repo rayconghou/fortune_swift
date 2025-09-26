@@ -1,4 +1,0 @@
-module AWSSDKCommon {
-header "AWSSDKCommon-Swift.h"
-export *
-}

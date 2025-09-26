@@ -1,4 +1,0 @@
-module SmithyTimestamps {
-header "SmithyTimestamps-Swift.h"
-export *
-}

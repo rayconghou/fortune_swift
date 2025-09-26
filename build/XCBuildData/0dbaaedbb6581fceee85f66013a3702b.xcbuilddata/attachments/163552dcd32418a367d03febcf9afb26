@@ -1,4 +1,0 @@
-module OpenTelemetryApi {
-header "OpenTelemetryApi-Swift.h"
-export *
-}

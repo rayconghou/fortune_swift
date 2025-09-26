@@ -1,4 +1,0 @@
-module InternalAWSCognitoIdentity {
-header "InternalAWSCognitoIdentity-Swift.h"
-export *
-}

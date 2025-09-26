@@ -1,4 +1,0 @@
-module grpcppWrapper {
-umbrella "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/grpc-binary/grpcpp-Wrapper/include"
-export *
-}

@@ -1,4 +1,0 @@
-module SmithyRetriesAPI {
-header "SmithyRetriesAPI-Swift.h"
-export *
-}

@@ -1,4 +1,0 @@
-module SmithyChecksumsAPI {
-header "SmithyChecksumsAPI-Swift.h"
-export *
-}

@@ -1,4 +1,0 @@
-module SmithyReadWrite {
-header "SmithyReadWrite-Swift.h"
-export *
-}

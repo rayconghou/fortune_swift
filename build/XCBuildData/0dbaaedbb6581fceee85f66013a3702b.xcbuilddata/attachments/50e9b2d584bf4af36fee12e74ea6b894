@@ -1,4 +1,0 @@
-module OpenTelemetryProtocolExporterHttp {
-header "OpenTelemetryProtocolExporterHttp-Swift.h"
-export *
-}

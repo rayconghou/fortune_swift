@@ -1,4 +1,0 @@
-module AWSSDKPartitions {
-header "AWSSDKPartitions-Swift.h"
-export *
-}

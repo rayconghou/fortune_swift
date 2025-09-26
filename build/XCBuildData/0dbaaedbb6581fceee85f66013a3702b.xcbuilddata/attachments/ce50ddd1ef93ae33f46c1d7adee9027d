@@ -1,4 +1,0 @@
-module SmithyChecksums {
-header "SmithyChecksums-Swift.h"
-export *
-}

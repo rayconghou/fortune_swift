@@ -1,4 +1,0 @@
-module Smithy {
-header "Smithy-Swift.h"
-export *
-}

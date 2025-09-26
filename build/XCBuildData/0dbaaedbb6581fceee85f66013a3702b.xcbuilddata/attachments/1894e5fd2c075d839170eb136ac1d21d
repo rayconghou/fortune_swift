@@ -1,4 +1,0 @@
-module SmithyHTTPAPI {
-header "SmithyHTTPAPI-Swift.h"
-export *
-}
