@@ -43,11 +43,11 @@ struct SidebarView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.white)
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(userProfile.username)
-                                .font(.satoshiBold20)
+                Text(userProfile.username)
+                    .font(.custom("Satoshi-Bold", size: 24))
                                 .foregroundColor(.white)
-                            Text(userProfile.email)
-                                .font(.satoshiRegular14)
+                Text(userProfile.email)
+                    .font(.custom("Satoshi-Bold", size: 16))
                                 .foregroundColor(.gray)
                         }
                         Spacer()
@@ -70,7 +70,7 @@ struct SidebarView: View {
                 HStack {
                     Image(systemName: "flame.fill")
                     Text("Degen Mode")
-                        .font(.satoshiRegular18)
+                        .font(.custom("Satoshi-Bold", size: 18))
                     Spacer()
                     Toggle("", isOn: Binding(
                         get: { showDegenMode },
@@ -93,7 +93,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "cat.fill")
                         Text("Maneki Guide")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -107,7 +107,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "bubble.left.and.bubble.right.fill")
                         Text("Chatroom")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -121,7 +121,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "person.3.fill")
                         Text("Community Hub")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -132,7 +132,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "newspaper.fill")
                         Text("Market News")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -151,7 +151,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "gear")
                         Text("Settings")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -161,7 +161,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "bell")
                         Text("Notifications")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.white)
@@ -174,7 +174,7 @@ struct SidebarView: View {
                     HStack {
                         Image(systemName: "power")
                         Text("Logout")
-                            .font(.satoshiRegular18)
+                            .font(.custom("Satoshi-Bold", size: 18))
                     }
                     .padding(.horizontal, 30)
                     .foregroundColor(.red)

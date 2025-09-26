@@ -44,8 +44,8 @@ struct DegenView: View {
     // MARK: - Header View
     private var headerView: some View {
         HStack {
-            Text("DEGEN MODE")
-                .font(.ninja24)
+                Text("DEGEN MODE")
+                    .font(.custom("The Last Shuriken", size: 24))
                 .foregroundColor(.orange)
             
             Spacer()
@@ -106,8 +106,8 @@ struct DegenView: View {
                 .foregroundColor(selectedTab == tab ? .orange : .white.opacity(0.6))
                 .font(.system(size: 20))
             
-            Text(label)
-                .font(.satoshiRegular12)
+                Text(label)
+                    .font(.custom("Satoshi-Bold", size: 16))
                 .foregroundColor(selectedTab == tab ? .orange : .white.opacity(0.6))
         }
         .onTapGesture {

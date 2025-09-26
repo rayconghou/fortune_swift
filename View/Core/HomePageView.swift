@@ -305,7 +305,7 @@ struct HomePageView: View {
                 // Main title with better typography and animation
                 Text("DOJO")
                     .foregroundColor(.white)
-                    .font(.satoshiBold54)
+                    .font(.custom("Satoshi-Bold", size: 48))
                     .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
                     .opacity(showDojo ? 1 : 0)
                     .scaleEffect(showDojo ? 1 : 0.8)
@@ -457,14 +457,14 @@ struct DegenEntryWarningView: View {
                     .foregroundColor(Color.yellow)
                 
                 Text("DEGEN MODE")
-                    .font(.satoshiBold24)
+                    .font(.custom("Satoshi-Bold", size: 24))
                     .foregroundColor(Color.yellow)
             }
             .padding(.top, 6)
             
             // Warning
             Text("You're entering high-risk trading territory")
-                .font(.satoshiMedium18)
+                .font(.custom("Satoshi-Bold", size: 18))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
             
@@ -482,7 +482,7 @@ struct DegenEntryWarningView: View {
             
             // Risk acknowledgment text
             Text("By entering Degen Mode, you acknowledge that you understand these risks and are trading at your own discretion.")
-                .font(.satoshiRegular14)
+                .font(.custom("Satoshi-Bold", size: 14))
                 .foregroundColor(Color.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 5)
@@ -495,7 +495,7 @@ struct DegenEntryWarningView: View {
                     }
                 }) {
                     Text("Cancel")
-                        .font(.satoshiMedium16)
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -515,7 +515,7 @@ struct DegenEntryWarningView: View {
                 
                 Button(action: onAccept) {
                     Text("Accept Risk")
-                        .font(.satoshiMedium16)
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -586,7 +586,7 @@ struct DegenEntryWarningView: View {
                 .frame(width: 24, height: 24)
             
             Text(text)
-                .font(.satoshiRegular14)
+                .font(.custom("Satoshi-Bold", size: 14))
                 .foregroundColor(.white)
             
             Spacer()
@@ -610,7 +610,7 @@ struct DegenExitConfirmationView: View {
                     .foregroundColor(Color.blue.opacity(0.9))
                 
                 Text("Exit Degen Mode")
-                    .font(.satoshiBold20)
+                    .font(.custom("Satoshi-Bold", size: 20))
                     .foregroundColor(.white)
             }
             .padding(.top, 8)
@@ -624,7 +624,7 @@ struct DegenExitConfirmationView: View {
             
             // Message
             Text("You're about to exit Degen Mode and return to the standard interface.")
-                .font(.satoshiRegular16)
+                .font(.custom("Satoshi-Bold", size: 16))
                 .foregroundColor(.white.opacity(0.9))
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -646,7 +646,7 @@ struct DegenExitConfirmationView: View {
                     }
                 }) {
                     Text("Stay")
-                        .font(.satoshiMedium16)
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -666,7 +666,7 @@ struct DegenExitConfirmationView: View {
                 
                 Button(action: onConfirm) {
                     Text("Confirm Exit")
-                        .font(.satoshiMedium16)
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)

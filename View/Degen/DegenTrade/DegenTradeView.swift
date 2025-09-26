@@ -184,8 +184,8 @@ struct DegenTradeView: View {
             VStack(spacing: 20) {
                 // Header
                 HStack {
-                    Text("Bridge Assets")
-                        .font(.ninja20)
+                Text("Bridge Assets")
+                    .font(.custom("The Last Shuriken", size: 24))
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -287,8 +287,8 @@ struct DegenTradeView: View {
                 Button(action: {
                     viewModel.executeBridge()
                 }) {
-                    Text("Bridge Now")
-                        .font(.ninjaRegular)
+                Text("Bridge Now")
+                    .font(.custom("The Last Shuriken", size: 18))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -466,7 +466,7 @@ struct TokenCard: View {
                 // Action to trade token
             }) {
                 Text("Trade")
-                    .font(.ninjaRegular)
+                    .font(.custom("The Last Shuriken", size: 18))
                     .foregroundColor(.white)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)

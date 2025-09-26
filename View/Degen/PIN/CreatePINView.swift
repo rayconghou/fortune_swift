@@ -39,12 +39,12 @@ struct CreatePINView: View {
                 
                     // Title text
                     Text("Create Your PIN")
-                        .font(.satoshiMedium28)
+                        .font(.custom("Satoshi-Bold", size: 24))
                         .foregroundColor(.white)
                         .padding(.top, 20)
                     
                     Text("Choose a secure 6-digit PIN to protect your assets")
-                        .font(.satoshiRegular16)
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 40)

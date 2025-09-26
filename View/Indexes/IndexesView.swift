@@ -109,8 +109,8 @@ struct IndexCard: View {
                         .font(.headline)
                         .foregroundColor(.primary)
                     
-                    Text(value)
-                        .font(.satoshiBold24)
+                Text(value)
+                    .font(.custom("Satoshi-Bold", size: 30))
                         .foregroundColor(.primary)
                     
                     HStack(spacing: 4) {
