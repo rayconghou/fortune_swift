@@ -1,0 +1,4 @@
+module InMemoryExporter {
+header "InMemoryExporter-Swift.h"
+export *
+}

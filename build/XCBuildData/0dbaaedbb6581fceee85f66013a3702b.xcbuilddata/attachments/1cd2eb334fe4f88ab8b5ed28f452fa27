@@ -1,0 +1,31 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/SmithyStreams-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyStreams/BufferedStream.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/BufferedStream.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/BufferedStream.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/BufferedStream.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyStreams/FileStream.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/FileStream.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/FileStream.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/FileStream.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyStreams/NSLock+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/NSLock+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/NSLock+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/NSLock+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyStreams/StreamableHttpBody.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/StreamableHttpBody.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/StreamableHttpBody.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyStreams.build/Objects-normal/arm64/StreamableHttpBody.o"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SmithyHTTPAuth-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/AWSSigningConfig.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/AWSSigningConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/AWSSigningConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/AWSSigningConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/AuthSchemes/BearerTokenAuthScheme.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenAuthScheme.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenAuthScheme.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenAuthScheme.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/CRTAdapters.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/CRTAdapters.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/CRTAdapters.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/CRTAdapters.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/DefaultIdentityResolverConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/DefaultIdentityResolverConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/DefaultIdentityResolverConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/DefaultIdentityResolverConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/SigV4AuthScheme.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/SigV4Signer.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4Signer.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4Signer.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/SigV4Signer.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyHTTPAuth/Signers/BearerTokenSigner.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenSigner.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenSigner.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyHTTPAuth.build/Objects-normal/arm64/BearerTokenSigner.o"
+  }
+}

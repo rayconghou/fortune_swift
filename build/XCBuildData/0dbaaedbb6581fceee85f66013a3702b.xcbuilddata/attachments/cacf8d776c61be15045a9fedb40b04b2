@@ -1,0 +1,4 @@
+module AWSSDKChecksums {
+header "AWSSDKChecksums-Swift.h"
+export *
+}

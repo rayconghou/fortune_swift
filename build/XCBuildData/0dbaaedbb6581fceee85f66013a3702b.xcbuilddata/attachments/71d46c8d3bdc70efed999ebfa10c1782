@@ -1,0 +1,4 @@
+module InternalAWSSSOOIDC {
+header "InternalAWSSSOOIDC-Swift.h"
+export *
+}

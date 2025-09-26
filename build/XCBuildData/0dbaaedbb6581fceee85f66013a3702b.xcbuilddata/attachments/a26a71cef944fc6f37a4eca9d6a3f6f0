@@ -1,0 +1,4 @@
+module SmithyStreams {
+header "SmithyStreams-Swift.h"
+export *
+}

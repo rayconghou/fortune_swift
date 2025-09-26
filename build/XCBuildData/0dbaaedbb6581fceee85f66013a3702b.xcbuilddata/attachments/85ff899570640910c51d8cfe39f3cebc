@@ -1,0 +1,4 @@
+module SmithyFormURL {
+header "SmithyFormURL-Swift.h"
+export *
+}

@@ -1,0 +1,56 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/SmithyEventStreamsAPI-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/Context+EventStreamsAPI.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Context+EventStreamsAPI.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Context+EventStreamsAPI.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Context+EventStreamsAPI.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/EventStreamError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/EventStreamError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/EventStreamError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/EventStreamError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/Header.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Header.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Header.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Header.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/MarshalClosure.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MarshalClosure.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MarshalClosure.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MarshalClosure.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/Message.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Message.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Message.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/Message.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/MessageDecoder.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageDecoder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageDecoder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageDecoder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/MessageEncoder.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageEncoder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageEncoder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageEncoder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/MessageType.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageType.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageType.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/MessageType.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/SmithyEventStreamsAPI/UnmarshalClosure.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/UnmarshalClosure.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/UnmarshalClosure.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/SmithyEventStreamsAPI.build/Objects-normal/arm64/UnmarshalClosure.o"
+  }
+}

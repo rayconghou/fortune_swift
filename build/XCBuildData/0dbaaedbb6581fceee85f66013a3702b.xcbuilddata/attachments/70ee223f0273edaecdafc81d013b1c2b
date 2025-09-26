@@ -1,0 +1,4 @@
+module AWSClientRuntime {
+header "AWSClientRuntime-Swift.h"
+export *
+}

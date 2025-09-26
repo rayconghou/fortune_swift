@@ -1,0 +1,366 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientRuntime-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/AWSClientConfigDefaultsProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientConfigDefaultsProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientConfigDefaultsProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSClientConfigDefaultsProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Config/AWSChecksumsConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSChecksumsConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSChecksumsConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSChecksumsConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Config/AWSDefaultClientConfiguration.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSDefaultClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSDefaultClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSDefaultClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Config/AWSRegionClientConfiguration.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRegionClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRegionClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRegionClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Config/AuthSchemeConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthSchemeConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthSchemeConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthSchemeConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Customizations/AuthTokenGenerator.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthTokenGenerator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthTokenGenerator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AuthTokenGenerator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Customizations/BedrockAPIKeyInterceptor.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BedrockAPIKeyInterceptor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BedrockAPIKeyInterceptor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BedrockAPIKeyInterceptor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Customizations/Context+usesBearerServiceEnvVars.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+usesBearerServiceEnvVars.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+usesBearerServiceEnvVars.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+usesBearerServiceEnvVars.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/AWSEndpoint.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpoint.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpoint.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpoint.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/AWSEndpointConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpointConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpointConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSEndpointConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/AWSPartitionDefinition.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSPartitionDefinition.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSPartitionDefinition.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSPartitionDefinition.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/AccountIDEndpointMode.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AccountIDEndpointMode.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AccountIDEndpointMode.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AccountIDEndpointMode.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/Context+AccountIDEndpointMode.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+AccountIDEndpointMode.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+AccountIDEndpointMode.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+AccountIDEndpointMode.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/Context+ResolvedAccountID.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+ResolvedAccountID.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+ResolvedAccountID.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Context+ResolvedAccountID.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/EndpointResolverMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/Partition.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Partition.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Partition.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Partition.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Endpoints/ServiceEndpointMetadata+Extension.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Environment.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Environment.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Environment.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Environment.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Errors/AWSS3ServiceError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Errors/AWSServiceError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Errors/Candidates/InvalidAccessKeyId.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InvalidAccessKeyId.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InvalidAccessKeyId.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InvalidAccessKeyId.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Errors/Candidates/UnknownAWSHTTPErrorCandidate.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPErrorCandidate.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPErrorCandidate.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPErrorCandidate.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Errors/UnknownAWSHTTPServiceError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UnknownAWSHTTPServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/HTTP/HttpResponse+AWS.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/HttpResponse+AWS.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/HttpResponse+AWS.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/HttpResponse+AWS.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/IMDS/IMDSClient.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSClient.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSClient.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSClient.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/IMDS/IMDSConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/AWSS3ErrorWith200StatusXMLMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ErrorWith200StatusXMLMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ErrorWith200StatusXMLMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSS3ErrorWith200StatusXMLMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/AmzSdkInvocationIdMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkInvocationIdMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkInvocationIdMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkInvocationIdMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/AmzSdkRequestMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkRequestMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkRequestMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AmzSdkRequestMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/FlexibleChecksumsRequestMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsRequestMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsRequestMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsRequestMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/FlexibleChecksumsResponseMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsResponseMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsResponseMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FlexibleChecksumsResponseMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/Route53TrimHostedZoneMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Route53TrimHostedZoneMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Route53TrimHostedZoneMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Route53TrimHostedZoneMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/Sha256TreeHashMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Sha256TreeHashMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Sha256TreeHashMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Sha256TreeHashMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/UserAgentMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Middlewares/XAmzTargetMiddleware.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/XAmzTargetMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/XAmzTargetMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/XAmzTargetMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Plugins/DefaultAWSClientPlugin.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultAWSClientPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultAWSClientPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultAWSClientPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Plugins/RegionPlugin.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/PrimitiveExtensions/Data+Extension.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Data+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Data+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Data+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/PrimitiveExtensions/String+Extension.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/String+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/String+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/String+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/PrimitiveExtensions/TimeInterval+Extension.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/TimeInterval+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/TimeInterval+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/TimeInterval+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/AWSJSON/AWSJSONError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSJSONError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSJSONError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSJSONError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/AWSJSON/AwsQueryCompatibleErrorDetails.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AwsQueryCompatibleErrorDetails.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AwsQueryCompatibleErrorDetails.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AwsQueryCompatibleErrorDetails.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/AWSQuery/AWSQueryCompatibleUtils.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryCompatibleUtils.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryCompatibleUtils.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryCompatibleUtils.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/AWSQuery/AWSQueryError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSQueryError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/Ec2Query/EC2QueryError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EC2QueryError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EC2QueryError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EC2QueryError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/RestJSON/RestJSONError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestJSONError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestJSONError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestJSONError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Protocols/RestXML/RestXMLError.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestXMLError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestXMLError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RestXMLError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/DefaultRegionResolver.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultRegionResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultRegionResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/DefaultRegionResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/EnvironmentRegionProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EnvironmentRegionProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EnvironmentRegionProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/EnvironmentRegionProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/IMDSRegionProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSRegionProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSRegionProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/IMDSRegionProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/ProfileRegionProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ProfileRegionProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ProfileRegionProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ProfileRegionProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/RegionProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Regions/RegionResolver.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/RegionResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Retry/AWSRetryConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Retry/AWSRetryErrorInfoProvider.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryErrorInfoProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryErrorInfoProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryErrorInfoProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Retry/AWSRetryMode.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryMode.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryMode.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSRetryMode.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/APIMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/APIMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/APIMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/APIMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/AWSUserAgentMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSUserAgentMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSUserAgentMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AWSUserAgentMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/AdditionalMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AdditionalMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AdditionalMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AdditionalMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/AppIDConfig.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/AppIDMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/AppIDMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/BusinessMetrics.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BusinessMetrics.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BusinessMetrics.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/BusinessMetrics.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/ExecutionEnvMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ExecutionEnvMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ExecutionEnvMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/ExecutionEnvMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/FrameworkMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FrameworkMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FrameworkMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/FrameworkMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/InternalMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InternalMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InternalMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/InternalMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/LanguageMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/LanguageMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/LanguageMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/LanguageMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/OSMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/OSMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/OSMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/OSMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/SDKMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/SDKMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/SDKMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/SDKMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/UserAgent/UserAgentMetadata.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/UserAgentMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSClientRuntime/Sources/AWSClientRuntime/Utils.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Utils.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Utils.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/Utils.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary.d",
+    "diagnostics" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary-emit-module.dia",
+    "pch" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Dojo-primary.swiftdeps"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/API/ApplePay.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ApplePay.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ApplePay.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ApplePay.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/API/CryptoMarketFetcher.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoMarketFetcher.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoMarketFetcher.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoMarketFetcher.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/API/DegenTrendingViewModel.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingViewModel.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingViewModel.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingViewModel.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/API/DexScreenerTokenProfile.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DexScreenerTokenProfile.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DexScreenerTokenProfile.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DexScreenerTokenProfile.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/API/WebSocketManager.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WebSocketManager.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WebSocketManager.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WebSocketManager.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Auth/AuthManager.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthManager.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthManager.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthManager.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Auth/AuthView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Auth/AuthViewModel.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthViewModel.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthViewModel.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AuthViewModel.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/AnyCodable.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AnyCodable.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AnyCodable.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/AnyCodable.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/Asset.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Asset.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Asset.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Asset.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/Chat.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Chat.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Chat.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Chat.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/CoinGecko.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CoinGecko.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CoinGecko.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CoinGecko.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/News.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/News.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/News.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/News.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/Models/UserProfile.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/UserProfile.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/UserProfile.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/UserProfile.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/SecureSignInFlowView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SecureSignInFlowView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SecureSignInFlowView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SecureSignInFlowView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Core/ContentView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Core/DojoApp.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DojoApp.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DojoApp.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DojoApp.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Core/HomePageView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/HomePageView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/HomePageView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/HomePageView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/BiometricSetup/BIometricSetupView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BIometricSetupView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BIometricSetupView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BIometricSetupView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/BiometricSetup/BiometricAuthManager.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BiometricAuthManager.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BiometricAuthManager.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BiometricAuthManager.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenSplashScreenView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenSplashScreenView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenSplashScreenView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenSplashScreenView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenTrade/BridgeService.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BridgeService.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BridgeService.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BridgeService.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenTrade/DegenTradeModels.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeModels.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeModels.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeModels.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenTrade/DegenTradeView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTradeView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenTrade/WalletService.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletService.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletService.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletService.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/DegenTrendingView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/DegenTrendingView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/PIN/ConfirmPINView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ConfirmPINView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ConfirmPINView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ConfirmPINView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/PIN/CreatePINView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreatePINView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreatePINView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreatePINView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/PIN/KeychainHelper.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/KeychainHelper.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/KeychainHelper.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/KeychainHelper.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/PIN/PINEntryView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PINEntryView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PINEntryView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PINEntryView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/SetupComplete/SetupCompleteView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SetupCompleteView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SetupCompleteView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SetupCompleteView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/WalletSocialMediaTracker/Tweets.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Tweets.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Tweets.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/Tweets.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/WalletSocialMediaTracker/WalletSocialMediaTracker.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletSocialMediaTracker.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletSocialMediaTracker.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletSocialMediaTracker.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Degen/WalletSocialMediaTracker/WalletViewModel.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletViewModel.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletViewModel.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/WalletViewModel.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Indexes/CreateIndexes.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreateIndexes.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreateIndexes.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CreateIndexes.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Indexes/IndexesView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/IndexesView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/IndexesView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/IndexesView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Maneki/ManekiView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ManekiView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ManekiView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ManekiView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Portfolio/PortfolioView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PortfolioView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PortfolioView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/PortfolioView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/SharedUI/SharedUIView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SharedUIView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SharedUIView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SharedUIView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Sidebar/ChatroomView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ChatroomView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ChatroomView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/ChatroomView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Sidebar/SidebarView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SidebarView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SidebarView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SidebarView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Spot/BuyCryptoView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BuyCryptoView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BuyCryptoView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/BuyCryptoView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Spot/CryptoTrendCardView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoTrendCardView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoTrendCardView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/CryptoTrendCardView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Spot/SellCryptoView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SellCryptoView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SellCryptoView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SellCryptoView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/View/Spot/SpotView.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SpotView.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SpotView.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/SpotView.o"
+  },
+  "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/rhou/cs_projects/FORTUNE/Dojo/build/DojoIOS.build/Release-iphoneos/Dojo.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

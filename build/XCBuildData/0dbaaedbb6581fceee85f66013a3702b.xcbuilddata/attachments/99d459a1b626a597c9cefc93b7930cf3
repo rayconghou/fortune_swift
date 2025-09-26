@@ -1,0 +1,4 @@
+module AWSSDKHTTPAuth {
+header "AWSSDKHTTPAuth-Swift.h"
+export *
+}

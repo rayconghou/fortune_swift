@@ -1,0 +1,716 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientRuntime-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Client/Client.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Client.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Client.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Client.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Client/ClientBuilder.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/ClientConfigDefaultsProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfigDefaultsProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfigDefaultsProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfigDefaultsProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/ClientConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/Context+Config.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Config.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Config.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Config.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/ContextBuilder+withSmithyDefaultConfig.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContextBuilder+withSmithyDefaultConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContextBuilder+withSmithyDefaultConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContextBuilder+withSmithyDefaultConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/DefaultClientConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/DefaultHttpClientConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultHttpClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultHttpClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultHttpClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/DefaultIdempotencyTokenGenerator.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultIdempotencyTokenGenerator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultIdempotencyTokenGenerator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultIdempotencyTokenGenerator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/DefaultSDKRuntimeConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultSDKRuntimeConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultSDKRuntimeConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultSDKRuntimeConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/IdempotencyTokenGenerator.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenGenerator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenGenerator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenGenerator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Config/IdentityPropertyKeys.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdentityPropertyKeys.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdentityPropertyKeys.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdentityPropertyKeys.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/CRTResolvedEndpoint.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpoint.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpoint.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpoint.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/CRTResolvedEndpointType.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpointType.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpointType.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTResolvedEndpointType.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/CredentialScope.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CredentialScope.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CredentialScope.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CredentialScope.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/DefaultEndpointResolver.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultEndpointResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultEndpointResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultEndpointResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointResolverMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointResolverMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointsAuthSchemeResolver.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsAuthSchemeResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsAuthSchemeResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsAuthSchemeResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointsRequestContext.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContext.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContext.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContext.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointsRequestContextProviding.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContextProviding.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContextProviding.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRequestContextProviding.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/EndpointsRuleEngine.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRuleEngine.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRuleEngine.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EndpointsRuleEngine.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/PartitionDefinition.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PartitionDefinition.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PartitionDefinition.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PartitionDefinition.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/ServiceEndpointMetadata.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceEndpointMetadata.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/SmithyEndpoint.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SmithyEndpoint.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SmithyEndpoint.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SmithyEndpoint.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Endpoints/StaticEndpointResolver.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StaticEndpointResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StaticEndpointResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StaticEndpointResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Idempotency/Context+Idempotency.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Idempotency.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Idempotency.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Context+Idempotency.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Idempotency/IdempotencyTokenMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/IdempotencyTokenMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/AnyInterceptor.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AnyInterceptor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AnyInterceptor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AnyInterceptor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/DefaultInterceptorContext.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultInterceptorContext.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultInterceptorContext.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultInterceptorContext.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/HttpInterceptorProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpInterceptorProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpInterceptorProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpInterceptorProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/Interceptor.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/InterceptorContext.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorContext.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorContext.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorContext.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/InterceptorProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/InterceptorProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Interceptor/Interceptors.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptors.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptors.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Interceptors.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/BaseError/BaseError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BaseError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BaseError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BaseError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/CRTClientEngine.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngine.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngine.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngine.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/CRTClientEngineConfig.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineConfig.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineConfig.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineConfig.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/CRTClientEngineLogHandlerFactory.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineLogHandlerFactory.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineLogHandlerFactory.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientEngineLogHandlerFactory.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/CRTClientTLSOptions.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientTLSOptions.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientTLSOptions.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CRTClientTLSOptions.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/HTTP2Stream+ByteStream.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTP2Stream+ByteStream.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTP2Stream+ByteStream.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTP2Stream+ByteStream.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/SDKDefaultIO.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKDefaultIO.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKDefaultIO.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKDefaultIO.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/CRT/TLSConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TLSConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TLSConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TLSConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/HTTPError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/HTTPResponse+WireDataProviding.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPResponse+WireDataProviding.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPResponse+WireDataProviding.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HTTPResponse+WireDataProviding.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/HttpClientConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/HttpTelemetry.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpTelemetry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpTelemetry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpTelemetry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/AuthSchemeMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/ContentLengthMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentLengthMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentLengthMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentLengthMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/ContentMD5Middleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentMD5Middleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentMD5Middleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentMD5Middleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/ContentTypeMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentTypeMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentTypeMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ContentTypeMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/DeserializeMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DeserializeMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DeserializeMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DeserializeMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/HeaderMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/LoggerMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/MutateHeadersMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MutateHeadersMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MutateHeadersMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MutateHeadersMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/Providers/HeaderProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/Providers/QueryItemProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/Providers/URLPathProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/QueryItemMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/QueryItemMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/BlobBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/BlobStreamBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobStreamBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobStreamBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BlobStreamBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/BodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/BodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/EnumBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EnumBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EnumBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EnumBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/EventStreamBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EventStreamBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EventStreamBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/EventStreamBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/PayloadBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PayloadBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PayloadBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PayloadBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/RequestBody/StringBodyMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StringBodyMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StringBodyMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/StringBodyMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/SignerMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SignerMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SignerMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SignerMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/URLHostMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLHostMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLHostMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLHostMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/Middlewares/URLPathMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLPathMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/SdkHttpClient.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SdkHttpClient.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SdkHttpClient.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SdkHttpClient.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/String+URLPercentEncoding.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+URLPercentEncoding.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+URLPercentEncoding.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+URLPercentEncoding.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/URLSession/FoundationStreamBridge.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FoundationStreamBridge.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FoundationStreamBridge.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FoundationStreamBridge.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/URLSession/URLSessionConfiguration+HTTPClientConfiguration.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionConfiguration+HTTPClientConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionConfiguration+HTTPClientConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionConfiguration+HTTPClientConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/URLSession/URLSessionHTTPClient.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionHTTPClient.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionHTTPClient.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionHTTPClient.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/URLSession/URLSessionTLSOptions.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSOptions.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSOptions.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSOptions.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/URLSession/URLSessionTLSResolverUtils.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSResolverUtils.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSResolverUtils.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/URLSessionTLSResolverUtils.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Http/UnknownHttpServiceError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownHttpServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownHttpServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownHttpServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/ModeledError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ModeledError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ModeledError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ModeledError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/ServiceError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Streaming/ByteStream+FileHandle.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+FileHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+FileHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+FileHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/Streaming/ByteStream+Validating.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+Validating.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+Validating.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ByteStream+Validating.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Networking/UnknownServiceError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownServiceError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownServiceError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UnknownServiceError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/ApplyEndpoint.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplyEndpoint.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplyEndpoint.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplyEndpoint.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/ApplySigner.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplySigner.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplySigner.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ApplySigner.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/AuthSchemeSelector.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeSelector.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeSelector.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemeSelector.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/ExecuteRequest.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ExecuteRequest.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ExecuteRequest.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ExecuteRequest.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/Orchestrator.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Orchestrator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Orchestrator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Orchestrator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/OrchestratorBuilder.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Orchestrator/OrchestratorTelemetry.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorTelemetry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorTelemetry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OrchestratorTelemetry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Pagination/PaginateToken.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginateToken.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginateToken.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginateToken.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Pagination/PaginatorSequence.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginatorSequence.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginatorSequence.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PaginatorSequence.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/AuthSchemePlugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemePlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemePlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AuthSchemePlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/DefaultClientPlugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultClientPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/HttpClientPlugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HttpClientPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/Plugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Plugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Plugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Plugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/RetryPlugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RetryPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RetryPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RetryPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Plugins/TelemetryPlugin.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryPlugin.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryPlugin.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryPlugin.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/AsyncSequence+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncSequence+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncSequence+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncSequence+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/FileHandle+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FileHandle+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FileHandle+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/FileHandle+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/Indirect.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Indirect.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Indirect.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Indirect.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/NSLock+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/NSLock+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/NSLock+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/NSLock+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/Number+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Number+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Number+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Number+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/PrimitiveTypeExtensions/String+Extensions.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+Extensions.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+Extensions.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/String+Extensions.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Retries/DefaultRetryErrorInfoProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultRetryErrorInfoProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultRetryErrorInfoProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultRetryErrorInfoProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Serialization/SerializationUtils/CharacterSet+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CharacterSet+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CharacterSet+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/CharacterSet+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Serialization/SerializationUtils/Double+Extension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Double+Extension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Double+Extension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Double+Extension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Serialization/SerializationUtils/HeaderUtils.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderUtils.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderUtils.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/HeaderUtils.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Serialization/SerializationUtils/TimestampFormatter.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TimestampFormatter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TimestampFormatter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TimestampFormatter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Context/TelemetryContext.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContext.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContext.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContext.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Context/TelemetryContextManager.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContextManager.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContextManager.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryContextManager.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Context/TelemetryScope.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryScope.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryScope.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryScope.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/DefaultTelemetry.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultTelemetry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultTelemetry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/DefaultTelemetry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/ClientLogMode.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientLogMode.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientLogMode.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/ClientLogMode.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/LogLevel+StringExtension.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LogLevel+StringExtension.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LogLevel+StringExtension.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LogLevel+StringExtension.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/LoggerProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/LoggerProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/SDKLogHandlerFactory.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogHandlerFactory.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogHandlerFactory.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogHandlerFactory.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/SDKLogLevel.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogLevel.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogLevel.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLogLevel.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Logging/SDKLoggingSystem.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLoggingSystem.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLoggingSystem.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SDKLoggingSystem.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/AsyncMeasurement.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncMeasurement.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncMeasurement.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/AsyncMeasurement.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/Histogram.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Histogram.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Histogram.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Histogram.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/Meter.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Meter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Meter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Meter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/MeterProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MeterProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MeterProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MeterProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/MonotonicCounter.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MonotonicCounter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MonotonicCounter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/MonotonicCounter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Metrics/UpDownCounter.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UpDownCounter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UpDownCounter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/UpDownCounter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Providers/OpenTelemetry/OTelProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Providers/OpenTelemetry/OTelTracing.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelTracing.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelTracing.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelTracing.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Providers/OpenTelemetry/OTelUtils.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelUtils.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelUtils.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/OTelUtils.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/TelemetryProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TelemetryProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/SpanContext.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanContext.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanContext.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanContext.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/SpanKind.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanKind.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanKind.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SpanKind.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/TraceSpan.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpan.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpan.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpan.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/TraceSpanStatus.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpanStatus.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpanStatus.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TraceSpanStatus.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/Tracer.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Tracer.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Tracer.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/Tracer.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Telemetry/Tracing/TracerProvider.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TracerProvider.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TracerProvider.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/TracerProvider.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Util/PlatformOperatingSystem.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperatingSystem.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperatingSystem.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperatingSystem.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Util/PlatformOperationSystemVersion.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperationSystemVersion.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperationSystemVersion.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/PlatformOperationSystemVersion.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/Util/SwiftVersion.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SwiftVersion.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SwiftVersion.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/SwiftVersion.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/protocols/rpcv2cbor/RpcV2CborError.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborError.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborError.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborError.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/protocols/rpcv2cbor/RpcV2CborQueryCompatible.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborQueryCompatible.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborQueryCompatible.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborQueryCompatible.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/Sources/ClientRuntime/protocols/rpcv2cbor/RpcV2CborValidateResponseHeaderMiddleware.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborValidateResponseHeaderMiddleware.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborValidateResponseHeaderMiddleware.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/RpcV2CborValidateResponseHeaderMiddleware.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/smithy-swift/build/smithy-swift.build/Release-iphoneos/ClientRuntime.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  }
+}

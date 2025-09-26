@@ -1,0 +1,4 @@
+module SmithyRetries {
+header "SmithyRetries-Swift.h"
+export *
+}

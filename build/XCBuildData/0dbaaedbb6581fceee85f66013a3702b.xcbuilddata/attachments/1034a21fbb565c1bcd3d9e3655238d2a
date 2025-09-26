@@ -1,0 +1,4 @@
+module DataCompression {
+header "DataCompression-Swift.h"
+export *
+}

@@ -52,6 +52,7 @@
 		C319FA872D9B63DB0058C4B2 /* BIometricSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA862D9B63DB0058C4B2 /* BIometricSetupView.swift */; };
 		C319FA8A2D9B63F90058C4B2 /* SetupCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA892D9B63F90058C4B2 /* SetupCompleteView.swift */; };
 		C319FA8D2D9B66530058C4B2 /* BridgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA8C2D9B66530058C4B2 /* BridgeService.swift */; };
+		C319FA8E2D9B66530058C4B2 /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA932D9B66530058C4B2 /* PINEntryView.swift */; };
 		C319FA8F2D9B66E80058C4B2 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA8E2D9B66E80058C4B2 /* WalletService.swift */; };
 		C319FA912DA0CB090058C4B2 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */; };
 		C319FA942DA611F10058C4B2 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA932DA611F10058C4B2 /* ChatroomView.swift */; };
@@ -61,6 +62,7 @@
 		C319FAA22DAD55BB0058C4B2 /* SecureSignInFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA12DAD55BB0058C4B2 /* SecureSignInFlowView.swift */; };
 		C319FAA42DAD64E70058C4B2 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */; };
 		C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */; };
+		C38BADA12E85CD9500DF6FF2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C38BADA02E85CD9500DF6FF2 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,7 @@
 		C319FA8C2D9B66530058C4B2 /* BridgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeService.swift; sourceTree = "<group>"; };
 		C319FA8E2D9B66E80058C4B2 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		C319FA932D9B66530058C4B2 /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
 		C319FA932DA611F10058C4B2 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
 		C319FA952DA71F420058C4B2 /* CreateIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIndexes.swift; sourceTree = "<group>"; };
 		C319FA972DA7395E0058C4B2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
 		C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38BADA02E85CD9500DF6FF2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,7 @@
 				C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */,
 				C319FA832D9B623A0058C4B2 /* ConfirmPINView.swift */,
 				C319FA802D9B62210058C4B2 /* CreatePINView.swift */,
+				C319FA932D9B66530058C4B2 /* PINEntryView.swift */,
 			);
 			path = PIN;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 		C388F8882D72437D003FFCFF = {
 			isa = PBXGroup;
 			children = (
+				C38BADA02E85CD9500DF6FF2 /* .gitignore */,
 				C319FA612D99B7E70058C4B2 /* Auth */,
 				C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */,
 				C319FA252D8113B10058C4B2 /* View */,
@@ -410,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38BADA12E85CD9500DF6FF2 /* .gitignore in Resources */,
 				C319FA242D8113A80058C4B2 /* Preview Content in Resources */,
 				C319FA232D8113A80058C4B2 /* Assets.xcassets in Resources */,
 				C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */,
@@ -430,6 +437,7 @@
 				C319FA8A2D9B63F90058C4B2 /* SetupCompleteView.swift in Sources */,
 				C319FA8F2D9B66E80058C4B2 /* WalletService.swift in Sources */,
 				C319FA812D9B62210058C4B2 /* CreatePINView.swift in Sources */,
+				C319FA8E2D9B66530058C4B2 /* PINEntryView.swift in Sources */,
 				C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */,
 				C319FA7B2D9B55920058C4B2 /* WalletSocialMediaTracker.swift in Sources */,
 				C319FA772D9B53660058C4B2 /* DegenTradeView.swift in Sources */,

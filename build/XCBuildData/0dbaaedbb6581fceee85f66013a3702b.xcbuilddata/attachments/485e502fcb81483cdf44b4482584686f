@@ -1,0 +1,976 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/OpenTelemetrySdk-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/Clock.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Clock.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Clock.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Clock.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/ComponentRegistry.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ComponentRegistry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ComponentRegistry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ComponentRegistry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/ExportResult.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExportResult.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExportResult.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExportResult.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/InstrumentationLibraryInfo.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentationLibraryInfo.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentationLibraryInfo.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentationLibraryInfo.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/WorkerThread.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/WorkerThread.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/WorkerThread.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/WorkerThread.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Common/autoreleasepool.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/autoreleasepool.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/autoreleasepool.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/autoreleasepool.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Internal/Locks.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Locks.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Locks.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Locks.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Internal/MillisClock.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MillisClock.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MillisClock.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MillisClock.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Internal/MonotonicClock.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MonotonicClock.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MonotonicClock.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MonotonicClock.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Data/ReadableLogRecord.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableLogRecord.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableLogRecord.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableLogRecord.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Export/InMemoryLogRecordExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InMemoryLogRecordExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InMemoryLogRecordExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InMemoryLogRecordExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Export/LogRecordExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Export/MultiLogRecordExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Export/NoopLogRecordExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LogLimits.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogLimits.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogLimits.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogLimits.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LogRecordBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LoggerBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LoggerProviderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LoggerProviderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerProviderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LoggerSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/LoggerSharedState.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSharedState.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSharedState.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LoggerSharedState.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Processors/BatchLogRecordProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchLogRecordProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchLogRecordProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchLogRecordProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Processors/LogRecordProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LogRecordProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Processors/MultiLogRecordProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiLogRecordProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Processors/NoopLogRecordProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopLogRecordProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Logs/Processors/SimpleLogRecordProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleLogRecordProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleLogRecordProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleLogRecordProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/Aggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/CounterSumAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterSumAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterSumAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterSumAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/HistogramAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/LastValueAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/MaxValueAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MaxValueAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MaxValueAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MaxValueAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Aggregators/MeasureMinMaxSumCountAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMinMaxSumCountAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMinMaxSumCountAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMinMaxSumCountAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundCounterMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundCounterMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundCounterMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundHistogramMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundHistogramMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundHistogramMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundMeasureMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/BoundMeasureMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundMeasureMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/CounterMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/CounterMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CounterMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/DoubleObservableGaugeHandle.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/DoubleObservableGaugeSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObservableGaugeSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/DoubleObserverMetricHandle.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/DoubleObserverMetricHandleSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandleSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandleSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleObserverMetricHandleSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/AggregationType.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationType.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationType.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationType.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/Metric.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Metric.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Metric.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Metric.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/MetricData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/MetricExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/MetricProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/MetricProcessorSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessorSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessorSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProcessorSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/PushMetricController.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PushMetricController.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PushMetricController.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PushMetricController.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Export/UngroupedBatcher.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/UngroupedBatcher.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/UngroupedBatcher.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/UngroupedBatcher.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/HistogramMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/IntObservableGaugeHandle.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/IntObservableGaugeSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObservableGaugeSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/IntObserverMetricHandle.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/IntObserverMetricHandleSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandleSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandleSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IntObserverMetricHandleSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/LabelSetSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LabelSetSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LabelSetSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LabelSetSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/MeasureMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeasureMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/MeterProviderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/MeterProviderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterProviderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/MeterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/MeterSharedState.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSharedState.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSharedState.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterSharedState.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/BoundRawCounterMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/BoundRawCounterMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawCounterMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/BoundRawHistogramMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/BoundRawHistogramMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BoundRawHistogramMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/RawCounterMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/RawCounterMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawCounterMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/RawHistogramMetricSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Raw/RawHistogramMetricSdkBase.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdkBase.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdkBase.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RawHistogramMetricSdkBase.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/RecordStatus.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordStatus.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordStatus.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordStatus.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AdaptingCircularBufferCounter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingCircularBufferCounter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingCircularBufferCounter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingCircularBufferCounter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AdaptingIntegerArray.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingIntegerArray.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingIntegerArray.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AdaptingIntegerArray.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/Aggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Aggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AggregationSelector.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationSelector.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationSelector.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationSelector.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AggregationTemporality.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationTemporality.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationTemporality.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregationTemporality.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AggregatorFactory.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorFactory.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorFactory.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorFactory.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/AggregatorHandle.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorHandle.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorHandle.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AggregatorHandle.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/Base2ExponentialHistogramAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DefaultAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DefaultAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DefaultAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DefaultAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DoubleBase2ExponentialHistogramAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DoubleExplicitBucketHistogramAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleExplicitBucketHistogramAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleExplicitBucketHistogramAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleExplicitBucketHistogramAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DoubleLastValueAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleLastValueAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleLastValueAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleLastValueAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DoubleSumAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleSumAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleSumAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleSumAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DropAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/DropAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DropAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/ExplicitBucketHistogramAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExplicitBucketHistogramAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExplicitBucketHistogramAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExplicitBucketHistogramAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/LastValueAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LastValueAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/LongLastValueAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongLastValueAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongLastValueAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongLastValueAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/LongSumAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongSumAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongSumAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongSumAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/StableAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/SumAggregation.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregation.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregation.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregation.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Aggregation/SumAggregator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SumAggregator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/CallbackRegistration.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CallbackRegistration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CallbackRegistration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CallbackRegistration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/ExemplarData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/Base2ExponentialHistogramIndexer.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramIndexer.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramIndexer.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Base2ExponentialHistogramIndexer.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/DoubleBase2ExponentialHistogramBuckets.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramBuckets.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramBuckets.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleBase2ExponentialHistogramBuckets.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/DoublePointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoublePointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoublePointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoublePointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/EmptyExponentialHistogramBuckets.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyExponentialHistogramBuckets.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyExponentialHistogramBuckets.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyExponentialHistogramBuckets.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/ExponentialHistogramBuckets.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramBuckets.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramBuckets.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramBuckets.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/ExponentialHistogramPointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramPointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramPointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExponentialHistogramPointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/HistogramPointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramPointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramPointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramPointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/LongPointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongPointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongPointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongPointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/Internal/SummaryPointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SummaryPointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SummaryPointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SummaryPointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/PointData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PointData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PointData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/PointData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Data/StableMetricData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleCounterMeterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleCounterMeterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleCounterMeterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleCounterMeterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleGaugeBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleGaugeSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleGaugeSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleHistogramMeterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleHistogramMeterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleHistogramMeterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleUpDownCounterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/DoubleUpDownCounterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/DoubleUpDownCounterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/ExemplarFilter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarFilter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarFilter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarFilter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/ExemplarReservoir.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarReservoir.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarReservoir.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ExemplarReservoir.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/FilteredExemplarReservoir.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/FilteredExemplarReservoir.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/FilteredExemplarReservoir.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/FilteredExemplarReservoir.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/HistogramExemplarReservoir.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramExemplarReservoir.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramExemplarReservoir.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/HistogramExemplarReservoir.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/LongToDoubleExemplarReservoir.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongToDoubleExemplarReservoir.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongToDoubleExemplarReservoir.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongToDoubleExemplarReservoir.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/ReservoirCell.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCell.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCell.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCell.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exemplar/ReservoirCellSelector.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCellSelector.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCellSelector.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReservoirCellSelector.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exporter/CollectionRegistration.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CollectionRegistration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CollectionRegistration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/CollectionRegistration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exporter/MetricProducer.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProducer.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProducer.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricProducer.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exporter/StableMetricExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exporter/StablePeriodicMeterReaderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMeterReaderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMeterReaderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMeterReaderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Exporter/StablePeriodicMetricReaderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMetricReaderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMetricReaderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StablePeriodicMetricReaderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Instrument.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Instrument.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Instrument.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Instrument.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentDescriptor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentDescriptor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentDescriptor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentDescriptor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentSelector.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelector.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelector.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelector.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentSelectorBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelectorBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelectorBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentSelectorBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentType.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentType.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentType.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentType.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/InstrumentValueType.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentValueType.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentValueType.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/InstrumentValueType.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongCounterMeterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterMeterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterMeterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterMeterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongCounterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongCounterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongGaugeBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongGaugeSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongGaugeSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongHistogramMeterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongHistogramMeterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongHistogramMeterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongUpDownCounterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/LongUpDownCounterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/LongUpDownCounterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/Measurement.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Measurement.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Measurement.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Measurement.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/MeterBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MeterBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/MetricDescriptor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricDescriptor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricDescriptor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricDescriptor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/NoopStableMeterProviderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopStableMeterProviderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopStableMeterProviderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopStableMeterProviderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/ObservableInstrumentSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ObservableInstrumentSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ObservableInstrumentSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ObservableInstrumentSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/RegisteredReader.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredReader.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredReader.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredReader.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/StableMeterProviderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/StableMeterProviderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/StableMeterSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/StableMetricReader.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricReader.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricReader.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMetricReader.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/AsynchronousMetricStorage.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AsynchronousMetricStorage.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AsynchronousMetricStorage.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AsynchronousMetricStorage.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/EmptyMetricStorage.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyMetricStorage.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyMetricStorage.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EmptyMetricStorage.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/MetricStorage.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorage.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorage.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorage.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/MetricStorageRegistry.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorageRegistry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorageRegistry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MetricStorageRegistry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/MultiWritableMetricStorage.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiWritableMetricStorage.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiWritableMetricStorage.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiWritableMetricStorage.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/StableMeterProviderSharedState.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSharedState.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSharedState.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterProviderSharedState.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/StableMeterSharedState.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSharedState.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSharedState.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableMeterSharedState.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/StableObservableMeasurement.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableObservableMeasurement.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableObservableMeasurement.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableObservableMeasurement.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/State/SynchronousMetricStorage.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SynchronousMetricStorage.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SynchronousMetricStorage.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SynchronousMetricStorage.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/ValueAtQuantile.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ValueAtQuantile.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ValueAtQuantile.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ValueAtQuantile.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/View/AttributeProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributeProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributeProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributeProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/View/RegisteredView.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredView.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredView.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RegisteredView.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/View/StableView.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableView.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableView.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableView.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/View/StableViewRegistry.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableViewRegistry.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableViewRegistry.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/StableViewRegistry.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Metrics/Stable/View/ViewBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ViewBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ViewBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ViewBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Resources/EnvVarResource.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvVarResource.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvVarResource.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvVarResource.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Resources/Resource.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Resource.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Resource.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Resource.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Resources/ResourceAttributes.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ResourceAttributes.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ResourceAttributes.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ResourceAttributes.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/ArrayWithCapacity.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ArrayWithCapacity.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ArrayWithCapacity.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ArrayWithCapacity.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/AttributesDictionary.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributesDictionary.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributesDictionary.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/AttributesDictionary.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Data/SpanData.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanData.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanData.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanData.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Export/MultiSpanExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Export/SpanExporter.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanExporter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanExporter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanExporter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/IdGenerator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IdGenerator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IdGenerator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/IdGenerator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Propagation/EnvironmentContextPropagator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvironmentContextPropagator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvironmentContextPropagator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/EnvironmentContextPropagator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/RandomIdsGenerator.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RandomIdsGenerator.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RandomIdsGenerator.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RandomIdsGenerator.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/ReadableSpan.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableSpan.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableSpan.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/ReadableSpan.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/RecordEventsReadableSpan.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordEventsReadableSpan.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordEventsReadableSpan.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/RecordEventsReadableSpan.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Samplers/Sampler.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Sampler.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Sampler.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Sampler.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/Samplers/Samplers.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Samplers.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Samplers.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Samplers.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanBuilderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanBuilderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanBuilderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanBuilderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanLimits.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanLimits.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanLimits.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanLimits.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SpanProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanProcessors/BatchSpanProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchSpanProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchSpanProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/BatchSpanProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanProcessors/MultiSpanProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/MultiSpanProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanProcessors/NoopSpanProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopSpanProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopSpanProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/NoopSpanProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/SpanProcessors/SimpleSpanProcessor.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleSpanProcessor.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleSpanProcessor.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/SimpleSpanProcessor.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/TracerProviderBuilder.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderBuilder.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderBuilder.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderBuilder.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/TracerProviderSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerProviderSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/TracerSdk.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSdk.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSdk.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSdk.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Trace/TracerSharedState.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSharedState.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSharedState.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/TracerSharedState.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/Sources/OpenTelemetrySdk/Version.swift" : {
+    "index-unit-output-path" : "/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Version.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Version.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/opentelemetry-swift/build/opentelemetry-swift.build/Release-iphoneos/OpenTelemetrySdk.build/Objects-normal/arm64/Version.o"
+  }
+}

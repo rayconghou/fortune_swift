@@ -1,0 +1,4 @@
+module SmithyXML {
+header "SmithyXML-Swift.h"
+export *
+}

@@ -1,0 +1,26 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSSDKChecksums-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKChecksums/Sources/AWSSDKChecksums/AWSChecksumCalculationMode.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChecksumCalculationMode.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChecksumCalculationMode.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChecksumCalculationMode.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKChecksums/Sources/AWSSDKChecksums/AWSChunkedUtil.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChunkedUtil.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChunkedUtil.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/AWSChunkedUtil.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKChecksums/Sources/AWSSDKChecksums/Context+Checksum.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/Context+Checksum.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/Context+Checksum.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKChecksums.build/Objects-normal/arm64/Context+Checksum.o"
+  }
+}

@@ -1,0 +1,4 @@
+module SmithyEventStreamsAuthAPI {
+header "SmithyEventStreamsAuthAPI-Swift.h"
+export *
+}

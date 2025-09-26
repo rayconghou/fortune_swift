@@ -1,0 +1,4 @@
+module SmithyHTTPAuth {
+header "SmithyHTTPAuth-Swift.h"
+export *
+}

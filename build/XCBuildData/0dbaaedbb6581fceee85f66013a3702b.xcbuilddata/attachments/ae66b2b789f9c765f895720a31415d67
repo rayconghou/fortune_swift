@@ -1,0 +1,4 @@
+module AWSSQS {
+header "AWSSQS-Swift.h"
+export *
+}

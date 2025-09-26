@@ -1,0 +1,4 @@
+module AWSSDKIdentity {
+header "AWSSDKIdentity-Swift.h"
+export *
+}

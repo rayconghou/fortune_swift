@@ -1,0 +1,4 @@
+module SmithyHTTPClient {
+header "SmithyHTTPClient-Swift.h"
+export *
+}

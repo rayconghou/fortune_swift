@@ -1,0 +1,4 @@
+module SmithyJSON {
+header "SmithyJSON-Swift.h"
+export *
+}

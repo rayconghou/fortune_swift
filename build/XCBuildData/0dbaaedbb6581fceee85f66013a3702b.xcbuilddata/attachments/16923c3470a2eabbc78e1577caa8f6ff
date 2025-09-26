@@ -1,0 +1,4 @@
+module leveldb {
+umbrella "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/leveldb/include"
+export *
+}

@@ -1,0 +1,31 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/AWSSDKCommon-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKCommon/Sources/AWSSDKCommon/FieldResolver.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FieldResolver.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FieldResolver.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FieldResolver.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKCommon/Sources/AWSSDKCommon/FileBasedConfiguration/CRTFileBasedConfiguration.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/CRTFileBasedConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/CRTFileBasedConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/CRTFileBasedConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKCommon/Sources/AWSSDKCommon/FileBasedConfiguration/FileBasedConfiguration.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfiguration.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfiguration.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfiguration.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKCommon/Sources/AWSSDKCommon/FileBasedConfiguration/FileBasedConfigurationKeys.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfigurationKeys.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfigurationKeys.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKCommon.build/Objects-normal/arm64/FileBasedConfigurationKeys.o"
+  }
+}

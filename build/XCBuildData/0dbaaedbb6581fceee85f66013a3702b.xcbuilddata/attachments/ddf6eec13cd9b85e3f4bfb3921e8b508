@@ -1,0 +1,4 @@
+module AwsCommonRuntimeKit {
+header "AwsCommonRuntimeKit-Swift.h"
+export *
+}

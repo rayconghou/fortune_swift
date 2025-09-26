@@ -20,7 +20,11 @@ struct SecureSignInFlowView: View {
     var body: some View {
         NavigationStack {
             if !securityViewModel.authenticated {
-                onboardingFlow
+                if securityViewModel.currentStep == .pinEntry {
+                    authenticationFlow
+                } else {
+                    onboardingFlow
+                }
             } else {
                 HomePageView(userProfile: userProfile)
             }
@@ -34,9 +38,17 @@ struct SecureSignInFlowView: View {
             CreatePINView(viewModel: securityViewModel)
         case .confirmPin:
             ConfirmPINView(viewModel: securityViewModel)
+        case .pinEntry:
+            PINEntryView(viewModel: securityViewModel)
         case .setupComplete:
             SetupCompleteView(viewModel: securityViewModel)
         }
+    }
+    
+    // Add a new case for PIN entry (authentication)
+    @ViewBuilder
+    private var authenticationFlow: some View {
+        PINEntryView(viewModel: securityViewModel)
     }
 }
 
@@ -56,7 +68,6 @@ class SecureSignInFlowViewModel: ObservableObject {
     // MARK: Onboarding / Authentication
     @Published var pin: String = ""
     @Published var confirmPin: String = ""
-    @Published var showPin: Bool = false
     @Published var biometricEnabled: Bool = false
     
     @Published var pinVerified: Bool = false
@@ -77,6 +88,7 @@ class SecureSignInFlowViewModel: ObservableObject {
     enum OnboardingStep {
         case createPin
         case confirmPin
+        case pinEntry
         case setupComplete
     }
     
@@ -84,7 +96,7 @@ class SecureSignInFlowViewModel: ObservableObject {
         // Authentication checks
         if let storedPin = KeychainHelper.read(forKey: "userPin") {
             self.pin = storedPin
-            self.currentStep = .confirmPin
+            self.currentStep = .pinEntry
         } else {
             self.currentStep = .createPin
         }
@@ -92,10 +104,12 @@ class SecureSignInFlowViewModel: ObservableObject {
 
     // MARK: PIN Flow
     func appendPin(digit: String) {
+        print("DEBUG: appendPin called with digit: \(digit), currentStep: \(currentStep), current pin: '\(pin)'")
         switch currentStep {
         case .createPin:
             if pin.count < 6 {
                 pin += digit
+                print("DEBUG: CreatePin - pin now: '\(pin)'")
                 if pin.count == 6 {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         withAnimation(.spring(response: 0.3)) {
@@ -107,8 +121,17 @@ class SecureSignInFlowViewModel: ObservableObject {
         case .confirmPin:
             if confirmPin.count < 6 {
                 confirmPin += digit
+                print("DEBUG: ConfirmPin - confirmPin now: '\(confirmPin)'")
                 if confirmPin.count == 6 {
                     validatePins()
+                }
+            }
+        case .pinEntry:
+            if pin.count < 6 {
+                pin += digit
+                print("DEBUG: PinEntry - pin now: '\(pin)'")
+                if pin.count == 6 {
+                    validatePinEntry()
                 }
             }
         default:
@@ -126,9 +149,19 @@ class SecureSignInFlowViewModel: ObservableObject {
             if !confirmPin.isEmpty {
                 confirmPin.removeLast()
             }
+        case .pinEntry:
+            if !pin.isEmpty {
+                pin.removeLast()
+            }
         default:
             break
         }
+    }
+    
+    func clearPin() {
+        pin = ""
+        confirmPin = ""
+        pinError = false
     }
     
     private func validatePins() {
@@ -156,6 +189,31 @@ class SecureSignInFlowViewModel: ObservableObject {
         }
     }
     
+    private func validatePinEntry() {
+        if let storedPin = KeychainHelper.read(forKey: "userPin"), pin == storedPin {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation(.spring(response: 0.3)) {
+                    self.authenticated = true
+                }
+            }
+        } else {
+            // Wrong PIN => shake and clear
+            withAnimation(.spring(response: 0.3)) {
+                pinError = true
+            }
+            
+            // Clear PIN immediately for better UX
+            pin = ""
+            
+            // Reset error state after a short delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                withAnimation {
+                    self.pinError = false
+                }
+            }
+        }
+    }
+    
     // MARK: Biometric Flow
     func startBiometricSetup() {
         withAnimation {
@@ -169,7 +227,7 @@ class SecureSignInFlowViewModel: ObservableObject {
                 self.isScanningFace = false
             }
 
-            if let storedPin = KeychainHelper.read(forKey: "userPin") {
+            if KeychainHelper.read(forKey: "userPin") != nil {
                 self.authenticated = true
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

@@ -70,30 +70,6 @@ struct ScaleButtonStyle: ButtonStyle {
     }
 }
 
-struct NumberPadButton: View {
-    let number: String
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                Circle()
-                    .fill(Color.black.opacity(0.1))
-                    .overlay(
-                        Circle()
-                            .stroke(Color.blue.opacity(0.3), lineWidth: 1)
-                    )
-                
-                Text(number)
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(.primary)
-            }
-        }
-        .frame(width: 70, height: 70)
-        .buttonStyle(ScaleButtonStyle())
-    }
-}
 
 struct FaceIDScanView: View {
     @Binding var isScanning: Bool

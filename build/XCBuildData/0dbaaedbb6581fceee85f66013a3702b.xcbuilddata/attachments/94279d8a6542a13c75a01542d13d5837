@@ -1,0 +1,36 @@
+{
+  "" : {
+    "const-values" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary.swiftconstvalues",
+    "dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary.d",
+    "diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary.dia",
+    "emit-module-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary-emit-module.dia",
+    "pch" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSDKHTTPAuth-primary.swiftdeps"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKHTTPAuth/Sources/AWSSDKHTTPAuth/AWSSigV4Signer.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSigV4Signer.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSigV4Signer.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/AWSSigV4Signer.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKHTTPAuth/Sources/AWSSDKHTTPAuth/CustomSigningPropertiesSetter.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/CustomSigningPropertiesSetter.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/CustomSigningPropertiesSetter.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/CustomSigningPropertiesSetter.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKHTTPAuth/Sources/AWSSDKHTTPAuth/SigV4AAuthScheme.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AAuthScheme.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AAuthScheme.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AAuthScheme.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKHTTPAuth/Sources/AWSSDKHTTPAuth/SigV4AuthScheme.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4AuthScheme.o"
+  },
+  "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/Sources/Core/AWSSDKHTTPAuth/Sources/AWSSDKHTTPAuth/SigV4S3ExpressAuthScheme.swift" : {
+    "index-unit-output-path" : "/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4S3ExpressAuthScheme.o",
+    "llvm-bc" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4S3ExpressAuthScheme.bc",
+    "object" : "/Users/rhou/Library/Developer/Xcode/DerivedData/DojoIOS-ewyqyddcctxpppdouyugbrrolacm/SourcePackages/checkouts/aws-sdk-swift/build/aws-sdk-swift.build/Release-iphoneos/AWSSDKHTTPAuth.build/Objects-normal/arm64/SigV4S3ExpressAuthScheme.o"
+  }
+}
