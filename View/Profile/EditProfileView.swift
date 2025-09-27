@@ -92,14 +92,14 @@ struct EditProfileView: View {
                                         ZStack {
                                             // Transparent overlay background
                                             RoundedRectangle(cornerRadius: 8)
-                                                .fill(Color.black.opacity(0.6))
-                                                .frame(width: 32, height: 32)
+                                                .fill(Color.black.opacity(0.4))
+                                                .frame(width: 36, height: 36)
                                             
                                             Image(systemName: "camera")
                                                 .foregroundColor(.white)
-                                                .font(.system(size: 16, weight: .medium))
+                                                .font(.system(size: 18, weight: .medium))
                                         }
-                                        .offset(x: 8, y: 8)
+                                        .offset(x: -4, y: 4)
                                     }
                                 }
                             }

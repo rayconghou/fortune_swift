@@ -82,10 +82,12 @@ struct IndexesView: View {
             }
             .allowsHitTesting(false)
         }
+        .blur(radius: showCreateIndexSheet ? 3 : 0)
+        .animation(.easeInOut(duration: 0.3), value: showCreateIndexSheet)
         .sheet(isPresented: $showManekiQuizModal) {
             ManekiQuizModalView(hasCompletedQuiz: $hasCompletedQuiz)
         }
-        .fullScreenCover(isPresented: $showCreateIndexSheet) {
+        .sheet(isPresented: $showCreateIndexSheet) {
             CreateIndexView(
                 selectedTab: $selectedTab,
                 leaderboardVM: viewModel,
@@ -137,7 +139,7 @@ struct IndexesView: View {
                 .font(.custom("Satoshi-Bold", size: 20))
                 .foregroundColor(.white)
             
-            VStack(spacing: 12) {
+            VStack(spacing: 0) {
                 // AI James Select (Positive)
                 MyIndexCard(
                     profileImage: "Profile",
@@ -162,38 +164,55 @@ struct IndexesView: View {
     }
     
     private var tabSelectionSection: some View {
-        HStack(spacing: 4) {
-            ForEach(IndexSourceTab.allCases, id: \.self) { tab in
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        selectedTab = tab
-                    }
-                }) {
-                    Text(tab.rawValue)
-                        .font(.custom("Satoshi-Bold", size: 14))
-                        .foregroundColor(selectedTab == tab ? .white : .gray)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 20)
-                        .background(
-                            selectedTab == tab ?
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
-                                    Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
-                                ]),
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ) : LinearGradient(
-                                gradient: Gradient(colors: [Color.gray.opacity(0.2)]),
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
-                        .cornerRadius(6)
-                }
+        HStack(spacing: 0) {
+            ForEach(Array(IndexSourceTab.allCases.enumerated()), id: \.element) { index, tab in
+                tabButton(for: tab, isFirst: index == 0, isLast: index == IndexSourceTab.allCases.count - 1)
             }
         }
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.gray.opacity(0.2))
+        )
         .padding(.vertical, 12)
+    }
+    
+    private func tabButton(for tab: IndexSourceTab, isFirst: Bool, isLast: Bool) -> some View {
+        Button(action: {
+            withAnimation(.easeInOut) {
+                selectedTab = tab
+            }
+        }) {
+            Text(tab.rawValue)
+                .font(.custom("Satoshi-Bold", size: 14))
+                .foregroundColor(selectedTab == tab ? .white : .gray)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(tabBackground(for: tab, isFirst: isFirst, isLast: isLast))
+        }
+    }
+    
+    private func tabBackground(for tab: IndexSourceTab, isFirst: Bool, isLast: Bool) -> some View {
+        Group {
+            if selectedTab == tab {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color(red: 0.2, green: 0.5, blue: 1.0),
+                        Color(red: 0.1, green: 0.3, blue: 0.8)
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .clipShape(
+                    TabSelectionShape(
+                        cornerRadius: 8,
+                        isFirst: isFirst,
+                        isLast: isLast
+                    )
+                )
+            } else {
+                Color.clear
+            }
+        }
     }
     
     private var contentSection: some View {
@@ -260,7 +279,7 @@ struct IndexesView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.up")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.black)
                 }
@@ -361,11 +380,683 @@ struct IndexesView: View {
     }
 }
 
+// MARK: - Tab Selection Shape
+struct TabSelectionShape: Shape {
+    let cornerRadius: CGFloat
+    let isFirst: Bool
+    let isLast: Bool
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        let topLeft = isFirst ? cornerRadius : 0
+        let topRight = isLast ? cornerRadius : 0
+        let bottomLeft = isFirst ? cornerRadius : 0
+        let bottomRight = isLast ? cornerRadius : 0
+        
+        // Start from top-left
+        path.move(to: CGPoint(x: topLeft, y: 0))
+        
+        // Top edge
+        if isFirst && isLast {
+            // Both corners rounded - single tab
+            path.addLine(to: CGPoint(x: rect.width - topRight, y: 0))
+        } else if isFirst {
+            // Left corner rounded
+            path.addLine(to: CGPoint(x: rect.width, y: 0))
+        } else if isLast {
+            // Right corner rounded
+            path.addLine(to: CGPoint(x: rect.width - topRight, y: 0))
+        } else {
+            // No corners rounded - middle tab
+            path.addLine(to: CGPoint(x: rect.width, y: 0))
+        }
+        
+        // Top-right corner
+        if isLast {
+            path.addQuadCurve(
+                to: CGPoint(x: rect.width, y: topRight),
+                control: CGPoint(x: rect.width, y: 0)
+            )
+        }
+        
+        // Right edge
+        path.addLine(to: CGPoint(x: rect.width, y: rect.height - bottomRight))
+        
+        // Bottom-right corner
+        if isLast {
+            path.addQuadCurve(
+                to: CGPoint(x: rect.width - bottomRight, y: rect.height),
+                control: CGPoint(x: rect.width, y: rect.height)
+            )
+        }
+        
+        // Bottom edge
+        if isFirst && isLast {
+            // Both corners rounded - single tab
+            path.addLine(to: CGPoint(x: bottomLeft, y: rect.height))
+        } else if isFirst {
+            // Left corner rounded
+            path.addLine(to: CGPoint(x: bottomLeft, y: rect.height))
+        } else if isLast {
+            // Right corner rounded
+            path.addLine(to: CGPoint(x: 0, y: rect.height))
+        } else {
+            // No corners rounded - middle tab
+            path.addLine(to: CGPoint(x: 0, y: rect.height))
+        }
+        
+        // Bottom-left corner
+        if isFirst {
+            path.addQuadCurve(
+                to: CGPoint(x: 0, y: rect.height - bottomLeft),
+                control: CGPoint(x: 0, y: rect.height)
+            )
+        }
+        
+        // Left edge
+        path.addLine(to: CGPoint(x: 0, y: topLeft))
+        
+        // Top-left corner
+        if isFirst {
+            path.addQuadCurve(
+                to: CGPoint(x: topLeft, y: 0),
+                control: CGPoint(x: 0, y: 0)
+            )
+        }
+        
+        path.closeSubpath()
+        return path
+    }
+}
+
 // MARK: - Index Source Tab Enum
 enum IndexSourceTab: String, CaseIterable {
     case teamPicks = "Team Picks"
     case manekiQuiz = "Maneki Quiz"
     case community = "Community"
+}
+
+// MARK: - Data Models for Index Detail Modal
+struct IndexDetail: Identifiable {
+    let id = UUID()
+    let name: String
+    let creator: String
+    let description: String
+    let currentPrice: Double
+    let roi: Double
+    let composition: [AssetComposition]
+    let priceHistory: [PriceHistoryEntry]
+    let marketCap: String
+    let volume24h: String
+    let circulatingSupply: String
+    let maxSupply: String
+    let allTimeHigh: String
+    let popularity: String
+}
+
+struct AssetComposition: Identifiable {
+    let id = UUID()
+    let name: String
+    let symbol: String
+    let allocation: Double
+    let imageUrl: String
+}
+
+
+// MARK: - Mock Data
+extension IndexDetail {
+    static let mockData: [IndexDetail] = [
+        IndexDetail(
+            name: "Fortune AI Select",
+            creator: "Dojo Team",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus ac nibh elementum volutpat aliquam in metus. Nullam in massa egestas, placerat justo nec, rutrum erat.",
+            currentPrice: 117176.16,
+            roi: 11.2,
+            composition: [
+                AssetComposition(name: "XRP", symbol: "XRP", allocation: 40, imageUrl: "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png"),
+                AssetComposition(name: "Ethereum", symbol: "ETH", allocation: 30, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+                AssetComposition(name: "Bitcoin", symbol: "BTC", allocation: 30, imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png")
+            ],
+            priceHistory: [
+                PriceHistoryEntry(date: "Apr 09", price: 117176.16),
+                PriceHistoryEntry(date: "Apr 08", price: 118611.15),
+                PriceHistoryEntry(date: "Apr 07", price: 114497.52),
+                PriceHistoryEntry(date: "Apr 06", price: 112927.92)
+            ],
+            marketCap: "$1.2T",
+            volume24h: "$48.2B",
+            circulatingSupply: "19.4M BTC",
+            maxSupply: "21M BTC",
+            allTimeHigh: "$119 176,16",
+            popularity: "#1 Most held"
+        ),
+        IndexDetail(
+            name: "AI James Select",
+            creator: "James Wang",
+            description: "A carefully curated selection of AI-focused cryptocurrencies and blockchain projects that are driving innovation in artificial intelligence and machine learning applications.",
+            currentPrice: 12345.67,
+            roi: 8.5,
+            composition: [
+                AssetComposition(name: "Ethereum", symbol: "ETH", allocation: 35, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+                AssetComposition(name: "Cardano", symbol: "ADA", allocation: 25, imageUrl: "https://assets.coingecko.com/coins/images/975/large/cardano.png"),
+                AssetComposition(name: "Chainlink", symbol: "LINK", allocation: 20, imageUrl: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png"),
+                AssetComposition(name: "Polygon", symbol: "MATIC", allocation: 20, imageUrl: "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png")
+            ],
+            priceHistory: [
+                PriceHistoryEntry(date: "Apr 09", price: 12345.67),
+                PriceHistoryEntry(date: "Apr 08", price: 12123.45),
+                PriceHistoryEntry(date: "Apr 07", price: 11987.32),
+                PriceHistoryEntry(date: "Apr 06", price: 11876.54)
+            ],
+            marketCap: "$850B",
+            volume24h: "$32.1B",
+            circulatingSupply: "120.2M ETH",
+            maxSupply: "∞ ETH",
+            allTimeHigh: "$4,891.70",
+            popularity: "#3 Most held"
+        ),
+        IndexDetail(
+            name: "Income Builder",
+            creator: "Sarah Chen",
+            description: "A diversified portfolio focused on yield-generating assets and staking rewards, designed for steady income generation in the crypto market.",
+            currentPrice: 9876.54,
+            roi: 6.8,
+            composition: [
+                AssetComposition(name: "Ethereum", symbol: "ETH", allocation: 30, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+                AssetComposition(name: "Solana", symbol: "SOL", allocation: 25, imageUrl: "https://assets.coingecko.com/coins/images/4128/large/solana.png"),
+                AssetComposition(name: "Avalanche", symbol: "AVAX", allocation: 20, imageUrl: "https://assets.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png"),
+                AssetComposition(name: "Polkadot", symbol: "DOT", allocation: 15, imageUrl: "https://assets.coingecko.com/coins/images/12171/large/polkadot.png"),
+                AssetComposition(name: "Cosmos", symbol: "ATOM", allocation: 10, imageUrl: "https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png")
+            ],
+            priceHistory: [
+                PriceHistoryEntry(date: "Apr 09", price: 9876.54),
+                PriceHistoryEntry(date: "Apr 08", price: 9754.32),
+                PriceHistoryEntry(date: "Apr 07", price: 9632.10),
+                PriceHistoryEntry(date: "Apr 06", price: 9510.88)
+            ],
+            marketCap: "$420B",
+            volume24h: "$18.5B",
+            circulatingSupply: "450.2M SOL",
+            maxSupply: "∞ SOL",
+            allTimeHigh: "$260.06",
+            popularity: "#5 Most held"
+        ),
+        IndexDetail(
+            name: "Growth Portfolio",
+            creator: "Mike Rodriguez",
+            description: "High-growth potential cryptocurrencies and emerging blockchain projects with strong fundamentals and innovative technology solutions.",
+            currentPrice: 5432.10,
+            roi: 15.3,
+            composition: [
+                AssetComposition(name: "Bitcoin", symbol: "BTC", allocation: 40, imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"),
+                AssetComposition(name: "Ethereum", symbol: "ETH", allocation: 30, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+                AssetComposition(name: "Binance Coin", symbol: "BNB", allocation: 15, imageUrl: "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png"),
+                AssetComposition(name: "XRP", symbol: "XRP", allocation: 15, imageUrl: "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png")
+            ],
+            priceHistory: [
+                PriceHistoryEntry(date: "Apr 09", price: 5432.10),
+                PriceHistoryEntry(date: "Apr 08", price: 5287.65),
+                PriceHistoryEntry(date: "Apr 07", price: 5143.20),
+                PriceHistoryEntry(date: "Apr 06", price: 4998.75)
+            ],
+            marketCap: "$95B",
+            volume24h: "$2.1B",
+            circulatingSupply: "153.8M BNB",
+            maxSupply: "200M BNB",
+            allTimeHigh: "$686.31",
+            popularity: "#7 Most held"
+        ),
+        IndexDetail(
+            name: "Balanced Strategy",
+            creator: "Emma Thompson",
+            description: "A well-balanced mix of established cryptocurrencies and promising altcoins, designed for moderate risk with steady growth potential.",
+            currentPrice: 8765.43,
+            roi: 9.7,
+            composition: [
+                AssetComposition(name: "Bitcoin", symbol: "BTC", allocation: 35, imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"),
+                AssetComposition(name: "Ethereum", symbol: "ETH", allocation: 25, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+                AssetComposition(name: "Litecoin", symbol: "LTC", allocation: 15, imageUrl: "https://assets.coingecko.com/coins/images/2/large/litecoin.png"),
+                AssetComposition(name: "Bitcoin Cash", symbol: "BCH", allocation: 15, imageUrl: "https://assets.coingecko.com/coins/images/780/large/bitcoin-cash.png"),
+                AssetComposition(name: "Dogecoin", symbol: "DOGE", allocation: 10, imageUrl: "https://assets.coingecko.com/coins/images/5/large/dogecoin.png")
+            ],
+            priceHistory: [
+                PriceHistoryEntry(date: "Apr 09", price: 8765.43),
+                PriceHistoryEntry(date: "Apr 08", price: 8643.21),
+                PriceHistoryEntry(date: "Apr 07", price: 8521.09),
+                PriceHistoryEntry(date: "Apr 06", price: 8398.97)
+            ],
+            marketCap: "$180B",
+            volume24h: "$8.7B",
+            circulatingSupply: "74.2M LTC",
+            maxSupply: "84M LTC",
+            allTimeHigh: "$412.96",
+            popularity: "#9 Most held"
+        )
+    ]
+}
+
+// MARK: - Index Detail Modal
+struct IndexDetailModalView: View {
+    let index: IndexDetail
+    @Environment(\.dismiss) private var dismiss
+    @State private var selectedTimeFrame: TimeFrame = .oneDay
+    @State private var showBuySheet = false
+    @State private var showSellSheet = false
+    
+    var body: some View {
+        ZStack {
+            // Background
+            Color(hex: "050715")
+                .ignoresSafeArea(.all)
+            
+            ScrollView {
+                VStack(spacing: 24) {
+                    // Header
+                    headerSection
+                    
+                    // Index Description
+                    descriptionSection
+                    
+                    // Index Graph
+                    indexGraphSection
+                    
+                    // Resume Section
+                    resumeSection
+                    
+                    // Index Composition
+                    indexCompositionSection
+                    
+                    // Price History
+                    priceHistorySection
+                    
+                    // Market Stats
+                    marketStatsSection
+                    
+                    // Action Buttons
+                    actionButtonsSection
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 40)
+            }
+        }
+        .sheet(isPresented: $showBuySheet) {
+            BuyIndexSheet(index: index)
+        }
+        .sheet(isPresented: $showSellSheet) {
+            SellIndexSheet(index: index)
+        }
+    }
+    
+    // MARK: - Header Section
+    private var headerSection: some View {
+        HStack {
+            // RedLogo icon
+            Image("RedLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40, height: 40)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.red)
+                )
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Fortune AI Select")
+                    .font(.custom("Satoshi-Bold", size: 20))
+                    .foregroundColor(.white)
+                
+                Text("by Dojo Team")
+                    .font(.custom("Satoshi-Medium", size: 14))
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            // Dismiss button
+            Button(action: {
+                dismiss()
+            }) {
+                Image(systemName: "chevron.down")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.white)
+            }
+        }
+        .padding(.top, 8)
+    }
+    
+    // MARK: - Description Section
+    private var descriptionSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(index.name)
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
+            
+            Text(index.description)
+                .font(.custom("Satoshi-Regular", size: 14))
+                .foregroundColor(.gray)
+                .lineLimit(nil)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    // MARK: - Index Graph Section
+    private var indexGraphSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Index Graph")
+                .font(.custom("Satoshi-Bold", size: 18))
+                .foregroundColor(.white)
+            
+            VStack(spacing: 16) {
+                // Graph Container
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(hex: "141628"))
+                        .frame(height: 200)
+                    
+                    // Sparkline Chart
+                    SparklineChartView(
+                        data: index.priceHistory.map { $0.price },
+                        isPositive: index.roi >= 0
+                    )
+                }
+                
+                // Time Frame Selector
+                HStack(spacing: 0) {
+                    ForEach([TimeFrame.oneDay, .oneWeek, .oneMonth, .oneYear, .all], id: \.self) { timeFrame in
+                        Button(action: {
+                            selectedTimeFrame = timeFrame
+                        }) {
+                            Text(timeFrame.rawValue)
+                                .font(.custom("Satoshi-Bold", size: 14))
+                                .foregroundColor(selectedTimeFrame == timeFrame ? .white : .gray)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .fill(selectedTimeFrame == timeFrame ? Color.white.opacity(0.2) : Color.clear)
+                                )
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - Resume Section
+    private var resumeSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Resume")
+                .font(.custom("Satoshi-Bold", size: 18))
+                .foregroundColor(.white)
+            
+            HStack(spacing: 16) {
+                // Icon
+                Image("ROI")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Index ROI")
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                    
+                    Text("Return on Investment")
+                        .font(.custom("Satoshi-Regular", size: 12))
+                        .foregroundColor(.gray)
+                }
+                
+                Spacer()
+                
+                Text("▲ \(String(format: "%.1f", index.roi))%")
+                    .font(.custom("Satoshi-Bold", size: 18))
+                    .foregroundColor(.green)
+            }
+            .padding(16)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(hex: "141628"))
+            )
+        }
+    }
+    
+    // MARK: - Index Composition Section
+    private var indexCompositionSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Index Composition")
+                .font(.custom("Satoshi-Bold", size: 18))
+                .foregroundColor(.white)
+            
+            VStack(spacing: 12) {
+                ForEach(index.composition, id: \.symbol) { asset in
+                    HStack(spacing: 12) {
+                        // Asset Icon with AsyncImage
+                        AsyncImage(url: URL(string: asset.imageUrl)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 32, height: 32)
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: 32, height: 32)
+                        }
+                        .frame(width: 40, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(backgroundColorForSymbol(asset.symbol))
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(asset.name)
+                                .font(.custom("Satoshi-Bold", size: 16))
+                                .foregroundColor(.white)
+                            
+                            Text(asset.symbol)
+                                .font(.custom("Satoshi-Medium", size: 14))
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                        
+                        Text("\(Int(asset.allocation))%")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(.white)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(hex: "1A1C2E"))
+                    )
+                }
+            }
+        }
+    }
+    
+    // MARK: - Price History Section
+    private var priceHistorySection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Price History")
+                .font(.custom("Satoshi-Bold", size: 18))
+                .foregroundColor(.white)
+            
+            VStack(spacing: 12) {
+                ForEach(index.priceHistory.prefix(4), id: \.date) { entry in
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(entry.date)
+                                .font(.custom("Satoshi-Bold", size: 14))
+                                .foregroundColor(.white)
+                            
+                            Text("1 BTC")
+                                .font(.custom("Satoshi-Medium", size: 12))
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                        
+                        Text("$\(String(format: "%.2f", entry.price))")
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(.white)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                }
+                
+                Button(action: {
+                    // Show more history
+                }) {
+                    Text("See Last 30 Days >")
+                        .font(.custom("Satoshi-Bold", size: 14))
+                        .foregroundColor(.blue)
+                }
+                .padding(.top, 8)
+            }
+            .padding(16)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(hex: "141628"))
+            )
+        }
+    }
+    
+    // MARK: - Market Stats Section
+    private var marketStatsSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Market Stats")
+                .font(.custom("Satoshi-Bold", size: 18))
+                .foregroundColor(.white)
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 12) {
+                MarketStatCard(title: "Market Cap", value: index.marketCap)
+                MarketStatCard(title: "24h Volume", value: index.volume24h)
+                MarketStatCard(title: "Circulating Supply", value: index.circulatingSupply)
+                MarketStatCard(title: "Max Supply", value: index.maxSupply)
+                MarketStatCard(title: "All-Time High", value: index.allTimeHigh)
+                MarketStatCard(title: "Popularity", value: index.popularity)
+            }
+        }
+    }
+    
+    // MARK: - Action Buttons Section
+    private var actionButtonsSection: some View {
+        HStack(spacing: 16) {
+            Button(action: {
+                showBuySheet = true
+            }) {
+                Text("Buy")
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                    Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                ]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ))
+                    )
+            }
+            
+            Button(action: {
+                showSellSheet = true
+            }) {
+                Text("Sell")
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                    )
+            }
+        }
+        .padding(.top, 8)
+    }
+    
+    // MARK: - Helper Functions
+}
+
+
+// MARK: - Market Stat Card
+struct MarketStatCard: View {
+    let title: String
+    let value: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.custom("Satoshi-Medium", size: 12))
+                .foregroundColor(.gray)
+            
+            Text(value)
+                .font(.custom("Satoshi-Bold", size: 16))
+                .foregroundColor(.white)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color(hex: "1A1C2E"))
+        )
+    }
+}
+
+// MARK: - Buy/Sell Sheets
+struct BuyIndexSheet: View {
+    let index: IndexDetail
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        VStack {
+            Text("Buy \(index.name)")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
+                .padding()
+            
+            Spacer()
+            
+            Text("Buy functionality coming soon")
+                .font(.custom("Satoshi-Regular", size: 16))
+                .foregroundColor(.gray)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex: "050715"))
+    }
+}
+
+struct SellIndexSheet: View {
+    let index: IndexDetail
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        VStack {
+            Text("Sell \(index.name)")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
+                .padding()
+            
+            Spacer()
+            
+            Text("Sell functionality coming soon")
+                .font(.custom("Satoshi-Regular", size: 16))
+                .foregroundColor(.gray)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex: "050715"))
+    }
 }
 
 // MARK: - My Index Card Component
@@ -376,57 +1067,80 @@ struct MyIndexCard: View {
     let value: String
     let change: String
     let isPositive: Bool
+    @State private var showDetailModal = false
     
     var body: some View {
-        HStack(spacing: 12) {
-            // Profile image
-            if profileImage == "User" {
-                Image(profileImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .padding(8)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color(hex: "272A45"))
-                    )
-            } else {
-                Image(profileImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(indexName)
-                    .font(.custom("Satoshi-Bold", size: 16))
-                    .foregroundColor(.white)
+        Button(action: {
+            showDetailModal = true
+        }) {
+            ZStack {
+                HStack(spacing: 12) {
+                    // Profile image
+                    if profileImage == "User" {
+                        Image(profileImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                            .padding(8)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color(hex: "272A45"))
+                            )
+                    } else {
+                        Image(profileImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(indexName)
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(.white)
+                        
+                        Text(creator)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(.gray)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text(value)
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(.white)
+                        
+                        Text(change)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(isPositive ? .green : .red)
+                    }
+                }
+                .padding(16)
+                .background(Color(hex: "141628"))
+                .cornerRadius(12)
                 
-                Text(creator)
-                    .font(.custom("Satoshi-Bold", size: 14))
-                    .foregroundColor(.gray)
+                // Chevron in top right corner
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                }
+                .padding(16)
             }
-            
-            Spacer()
-            
-            VStack(alignment: .trailing, spacing: 4) {
-                Text(value)
-                    .font(.custom("Satoshi-Bold", size: 16))
-                    .foregroundColor(.white)
-                
-                Text(change)
-                    .font(.custom("Satoshi-Bold", size: 14))
-                    .foregroundColor(isPositive ? .green : .red)
-            }
-            
-            Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .medium))
-                .foregroundColor(.gray)
         }
-        .padding(16)
-        .background(Color(hex: "141628"))
-        .cornerRadius(12)
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showDetailModal) {
+            IndexDetailModalView(index: getIndexDetail(for: indexName))
+        }
+    }
+    
+    private func getIndexDetail(for name: String) -> IndexDetail {
+        return IndexDetail.mockData.first { $0.name == name } ?? IndexDetail.mockData[0]
     }
 }
 
@@ -436,46 +1150,69 @@ struct TeamIndexCard: View {
     let value: String
     let change: String
     let isPositive: Bool
+    @State private var showDetailModal = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(indexName)
-                        .font(.custom("Satoshi-Bold", size: 16))
-                        .foregroundColor(.white)
-                    
-                    Text(value)
-                        .font(.custom("Satoshi-Bold", size: 24))
-                        .foregroundColor(.white)
-                    
-                    HStack(spacing: 4) {
-                        Text(change.components(separatedBy: " • ").first ?? change)
-                            .font(.custom("Satoshi-Bold", size: 14))
-                            .foregroundColor(isPositive ? .green : .red)
-                        
-                        if change.contains("•") {
-                            Text("• Today")
-                                .font(.custom("Satoshi-Bold", size: 14))
-                                .foregroundColor(.gray)
+        Button(action: {
+            showDetailModal = true
+        }) {
+            ZStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(indexName)
+                                .font(.custom("Satoshi-Bold", size: 16))
+                                .foregroundColor(.white)
+                            
+                            Text(value)
+                                .font(.custom("Satoshi-Bold", size: 24))
+                                .foregroundColor(.white)
+                            
+                            HStack(spacing: 4) {
+                                Text(change.components(separatedBy: " • ").first ?? change)
+                                    .font(.custom("Satoshi-Bold", size: 14))
+                                    .foregroundColor(isPositive ? .green : .red)
+                                
+                                if change.contains("•") {
+                                    Text("• Today")
+                                        .font(.custom("Satoshi-Bold", size: 14))
+                                        .foregroundColor(.gray)
+                                }
+                            }
                         }
+                        
+                        Spacer()
                     }
+                    
+                    // Sparkline Chart with extrapolation
+                    SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
+                        .frame(height: 60)
                 }
+                .padding(16)
+                .background(Color(hex: "141628"))
+                .cornerRadius(12)
                 
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.gray)
+                // Chevron in top right corner
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                }
+                .padding(16)
             }
-            
-            // Sparkline Chart with extrapolation
-            SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
-                .frame(height: 60)
         }
-        .padding(16)
-        .background(Color(hex: "141628"))
-        .cornerRadius(12)
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showDetailModal) {
+            IndexDetailModalView(index: getIndexDetail(for: indexName))
+        }
+    }
+    
+    private func getIndexDetail(for name: String) -> IndexDetail {
+        return IndexDetail.mockData.first { $0.name == name } ?? IndexDetail.mockData[0]
     }
     
     // Helper function to generate mock sparkline data
@@ -485,7 +1222,7 @@ struct TeamIndexCard: View {
         var data: [Double] = []
         var currentValue = Double.random(in: 20...80)
         
-        for i in 0..<dataPoints {
+        for _ in 0..<dataPoints {
             // Create a more realistic trend with some randomness
             let trend = isPositive ? 0.5 : -0.3
             let randomChange = Double.random(in: -2...2)
@@ -504,55 +1241,78 @@ struct CommunityIndexCard: View {
     let indexName: String
     let creator: String
     let roi: String
+    @State private var showDetailModal = false
     
     var body: some View {
-        HStack(spacing: 12) {
-            // Rank number
-            Text("#\(rank)")
-                .font(.custom("Satoshi-Bold", size: 16))
-                .foregroundColor(.white)
-                .frame(width: 30, alignment: .leading)
-            
-            // Profile icon
-            Image(systemName: "person.circle")
-                .font(.system(size: 24))
-                .foregroundColor(.white)
-                .frame(width: 40, height: 40)
-                .background(Color.gray.opacity(0.2))
-                .clipShape(Circle())
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(indexName)
-                    .font(.custom("Satoshi-Bold", size: 14))
-                    .foregroundColor(.white)
-                    .lineLimit(1)
+        Button(action: {
+            showDetailModal = true
+        }) {
+            ZStack {
+                HStack(spacing: 12) {
+                    // Rank number
+                    Text("#\(rank)")
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                        .frame(width: 30, alignment: .leading)
+                    
+                    // Profile icon
+                    Image(systemName: "person.circle")
+                        .font(.system(size: 24))
+                        .foregroundColor(.white)
+                        .frame(width: 40, height: 40)
+                        .background(Color.gray.opacity(0.2))
+                        .clipShape(Circle())
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(indexName)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                        
+                        Text(creator)
+                            .font(.custom("Satoshi-Bold", size: 12))
+                            .foregroundColor(.gray)
+                            .lineLimit(1)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text(roi)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(.green)
+                            .lineLimit(1)
+                    }
+                }
+                .padding(16)
+                .background(Color(hex: "141628"))
+                .cornerRadius(12)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                )
                 
-                Text(creator)
-                    .font(.custom("Satoshi-Bold", size: 12))
-                    .foregroundColor(.gray)
-                    .lineLimit(1)
+                // Chevron in top right corner
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                }
+                .padding(16)
             }
-            
-            Spacer()
-            
-            VStack(alignment: .trailing, spacing: 4) {
-                Text(roi)
-                    .font(.custom("Satoshi-Bold", size: 14))
-                    .foregroundColor(.green)
-                    .lineLimit(1)
-            }
-            
-            Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .medium))
-                .foregroundColor(.gray)
         }
-        .padding(16)
-        .background(Color(hex: "141628"))
-        .cornerRadius(12)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white.opacity(0.1), lineWidth: 1)
-        )
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showDetailModal) {
+            IndexDetailModalView(index: getIndexDetail(for: indexName))
+        }
+    }
+    
+    private func getIndexDetail(for name: String) -> IndexDetail {
+        return IndexDetail.mockData.first { $0.name == name } ?? IndexDetail.mockData[0]
     }
 }
 
@@ -562,50 +1322,73 @@ struct RecommendedIndexCard: View {
     let value: String
     let change: String
     let isPositive: Bool
+    @State private var showDetailModal = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(indexName)
-                        .font(.custom("Satoshi-Bold", size: 16))
-                        .foregroundColor(.white)
-                    
-                    Text(value)
-                        .font(.custom("Satoshi-Bold", size: 24))
-                        .foregroundColor(.white)
-                    
-                    HStack(spacing: 4) {
-                        Text(change.components(separatedBy: " • ").first ?? change)
-                            .font(.custom("Satoshi-Bold", size: 14))
-                            .foregroundColor(isPositive ? .green : .red)
-                        
-                        if change.contains("•") {
-                            Text("• Today")
-                                .font(.custom("Satoshi-Bold", size: 14))
-                                .foregroundColor(.gray)
+        Button(action: {
+            showDetailModal = true
+        }) {
+            ZStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(indexName)
+                                .font(.custom("Satoshi-Bold", size: 16))
+                                .foregroundColor(.white)
+                            
+                            Text(value)
+                                .font(.custom("Satoshi-Bold", size: 24))
+                                .foregroundColor(.white)
+                            
+                            HStack(spacing: 4) {
+                                Text(change.components(separatedBy: " • ").first ?? change)
+                                    .font(.custom("Satoshi-Bold", size: 14))
+                                    .foregroundColor(isPositive ? .green : .red)
+                                
+                                if change.contains("•") {
+                                    Text("• Today")
+                                        .font(.custom("Satoshi-Bold", size: 14))
+                                        .foregroundColor(.gray)
+                                }
+                            }
                         }
+                        
+                        Spacer()
                     }
+                    
+                    // Sparkline Chart with extrapolation
+                    SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
+                        .frame(height: 60)
                 }
+                .padding(16)
+                .background(Color(hex: "141628"))
+                .cornerRadius(12)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                )
                 
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.gray)
+                // Chevron in top right corner
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                }
+                .padding(16)
             }
-            
-            // Sparkline Chart with extrapolation
-            SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
-                .frame(height: 60)
         }
-        .padding(16)
-        .background(Color(hex: "141628"))
-        .cornerRadius(12)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white.opacity(0.1), lineWidth: 1)
-        )
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showDetailModal) {
+            IndexDetailModalView(index: getIndexDetail(for: indexName))
+        }
+    }
+    
+    private func getIndexDetail(for name: String) -> IndexDetail {
+        return IndexDetail.mockData.first { $0.name == name } ?? IndexDetail.mockData[0]
     }
     
     // Helper function to generate mock sparkline data
@@ -615,7 +1398,7 @@ struct RecommendedIndexCard: View {
         var data: [Double] = []
         var currentValue = Double.random(in: 20...80)
         
-        for i in 0..<dataPoints {
+        for _ in 0..<dataPoints {
             // Create a more realistic trend with some randomness
             let trend = isPositive ? 0.5 : -0.3
             let randomChange = Double.random(in: -2...2)
@@ -720,8 +1503,13 @@ struct CommunityIndexesView: View {
     }
 }
 
-// Time frame for leaderboard
+// Time frame for leaderboard and modals
 enum TimeFrame: String, CaseIterable {
+    case oneDay = "1D"
+    case oneWeek = "1W"
+    case oneMonth = "1M"
+    case oneYear = "1Y"
+    case all = "All"
     case week = "Week"
     case month = "Month"
     case year = "Year"

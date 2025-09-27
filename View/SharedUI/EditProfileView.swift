@@ -63,14 +63,14 @@ struct EditProfileView: View {
                                         Spacer()
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 8)
-                                                .fill(Color.gray.opacity(0.8))
-                                                .frame(width: 32, height: 32)
+                                                .fill(Color.black.opacity(0.4))
+                                                .frame(width: 36, height: 36)
                                             
                                             Image(systemName: "camera")
                                                 .foregroundColor(.white)
-                                                .font(.system(size: 16, weight: .medium))
+                                                .font(.system(size: 18, weight: .medium))
                                         }
-                                        .offset(x: 8, y: 8)
+                                        .offset(x: -4, y: 4)
                                     }
                                 }
                             }
@@ -92,7 +92,7 @@ struct EditProfileView: View {
                                     .padding(.vertical, 12)
                                     .background(
                                         RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(hex: "1A1A1A"))
+                                            .fill(Color(hex: "141628"))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .stroke(Color.white.opacity(0.1), lineWidth: 1)
@@ -113,7 +113,7 @@ struct EditProfileView: View {
                                     .padding(.vertical, 12)
                                     .background(
                                         RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(hex: "1A1A1A"))
+                                            .fill(Color(hex: "141628"))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .stroke(Color.white.opacity(0.1), lineWidth: 1)
@@ -135,7 +135,7 @@ struct EditProfileView: View {
                                     .padding(.vertical, 12)
                                     .background(
                                         RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(hex: "1A1A1A"))
+                                            .fill(Color(hex: "141628"))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .stroke(Color.white.opacity(0.1), lineWidth: 1)
@@ -167,7 +167,7 @@ struct EditProfileView: View {
                                     .padding(.vertical, 12)
                                     .background(
                                         RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(hex: "1A1A1A"))
+                                            .fill(Color(hex: "141628"))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .stroke(Color.white.opacity(0.1), lineWidth: 1)

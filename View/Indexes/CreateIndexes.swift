@@ -28,118 +28,121 @@ struct CreateIndexView: View {
     let steps = ["Details", "Select Assets", "Allocation", "Preview"]
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            HStack {
-                Button(action: {
-                    dismiss()
-                }) {
-                    Image(systemName: "chevron.down")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-                Text("Index Creator")
-                    .font(.custom("Satoshi-Bold", size: 24))
-                    .foregroundColor(.white)
-                
-                Spacer()
-                
-                Color.clear
-                    .frame(width: 18)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 20)
-            .padding(.bottom, 20)
+        ZStack {
+            // Background - same as other screens
+            Color(hex: "050715")
+                .ignoresSafeArea(.all)
             
-            // Main content
-            ScrollView {
-                switch currentStep {
-                case 0:
-                    indexDetailsView
-                case 1:
-                    coinSelectionView
-                case 2:
-                    allocationView
-                case 3:
-                    reviewView
-                default:
-                    EmptyView()
-                }
-            }
-            
-            // Bottom section
             VStack(spacing: 0) {
-                HStack(spacing: 16) {
-                    if currentStep > 0 {
+                // Header
+                HStack {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 18, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Index Creator")
+                        .font(.custom("Satoshi-Bold", size: 24))
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    Color.clear
+                        .frame(width: 18)
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+                .padding(.bottom, 20)
+                
+                // Main content
+                ScrollView {
+                    switch currentStep {
+                    case 0:
+                        indexDetailsView
+                    case 1:
+                        coinSelectionView
+                    case 2:
+                        allocationView
+                    case 3:
+                        reviewView
+                    default:
+                        EmptyView()
+                    }
+                }
+                
+                // Bottom section
+                VStack(spacing: 0) {
+                    HStack(spacing: 16) {
+                        if currentStep > 0 {
+                            Button(action: {
+                                withAnimation {
+                                    currentStep -= 1
+                                }
+                            }) {
+                                Text("Back")
+                                    .font(.custom("Satoshi-Bold", size: 16))
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 16)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill(Color.white)
+                                    )
+                            }
+                        }
+                        
                         Button(action: {
-                            withAnimation {
-                                currentStep -= 1
+                            if currentStep < steps.count - 1 {
+                                withAnimation {
+                                    currentStep += 1
+                                }
+                            } else {
+                                showingPreview = true
                             }
                         }) {
-                            Text("Back")
+                            Text(currentStep < steps.count - 1 ? "Next Step" : "Create Index")
                                 .font(.custom("Satoshi-Bold", size: 16))
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 16)
                                 .background(
                                     RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color.white)
+                                        .fill(
+                                            LinearGradient(
+                                                gradient: Gradient(colors: [
+                                                    Color(red: 0.2, green: 0.5, blue: 1.0),
+                                                    Color(red: 0.1, green: 0.3, blue: 0.8)
+                                                ]),
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
+                                        )
                                 )
                         }
+                        .disabled(!canProceedToNextStep)
+                        .opacity(canProceedToNextStep ? 1.0 : 0.5)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 16)
                     
-                    Button(action: {
-                        if currentStep < steps.count - 1 {
-                            withAnimation {
-                                currentStep += 1
-                            }
-                        } else {
-                            showingPreview = true
+                    HStack(spacing: 8) {
+                        ForEach(0..<steps.count, id: \.self) { index in
+                            Rectangle()
+                                .fill(index <= currentStep ? Color.white : Color.gray.opacity(0.3))
+                                .frame(height: 4)
+                                .cornerRadius(2)
                         }
-                    }) {
-                        Text(currentStep < steps.count - 1 ? "Next Step" : "Create Index")
-                            .font(.custom("Satoshi-Bold", size: 16))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
-                            .background(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [
-                                                Color(red: 0.2, green: 0.5, blue: 1.0),
-                                                Color(red: 0.1, green: 0.3, blue: 0.8)
-                                            ]),
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        )
-                                    )
-                            )
                     }
-                    .disabled(!canProceedToNextStep)
-                    .opacity(canProceedToNextStep ? 1.0 : 0.5)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 16)
-                
-                HStack(spacing: 8) {
-                    ForEach(0..<steps.count, id: \.self) { index in
-                        Rectangle()
-                            .fill(index <= currentStep ? Color.white : Color.gray.opacity(0.3))
-                            .frame(height: 4)
-                            .cornerRadius(2)
-                    }
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: "050715"))
-        .ignoresSafeArea(.all)
     }
     
     // MARK: - Step 1: Index Details
@@ -917,6 +920,10 @@ struct AssetAllocationCard: View {
     let onAllocationChange: (Double) -> Void
     let onRemove: () -> Void
     
+    @State private var isHoldingMinus = false
+    @State private var isHoldingPlus = false
+    @State private var holdTimer: Timer?
+    
     var body: some View {
         HStack(spacing: 12) {
             tokenIcon(for: coin.symbol)
@@ -934,7 +941,8 @@ struct AssetAllocationCard: View {
             
             Spacer()
             
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
+                // Minus Button with hold functionality
                 Button(action: {
                     if allocation > 0 {
                         onAllocationChange(allocation - 1)
@@ -944,15 +952,34 @@ struct AssetAllocationCard: View {
                         .font(.system(size: 14, weight: .bold))
                         .foregroundColor(.white)
                         .frame(width: 32, height: 32)
-                        .background(Color.gray.opacity(0.3))
-                        .clipShape(Circle())
+                        .background(
+                            Circle()
+                                .fill(isHoldingMinus ? Color.red.opacity(0.6) : Color.gray.opacity(0.3))
+                        )
+                        .scaleEffect(isHoldingMinus ? 1.1 : 1.0)
+                        .animation(.easeInOut(duration: 0.1), value: isHoldingMinus)
                 }
+                .onLongPressGesture(minimumDuration: 0.3, maximumDistance: 50) {
+                    // Long press started
+                    startHoldingMinus()
+                } onPressingChanged: { pressing in
+                    if !pressing {
+                        // Long press ended
+                        stopHolding()
+                    }
+                }
+                .disabled(allocation <= 0)
+                .opacity(allocation <= 0 ? 0.5 : 1.0)
                 
+                // Percentage display with more space
                 Text("\(Int(allocation))%")
                     .font(.custom("Satoshi-Bold", size: 16))
                     .foregroundColor(.white)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50, maxWidth: 60)
+                    .multilineTextAlignment(.center)
+                    .animation(.easeInOut(duration: 0.2), value: allocation)
                 
+                // Plus Button with hold functionality
                 Button(action: {
                     if allocation < 100 {
                         onAllocationChange(allocation + 1)
@@ -962,9 +989,28 @@ struct AssetAllocationCard: View {
                         .font(.system(size: 14, weight: .bold))
                         .foregroundColor(.white)
                         .frame(width: 32, height: 32)
-                        .background(Color.gray.opacity(0.3))
-                        .clipShape(Circle())
+                        .background(
+                            Circle()
+                                .fill(isHoldingPlus ? Color.green.opacity(0.6) : Color.gray.opacity(0.3))
+                        )
+                        .scaleEffect(isHoldingPlus ? 1.1 : 1.0)
+                        .animation(.easeInOut(duration: 0.1), value: isHoldingPlus)
                 }
+                .onLongPressGesture(minimumDuration: 0.3, maximumDistance: 50) {
+                    // Long press started
+                    startHoldingPlus()
+                } onPressingChanged: { pressing in
+                    if !pressing {
+                        // Long press ended
+                        stopHolding()
+                    }
+                }
+                .disabled(allocation >= 100)
+                .opacity(allocation >= 100 ? 0.5 : 1.0)
+                
+                // Spacer to push trash button to the right
+                Spacer()
+                    .frame(width: 8)
                 
                 Button(action: onRemove) {
                     Image(systemName: "trash")
@@ -985,6 +1031,68 @@ struct AssetAllocationCard: View {
                         .stroke(Color.white.opacity(0.1), lineWidth: 1)
                 )
         )
+        .onDisappear {
+            stopHolding()
+        }
+    }
+    
+    // MARK: - Hold Functionality
+    
+    private func startHoldingMinus() {
+        isHoldingMinus = true
+        isHoldingPlus = false
+        
+        // Haptic feedback when starting to hold
+        let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+        impactFeedback.impactOccurred()
+        
+        startHoldTimer {
+            if self.allocation > 0 {
+                self.onAllocationChange(self.allocation - 1)
+            } else {
+                self.stopHolding()
+            }
+        }
+    }
+    
+    private func startHoldingPlus() {
+        isHoldingPlus = true
+        isHoldingMinus = false
+        
+        // Haptic feedback when starting to hold
+        let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+        impactFeedback.impactOccurred()
+        
+        startHoldTimer {
+            if self.allocation < 100 {
+                self.onAllocationChange(self.allocation + 1)
+            } else {
+                self.stopHolding()
+            }
+        }
+    }
+    
+    private func startHoldTimer(action: @escaping () -> Void) {
+        // Initial delay before starting rapid increments
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            guard self.isHoldingMinus || self.isHoldingPlus else { return }
+            
+            // Start rapid increments
+            self.holdTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+                guard self.isHoldingMinus || self.isHoldingPlus else {
+                    self.stopHolding()
+                    return
+                }
+                action()
+            }
+        }
+    }
+    
+    private func stopHolding() {
+        isHoldingMinus = false
+        isHoldingPlus = false
+        holdTimer?.invalidate()
+        holdTimer = nil
     }
     
     private func tokenIcon(for symbol: String) -> some View {
