@@ -9,6 +9,7 @@ struct IndexesView: View {
     @State private var showManekiQuizModal = false
     @State private var showCreateIndexSheet = false
     @State private var searchText = ""
+    @State private var hasCompletedQuiz = false
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -46,7 +47,7 @@ struct IndexesView: View {
                         contentSection
                     }
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 100)
+                    .padding(.bottom, 20)
                 }
             }
             
@@ -82,9 +83,9 @@ struct IndexesView: View {
             .allowsHitTesting(false)
         }
         .sheet(isPresented: $showManekiQuizModal) {
-            ManekiQuizModalView()
+            ManekiQuizModalView(hasCompletedQuiz: $hasCompletedQuiz)
         }
-        .sheet(isPresented: $showCreateIndexSheet) {
+        .fullScreenCover(isPresented: $showCreateIndexSheet) {
             CreateIndexView(
                 selectedTab: $selectedTab,
                 leaderboardVM: viewModel,
@@ -270,6 +271,41 @@ struct IndexesView: View {
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color.white)
                 )
+            }
+            
+            // Show recommended indexes after quiz completion
+            if hasCompletedQuiz {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Recommended For You")
+                        .font(.custom("Satoshi-Bold", size: 20))
+                        .foregroundColor(.white)
+                    
+                    VStack(spacing: 12) {
+                        // Income Builder
+                        RecommendedIndexCard(
+                            indexName: "Income Builder",
+                            value: "$1 428,67",
+                            change: "-$705,70 ▼ 1,32% • Today",
+                            isPositive: false
+                        )
+                        
+                        // Growth Portfolio
+                        RecommendedIndexCard(
+                            indexName: "Growth Portfolio",
+                            value: "$785,32",
+                            change: "+$293,70 ▲ 1,32% • Today",
+                            isPositive: true
+                        )
+                        
+                        // Balanced Strategy
+                        RecommendedIndexCard(
+                            indexName: "Balanced Strategy",
+                            value: "$2 432.89",
+                            change: "+$293,70 ▲ 1,32% • Today",
+                            isPositive: true
+                        )
+                    }
+                }
             }
         }
     }
@@ -791,6 +827,7 @@ class LeaderboardViewModel: ObservableObject {
 // MARK: - Maneki Quiz Modal
 struct ManekiQuizModalView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var hasCompletedQuiz: Bool
     @State private var currentQuestion = 0
     @State private var selectedAnswers: [Int] = []
     
@@ -875,12 +912,13 @@ struct ManekiQuizModalView: View {
                     
                     Spacer()
                     
-                    // Navigation button
+                    // Navigation button with validation
                     Button(action: {
                         if currentQuestion < questions.count - 1 {
                             currentQuestion += 1
                         } else {
-                            // Show results or finish
+                            // Mark quiz as completed and dismiss
+                            hasCompletedQuiz = true
                             presentationMode.wrappedValue.dismiss()
                         }
                     }) {
@@ -891,9 +929,20 @@ struct ManekiQuizModalView: View {
                             .padding(.vertical, 16)
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.blue)
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                                Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
                             )
                     }
+                    .disabled(selectedAnswers.count <= currentQuestion)
+                    .opacity(selectedAnswers.count <= currentQuestion ? 0.5 : 1.0)
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
                     
