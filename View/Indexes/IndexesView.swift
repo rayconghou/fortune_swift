@@ -13,7 +13,7 @@ struct IndexesView: View {
     var body: some View {
         ZStack(alignment: .top) {
             // Background color
-            Color.black
+            Color(hex: "050715")
                 .ignoresSafeArea(.all)
             
             VStack(spacing: 0) {
@@ -119,7 +119,7 @@ struct IndexesView: View {
                 .padding(.vertical, 10)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.gray.opacity(0.2))
+                        .fill(Color(hex: "141628"))
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.white.opacity(0.1), lineWidth: 1)
@@ -139,7 +139,7 @@ struct IndexesView: View {
             VStack(spacing: 12) {
                 // AI James Select (Positive)
                 MyIndexCard(
-                    profileImage: "person.circle.fill",
+                    profileImage: "Profile",
                     indexName: "AI James Select",
                     creator: "by @jameswang",
                     value: "$12.23",
@@ -149,7 +149,7 @@ struct IndexesView: View {
                 
                 // AI James Select (Negative)
                 MyIndexCard(
-                    profileImage: "person.circle",
+                    profileImage: "User",
                     indexName: "AI James Select",
                     creator: "by @jameswang",
                     value: "$117 176,16",
@@ -161,7 +161,7 @@ struct IndexesView: View {
     }
     
     private var tabSelectionSection: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 4) {
             ForEach(IndexSourceTab.allCases, id: \.self) { tab in
                 Button(action: {
                     withAnimation(.easeInOut) {
@@ -169,9 +169,9 @@ struct IndexesView: View {
                     }
                 }) {
                     Text(tab.rawValue)
-                        .font(.custom("Satoshi-Bold", size: 16))
+                        .font(.custom("Satoshi-Bold", size: 14))
                         .foregroundColor(selectedTab == tab ? .white : .gray)
-                        .padding(.vertical, 12)
+                        .padding(.vertical, 8)
                         .padding(.horizontal, 20)
                         .background(
                             selectedTab == tab ?
@@ -188,11 +188,11 @@ struct IndexesView: View {
                                 endPoint: .bottomTrailing
                             )
                         )
-                        .cornerRadius(8)
+                        .cornerRadius(6)
                 }
             }
         }
-        .padding(.vertical, 16)
+        .padding(.vertical, 12)
     }
     
     private var contentSection: some View {
@@ -210,30 +210,30 @@ struct IndexesView: View {
     
     private var teamPicksContent: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Team-Curated AI Meme Indexes")
+            Text("Recommended For You")
                 .font(.custom("Satoshi-Bold", size: 20))
                 .foregroundColor(.white)
             
             VStack(spacing: 12) {
-                // Fortune AI Select
-                TeamIndexCard(
-                    indexName: "Fortune AI Select",
-                    value: "$785,32",
-                    change: "+$293,70 ▲ 1,32% • Today",
-                    isPositive: true
-                )
-                
-                // AI Memes Index
-                TeamIndexCard(
-                    indexName: "AI Memes Index",
+                // Income Builder
+                RecommendedIndexCard(
+                    indexName: "Income Builder",
                     value: "$1 428,67",
                     change: "-$705,70 ▼ 1,32% • Today",
                     isPositive: false
                 )
                 
-                // AI Blue Chips
-                TeamIndexCard(
-                    indexName: "AI Blue Chips",
+                // Growth Portfolio
+                RecommendedIndexCard(
+                    indexName: "Growth Portfolio",
+                    value: "$785,32",
+                    change: "+$293,70 ▲ 1,32% • Today",
+                    isPositive: true
+                )
+                
+                // Balanced Strategy
+                RecommendedIndexCard(
+                    indexName: "Balanced Strategy",
                     value: "$2 432.89",
                     change: "+$293,70 ▲ 1,32% • Today",
                     isPositive: true
@@ -244,36 +244,31 @@ struct IndexesView: View {
     
     private var manekiQuizContent: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Maneki Quiz")
-                .font(.custom("Satoshi-Bold", size: 20))
-                .foregroundColor(.white)
-            
             Button(action: {
                 showManekiQuizModal = true
             }) {
                 HStack {
-                    Image(systemName: "questionmark.circle.fill")
-                        .font(.title2)
-                        .foregroundColor(.white)
+                    Image("SealQuestion")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                     
                     Text("Take Maneki's Investment Quiz")
                         .font(.custom("Satoshi-Bold", size: 18))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.black)
                 }
-                .padding()
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
                 .frame(maxWidth: .infinity)
                 .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
-                                    Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
-                                ]),
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white)
                 )
             }
         }
@@ -281,14 +276,51 @@ struct IndexesView: View {
     
     private var communityContent: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Community")
+            Text("Leaderboard")
                 .font(.custom("Satoshi-Bold", size: 20))
                 .foregroundColor(.white)
             
-            Text("Community indexes coming soon...")
-                .font(.custom("Satoshi-Bold", size: 16))
-                .foregroundColor(.gray)
-                .padding()
+            VStack(spacing: 12) {
+                // Community Index 1
+                CommunityIndexCard(
+                    rank: 1,
+                    indexName: "Community Index 1",
+                    creator: "by @dojouser123",
+                    roi: "▲ 24.8% ROI"
+                )
+                
+                // Community Index 2
+                CommunityIndexCard(
+                    rank: 2,
+                    indexName: "Community Index 2",
+                    creator: "by @dojouser123",
+                    roi: "▲ 22.3% ROI"
+                )
+                
+                // Community Index 3
+                CommunityIndexCard(
+                    rank: 3,
+                    indexName: "Community Index 3",
+                    creator: "by @dojouser123",
+                    roi: "▲ 19.7% ROI"
+                )
+                
+                // Community Index 4
+                CommunityIndexCard(
+                    rank: 4,
+                    indexName: "Community Index 4",
+                    creator: "by @dojouser123",
+                    roi: "▲ 16.2% ROI"
+                )
+                
+                // Community Index 5
+                CommunityIndexCard(
+                    rank: 5,
+                    indexName: "Community Index 5",
+                    creator: "by @dojouser123",
+                    roi: "▲ 15.1% ROI"
+                )
+            }
         }
     }
 }
@@ -312,12 +344,23 @@ struct MyIndexCard: View {
     var body: some View {
         HStack(spacing: 12) {
             // Profile image
-            Image(systemName: profileImage)
-                .font(.system(size: 24))
-                .foregroundColor(.white)
-                .frame(width: 40, height: 40)
-                .background(Color.gray.opacity(0.2))
-                .clipShape(Circle())
+            if profileImage == "User" {
+                Image(profileImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24, height: 24)
+                    .padding(8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(hex: "272A45"))
+                    )
+            } else {
+                Image(profileImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+            }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(indexName)
@@ -370,9 +413,17 @@ struct TeamIndexCard: View {
                         .font(.custom("Satoshi-Bold", size: 24))
                         .foregroundColor(.white)
                     
-                    Text(change)
-                        .font(.custom("Satoshi-Bold", size: 14))
-                        .foregroundColor(isPositive ? .green : .red)
+                    HStack(spacing: 4) {
+                        Text(change.components(separatedBy: " • ").first ?? change)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(isPositive ? .green : .red)
+                        
+                        if change.contains("•") {
+                            Text("• Today")
+                                .font(.custom("Satoshi-Bold", size: 14))
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
                 
                 Spacer()
@@ -382,18 +433,8 @@ struct TeamIndexCard: View {
                     .foregroundColor(.gray)
             }
             
-            // Sparkline Chart Placeholder
-            RoundedRectangle(cornerRadius: 4)
-                .fill(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            (isPositive ? Color.green : Color.red).opacity(0.3),
-                            (isPositive ? Color.green : Color.red).opacity(0.05)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+            // Sparkline Chart with extrapolation
+            SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
                 .frame(height: 60)
         }
         .padding(16)
@@ -401,6 +442,154 @@ struct TeamIndexCard: View {
         .cornerRadius(12)
     }
     
+    // Helper function to generate mock sparkline data
+    private func generateMockSparklineData() -> [Double] {
+        // Generate more data points for better chart coverage
+        let dataPoints = 50
+        var data: [Double] = []
+        var currentValue = Double.random(in: 20...80)
+        
+        for i in 0..<dataPoints {
+            // Create a more realistic trend with some randomness
+            let trend = isPositive ? 0.5 : -0.3
+            let randomChange = Double.random(in: -2...2)
+            currentValue += trend + randomChange
+            currentValue = max(0, min(100, currentValue)) // Keep within bounds
+            data.append(currentValue)
+        }
+        
+        return data
+    }
+}
+
+// MARK: - Community Index Card Component
+struct CommunityIndexCard: View {
+    let rank: Int
+    let indexName: String
+    let creator: String
+    let roi: String
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // Rank number
+            Text("#\(rank)")
+                .font(.custom("Satoshi-Bold", size: 16))
+                .foregroundColor(.white)
+                .frame(width: 30, alignment: .leading)
+            
+            // Profile icon
+            Image(systemName: "person.circle")
+                .font(.system(size: 24))
+                .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(Color.gray.opacity(0.2))
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(indexName)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(.white)
+                    .lineLimit(1)
+                
+                Text(creator)
+                    .font(.custom("Satoshi-Bold", size: 12))
+                    .foregroundColor(.gray)
+                    .lineLimit(1)
+            }
+            
+            Spacer()
+            
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(roi)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(.green)
+                    .lineLimit(1)
+            }
+            
+            Image(systemName: "chevron.right")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.gray)
+        }
+        .padding(16)
+        .background(Color(hex: "141628"))
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+        )
+    }
+}
+
+// MARK: - Recommended Index Card Component
+struct RecommendedIndexCard: View {
+    let indexName: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(indexName)
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                    
+                    Text(value)
+                        .font(.custom("Satoshi-Bold", size: 24))
+                        .foregroundColor(.white)
+                    
+                    HStack(spacing: 4) {
+                        Text(change.components(separatedBy: " • ").first ?? change)
+                            .font(.custom("Satoshi-Bold", size: 14))
+                            .foregroundColor(isPositive ? .green : .red)
+                        
+                        if change.contains("•") {
+                            Text("• Today")
+                                .font(.custom("Satoshi-Bold", size: 14))
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.gray)
+            }
+            
+            // Sparkline Chart with extrapolation
+            SparklineChartView(data: generateMockSparklineData(), isPositive: isPositive)
+                .frame(height: 60)
+        }
+        .padding(16)
+        .background(Color(hex: "141628"))
+        .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+        )
+    }
+    
+    // Helper function to generate mock sparkline data
+    private func generateMockSparklineData() -> [Double] {
+        // Generate more data points for better chart coverage
+        let dataPoints = 50
+        var data: [Double] = []
+        var currentValue = Double.random(in: 20...80)
+        
+        for i in 0..<dataPoints {
+            // Create a more realistic trend with some randomness
+            let trend = isPositive ? 0.5 : -0.3
+            let randomChange = Double.random(in: -2...2)
+            currentValue += trend + randomChange
+            currentValue = max(0, min(100, currentValue)) // Keep within bounds
+            data.append(currentValue)
+        }
+        
+        return data
+    }
 }
 
 
@@ -606,117 +795,197 @@ struct ManekiQuizModalView: View {
     @State private var selectedAnswers: [Int] = []
     
     let questions = [
-        "What is your investment time horizon?",
+        "Whats your investment time horizon?",
         "How would you react to a 20% market drop?",
         "What's your primary investment goal?"
     ]
     
     let answers = [
-        ["Short term (< 1 year)", "Medium term (1-5 years)", "Long term (5+ years)"],
-        ["Sell immediately", "Hold and wait", "Buy more"],
+        ["Short Term (< 1 year)", "Medium Term (1-5 years)", "Long Term (5+ years)"],
+        ["Sell Immediately", "Hold and Wait", "Buy More"],
         ["Capital preservation", "Balanced growth", "Maximum returns"]
     ]
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 24) {
-                Image(systemName: "brain.head.profile")
-                    .font(.system(size: 48))
-                    .foregroundColor(.accentColor)
-                    .padding(.top, 32)
-                
-                Text("Maneki's Investment Quiz")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                
-                if currentQuestion < questions.count {
-                    Text("Question \(currentQuestion + 1) of \(questions.count)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    
-                    Text(questions[currentQuestion])
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                    
-                    VStack(spacing: 12) {
-                        ForEach(0..<answers[currentQuestion].count, id: \.self) { index in
-                            Button(action: {
-                                if selectedAnswers.count > currentQuestion {
-                                    selectedAnswers[currentQuestion] = index
-                                } else {
-                                    selectedAnswers.append(index)
-                                }
-                                
-                                // Move to next question or finish
-                                if currentQuestion < questions.count - 1 {
-                                    currentQuestion += 1
-                                }
-                            }) {
-                                Text(answers[currentQuestion][index])
-                                    .font(.subheadline)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(UIColor.secondarySystemBackground))
-                                    )
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .stroke(Color.accentColor.opacity(0.5), lineWidth: 1)
-                                    )
-                            }
-                            .foregroundColor(.primary)
-                        }
-                    }
-                    .padding(.horizontal)
-                } else {
-                    // Results view
-                    Text("Your Recommended Portfolio:")
-                        .font(.headline)
-                        .padding(.top)
-                    
-                    TeamIndexCard(
-                        indexName: "Balanced Growth Portfolio",
-                        value: "1,247.38",
-                        change: "+2.3% • Today",
-                        isPositive: true
-                    )
-                    .padding(.horizontal)
-                    
-                    Text("This portfolio matches your risk tolerance and time horizon.")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal)
-                    
+        ZStack {
+            // Background color
+            Color(hex: "050715")
+                .ignoresSafeArea(.all)
+            
+            VStack(spacing: 0) {
+                // Header with back button and title
+                HStack {
                     Button(action: {
-                        presentationMode.wrappedValue.dismiss()
+                        if currentQuestion > 0 {
+                            currentQuestion -= 1
+                        } else {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }) {
-                        Text("Apply This Portfolio")
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(Color.accentColor)
-                            )
+                        Image(systemName: "arrow.left")
+                            .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.white)
                     }
-                    .padding(.horizontal)
-                    .padding(.top, 16)
+                    
+                    Spacer()
                 }
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
+                
+                // Title and question counter
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Maneki's Investment Quiz")
+                        .font(.custom("Satoshi-Bold", size: 24))
+                        .foregroundColor(.white)
+                    
+                    Text("Question \(currentQuestion + 1) of \(questions.count)")
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.gray)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+                
+                if currentQuestion < questions.count {
+                    // Question content
+                    VStack(alignment: .leading, spacing: 24) {
+                        Text(questions[currentQuestion])
+                            .font(.custom("Satoshi-Bold", size: 20))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+                        
+                        VStack(spacing: 16) {
+                            ForEach(0..<answers[currentQuestion].count, id: \.self) { index in
+                                QuizAnswerButton(
+                                    text: answers[currentQuestion][index],
+                                    isSelected: selectedAnswers.count > currentQuestion && selectedAnswers[currentQuestion] == index,
+                                    action: {
+                                        if selectedAnswers.count > currentQuestion {
+                                            selectedAnswers[currentQuestion] = index
+                                        } else {
+                                            selectedAnswers.append(index)
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 40)
+                    
+                    Spacer()
+                    
+                    // Navigation button
+                    Button(action: {
+                        if currentQuestion < questions.count - 1 {
+                            currentQuestion += 1
+                        } else {
+                            // Show results or finish
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }) {
+                        Text(currentQuestion < questions.count - 1 ? "Next Question" : "Finish Quiz")
+                            .font(.custom("Satoshi-Bold", size: 18))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color.blue)
+                            )
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                    
+                    // Progress indicator
+                    HStack(spacing: 8) {
+                        ForEach(0..<questions.count, id: \.self) { index in
+                            Rectangle()
+                                .fill(index <= currentQuestion ? Color.white : Color.gray.opacity(0.3))
+                                .frame(height: 4)
+                                .cornerRadius(2)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                } else {
+                    // Results view
+                    VStack(spacing: 24) {
+                        Text("Your Recommended Portfolio:")
+                            .font(.custom("Satoshi-Bold", size: 20))
+                            .foregroundColor(.white)
+                        
+                        RecommendedIndexCard(
+                            indexName: "Balanced Growth Portfolio",
+                            value: "1,247.38",
+                            change: "+2.3% • Today",
+                            isPositive: true
+                        )
+                        
+                        Text("This portfolio matches your risk tolerance and time horizon.")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal)
+                        
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Text("Apply This Portfolio")
+                                .font(.custom("Satoshi-Bold", size: 18))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color.blue)
+                                )
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                    .padding(.top, 40)
+                    
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Quiz Answer Button Component
+struct QuizAnswerButton: View {
+    let text: String
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Text(text)
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.leading)
                 
                 Spacer()
+                
+                // Radio button
+                Circle()
+                    .fill(isSelected ? Color.white : Color.clear)
+                    .frame(width: 20, height: 20)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 2)
+                    )
             }
-            .padding(.bottom, 32)
-            .navigationBarItems(
-                trailing: Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.secondary)
-                }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(hex: "141628"))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                    )
             )
         }
     }

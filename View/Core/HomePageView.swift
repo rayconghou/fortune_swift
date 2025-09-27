@@ -65,7 +65,7 @@ struct HomePageView: View {
                         })
                         .tag(1)
                         .tabItem {
-                            Image(systemName: "chart.xyaxis.line")
+                            Image(selectedTab == 1 ? "DarkTappedIndexes" : "DarkUntappedIndexes")
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -78,7 +78,7 @@ struct HomePageView: View {
                         })
                         .tag(2)
                         .tabItem {
-                            Image(systemName: "cat.fill")
+                            Image(selectedTab == 2 ? "DarkTappedManeki" : "DarkUntappedManeki")
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -91,7 +91,7 @@ struct HomePageView: View {
                         })
                         .tag(3)
                         .tabItem {
-                            Image(systemName: "chart.bar.fill")
+                            Image(selectedTab == 3 ? "DarkTappedPortfolio" : "DarkUntappedPortfolio")
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -280,15 +280,6 @@ struct HomePageView: View {
             .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30) {
-                // Main title with better typography and animation
-                Text("DOJO")
-                    .foregroundColor(.white)
-                    .font(.custom("Satoshi-Bold", size: 48))
-                    .shadow(color: Color.white.opacity(0.4), radius: 10, x: 0, y: 0)
-                    .opacity(showDojo ? 1 : 0)
-                    .scaleEffect(showDojo ? 1 : 0.8)
-                    .animation(.spring(response: 0.6, dampingFraction: 0.7).delay(0.3), value: showDojo)
-                
                 // Bottom elements with improved animations and layout
                 VStack(spacing: 24) {
                     Divider()

@@ -91,6 +91,7 @@ struct CoinDetailModalView: View {
                 VStack(spacing: 24) {
                     // Header with back button, coin info, and favorite
                     headerSection
+                        .padding(.top, 20)
                     
                     // Price section
                     priceSection
@@ -253,23 +254,27 @@ struct CoinDetailModalView: View {
     }
     
     private var chartSection: some View {
-        VStack(spacing: 0) {
-            // Chart with sparkline
-                if let sparklineData = coin.sparkline_in_7d?.price, !sparklineData.isEmpty {
+        Group {
+            // Chart with sparkline - exactly like CryptoTrendCard
+            if let sparklineData = coin.sparkline_in_7d?.price, !sparklineData.isEmpty {
                 SparklineChartView(data: sparklineData, isPositive: coin.price_change_percentage_24h ?? 0 >= 0)
-                        .frame(height: 200)
-                    .padding(.horizontal, 20)
-                } else {
+                    .frame(height: 200)
+                    .onAppear {
+                        print("🔍 Sparkline data for \(coin.symbol): \(sparklineData.prefix(10))... (total: \(sparklineData.count) points)")
+                        if let min = sparklineData.min(), let max = sparklineData.max() {
+                            print("📊 Price range: \(min) to \(max)")
+                        }
+                    }
+            } else {
                 // Fallback chart
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color(hex: "141628"))
-                        .frame(height: 200)
+                    .frame(height: 200)
                     .overlay(
                         Text("Chart data unavailable")
                             .font(.custom("Satoshi-Black", size: 14))
                             .foregroundColor(.gray)
                     )
-                    .padding(.horizontal, 20)
             }
         }
     }
@@ -519,6 +524,318 @@ class CryptoMarketViewModel: ObservableObject {
     func fetchCoinDetail(id: String) {
         // Implementation for fetching detailed coin information
         // This would typically make another API call to get more detailed data
+    }
+}
+
+// MARK: - Helper Functions
+
+func backgroundColorForSymbol(_ symbol: String) -> Color {
+    let lowercasedSymbol = symbol.lowercased()
+    
+    switch lowercasedSymbol {
+    case "btc", "bitcoin":
+        return Color(red: 1.0, green: 0.58, blue: 0.0) // Bitcoin orange
+    case "eth", "ethereum":
+        return Color(red: 0.46, green: 0.48, blue: 0.9) // Ethereum blue
+    case "bnb", "binance":
+        return Color(red: 0.8, green: 0.6, blue: 0.0) // Binance darker yellow
+    case "sol", "solana":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Solana black
+    case "ada", "cardano":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Cardano black
+    case "xrp", "ripple":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Ripple black
+    case "doge", "dogecoin":
+        return Color(red: 0.8, green: 0.6, blue: 0.0) // Dogecoin darker yellow
+    case "trx", "tron":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Tron black
+    case "usdt", "tether":
+        return Color(red: 0.0, green: 0.4, blue: 0.0) // Tether forest green
+    case "usde", "ethena-usde":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Ethena USDE black
+    case "wbeth", "wrapped-beth":
+        return Color(red: 1.0, green: 0.84, blue: 0.0) // Wrapped BETH golden yellow
+    case "wbtc", "wrapped-bitcoin":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Wrapped Bitcoin black
+    case "tao", "bittensor":
+        return Color(red: 1.0, green: 1.0, blue: 1.0) // Bittensor white
+    case "story":
+        return Color(red: 1.0, green: 0.84, blue: 0.0) // Story gold
+    case "jitosol", "jito-staked-sol":
+        return Color(red: 1.0, green: 1.0, blue: 1.0) // Jito Staked SOL white
+    case "apt", "aptos":
+        return Color(red: 1.0, green: 1.0, blue: 1.0) // Aptos white
+    case "steth", "lido-staked-ether":
+        return Color(red: 1.0, green: 1.0, blue: 1.0) // Lido Staked Ether white
+    case "usdc", "usd-coin":
+        return Color(red: 0.2, green: 0.4, blue: 0.9) // USDC blue
+    case "avax", "avalanche":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Avalanche red
+    case "matic", "polygon":
+        return Color(red: 0.6, green: 0.3, blue: 0.9) // Polygon purple
+    case "link", "chainlink":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Chainlink blue
+    case "atom", "cosmos":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Cosmos blue
+    case "near":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // NEAR orange
+    case "ftm", "fantom":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Fantom blue
+    case "algo", "algorand":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Algorand black
+    case "vet", "vechain":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // VeChain cyan
+    case "icp", "internet-computer":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Internet Computer red
+    case "fil", "filecoin":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Filecoin blue
+    case "hbar", "hedera":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Hedera black
+    case "sand", "the-sandbox":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // The Sandbox cyan
+    case "mana", "decentraland":
+        return Color(red: 0.8, green: 0.4, blue: 0.8) // Decentraland purple
+    case "axs", "axie-infinity":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Axie Infinity cyan
+    case "gala":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Gala orange
+    case "enj", "enjin-coin":
+        return Color(red: 0.4, green: 0.6, blue: 0.8) // Enjin Coin blue
+    case "chz", "chiliz":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Chiliz red
+    case "flow":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Flow cyan
+    case "theta":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Theta blue
+    case "klay", "klaytn":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Klaytn teal
+    case "eos":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // EOS black
+    case "xtz", "tezos":
+        return Color(red: 0.2, green: 0.4, blue: 0.8) // Tezos blue
+    case "zec", "zcash":
+        return Color(red: 0.8, green: 0.6, blue: 0.0) // Zcash yellow
+    case "dash":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Dash cyan
+    case "xlm", "stellar":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Stellar blue
+    case "neo":
+        return Color(red: 0.0, green: 0.8, blue: 0.0) // NEO green
+    case "qtum":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Qtum orange
+    case "waves":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Waves cyan
+    case "omg", "omg-network":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // OMG Network red
+    case "zrx", "0x":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 0x black
+    case "bat", "basic-attention-token":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Basic Attention Token orange
+    case "knc", "kyber-network":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Kyber Network cyan
+    case "lrc", "loopring":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Loopring blue
+    case "rep", "augur":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Augur red
+    case "gnt", "golem":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Golem teal
+    case "mkr", "maker":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Maker orange
+    case "snx", "synthetix":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Synthetix black
+    case "comp", "compound":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Compound cyan
+    case "yfi", "yearn-finance":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Yearn Finance teal
+    case "uni", "uniswap":
+        return Color(red: 0.8, green: 0.2, blue: 0.8) // Uniswap pink
+    case "aave":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Aave red
+    case "sushi", "sushiswap":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // SushiSwap teal
+    case "crv", "curve-dao-token":
+        return Color(red: 0.0, green: 0.8, blue: 0.0) // Curve DAO Token green
+    case "1inch":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 1inch black
+    case "bal", "balancer":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Balancer cyan
+    case "lpt", "livepeer":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Livepeer blue
+    case "ren", "republic-protocol":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Republic Protocol black
+    case "uma", "uma":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // UMA orange
+    case "band":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Band Protocol teal
+    case "nkn":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // NKN blue
+    case "ocean", "ocean-protocol":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Ocean Protocol cyan
+    case "rsr", "reserve-rights":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Reserve Rights red
+    case "nmr", "numeraire":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Numeraire black
+    case "ant", "aragon":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Aragon cyan
+    case "lend", "ethlend":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Aave (formerly ETHLend) blue
+    case "cvc", "civic":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Civic teal
+    case "dnt", "district0x":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // district0x black
+    case "gno", "gnosis":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Gnosis teal
+    case "powr", "power-ledger":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Power Ledger orange
+    case "req", "request-network":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Request Network blue
+    case "salt":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // SALT cyan
+    case "storj":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Storj blue
+    case "sub", "substratum":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Substratum teal
+    case "wtc", "waltonchain":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Waltonchain black
+    case "zil", "zilliqa":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Zilliqa cyan
+    case "fun", "funfair":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // FunFair orange
+    case "kcs", "kucoin-shares":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // KuCoin Shares teal
+    case "nano":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Nano blue
+    case "iost":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // IOST red
+    case "btt", "bit torrent":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // BitTorrent cyan
+    case "hot", "holo":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Holo teal
+    case "zrx", "0x-protocol":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 0x Protocol black
+    case "icx", "icon":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // ICON blue
+    case "ont", "ontology":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Ontology black
+    case "zec", "zcash":
+        return Color(red: 0.8, green: 0.6, blue: 0.0) // Zcash yellow
+    case "dash":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Dash cyan
+    case "xlm", "stellar":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Stellar blue
+    case "neo":
+        return Color(red: 0.0, green: 0.8, blue: 0.0) // NEO green
+    case "qtum":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Qtum orange
+    case "waves":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Waves cyan
+    case "omg", "omg-network":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // OMG Network red
+    case "zrx", "0x":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 0x black
+    case "bat", "basic-attention-token":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Basic Attention Token orange
+    case "knc", "kyber-network":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Kyber Network cyan
+    case "lrc", "loopring":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Loopring blue
+    case "rep", "augur":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Augur red
+    case "gnt", "golem":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Golem teal
+    case "mkr", "maker":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Maker orange
+    case "snx", "synthetix":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Synthetix black
+    case "comp", "compound":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Compound cyan
+    case "yfi", "yearn-finance":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Yearn Finance teal
+    case "uni", "uniswap":
+        return Color(red: 0.8, green: 0.2, blue: 0.8) // Uniswap pink
+    case "aave":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Aave red
+    case "sushi", "sushiswap":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // SushiSwap teal
+    case "crv", "curve-dao-token":
+        return Color(red: 0.0, green: 0.8, blue: 0.0) // Curve DAO Token green
+    case "1inch":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 1inch black
+    case "bal", "balancer":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Balancer cyan
+    case "lpt", "livepeer":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Livepeer blue
+    case "ren", "republic-protocol":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Republic Protocol black
+    case "uma", "uma":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // UMA orange
+    case "band":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Band Protocol teal
+    case "nkn":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // NKN blue
+    case "ocean", "ocean-protocol":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Ocean Protocol cyan
+    case "rsr", "reserve-rights":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // Reserve Rights red
+    case "nmr", "numeraire":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Numeraire black
+    case "ant", "aragon":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Aragon cyan
+    case "lend", "ethlend":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Aave (formerly ETHLend) blue
+    case "cvc", "civic":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Civic teal
+    case "dnt", "district0x":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // district0x black
+    case "gno", "gnosis":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Gnosis teal
+    case "powr", "power-ledger":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // Power Ledger orange
+    case "req", "request-network":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Request Network blue
+    case "salt":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // SALT cyan
+    case "storj":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Storj blue
+    case "sub", "substratum":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Substratum teal
+    case "wtc", "waltonchain":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Waltonchain black
+    case "zil", "zilliqa":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // Zilliqa cyan
+    case "fun", "funfair":
+        return Color(red: 0.8, green: 0.4, blue: 0.2) // FunFair orange
+    case "kcs", "kucoin-shares":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // KuCoin Shares teal
+    case "nano":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // Nano blue
+    case "iost":
+        return Color(red: 0.8, green: 0.2, blue: 0.2) // IOST red
+    case "btt", "bit torrent":
+        return Color(red: 0.0, green: 0.6, blue: 0.8) // BitTorrent cyan
+    case "hot", "holo":
+        return Color(red: 0.0, green: 0.6, blue: 0.4) // Holo teal
+    case "zrx", "0x-protocol":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // 0x Protocol black
+    case "icx", "icon":
+        return Color(red: 0.0, green: 0.4, blue: 0.8) // ICON blue
+    case "ont", "ontology":
+        return Color(red: 0.0, green: 0.0, blue: 0.0) // Ontology black
+    default:
+        // Fallback: generate a color based on the symbol's hash
+        let colors = [
+            Color(red: 0.2, green: 0.4, blue: 0.8), // Blue
+            Color(red: 0.8, green: 0.2, blue: 0.2), // Red
+            Color(red: 0.0, green: 0.6, blue: 0.4), // Teal
+            Color(red: 0.8, green: 0.4, blue: 0.2), // Orange
+            Color(red: 0.6, green: 0.2, blue: 0.8), // Purple
+            Color(red: 0.0, green: 0.8, blue: 0.0), // Green
+            Color(red: 0.8, green: 0.8, blue: 0.2), // Yellow
+            Color(red: 0.8, green: 0.2, blue: 0.8)  // Pink
+        ]
+        
+        let hash = lowercasedSymbol.hashValue
+        return colors[abs(hash) % colors.count]
     }
 }
 

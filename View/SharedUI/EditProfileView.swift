@@ -190,9 +190,12 @@ struct EditProfileView: View {
                                 .padding(.vertical, 16)
                                 .background(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]),
-                                        startPoint: .leading,
-                                        endPoint: .trailing
+                                        gradient: Gradient(colors: [
+                                            Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                            Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                        ]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
                                     )
                                 )
                                 .cornerRadius(12)

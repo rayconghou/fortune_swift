@@ -141,18 +141,6 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250, height: 250)
                 
-                // Test custom font with fallback
-                Text("DOJO")
-                    .font(.lastShuriken(size: 48))
-                    .foregroundColor(.white)
-                    .opacity(showDojo ? 1 : 0)
-                    .animation(.easeInOut(duration: 0.4).delay(0.2), value: showDojo)
-                
-                Text("Crypto Trading Platform")
-                    .font(.lastShuriken(size: 24))
-                    .foregroundColor(.cyan)
-                    .opacity(showDojo ? 1 : 0)
-                    .animation(.easeInOut(duration: 0.4).delay(0.3), value: showDojo)
             }
             .padding(.vertical, 50)
         }
@@ -205,15 +193,6 @@ struct DojoSplashPreview: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250, height: 250)
-                
-                // Test custom font - try different font name variations
-                Text("DOJO")
-                    .font(.lastShuriken(size: 48))
-                    .foregroundColor(.white)
-                
-                Text("Crypto Trading Platform")
-                    .font(.lastShuriken(size: 24))
-                    .foregroundColor(.cyan)
             }
         }
         .onAppear {

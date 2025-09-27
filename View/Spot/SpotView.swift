@@ -119,7 +119,7 @@ struct SpotView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     ScrollView {
-                        LazyVStack(spacing: 20) {
+                        LazyVStack(spacing: 24) {
                             ForEach(filteredCoins) { coin in
                                 CryptoTrendCard(
                                     rank: coin.market_cap_rank ?? 0,
@@ -136,7 +136,7 @@ struct SpotView: View {
                             }
                         }
                         .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 16)
                     }
                 }
                 
