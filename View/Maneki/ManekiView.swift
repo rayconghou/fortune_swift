@@ -57,9 +57,16 @@ struct ManekiView: View {
                             }
 
                             if isLoading {
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                    .frame(maxWidth: .infinity, alignment: .center)
+                                HStack {
+                                    Text("...")
+                                        .font(.system(size: 24, weight: .medium))
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .background(Color(hex: "1F212F"))
+                                        .cornerRadius(18)
+                                        .frame(maxWidth: 280, alignment: .leading)
+                                    Spacer()
+                                }
                             }
 
                             Color.clear
@@ -76,50 +83,88 @@ struct ManekiView: View {
                         }
                     }
                     .padding(.vertical, 6)
-                    .background(.ultraThinMaterial)
+                    .background(Color(hex: "050715"))
                     .cornerRadius(16)
                     .padding(.horizontal, 10)
                 }
 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(exampleQuestions, id: \ .self ) { question in
-                            Button {
-                                userMessage = question
-                                sendMessage()
-                            } label: {
-                                Text(question)
-                                    .font(.system(size: 14, weight: .medium))
-                                    .foregroundColor(.white)
-                                    .padding(.vertical, 8)
-                                    .padding(.horizontal, 12)
-                                    .background(Color.gray.opacity(0.3))
-                                    .cornerRadius(10)
+                // Compact rectangular container matching design specs
+                VStack(spacing: 8) {
+                    // Suggested Questions Row with horizontal scrolling
+                    ZStack(alignment: .trailing) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 12) {
+                                ForEach(exampleQuestions, id: \.self) { question in
+                                    Button(action: {
+                                        userMessage = question
+                                    }) {
+                                        Text(question)
+                                            .font(.system(size: 14, weight: .medium))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 16)
+                                            .padding(.vertical, 8)
+                                            .background(Color(hex: "282A45"))
+                                            .cornerRadius(20)
+                                    }
+                                }
                             }
+                            .padding(.horizontal, 4)
+                        }
+                        
+                        // Shadow indicator on the right
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color.clear,
+                                Color(hex: "141628").opacity(0.8)
+                            ]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                        .frame(width: 20)
+                        .allowsHitTesting(false)
+                    }
+                    
+                    // Input Field and Action Buttons Row
+                    HStack(spacing: 12) {
+                        TextField("Ask Maneki anything...", text: $userMessage)
+                            .font(.system(size: 16))
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 12)
+                            .background(Color(hex: "282A45"))
+                            .cornerRadius(25)
+                            .foregroundColor(.white)
+                        
+                        Button(action: sendMessage) {
+                            Image(systemName: "arrow.up")
+                                .foregroundColor(.black)
+                                .font(.system(size: 16, weight: .bold))
+                                .frame(width: 40, height: 40)
+                                .background(Color.white)
+                                .cornerRadius(12)
+                        }
+                        .disabled(userMessage.isEmpty)
+                        
+                        Button(action: {
+                            userMessage = ""
+                        }) {
+                            Image(systemName: "repeat")
+                                .foregroundColor(.white)
+                                .font(.system(size: 16, weight: .medium))
+                                .frame(width: 40, height: 40)
+                                .background(Color(hex: "282A45"))
+                                .cornerRadius(12)
                         }
                     }
-                    .padding(.horizontal)
                 }
-                .padding(.bottom, 5)
-
-                HStack {
-                    TextField("Ask Maneki anything...", text: $userMessage)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(25)
-                        .foregroundColor(.white)
-                    Button(action: sendMessage) {
-                        Image(systemName: "paperplane.fill")
-                            .foregroundColor(.white)
-                            .padding(12)
-                            .background(Color.blue)
-                            .cornerRadius(25)
-                    }
-                }
-                .padding()
+                .padding(.horizontal, 15)
+                .padding(.vertical, 10)
+                .background(Color(hex: "141628"))
+                .cornerRadius(20)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
                 }
             }
-            .background(Color.black)
+            .background(Color(hex: "050715"))
         }
     }
 
@@ -218,29 +263,30 @@ struct ManekiResponseView: View {
     let content: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            ForEach(parseIntoBlocks(from: content), id: \.self) { block in
-                VStack(alignment: .leading, spacing: 6) {
-                    if let header = block.header {
-                        Text(header)
-                            .font(.title3)
-                            .fontWeight(.bold)
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(parseIntoBlocks(from: content), id: \.self) { block in
+                    VStack(alignment: .leading, spacing: 6) {
+                        if let header = block.header {
+                            Text(header)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.leading)
+                        }
+                        Text(block.body)
+                            .font(.body)
                             .foregroundColor(.white)
                             .multilineTextAlignment(.leading)
-
                     }
-                    Text(block.body)
-                        .font(.body)
-                        .foregroundColor(.white.opacity(0.9))
-                        .multilineTextAlignment(.leading)
                 }
             }
+            .padding()
+            .background(Color(hex: "1F212F"))
+            .cornerRadius(18)
+            .frame(maxWidth: 280, alignment: .leading)
+            Spacer()
         }
-        .padding()
-        .background(Color.white.opacity(0.05))
-        .cornerRadius(14)
-        .padding(.horizontal, 4)
-        .padding(.vertical, 8)
     }
 
     struct Block: Hashable {
