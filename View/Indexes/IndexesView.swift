@@ -4,14 +4,18 @@ import SwiftUI
 // MARK: - Main Index View
 struct IndexesView: View {
     var hamburgerAction: () -> Void
-    @State private var selectedTab: IndexSourceTab = .handpicked
+    @State private var selectedTab: IndexSourceTab = .teamPicks
     @StateObject private var viewModel = LeaderboardViewModel()
     @State private var showManekiQuizModal = false
     @State private var showCreateIndexSheet = false
     @State private var searchText = ""
     
     var body: some View {
-        NavigationStack {
+        ZStack(alignment: .top) {
+            // Background color
+            Color.black
+                .ignoresSafeArea(.all)
+            
             VStack(spacing: 0) {
                 // TopBar with profile, search, notifications, and hamburger menu
                 TopBar(
@@ -27,33 +31,56 @@ struct IndexesView: View {
                     }
                 )
                 
-                // Tab Selection
-                IndexSourceTabView(selectedTab: $selectedTab)
-                    .padding(.horizontal)
-                    .padding(.top, 4)
-                
-                // Content based on selected tab
                 ScrollView {
-                    VStack(spacing: 16) {
-                        switch selectedTab {
-                        case .handpicked:
-                            HandpickedIndexesView()
-                        case .maneki:
-                            ManekiCuratedIndexesView(showQuizModal: $showManekiQuizModal)
-                        case .community:
-                            CommunityIndexesView(showCreateIndexSheet: $showCreateIndexSheet, viewModel: viewModel)
-                        }
+                    VStack(spacing: 24) {
+                        // Header with title and create button
+                        headerSection
+                        
+                        // My Indexes section
+                        myIndexesSection
+                        
+                        // Tab Selection
+                        tabSelectionSection
+                        
+                        // Content based on selected tab
+                        contentSection
                     }
-                    .padding(.horizontal)
-                    .padding(.bottom, 16)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 100)
                 }
-                .background(Color.black)
-                .scrollContentBackground(.hidden)
-                .ignoresSafeArea(edges: .top)
             }
-            .background(Color.black.edgesIgnoringSafeArea(.all))
+            
+            // Programmatic overlay effect - no asset imports, no layout breaking
+            GeometryReader { geometry in
+                ZStack {
+                    // Subtle radial gradient overlay
+                    RadialGradient(
+                        gradient: Gradient(colors: [
+                            Color.white.opacity(0.03),
+                            Color.blue.opacity(0.01),
+                            Color.clear
+                        ]),
+                        center: .topLeading,
+                        startRadius: 50,
+                        endRadius: 300
+                    )
+                    .ignoresSafeArea(.all)
+                    
+                    // Additional subtle pattern overlay
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.clear,
+                            Color.white.opacity(0.015),
+                            Color.clear
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    .ignoresSafeArea(.all)
+                }
+            }
+            .allowsHitTesting(false)
         }
-        .preferredColorScheme(.dark)
         .sheet(isPresented: $showManekiQuizModal) {
             ManekiQuizModalView()
         }
@@ -64,22 +91,76 @@ struct IndexesView: View {
                 isPresented: $showCreateIndexSheet
             )
         }
-
     }
-}
-
-// MARK: - Index Source Tab Enum
-enum IndexSourceTab: String, CaseIterable {
-    case handpicked = "Team Picks"
-    case maneki = "Maneki Quiz"
-    case community = "Community"
-}
-
-// MARK: - Tab Selection View
-struct IndexSourceTabView: View {
-    @Binding var selectedTab: IndexSourceTab
     
-    var body: some View {
+    // MARK: - UI Components
+    
+    private var headerSection: some View {
+        HStack {
+            Text("Indexes")
+                .font(.custom("Satoshi-Bold", size: 32))
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            Button(action: {
+                showCreateIndexSheet = true
+            }) {
+                HStack(spacing: 8) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                    
+                    Text("Create Index")
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray.opacity(0.2))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                        )
+                )
+            }
+        }
+        .padding(.top, 20)
+    }
+    
+    private var myIndexesSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("My Indexes")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
+            
+            VStack(spacing: 12) {
+                // AI James Select (Positive)
+                MyIndexCard(
+                    profileImage: "person.circle.fill",
+                    indexName: "AI James Select",
+                    creator: "by @jameswang",
+                    value: "$12.23",
+                    change: "▲ 1,12%",
+                    isPositive: true
+                )
+                
+                // AI James Select (Negative)
+                MyIndexCard(
+                    profileImage: "person.circle",
+                    indexName: "AI James Select",
+                    creator: "by @jameswang",
+                    value: "$117 176,16",
+                    change: "▼ 1,12%",
+                    isPositive: false
+                )
+            }
+        }
+    }
+    
+    private var tabSelectionSection: some View {
         HStack(spacing: 0) {
             ForEach(IndexSourceTab.allCases, id: \.self) { tab in
                 Button(action: {
@@ -87,190 +168,241 @@ struct IndexSourceTabView: View {
                         selectedTab = tab
                     }
                 }) {
-                    VStack(spacing: 8) {
-                        Text(tab.rawValue)
-                            .font(.subheadline)
-                            .fontWeight(selectedTab == tab ? .bold : .regular)
-                            .foregroundColor(selectedTab == tab ? .primary : .secondary)
-                        
-                        Rectangle()
-                            .fill(selectedTab == tab ? Color.accentColor : Color.clear)
-                            .frame(height: 3)
-                            .cornerRadius(1.5)
-                    }
+                    Text(tab.rawValue)
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(selectedTab == tab ? .white : .gray)
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 20)
+                        .background(
+                            selectedTab == tab ?
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                    Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                ]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ) : LinearGradient(
+                                gradient: Gradient(colors: [Color.gray.opacity(0.2)]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .cornerRadius(8)
                 }
-                .frame(maxWidth: .infinity)
             }
         }
-        .padding(.bottom, 8)
-    }
-}
-
-// MARK: - Shared Components
-struct IndexCard: View {
-    var name: String
-    var value: String
-    var change: String
-    var iconName: String = "chart.line.uptrend.xyaxis"
-    var isPositive: Bool {
-        return change.contains("+")
+        .padding(.vertical, 16)
     }
     
-    var body: some View {
-        VStack(spacing: 0) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(name)
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                    
-                Text(value)
-                    .font(.custom("Satoshi-Bold", size: 30))
-                        .foregroundColor(.primary)
-                    
-                    HStack(spacing: 4) {
-                        Text(change)
-                            .font(.subheadline)
-                            .foregroundColor(isPositive ? Color.green : Color.red)
-                        
-                        Text("Past 24h")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                }
-                
-                Spacer()
-                
-                ZStack {
-                    Circle()
-                        .fill(Color.accentColor.opacity(0.1))
-                        .frame(width: 40, height: 40)
-                    
-                    Image(systemName: iconName)
-                        .font(.system(size: 18))
-                        .foregroundColor(.accentColor)
-                }
+    private var contentSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            switch selectedTab {
+            case .teamPicks:
+                teamPicksContent
+            case .manekiQuiz:
+                manekiQuizContent
+            case .community:
+                communityContent
             }
-            .padding()
+        }
+    }
+    
+    private var teamPicksContent: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Team-Curated AI Meme Indexes")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
             
-            // Mini Graph Placeholder
-            ZStack(alignment: .bottomLeading) {
-                // Placeholder for actual chart
-                Path { path in
-                    let width: CGFloat = UIScreen.main.bounds.width - 64
-                    let height: CGFloat = 60
-                    
-                    // Sample points for mini graph
-                    let points = isPositive ?
-                        [
-                            CGPoint(x: 0, y: height * 0.5),
-                            CGPoint(x: width * 0.2, y: height * 0.7),
-                            CGPoint(x: width * 0.4, y: height * 0.3),
-                            CGPoint(x: width * 0.6, y: height * 0.6),
-                            CGPoint(x: width * 0.8, y: height * 0.2),
-                            CGPoint(x: width, y: height * 0.1)
-                        ] :
-                        [
-                            CGPoint(x: 0, y: height * 0.3),
-                            CGPoint(x: width * 0.2, y: height * 0.2),
-                            CGPoint(x: width * 0.4, y: height * 0.5),
-                            CGPoint(x: width * 0.6, y: height * 0.4),
-                            CGPoint(x: width * 0.8, y: height * 0.7),
-                            CGPoint(x: width, y: height * 0.9)
-                        ]
-                    
-                    path.move(to: points[0])
-                    for point in points.dropFirst() {
-                        path.addLine(to: point)
-                    }
-                }
-                .stroke(isPositive ? Color.green : Color.red, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
-                
-                // Gradient fill under the line
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        isPositive ? Color.green.opacity(0.3) : Color.red.opacity(0.3),
-                        isPositive ? Color.green.opacity(0.05) : Color.red.opacity(0.05)
-                    ]),
-                    startPoint: .bottom,
-                    endPoint: .top
+            VStack(spacing: 12) {
+                // Fortune AI Select
+                TeamIndexCard(
+                    indexName: "Fortune AI Select",
+                    value: "$785,32",
+                    change: "+$293,70 ▲ 1,32% • Today",
+                    isPositive: true
                 )
-                .frame(height: 60)
+                
+                // AI Memes Index
+                TeamIndexCard(
+                    indexName: "AI Memes Index",
+                    value: "$1 428,67",
+                    change: "-$705,70 ▼ 1,32% • Today",
+                    isPositive: false
+                )
+                
+                // AI Blue Chips
+                TeamIndexCard(
+                    indexName: "AI Blue Chips",
+                    value: "$2 432.89",
+                    change: "+$293,70 ▲ 1,32% • Today",
+                    isPositive: true
+                )
             }
-            .frame(height: 60)
-            .padding(.horizontal)
-            .padding(.bottom)
-        }
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color(UIColor.secondarySystemBackground))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.gray.opacity(0.1), lineWidth: 1)
-        )
-    }
-}
-
-// MARK: - Handpicked Indexes Tab
-struct HandpickedIndexesView: View {
-    var body: some View {
-        VStack(spacing: 16) {
-            Text("Team-curated AI Meme Indexes")
-                .font(.headline)
-                .foregroundColor(.secondary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 8)
-            
-            IndexCard(name: "AI Memes Index", value: "1,428.67", change: "+5.2%", iconName: "brain")
-            IndexCard(name: "Dojo AI Select", value: "785.32", change: "+2.8%", iconName: "sparkles")
-            IndexCard(name: "AI Blue Chips", value: "2,432.89", change: "+3.7%", iconName: "crown")
-            IndexCard(name: "AI Microcaps", value: "476.54", change: "-1.9%", iconName: "atom")
-            
-            Spacer(minLength: 50)
         }
     }
-}
-
-// MARK: - Maneki Quiz Tab
-struct ManekiCuratedIndexesView: View {
-    @Binding var showQuizModal: Bool
     
-    var body: some View {
-        VStack(spacing: 16) {
+    private var manekiQuizContent: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Maneki Quiz")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
+            
             Button(action: {
-                showQuizModal = true
+                showManekiQuizModal = true
             }) {
                 HStack {
                     Image(systemName: "questionmark.circle.fill")
                         .font(.title2)
+                        .foregroundColor(.white)
                     
                     Text("Take Maneki's Investment Quiz")
-                        .font(.headline)
+                        .font(.custom("Satoshi-Bold", size: 18))
+                        .foregroundColor(.white)
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.accentColor)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(red: 0.2, green: 0.5, blue: 1.0),      // Bright blue
+                                    Color(red: 0.1, green: 0.3, blue: 0.8)       // Darker blue
+                                ]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
                 )
-                .foregroundColor(.white)
             }
-            .padding(.vertical, 8)
+        }
+    }
+    
+    private var communityContent: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Community")
+                .font(.custom("Satoshi-Bold", size: 20))
+                .foregroundColor(.white)
             
-            Text("Recommended for you")
-                .font(.headline)
-                .foregroundColor(.secondary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            IndexCard(name: "Income Builder", value: "958.42", change: "+1.7%", iconName: "dollarsign.circle")
-            IndexCard(name: "Growth Portfolio", value: "1,653.21", change: "+4.2%", iconName: "chart.bar.fill")
-            IndexCard(name: "Balanced Strategy", value: "1,247.38", change: "+2.3%", iconName: "scale.3d")
-            
-            Spacer(minLength: 50)
+            Text("Community indexes coming soon...")
+                .font(.custom("Satoshi-Bold", size: 16))
+                .foregroundColor(.gray)
+                .padding()
         }
     }
 }
+
+// MARK: - Index Source Tab Enum
+enum IndexSourceTab: String, CaseIterable {
+    case teamPicks = "Team Picks"
+    case manekiQuiz = "Maneki Quiz"
+    case community = "Community"
+}
+
+// MARK: - My Index Card Component
+struct MyIndexCard: View {
+    let profileImage: String
+    let indexName: String
+    let creator: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // Profile image
+            Image(systemName: profileImage)
+                .font(.system(size: 24))
+                .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(Color.gray.opacity(0.2))
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(indexName)
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.white)
+                
+                Text(creator)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(value)
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.white)
+                
+                Text(change)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(isPositive ? .green : .red)
+            }
+            
+            Image(systemName: "chevron.right")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.gray)
+        }
+        .padding(16)
+        .background(Color(hex: "141628"))
+        .cornerRadius(12)
+    }
+}
+
+// MARK: - Team Index Card Component
+struct TeamIndexCard: View {
+    let indexName: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(indexName)
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                    
+                    Text(value)
+                        .font(.custom("Satoshi-Bold", size: 24))
+                        .foregroundColor(.white)
+                    
+                    Text(change)
+                        .font(.custom("Satoshi-Bold", size: 14))
+                        .foregroundColor(isPositive ? .green : .red)
+                }
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.gray)
+            }
+            
+            // Sparkline Chart Placeholder
+            RoundedRectangle(cornerRadius: 4)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            (isPositive ? Color.green : Color.red).opacity(0.3),
+                            (isPositive ? Color.green : Color.red).opacity(0.05)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(height: 60)
+        }
+        .padding(16)
+        .background(Color(hex: "141628"))
+        .cornerRadius(12)
+    }
+    
+}
+
 
 // MARK: - Community Indexes Tab
 struct CommunityIndexesView: View {
@@ -453,39 +585,15 @@ class LeaderboardViewModel: ObservableObject {
     func fetchLeaderboard() {
         print("🔍 Attempting to fetch leaderboard...")
 
-        guard let url = URL(string: "http://localhost:3001/api/leaderboard") else {
-            print("❌ Invalid URL")
-            return
+        // For now, use mock data to avoid network issues
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.leaderboard = [
+                LeaderboardIndex(index_name: "AI Memes Index", roi: 15.2, creator: "jameswang"),
+                LeaderboardIndex(index_name: "Fortune AI Select", roi: 12.8, creator: "alexchen"),
+                LeaderboardIndex(index_name: "AI Blue Chips", roi: 8.5, creator: "sarahkim")
+            ]
+            print("✅ Mock leaderboard data loaded")
         }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("❌ Network error:", error)
-                return
-            }
-
-            if let httpResponse = response as? HTTPURLResponse {
-                print("📡 Status Code:", httpResponse.statusCode)
-            }
-
-            guard let data = data else {
-                print("❌ No data received")
-                return
-            }
-
-            do {
-                let decoded = try JSONDecoder().decode([LeaderboardIndex].self, from: data)
-                DispatchQueue.main.async {
-                    self.leaderboard = decoded
-                    print("✅ Leaderboard fetched:", decoded)
-                }
-            } catch {
-                print("❌ Decoding error:", error)
-                if let raw = String(data: data, encoding: .utf8) {
-                    print("📄 Raw response body:", raw)
-                }
-            }
-        }.resume()
     }
 }
 
@@ -568,11 +676,11 @@ struct ManekiQuizModalView: View {
                         .font(.headline)
                         .padding(.top)
                     
-                    IndexCard(
-                        name: "Balanced Growth Portfolio",
+                    TeamIndexCard(
+                        indexName: "Balanced Growth Portfolio",
                         value: "1,247.38",
-                        change: "+2.3%",
-                        iconName: "star.fill"
+                        change: "+2.3% • Today",
+                        isPositive: true
                     )
                     .padding(.horizontal)
                     

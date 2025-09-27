@@ -27,8 +27,6 @@
 		C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA432D836C2C0058C4B2 /* UserProfile.swift */; };
 		C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA452D836C5A0058C4B2 /* ApplePay.swift */; };
 		C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA482D836D120058C4B2 /* SharedUIView.swift */; };
-		C319FA972D9B7A000058C4B2 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA962D9B7A000058C4B2 /* TopBar.swift */; };
-		C319FA992D9B7B000058C4B2 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA982D9B7B000058C4B2 /* EditProfileView.swift */; };
 		C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */; };
 		C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */; };
 		C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */; };
@@ -59,12 +57,26 @@
 		C319FA912DA0CB090058C4B2 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA902DA0CB090058C4B2 /* KeychainHelper.swift */; };
 		C319FA942DA611F10058C4B2 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA932DA611F10058C4B2 /* ChatroomView.swift */; };
 		C319FA962DA71F420058C4B2 /* CreateIndexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA952DA71F420058C4B2 /* CreateIndexes.swift */; };
+		C319FA972D9B7A000058C4B2 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA962D9B7A000058C4B2 /* TopBar.swift */; };
 		C319FA982DA7395E0058C4B2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA972DA7395E0058C4B2 /* News.swift */; };
+		C319FA992D9B7B000058C4B2 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA982D9B7B000058C4B2 /* EditProfileView.swift */; };
 		C319FA9A2DA743270058C4B2 /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA992DA743270058C4B2 /* Tweets.swift */; };
 		C319FAA22DAD55BB0058C4B2 /* SecureSignInFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA12DAD55BB0058C4B2 /* SecureSignInFlowView.swift */; };
 		C319FAA42DAD64E70058C4B2 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */; };
 		C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */; };
 		C38BADA12E85CD9500DF6FF2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C38BADA02E85CD9500DF6FF2 /* .gitignore */; };
+		C3EF602D2E87353900D18CB8 /* Satoshi-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602B2E87353900D18CB8 /* Satoshi-MediumItalic.ttf */; };
+		C3EF602E2E87353900D18CB8 /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602C2E87353900D18CB8 /* Satoshi-Regular.ttf */; };
+		C3EF602F2E87353900D18CB8 /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602A2E87353900D18CB8 /* Satoshi-Medium.ttf */; };
+		C3EF60302E87353900D18CB8 /* Satoshi-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60242E87353900D18CB8 /* Satoshi-BlackItalic.ttf */; };
+		C3EF60312E87353900D18CB8 /* Satoshi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60252E87353900D18CB8 /* Satoshi-Bold.ttf */; };
+		C3EF60322E87353900D18CB8 /* Satoshi-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60272E87353900D18CB8 /* Satoshi-Italic.ttf */; };
+		C3EF60332E87353900D18CB8 /* Satoshi-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60232E87353900D18CB8 /* Satoshi-Black.ttf */; };
+		C3EF60342E87353900D18CB8 /* Satoshi-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60282E87353900D18CB8 /* Satoshi-Light.ttf */; };
+		C3EF60352E87353900D18CB8 /* Satoshi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60262E87353900D18CB8 /* Satoshi-BoldItalic.ttf */; };
+		C3EF60362E87353900D18CB8 /* Satoshi-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60292E87353900D18CB8 /* Satoshi-LightItalic.ttf */; };
+		C3EF60382E87354F00D18CB8 /* Korosu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60372E87354F00D18CB8 /* Korosu.ttf */; };
+		C3EF603A2E87356100D18CB8 /* The Last Shuriken.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,8 +99,6 @@
 		C319FA432D836C2C0058C4B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C319FA452D836C5A0058C4B2 /* ApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
 		C319FA482D836D120058C4B2 /* SharedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
-		C319FA962D9B7A000058C4B2 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
-		C319FA982D9B7B000058C4B2 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketFetcher.swift; sourceTree = "<group>"; };
 		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -113,13 +123,27 @@
 		C319FA932D9B66530058C4B2 /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
 		C319FA932DA611F10058C4B2 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
 		C319FA952DA71F420058C4B2 /* CreateIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIndexes.swift; sourceTree = "<group>"; };
+		C319FA962D9B7A000058C4B2 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		C319FA972DA7395E0058C4B2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C319FA982D9B7B000058C4B2 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		C319FA992DA743270058C4B2 /* Tweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		C319FAA12DAD55BB0058C4B2 /* SecureSignInFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecureSignInFlowView.swift; path = ../SecureSignInFlowView.swift; sourceTree = "<group>"; };
 		C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
 		C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38BADA02E85CD9500DF6FF2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C3EF60232E87353900D18CB8 /* Satoshi-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.ttf"; sourceTree = "<group>"; };
+		C3EF60242E87353900D18CB8 /* Satoshi-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C3EF60252E87353900D18CB8 /* Satoshi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.ttf"; sourceTree = "<group>"; };
+		C3EF60262E87353900D18CB8 /* Satoshi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C3EF60272E87353900D18CB8 /* Satoshi-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.ttf"; sourceTree = "<group>"; };
+		C3EF60282E87353900D18CB8 /* Satoshi-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Light.ttf"; sourceTree = "<group>"; };
+		C3EF60292E87353900D18CB8 /* Satoshi-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.ttf"; sourceTree = "<group>"; };
+		C3EF602A2E87353900D18CB8 /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
+		C3EF602B2E87353900D18CB8 /* Satoshi-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C3EF602C2E87353900D18CB8 /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
+		C3EF60372E87354F00D18CB8 /* Korosu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Korosu.ttf; sourceTree = "<group>"; };
+		C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Last Shuriken.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +193,18 @@
 			isa = PBXGroup;
 			children = (
 				C319FA212D8113A80058C4B2 /* Assets.xcassets */,
+				C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */,
+				C3EF60372E87354F00D18CB8 /* Korosu.ttf */,
+				C3EF60232E87353900D18CB8 /* Satoshi-Black.ttf */,
+				C3EF60242E87353900D18CB8 /* Satoshi-BlackItalic.ttf */,
+				C3EF60252E87353900D18CB8 /* Satoshi-Bold.ttf */,
+				C3EF60262E87353900D18CB8 /* Satoshi-BoldItalic.ttf */,
+				C3EF60272E87353900D18CB8 /* Satoshi-Italic.ttf */,
+				C3EF60282E87353900D18CB8 /* Satoshi-Light.ttf */,
+				C3EF60292E87353900D18CB8 /* Satoshi-LightItalic.ttf */,
+				C3EF602A2E87353900D18CB8 /* Satoshi-Medium.ttf */,
+				C3EF602B2E87353900D18CB8 /* Satoshi-MediumItalic.ttf */,
+				C3EF602C2E87353900D18CB8 /* Satoshi-Regular.ttf */,
 				C319FA222D8113A80058C4B2 /* Preview Content */,
 			);
 			path = Supporting;
@@ -423,9 +459,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38BADA12E85CD9500DF6FF2 /* .gitignore in Resources */,
+				C3EF602D2E87353900D18CB8 /* Satoshi-MediumItalic.ttf in Resources */,
+				C3EF602E2E87353900D18CB8 /* Satoshi-Regular.ttf in Resources */,
+				C3EF602F2E87353900D18CB8 /* Satoshi-Medium.ttf in Resources */,
+				C3EF60302E87353900D18CB8 /* Satoshi-BlackItalic.ttf in Resources */,
+				C3EF60312E87353900D18CB8 /* Satoshi-Bold.ttf in Resources */,
+				C3EF60322E87353900D18CB8 /* Satoshi-Italic.ttf in Resources */,
+				C3EF60332E87353900D18CB8 /* Satoshi-Black.ttf in Resources */,
+				C3EF60342E87353900D18CB8 /* Satoshi-Light.ttf in Resources */,
+				C3EF60352E87353900D18CB8 /* Satoshi-BoldItalic.ttf in Resources */,
+				C3EF60362E87353900D18CB8 /* Satoshi-LightItalic.ttf in Resources */,
+				C3EF60382E87354F00D18CB8 /* Korosu.ttf in Resources */,
 				C319FA242D8113A80058C4B2 /* Preview Content in Resources */,
 				C319FA232D8113A80058C4B2 /* Assets.xcassets in Resources */,
 				C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */,
+				C3EF603A2E87356100D18CB8 /* The Last Shuriken.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,7 +74,7 @@ struct SpotView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
-                .padding(.bottom, 10)
+                .padding(.bottom, 15)
                 
                 // Search Bar
                 HStack {
@@ -95,8 +95,15 @@ struct SpotView: View {
                 }
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
-                .background(Color.clear)
-                .cornerRadius(10)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(hex: "141628"))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                        )
+                )
+                .padding(.horizontal, 16)
                 .padding(.bottom, 20)
                 
                 // Tokens List
@@ -135,6 +142,37 @@ struct SpotView: View {
                 
                 Spacer()
             }
+            
+            // Programmatic overlay effect - no asset imports, no layout breaking
+            GeometryReader { geometry in
+                ZStack {
+                    // Subtle radial gradient overlay
+                    RadialGradient(
+                        gradient: Gradient(colors: [
+                            Color.white.opacity(0.03),
+                            Color.blue.opacity(0.01),
+                            Color.clear
+                        ]),
+                        center: .topLeading,
+                        startRadius: 50,
+                        endRadius: 300
+                    )
+                    .ignoresSafeArea(.all)
+                    
+                    // Additional subtle pattern overlay
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.clear,
+                            Color.white.opacity(0.015),
+                            Color.clear
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    .ignoresSafeArea(.all)
+                }
+            }
+            .allowsHitTesting(false)
             
         }
             .sheet(item: $selectedCoin) { (coin: Coin) in

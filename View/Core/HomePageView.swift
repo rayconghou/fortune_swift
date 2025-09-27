@@ -52,7 +52,7 @@ struct HomePageView: View {
                         })
                         .tag(0)
                         .tabItem {
-                            Image(systemName: "binoculars.fill")
+                            Image(selectedTab == 0 ? "DarkTappedHome" : "DarkUntappedHome")
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)

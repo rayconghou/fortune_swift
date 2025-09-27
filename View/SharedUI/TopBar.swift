@@ -18,7 +18,7 @@ struct TopBar: View {
     @State private var showEditProfile = false
     
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 12) {
             // Profile Picture
             Button(action: {
                 showEditProfile = true
@@ -50,7 +50,7 @@ struct TopBar: View {
                     .font(.system(size: 16, weight: .medium))
                 
                 TextField("Search", text: $searchText)
-                    .font(.custom("Satoshi-Bold", size: 16))
+                    .font(.custom("Satoshi-Black", size: 16))
                     .foregroundColor(.white)
                     .onTapGesture {
                         showSearch = true
@@ -70,7 +70,7 @@ struct TopBar: View {
             .padding(.vertical, 8)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(hex: "2C2C2C"))
+                    .fill(Color(hex: "1F212F"))
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.white.opacity(0.1), lineWidth: 1)
@@ -79,8 +79,6 @@ struct TopBar: View {
             .onTapGesture {
                 showSearch = true
             }
-            
-            Spacer()
             
             // Notification Bell
             Button(action: onNotificationTap) {
