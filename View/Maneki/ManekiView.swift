@@ -12,7 +12,7 @@ struct ManekiView: View {
     var hamburgerAction: () -> Void
     @State private var userMessage = ""
     @State private var messages: [ManekiChatMessage] = [
-        ManekiChatMessage(id: 1, content: "Hi there! I'm Maneki, your crypto guide. How can I help you today?", isFromUser: false)
+        ManekiChatMessage(id: 1, content: "Hi there! I'm **Maneki**, your crypto guide. How can I help you today?", isFromUser: false)
     ]
     @State private var isLoading = false
     @State private var searchText = ""
@@ -59,7 +59,7 @@ struct ManekiView: View {
                             if isLoading {
                                 HStack {
                                     Text("...")
-                                        .font(.system(size: 24, weight: .medium))
+                                        .font(.custom("Satoshi-Bold", size: 24))
                                         .foregroundColor(.white)
                                         .padding()
                                         .background(Color(hex: "1F212F"))
@@ -99,7 +99,7 @@ struct ManekiView: View {
                                         userMessage = question
                                     }) {
                                         Text(question)
-                                            .font(.system(size: 14, weight: .medium))
+                                            .font(.custom("Satoshi-Medium", size: 14))
                                             .foregroundColor(.white)
                                             .padding(.horizontal, 16)
                                             .padding(.vertical, 8)
@@ -127,7 +127,7 @@ struct ManekiView: View {
                     // Input Field and Action Buttons Row
                     HStack(spacing: 12) {
                         TextField("Ask Maneki anything...", text: $userMessage)
-                            .font(.system(size: 16))
+                            .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.horizontal, 16)
                             .padding(.vertical, 12)
                             .background(Color(hex: "282A45"))
@@ -137,7 +137,7 @@ struct ManekiView: View {
                         Button(action: sendMessage) {
                             Image(systemName: "arrow.up")
                                 .foregroundColor(.black)
-                                .font(.system(size: 16, weight: .bold))
+                                .font(.custom("Satoshi-Bold", size: 16))
                                 .frame(width: 40, height: 40)
                                 .background(Color.white)
                                 .cornerRadius(12)
@@ -149,7 +149,7 @@ struct ManekiView: View {
                         }) {
                             Image(systemName: "repeat")
                                 .foregroundColor(.white)
-                                .font(.system(size: 16, weight: .medium))
+                                .font(.custom("Satoshi-Medium", size: 16))
                                 .frame(width: 40, height: 40)
                                 .background(Color(hex: "282A45"))
                                 .cornerRadius(12)
@@ -269,13 +269,13 @@ struct ManekiResponseView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         if let header = block.header {
                             Text(header)
-                                .font(.title3)
+                                .font(.custom("Satoshi-Bold", size: 20))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
                         }
-                        Text(block.body)
-                            .font(.body)
+                        Text(parseMarkdownText(block.body))
+                            .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.leading)
                     }
@@ -294,6 +294,20 @@ struct ManekiResponseView: View {
         let body: String
     }
 
+    func parseMarkdownText(_ text: String) -> AttributedString {
+        var attributedString = AttributedString(text)
+        
+        // Find and bold the word "Maneki" by replacing **Maneki** with Maneki and applying bold
+        if let range = attributedString.range(of: "**Maneki**") {
+            attributedString.replaceSubrange(range, with: AttributedString("Maneki"))
+            if let newRange = attributedString.range(of: "Maneki") {
+                attributedString[newRange].font = .custom("Satoshi-Bold", size: 16)
+            }
+        }
+        
+        return attributedString
+    }
+    
     func parseIntoBlocks(from input: String) -> [Block] {
         var blocks: [Block] = []
 

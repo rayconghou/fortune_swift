@@ -10,11 +10,11 @@ import SwiftUI
 
 struct PortfolioView: View {
     var hamburgerAction: () -> Void
-    @State private var selectedTimeframe: Timeframe = .week
+    @State private var selectedTimeframe: Timeframe = .day
     @StateObject private var viewModel = PortfolioViewModel()
-    @State private var showWalletSheet = false
-    @State private var isDeposit = true
     @State private var searchText = ""
+    @State private var selectedAssetTab = "All"
+    @State private var selectedNewsTab = "For You"
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -35,240 +35,453 @@ struct PortfolioView: View {
                 
                 ScrollView {
                 VStack(spacing: 20) {
-                    // Main balance card
-                    VStack(spacing: 10) {
-                        HStack {
-                            Text("Total Balance")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            Spacer()
+                        // Portfolio Value Section
+                        VStack(spacing: 8) {
+                            Text("Portfolio Value")
+                                .font(.custom("Satoshi-Medium", size: 16))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Button(action: {
-                                showWalletSheet = true
-                                isDeposit = true
-                            }) {
-                                Label("Deposit", systemImage: "arrow.down.to.line")
-                                    .font(.subheadline)
+                            HStack(alignment: .bottom) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    HStack(alignment: .bottom, spacing: 8) {
+                                        Text("$4,237.36")
+                                            .font(.custom("Satoshi-Bold", size: 36))
+                                            .foregroundColor(.white)
+                                        
+                                        HStack(spacing: 4) {
+                                            Image(systemName: "triangle.fill")
+                                                .font(.system(size: 10, weight: .bold))
+                                                .foregroundColor(.green)
+                                            Text("26.25%")
+                                                .font(.custom("Satoshi-Bold", size: 16))
                                     .foregroundColor(.green)
                             }
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(Color(UIColor.systemGray6))
-                            .cornerRadius(6)
-                            
-                            Button(action: {
-                                showWalletSheet = true
-                                isDeposit = false
-                            }) {
-                                Label("Withdraw", systemImage: "arrow.up.from.line")
-                                    .font(.subheadline)
-                                    .foregroundColor(.orange)
-                            }
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(Color(UIColor.systemGray6))
-                            .cornerRadius(6)
-                        }
-                        
-                        Text("$\(viewModel.totalBalance, specifier: "%.2f")")
-                            .font(.custom("Satoshi-Bold", size: 42))
-                            .foregroundColor(.white)
-                        
-                        HStack {
-                            Image(systemName: viewModel.totalChange >= 0 ? "arrow.up.right" : "arrow.down.right")
-                                .foregroundColor(viewModel.totalChange >= 0 ? .green : .red)
-                            Text("\(viewModel.totalChange >= 0 ? "+" : "")\(viewModel.totalChangeValue, specifier: "$%.2f")")
-                                .foregroundColor(viewModel.totalChange >= 0 ? .green : .red)
-                            Text("(\(viewModel.totalChange, specifier: "%.2f")%)")
+                                    }
+                                    
+                                    Text("+ $1,046.95")
+                                        .font(.custom("Satoshi-Medium", size: 14))
                                 .foregroundColor(.gray)
                         }
-                        .font(.subheadline)
                         
-                        // P&L Timeframe Selector
+                                Spacer()
+                            }
+                            
+                            // Timeframe Selector
                         HStack(spacing: 0) {
                             ForEach(Timeframe.allCases, id: \.self) { timeframe in
                                 Button(action: {
                                     selectedTimeframe = timeframe
-                                    viewModel.updatePnL(for: timeframe)
                                 }) {
-                                    Text(timeframe.rawValue)
-                                        .font(.subheadline)
-                                        .padding(.vertical, 8)
-                                        .padding(.horizontal, 12)
+                                    Text(timeframe.rawValue.uppercased())
+                                            .font(.custom("Satoshi-Bold", size: 16))
+                                            .padding(.vertical, 12)
+                                            .frame(maxWidth: .infinity)
                                         .foregroundColor(selectedTimeframe == timeframe ? .white : .gray)
-                                        .background(selectedTimeframe == timeframe ? Color(UIColor.systemGray5) : Color.clear)
-                                        .cornerRadius(8)
+                                            .background(
+                                                selectedTimeframe == timeframe ? 
+                                                LinearGradient(
+                                                    gradient: Gradient(colors: [
+                                                        Color(red: 0.2, green: 0.5, blue: 1.0),
+                                                        Color(red: 0.1, green: 0.3, blue: 0.8)
+                                                    ]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                ) : LinearGradient(
+                                                    gradient: Gradient(colors: [Color.clear]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
+                                            )
+                                    }
                                 }
                             }
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(8)
                         }
+                        .padding(.horizontal, 32)
+                        .padding(.top, 12)
+                        
+                        // Full Width Chart Area
+                        ZStack {
+                            // Subtle bottom halo effect
+                            Path { path in
+                                let width: CGFloat = UIScreen.main.bounds.width - 40
+                                let height: CGFloat = 200
+                                let points: [CGPoint] = [
+                                    CGPoint(x: 0, y: height * 0.75),
+                                    CGPoint(x: width * 0.1, y: height * 0.72),
+                                    CGPoint(x: width * 0.2, y: height * 0.65),
+                                    CGPoint(x: width * 0.3, y: height * 0.55),
+                                    CGPoint(x: width * 0.4, y: height * 0.45),
+                                    CGPoint(x: width * 0.5, y: height * 0.48),
+                                    CGPoint(x: width * 0.6, y: height * 0.62),
+                                    CGPoint(x: width * 0.7, y: height * 0.58),
+                                    CGPoint(x: width * 0.8, y: height * 0.42),
+                                    CGPoint(x: width * 0.9, y: height * 0.38),
+                                    CGPoint(x: width, y: height * 0.45)
+                                ]
+                                
+                                path.move(to: points[0])
+                                for i in 1..<points.count {
+                                    let currentPoint = points[i]
+                                    let previousPoint = points[i-1]
+                                    
+                                    // Create control points for smooth curves
+                                    let controlPoint1 = CGPoint(
+                                        x: previousPoint.x + (currentPoint.x - previousPoint.x) * 0.3,
+                                        y: previousPoint.y
+                                    )
+                                    let controlPoint2 = CGPoint(
+                                        x: previousPoint.x + (currentPoint.x - previousPoint.x) * 0.7,
+                                        y: currentPoint.y
+                                    )
+                                    
+                                    path.addCurve(to: currentPoint, control1: controlPoint1, control2: controlPoint2)
+                                }
+                            }
+                            .stroke(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color.green.opacity(0.15),
+                                        Color.green.opacity(0.08),
+                                        Color.green.opacity(0.03),
+                                        Color.clear
+                                    ]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                ),
+                                lineWidth: 12
+                            )
+                            
+                            // Main green line
+                            Path { path in
+                                let width: CGFloat = UIScreen.main.bounds.width - 40
+                                let height: CGFloat = 200
+                                let points: [CGPoint] = [
+                                    CGPoint(x: 0, y: height * 0.75),
+                                    CGPoint(x: width * 0.1, y: height * 0.72),
+                                    CGPoint(x: width * 0.2, y: height * 0.65),
+                                    CGPoint(x: width * 0.3, y: height * 0.55),
+                                    CGPoint(x: width * 0.4, y: height * 0.45),
+                                    CGPoint(x: width * 0.5, y: height * 0.48),
+                                    CGPoint(x: width * 0.6, y: height * 0.62),
+                                    CGPoint(x: width * 0.7, y: height * 0.58),
+                                    CGPoint(x: width * 0.8, y: height * 0.42),
+                                    CGPoint(x: width * 0.9, y: height * 0.38),
+                                    CGPoint(x: width, y: height * 0.45)
+                                ]
+                                
+                                path.move(to: points[0])
+                                for i in 1..<points.count {
+                                    let currentPoint = points[i]
+                                    let previousPoint = points[i-1]
+                                    
+                                    // Create control points for smooth curves
+                                    let controlPoint1 = CGPoint(
+                                        x: previousPoint.x + (currentPoint.x - previousPoint.x) * 0.3,
+                                        y: previousPoint.y
+                                    )
+                                    let controlPoint2 = CGPoint(
+                                        x: previousPoint.x + (currentPoint.x - previousPoint.x) * 0.7,
+                                        y: currentPoint.y
+                                    )
+                                    
+                                    path.addCurve(to: currentPoint, control1: controlPoint1, control2: controlPoint2)
+                                }
+                            }
+                            .stroke(Color.green, lineWidth: 3)
+                        }
+                        .frame(height: 180)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 8)
+                        
+                        // Action Buttons
+                        HStack(spacing: 16) {
+                            ActionButton(icon: "QrCode", title: "Receive", color: Color(hex: "141628"))
+                            ActionButton(icon: "PaperPlane", title: "Send", color: Color(hex: "141628"))
+                            ActionButton(icon: "Swap", title: "Swap", color: Color(hex: "141628"))
+                            ActionButton(icon: "ShoppingCart", title: "Buy", color: Color(hex: "141628"))
+                        }
+                        .padding(.horizontal, 32)
                         .padding(.top, 8)
                         
-                        // P&L Metrics
-                        VStack(spacing: 12) {
+                        // My Assets Section
+                        VStack(alignment: .leading, spacing: 16) {
                             HStack {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Unrealized P&L")
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                    Text("\(viewModel.unrealizedPnL, specifier: "$%.2f")")
-                                        .font(.headline)
-                                        .foregroundColor(viewModel.unrealizedPnL >= 0 ? .green : .red)
-                                }
-                                Spacer()
-                                VStack(alignment: .trailing, spacing: 2) {
-                                    Text("Realized P&L")
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                    Text("\(viewModel.realizedPnL, specifier: "$%.2f")")
-                                        .font(.headline)
-                                        .foregroundColor(viewModel.realizedPnL >= 0 ? .green : .red)
-                                }
-                            }
-                            
-                            Divider()
-                                .background(Color.gray.opacity(0.3))
-                            
-                            HStack {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Total P&L")
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                    Text("\(viewModel.totalPnL, specifier: "$%.2f")")
-                                        .font(.headline)
-                                        .foregroundColor(viewModel.totalPnL >= 0 ? .green : .white)
-                                }
-                                Spacer()
-                                VStack(alignment: .trailing, spacing: 2) {
-                                    Text("% Change")
-                                        .font(.caption)
-                                        .foregroundColor(.gray)
-                                    Text("\(viewModel.totalPnLPercentage >= 0 ? "+" : "")\(viewModel.totalPnLPercentage, specifier: "%.2f")%")
-                                        .font(.headline)
-                                        .foregroundColor(viewModel.totalPnLPercentage >= 0 ? .green : .red)
-                                }
-                            }
-                        }
-                        .padding()
-                        .background(Color(UIColor.systemGray6))
-                        .cornerRadius(12)
-                    }
-                    .padding()
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(16)
-                    .padding(.horizontal)
-                    
-                    // Wallet Selector
-                    WalletSelectorView(viewModel: viewModel)
-                        .padding(.horizontal)
-                    
-                    // Asset section header
-                    HStack {
-                        Text("Your Assets")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    if viewModel.portfolioAssets.isEmpty {
-                        VStack(spacing: 20) {
-                            Image(systemName: "briefcase")
-                                .resizable()
-                                .frame(width: 70, height: 60)
-                                .foregroundColor(.gray)
-                                .padding(.top, 40)
-                            Text("No Assets Yet")
-                                .font(.title2)
-                                .foregroundColor(.white)
-                            Text("Start your crypto journey by purchasing your first coin.")
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.gray)
-                                .padding(.horizontal, 40)
-                            Button(action: {
-                                // Navigate to buy screen if needed
-                            }) {
-                                Text("Buy Crypto")
-                                    .fontWeight(.bold)
-                                    .padding()
-                                    .frame(width: 200)
-                                    .background(Color.green)
+                                Text("My Assets")
+                                    .font(.custom("Satoshi-Bold", size: 16))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                Spacer()
                             }
-                            .padding(.top, 20)
-                        }
-                        .padding(.vertical, 50)
-                    } else {
-                        ForEach(viewModel.portfolioAssets) { asset in
-                            AssetRow(asset: asset)
-                                .padding(.horizontal)
-                        }
-                    }
-                    
-                    // News Section
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            Text("Latest News")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Spacer()
-                            Button(action: {
-                                viewModel.refreshNews()
-                            }) {
-                                Image(systemName: "arrow.clockwise")
-                                    .foregroundColor(.blue)
+                            
+                            // Asset Tabs
+                            HStack(spacing: 0) {
+                                ForEach(["All", "Gainers", "Losers"], id: \.self) { tab in
+                                    Button(action: {
+                                        selectedAssetTab = tab
+                                    }) {
+                                        Text(tab)
+                                            .font(.custom("Satoshi-Medium", size: 14))
+                                            .padding(.vertical, 8)
+                                            .padding(.horizontal, 16)
+                                            .foregroundColor(selectedAssetTab == tab ? .white : .gray)
+                                            .background(
+                                                selectedAssetTab == tab ? 
+                                                LinearGradient(
+                                                    gradient: Gradient(colors: [
+                                                        Color(red: 0.2, green: 0.5, blue: 1.0),
+                                                        Color(red: 0.1, green: 0.3, blue: 0.8)
+                                                    ]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                ) : LinearGradient(
+                                                    gradient: Gradient(colors: [Color.clear]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
+                                            )
+                                            .cornerRadius(6)
+                                    }
+                                }
+                                Spacer()
                             }
+                            
+                            // Asset List
+                            VStack(spacing: 12) {
+                                CustomAssetRow(
+                                    name: "Bitcoin",
+                                    symbol: "BTC",
+                                    balance: "0,0006 BTC",
+                                    value: "$2.02",
+                                    change: "13,45%",
+                                    isPositive: true,
+                                    logo: "bitcoin",
+                                    logoColor: .orange,
+                                    imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
+                                )
+                                
+                                CustomAssetRow(
+                                    name: "Ethereum",
+                                    symbol: "ETH",
+                                    balance: "1,2 ETH",
+                                    value: "$1,634.60",
+                                    change: "1,32%",
+                                    isPositive: false,
+                                    logo: "ethereum",
+                                    logoColor: .blue,
+                                    imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
+                                )
+                                
+                                CustomAssetRow(
+                                    name: "Tether",
+                                    symbol: "USDT",
+                                    balance: "0,0006 USDT",
+                                    value: "$2.02",
+                                    change: "13,45%",
+                                    isPositive: true,
+                                    logo: "tether",
+                                    logoColor: .green,
+                                    imageUrl: "https://assets.coingecko.com/coins/images/325/large/Tether.png"
+                                )
+                            }
+                        }
+                        .padding(20)
+                        .background(Color(hex: "141628"))
+                        .cornerRadius(20)
+                        .padding(.horizontal, 16)
+                        
+                        // My Favorite Assets Section
+                        VStack(alignment: .leading, spacing: 16) {
+                            HStack {
+                                Text("My Favorite Assets")
+                                    .font(.custom("Satoshi-Bold", size: 16))
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
+                            .padding(.horizontal, 16)
+                            
+                            VStack(alignment: .leading, spacing: 16) {
+                                VStack(spacing: 12) {
+                                    FavoriteAssetRow(
+                                        name: "Solana",
+                                        symbol: "SOL",
+                                        value: "$160.59",
+                                        change: "2,75%",
+                                        isPositive: false,
+                                        logo: "S",
+                                        logoColor: .purple,
+                                        imageUrl: "https://assets.coingecko.com/coins/images/4128/large/solana.png"
+                                    )
+                                    
+                                    FavoriteAssetRow(
+                                        name: "USDC",
+                                        symbol: "USDC",
+                                        value: "$0.9998",
+                                        change: "0,04%",
+                                        isPositive: true,
+                                        logo: "$",
+                                        logoColor: .blue,
+                                        imageUrl: "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png"
+                                    )
+                                    
+                                    FavoriteAssetRow(
+                                        name: "TRON",
+                                        symbol: "TRX",
+                                        value: "$0.3234",
+                                        change: "0.53%",
+                                        isPositive: false,
+                                        logo: "T",
+                                        logoColor: .red,
+                                        imageUrl: "https://assets.coingecko.com/coins/images/1094/large/tron-logo.png"
+                                    )
+                                    
+                                    FavoriteAssetRow(
+                                        name: "Cardano",
+                                        symbol: "ADA",
+                                        value: "$0.7130",
+                                        change: "5,94%",
+                                        isPositive: true,
+                                        logo: "A",
+                                        logoColor: .blue,
+                                        imageUrl: "https://assets.coingecko.com/coins/images/975/large/cardano.png"
+                                    )
+                                }
+                                
+                                HStack {
+                                    Spacer()
+                                    Button("View All >") {
+                                        // Navigate to all assets
+                                    }
+                                    .font(.custom("Satoshi-Medium", size: 14))
+                                    .foregroundStyle(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.2, green: 0.5, blue: 1.0),
+                                                Color(red: 0.1, green: 0.3, blue: 0.8)
+                                            ]),
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                }
+                            }
+                            .padding(20)
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(20)
+                            .padding(.horizontal, 16)
                         }
                         
-                        if viewModel.isLoadingNews {
+                        // Latest News Section
+                        VStack(alignment: .leading, spacing: 16) {
                             HStack {
-                                Spacer()
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: .gray))
-                                Spacer()
-                            }
-                            .padding(.vertical, 20)
-                        } else if viewModel.newsItems.isEmpty {
-                            HStack {
-                                Spacer()
-                                Text("No news available")
-                                    .foregroundColor(.gray)
+                                Text("Latest News")
+                                    .font(.custom("Satoshi-Bold", size: 16))
+                                    .foregroundColor(.white)
                                 Spacer()
                             }
-                            .padding(.vertical, 20)
-                        } else {
-                            ForEach(viewModel.newsItems) { newsItem in
-                                NewsItemView(newsItem: newsItem)
+                            .padding(.horizontal, 16)
+                            
+                            // News Tabs
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 12) {
+                                    ForEach(["For You", "All News", "Bitcoin News", "Ethereum News"], id: \.self) { tab in
+                                        Button(action: {
+                                            selectedNewsTab = tab
+                                        }) {
+                                            Text(tab)
+                                                .font(.custom("Satoshi-Medium", size: 12))
+                                                .padding(.vertical, 8)
+                                                .padding(.horizontal, 16)
+                                                .foregroundColor(selectedNewsTab == tab ? .white : .gray)
+                                                .background(
+                                                    selectedNewsTab == tab ? 
+                                                    LinearGradient(
+                                                        gradient: Gradient(colors: [
+                                                            Color(red: 0.2, green: 0.5, blue: 1.0),
+                                                            Color(red: 0.1, green: 0.3, blue: 0.8)
+                                                        ]),
+                                                        startPoint: .topLeading,
+                                                        endPoint: .bottomTrailing
+                                                    ) : LinearGradient(
+                                                        gradient: Gradient(colors: [Color.clear]),
+                                                        startPoint: .topLeading,
+                                                        endPoint: .bottomTrailing
+                                                    )
+                                                )
+                                                .cornerRadius(8)
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal, 16)
                             }
+                            
+                            // News Items Card
+                            VStack(spacing: 16) {
+                                NewsItemRow(
+                                    title: "Stablecoin Explosion: Over $13.5B Added in July as Market Nears $270B...",
+                                    snippet: "The latest figures reveal that the...",
+                                    date: "Aug 3, 2025",
+                                    views: "184 102",
+                                    imageColor: .green
+                                )
+                                
+                                NewsItemRow(
+                                    title: "Arkham Says $3.5B LuBian Bitcoin Theft Went Undetected for Nearly...",
+                                    snippet: "A crypto wallet tied to a little...",
+                                    date: "Aug 2, 2025",
+                                    views: "80 532",
+                                    imageColor: .blue
+                                )
+                                
+                                NewsItemRow(
+                                    title: "SEC's Crypto Task Force Will Tour U.S. to Hear From Small Startups...",
+                                    snippet: "The U.S. Securities and Exchange...",
+                                    date: "Aug 1, 2025",
+                                    views: "84 102",
+                                    imageColor: .gray
+                                )
+                                
+                                NewsItemRow(
+                                    title: "Solana Price Breaks Below $165: ETF Hype Fades, Fed Fuels Decline",
+                                    snippet: "Solana's strong run in July...",
+                                    date: "Jul 30, 2025",
+                                    views: "84 102",
+                                    imageColor: .purple
+                                )
+                                
+                                NewsItemRow(
+                                    title: "Bitcoin and the crypto market are in the red today, here's why",
+                                    snippet: "The crypto market took a sharp...",
+                                    date: "Jul 28, 2025",
+                                    views: "4 102",
+                                    imageColor: .red
+                                )
+                            }
+                            .padding(20)
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(20)
+                            .padding(.horizontal, 16)
                         }
                     }
-                    .padding()
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(16)
-                    .padding(.horizontal)
+                    .padding(.vertical, 20)
                 }
-                .padding(.vertical)
             }
         }
+        .background(Color(hex: "050715"))
         .onAppear {
             viewModel.fetchData()
-            viewModel.fetchNews()
-        }
-        .sheet(isPresented: $showWalletSheet) {
-            WalletManagementView(isDeposit: isDeposit, viewModel: viewModel)
         }
     }
 }
 // MARK: - Models
 
 enum Timeframe: String, CaseIterable {
-    case day = "24h"
-    case week = "Week"
-    case month = "Month"
-    case year = "Year"
-    case all = "All"
+    case day = "24H"
+    case week = "1W"
+    case month = "1M"
+    case year = "1Y"
+    case all = "ALL"
 }
 
 
@@ -1046,7 +1259,231 @@ struct PortfolioCoin: Codable {
     let price_change_percentage_24h: Double?
 }
 
+// MARK: - Supporting Views
 
+private func portfolioBackgroundColorForSymbol(_ symbol: String) -> Color {
+    switch symbol.uppercased() {
+    case "BTC": return .orange
+    case "ETH": return .blue
+    case "XRP": return .black
+    case "USDT": return .green
+    case "SOL": return .purple
+    case "USDC": return .blue
+    case "TRX": return .red
+    case "ADA": return .blue
+    default: return .gray
+    }
+}
+
+struct ActionButton: View {
+    let icon: String
+    let title: String
+    let color: Color
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(icon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 24, height: 24)
+                .foregroundColor(.blue)
+            
+            Text(title)
+                .font(.custom("Satoshi-Medium", size: 12))
+                .foregroundColor(.white)
+        }
+        .frame(width: 80, height: 80)
+        .background(color)
+        .cornerRadius(12)
+    }
+}
+
+struct CustomAssetRow: View {
+    let name: String
+    let symbol: String
+    let balance: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    let logo: String
+    let logoColor: Color
+    let imageUrl: String
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // Token Icon
+            AsyncImage(url: URL(string: imageUrl)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 32, height: 32)
+            } placeholder: {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 32, height: 32)
+            }
+            .frame(width: 40, height: 40)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(portfolioBackgroundColorForSymbol(symbol))
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            
+            // Asset Info
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(name)
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(.white)
+                    
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 12))
+                        .foregroundColor(.yellow)
+                }
+                
+                Text(balance)
+                    .font(.custom("Satoshi-Medium", size: 14))
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            // Value and Change
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(value)
+                    .font(.custom("Satoshi-Bold", size: 16))
+                    .foregroundColor(.white)
+                
+                HStack(spacing: 4) {
+                    Image(systemName: isPositive ? "arrow.up" : "arrow.down")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(isPositive ? .green : .red)
+                    
+                    Text(change)
+                        .font(.custom("Satoshi-Medium", size: 14))
+                        .foregroundColor(isPositive ? .green : .red)
+                }
+            }
+        }
+        .padding(.vertical, 8)
+    }
+}
+
+struct FavoriteAssetRow: View {
+    let name: String
+    let symbol: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    let logo: String
+    let logoColor: Color
+    let imageUrl: String
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // Token Icon
+            AsyncImage(url: URL(string: imageUrl)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24, height: 24)
+            } placeholder: {
+                RoundedRectangle(cornerRadius: 6)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 24, height: 24)
+            }
+            .frame(width: 32, height: 32)
+            .background(
+                RoundedRectangle(cornerRadius: 6)
+                    .fill(portfolioBackgroundColorForSymbol(symbol))
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            
+            // Asset Info
+            VStack(alignment: .leading, spacing: 2) {
+                HStack {
+                    Text(name)
+                        .font(.custom("Satoshi-Bold", size: 14))
+                        .foregroundColor(.white)
+                    
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 10))
+                        .foregroundColor(.yellow)
+                }
+                
+                Text(symbol)
+                    .font(.custom("Satoshi-Medium", size: 12))
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            // Value and Change
+            VStack(alignment: .trailing, spacing: 2) {
+                Text(value)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(.white)
+                
+                HStack(spacing: 4) {
+                    Image(systemName: isPositive ? "arrow.up" : "arrow.down")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundColor(isPositive ? .green : .red)
+                    
+                    Text(change)
+                        .font(.custom("Satoshi-Medium", size: 12))
+                        .foregroundColor(isPositive ? .green : .red)
+                }
+            }
+        }
+        .padding(.vertical, 6)
+    }
+}
+
+struct NewsItemRow: View {
+    let title: String
+    let snippet: String
+    let date: String
+    let views: String
+    let imageColor: Color
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            // News Image
+            RoundedRectangle(cornerRadius: 8)
+                .fill(imageColor)
+                .frame(width: 60, height: 60)
+                .overlay(
+                    Text("📰")
+                        .font(.system(size: 24))
+                )
+            
+            // News Content
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.custom("Satoshi-Bold", size: 14))
+                    .foregroundColor(.white)
+                    .lineLimit(2)
+                
+                Text(snippet)
+                    .font(.custom("Satoshi-Regular", size: 12))
+                    .foregroundColor(.gray)
+                    .lineLimit(1)
+                
+                HStack {
+                    Text(date)
+                        .font(.custom("Satoshi-Medium", size: 10))
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                    
+                    Text("\(views) views")
+                        .font(.custom("Satoshi-Medium", size: 10))
+                        .foregroundColor(.gray)
+                }
+            }
+        }
+        .padding(.vertical, 4)
+    }
 }
 
 struct PortfolioView_Previews: PreviewProvider {
