@@ -21,6 +21,7 @@
 		C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA332D8114180058C4B2 /* IndexesView.swift */; };
 		C319FA372D8114210058C4B2 /* ManekiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA362D8114210058C4B2 /* ManekiView.swift */; };
 		C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA392D8114420058C4B2 /* PortfolioView.swift */; };
+		C319FA3B2D8114420058C4B2 /* NewsDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3C2D8114420058C4B2 /* NewsDetailModal.swift */; };
 		C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3C2D81145A0058C4B2 /* SpotView.swift */; };
 		C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */; };
 		C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */; };
@@ -93,6 +94,7 @@
 		C319FA332D8114180058C4B2 /* IndexesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexesView.swift; sourceTree = "<group>"; };
 		C319FA362D8114210058C4B2 /* ManekiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManekiView.swift; sourceTree = "<group>"; };
 		C319FA392D8114420058C4B2 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		C319FA3C2D8114420058C4B2 /* NewsDetailModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailModal.swift; sourceTree = "<group>"; };
 		C319FA3C2D81145A0058C4B2 /* SpotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
 		C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellCryptoView.swift; sourceTree = "<group>"; };
 		C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCryptoView.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				C319FA392D8114420058C4B2 /* PortfolioView.swift */,
+				C319FA3C2D8114420058C4B2 /* NewsDetailModal.swift */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				C319FA672D99C4D50058C4B2 /* AuthViewModel.swift in Sources */,
 				C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */,
 				C319FA3A2D8114420058C4B2 /* PortfolioView.swift in Sources */,
+				C319FA3B2D8114420058C4B2 /* NewsDetailModal.swift in Sources */,
 				C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */,
 				C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */,
 			);

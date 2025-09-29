@@ -31,6 +31,8 @@ struct PortfolioView: View {
     @State private var searchText = ""
     @State private var selectedAssetTab = "All"
     @State private var selectedNewsTab = "For You"
+    @State private var selectedNewsItem: NewsItem?
+    @State private var showNewsModal = false
     
     // Sample asset data
     private let allAssets = [
@@ -489,13 +491,19 @@ struct PortfolioView: View {
                                     .padding(.vertical, 40)
                                 } else {
                                     ForEach(filteredNews) { newsItem in
-                                        PortfolioNewsCard(newsItem: newsItem)
+                                        Button(action: {
+                                            selectedNewsItem = newsItem
+                                            showNewsModal = true
+                                        }) {
+                                            PortfolioNewsCard(newsItem: newsItem)
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
                                     }
+                                }
                             }
-                        }
-                        .padding(20)
-                        .background(Color(hex: "141628"))
-                        .cornerRadius(20)
+                            .padding(20)
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(20)
                             .padding(.horizontal, 32)
                         }
                     }
@@ -506,6 +514,16 @@ struct PortfolioView: View {
         .background(Color(hex: "050715"))
         .onAppear {
             viewModel.fetchData()
+        }
+        .sheet(isPresented: $showNewsModal) {
+            if let newsItem = selectedNewsItem {
+                NewsDetailModal(
+                    newsItem: newsItem, 
+                    isPresented: $showNewsModal,
+                    selectedNewsItem: $selectedNewsItem,
+                    showNewsModal: $showNewsModal
+                )
+            }
         }
     }
 }
