@@ -8,6 +8,22 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Data Models
+
+struct PortfolioAssetData: Identifiable {
+    let id = UUID()
+    let name: String
+    let symbol: String
+    let balance: String
+    let value: String
+    let change: String
+    let isPositive: Bool
+    let logo: String
+    let logoColor: Color
+    let imageUrl: String
+}
+
+
 struct PortfolioView: View {
     var hamburgerAction: () -> Void
     @State private var selectedTimeframe: Timeframe = .day
@@ -15,6 +31,51 @@ struct PortfolioView: View {
     @State private var searchText = ""
     @State private var selectedAssetTab = "All"
     @State private var selectedNewsTab = "For You"
+    
+    // Sample asset data
+    private let allAssets = [
+        PortfolioAssetData(name: "Bitcoin", symbol: "BTC", balance: "0,0006 BTC", value: "$2.02", change: "13,45%", isPositive: true, logo: "bitcoin", logoColor: .orange, imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"),
+        PortfolioAssetData(name: "Ethereum", symbol: "ETH", balance: "1,2 ETH", value: "$1,634.60", change: "1,32%", isPositive: false, logo: "ethereum", logoColor: .blue, imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"),
+        PortfolioAssetData(name: "Tether", symbol: "USDT", balance: "0,0006 USDT", value: "$2.02", change: "13,45%", isPositive: true, logo: "tether", logoColor: .green, imageUrl: "https://assets.coingecko.com/coins/images/325/large/Tether.png"),
+        PortfolioAssetData(name: "Solana", symbol: "SOL", balance: "5.2 SOL", value: "$850.00", change: "-2.5%", isPositive: false, logo: "S", logoColor: .purple, imageUrl: "https://assets.coingecko.com/coins/images/4128/large/solana.png"),
+        PortfolioAssetData(name: "Cardano", symbol: "ADA", balance: "1000 ADA", value: "$750.00", change: "8.2%", isPositive: true, logo: "A", logoColor: .blue, imageUrl: "https://assets.coingecko.com/coins/images/975/large/cardano.png")
+    ]
+    
+    // Filtered assets based on selected tab
+    private var filteredAssets: [PortfolioAssetData] {
+        switch selectedAssetTab {
+        case "Gainers":
+            return allAssets.filter { $0.isPositive }
+        case "Losers":
+            return allAssets.filter { !$0.isPositive }
+        default: // "All"
+            return allAssets
+        }
+    }
+    
+    // Sample news data
+    private let allNews: [NewsItem] = [
+        NewsItem(id: "1", title: "Stablecoin Explosion: Over $13.5B Added in July as Market Nears $270B...", description: "The latest figures reveal that the...", source: "CoinDesk", url: "https://example.com", publishedAt: "2025-08-03T10:00:00Z", imageUrl: "TetherNews", relatedAssetId: "tether"),
+        NewsItem(id: "2", title: "Arkham Says $3.5B LuBian Bitcoin Theft Went Undetected for Nearly...", description: "A crypto wallet tied to a little...", source: "The Block", url: "https://example.com", publishedAt: "2025-08-02T10:00:00Z", imageUrl: "HackerNews", relatedAssetId: "bitcoin"),
+        NewsItem(id: "3", title: "SEC's Crypto Task Force Will Tour U.S. to Hear From Small Startups...", description: "The U.S. Securities and Exchange...", source: "Reuters", url: "https://example.com", publishedAt: "2025-08-01T10:00:00Z", imageUrl: "GovernmentNews", relatedAssetId: nil),
+        NewsItem(id: "4", title: "Solana Price Breaks Below $165: ETF Hype Fades, Fed Fuels Decline", description: "Solana's strong run in July...", source: "Decrypt", url: "https://example.com", publishedAt: "2025-07-30T10:00:00Z", imageUrl: "SolNews", relatedAssetId: "solana"),
+        NewsItem(id: "5", title: "Bitcoin and the crypto market are in the red today, here's why", description: "The crypto market took a sharp...", source: "CoinTelegraph", url: "https://example.com", publishedAt: "2025-07-28T10:00:00Z", imageUrl: "BearNews", relatedAssetId: "bitcoin")
+    ]
+    
+    private var filteredNews: [NewsItem] {
+        switch selectedNewsTab {
+        case "For You":
+            return allNews
+        case "All News":
+            return allNews
+        case "Bitcoin News":
+            return allNews.filter { $0.title.localizedCaseInsensitiveContains("Bitcoin") || $0.description.localizedCaseInsensitiveContains("Bitcoin") }
+        case "Ethereum News":
+            return allNews.filter { $0.title.localizedCaseInsensitiveContains("Ethereum") || $0.description.localizedCaseInsensitiveContains("Ethereum") }
+        default:
+            return allNews
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -34,7 +95,7 @@ struct PortfolioView: View {
                 )
                 
                 ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: 32) {
                         // Portfolio Value Section
                         VStack(spacing: 8) {
                             Text("Portfolio Value")
@@ -155,10 +216,10 @@ struct PortfolioView: View {
                             )
                             
                             // Main green line
-                            Path { path in
-                                let width: CGFloat = UIScreen.main.bounds.width - 40
-                                let height: CGFloat = 200
-                                let points: [CGPoint] = [
+                                Path { path in
+                                    let width: CGFloat = UIScreen.main.bounds.width - 40
+                                    let height: CGFloat = 200
+                                    let points: [CGPoint] = [
                                     CGPoint(x: 0, y: height * 0.75),
                                     CGPoint(x: width * 0.1, y: height * 0.72),
                                     CGPoint(x: width * 0.2, y: height * 0.65),
@@ -170,9 +231,9 @@ struct PortfolioView: View {
                                     CGPoint(x: width * 0.8, y: height * 0.42),
                                     CGPoint(x: width * 0.9, y: height * 0.38),
                                     CGPoint(x: width, y: height * 0.45)
-                                ]
-                                
-                                path.move(to: points[0])
+                                    ]
+                                    
+                                    path.move(to: points[0])
                                 for i in 1..<points.count {
                                     let currentPoint = points[i]
                                     let previousPoint = points[i-1]
@@ -188,12 +249,12 @@ struct PortfolioView: View {
                                     )
                                     
                                     path.addCurve(to: currentPoint, control1: controlPoint1, control2: controlPoint2)
+                                    }
                                 }
-                            }
-                            .stroke(Color.green, lineWidth: 3)
+                                .stroke(Color.green, lineWidth: 3)
                         }
                         .frame(height: 180)
-                        .padding(.horizontal, 20)
+                            .padding(.horizontal, 20)
                         .padding(.bottom, 8)
                         
                         // Action Buttons
@@ -214,6 +275,7 @@ struct PortfolioView: View {
                                     .foregroundColor(.white)
                                 Spacer()
                             }
+                            .padding(.horizontal, 32)
                             
                             // Asset Tabs
                             HStack(spacing: 0) {
@@ -224,72 +286,50 @@ struct PortfolioView: View {
                                         Text(tab)
                                             .font(.custom("Satoshi-Medium", size: 14))
                                             .padding(.vertical, 8)
-                                            .padding(.horizontal, 16)
-                                            .foregroundColor(selectedAssetTab == tab ? .white : .gray)
+                                            .frame(maxWidth: .infinity)
+                                            .foregroundColor(.white)
                                             .background(
                                                 selectedAssetTab == tab ? 
-                                                LinearGradient(
+                                                AnyView(LinearGradient(
                                                     gradient: Gradient(colors: [
                                                         Color(red: 0.2, green: 0.5, blue: 1.0),
                                                         Color(red: 0.1, green: 0.3, blue: 0.8)
                                                     ]),
                                                     startPoint: .topLeading,
                                                     endPoint: .bottomTrailing
-                                                ) : LinearGradient(
-                                                    gradient: Gradient(colors: [Color.clear]),
-                                                    startPoint: .topLeading,
-                                                    endPoint: .bottomTrailing
-                                                )
+                                                )) : AnyView(Color.clear)
                                             )
                                             .cornerRadius(6)
                                     }
                                 }
-                                Spacer()
                             }
+                            .padding(.horizontal, 4)
+                            .padding(.vertical, 4)
+                            .background(Color(hex: "141628"))
+                            .cornerRadius(8)
+                            .padding(.horizontal, 32)
                             
-                            // Asset List
+                            // Asset List Card
                             VStack(spacing: 12) {
+                                ForEach(filteredAssets, id: \.symbol) { asset in
                                 CustomAssetRow(
-                                    name: "Bitcoin",
-                                    symbol: "BTC",
-                                    balance: "0,0006 BTC",
-                                    value: "$2.02",
-                                    change: "13,45%",
-                                    isPositive: true,
-                                    logo: "bitcoin",
-                                    logoColor: .orange,
-                                    imageUrl: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
-                                )
-                                
-                                CustomAssetRow(
-                                    name: "Ethereum",
-                                    symbol: "ETH",
-                                    balance: "1,2 ETH",
-                                    value: "$1,634.60",
-                                    change: "1,32%",
-                                    isPositive: false,
-                                    logo: "ethereum",
-                                    logoColor: .blue,
-                                    imageUrl: "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
-                                )
-                                
-                                CustomAssetRow(
-                                    name: "Tether",
-                                    symbol: "USDT",
-                                    balance: "0,0006 USDT",
-                                    value: "$2.02",
-                                    change: "13,45%",
-                                    isPositive: true,
-                                    logo: "tether",
-                                    logoColor: .green,
-                                    imageUrl: "https://assets.coingecko.com/coins/images/325/large/Tether.png"
+                                        name: asset.name,
+                                        symbol: asset.symbol,
+                                        balance: asset.balance,
+                                        value: asset.value,
+                                        change: asset.change,
+                                        isPositive: asset.isPositive,
+                                        logo: asset.logo,
+                                        logoColor: asset.logoColor,
+                                        imageUrl: asset.imageUrl
                                 )
                             }
                         }
                         .padding(20)
                         .background(Color(hex: "141628"))
                         .cornerRadius(20)
-                        .padding(.horizontal, 16)
+                            .padding(.horizontal, 32)
+                        }
                         
                         // My Favorite Assets Section
                         VStack(alignment: .leading, spacing: 16) {
@@ -299,7 +339,7 @@ struct PortfolioView: View {
                                     .foregroundColor(.white)
                                 Spacer()
                             }
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, 32)
                             
                             VStack(alignment: .leading, spacing: 16) {
                                 VStack(spacing: 12) {
@@ -364,104 +404,99 @@ struct PortfolioView: View {
                                             endPoint: .trailing
                                         )
                                     )
+                                    Spacer()
                                 }
                             }
                             .padding(20)
                             .background(Color(hex: "141628"))
                             .cornerRadius(20)
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, 32)
                         }
                         
                         // Latest News Section
                         VStack(alignment: .leading, spacing: 16) {
-                            HStack {
-                                Text("Latest News")
+                        HStack {
+                            Text("Latest News")
                                     .font(.custom("Satoshi-Bold", size: 16))
-                                    .foregroundColor(.white)
-                                Spacer()
+                                .foregroundColor(.white)
+                            Spacer()
                             }
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, 32)
                             
                             // News Tabs
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 12) {
                                     ForEach(["For You", "All News", "Bitcoin News", "Ethereum News"], id: \.self) { tab in
-                                        Button(action: {
+                            Button(action: {
                                             selectedNewsTab = tab
                                         }) {
                                             Text(tab)
                                                 .font(.custom("Satoshi-Medium", size: 12))
-                                                .padding(.vertical, 8)
-                                                .padding(.horizontal, 16)
-                                                .foregroundColor(selectedNewsTab == tab ? .white : .gray)
+                                                .padding(.vertical, 6)
+                                                .padding(.horizontal, 8)
+                                                .foregroundColor(.white)
                                                 .background(
                                                     selectedNewsTab == tab ? 
-                                                    LinearGradient(
+                                                    AnyView(LinearGradient(
                                                         gradient: Gradient(colors: [
                                                             Color(red: 0.2, green: 0.5, blue: 1.0),
                                                             Color(red: 0.1, green: 0.3, blue: 0.8)
                                                         ]),
                                                         startPoint: .topLeading,
                                                         endPoint: .bottomTrailing
-                                                    ) : LinearGradient(
-                                                        gradient: Gradient(colors: [Color.clear]),
-                                                        startPoint: .topLeading,
-                                                        endPoint: .bottomTrailing
-                                                    )
+                                                    )) : AnyView(Color(hex: "141628"))
                                                 )
-                                                .cornerRadius(8)
+                                                .cornerRadius(6)
                                         }
                                     }
                                 }
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, 32)
                             }
+                            .overlay(
+                                // Right shadow to indicate more content
+                                HStack {
+                                    Spacer()
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [
+                                            Color.clear,
+                                            Color.black.opacity(0.3)
+                                        ]),
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                    .frame(width: 20)
+                                }
+                            )
                             
                             // News Items Card
                             VStack(spacing: 16) {
-                                NewsItemRow(
-                                    title: "Stablecoin Explosion: Over $13.5B Added in July as Market Nears $270B...",
-                                    snippet: "The latest figures reveal that the...",
-                                    date: "Aug 3, 2025",
-                                    views: "184 102",
-                                    imageColor: .green
-                                )
-                                
-                                NewsItemRow(
-                                    title: "Arkham Says $3.5B LuBian Bitcoin Theft Went Undetected for Nearly...",
-                                    snippet: "A crypto wallet tied to a little...",
-                                    date: "Aug 2, 2025",
-                                    views: "80 532",
-                                    imageColor: .blue
-                                )
-                                
-                                NewsItemRow(
-                                    title: "SEC's Crypto Task Force Will Tour U.S. to Hear From Small Startups...",
-                                    snippet: "The U.S. Securities and Exchange...",
-                                    date: "Aug 1, 2025",
-                                    views: "84 102",
-                                    imageColor: .gray
-                                )
-                                
-                                NewsItemRow(
-                                    title: "Solana Price Breaks Below $165: ETF Hype Fades, Fed Fuels Decline",
-                                    snippet: "Solana's strong run in July...",
-                                    date: "Jul 30, 2025",
-                                    views: "84 102",
-                                    imageColor: .purple
-                                )
-                                
-                                NewsItemRow(
-                                    title: "Bitcoin and the crypto market are in the red today, here's why",
-                                    snippet: "The crypto market took a sharp...",
-                                    date: "Jul 28, 2025",
-                                    views: "4 102",
-                                    imageColor: .red
-                                )
+                                if filteredNews.isEmpty {
+                                    // Empty state
+                                    VStack(spacing: 12) {
+                                        Image(systemName: "newspaper")
+                                            .font(.system(size: 40))
+                                            .foregroundColor(.gray.opacity(0.6))
+                                        
+                                        Text("No news available")
+                                            .font(.custom("Satoshi-Medium", size: 16))
+                                            .foregroundColor(.gray)
+                                        
+                                        Text("Check back later for updates")
+                                            .font(.custom("Satoshi-Regular", size: 14))
+                                            .foregroundColor(.gray.opacity(0.7))
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 40)
+                                } else {
+                                    ForEach(filteredNews) { newsItem in
+                                        PortfolioNewsCard(newsItem: newsItem)
+                                    }
                             }
-                            .padding(20)
-                            .background(Color(hex: "141628"))
-                            .cornerRadius(20)
-                            .padding(.horizontal, 16)
+                        }
+                        .padding(20)
+                        .background(Color(hex: "141628"))
+                        .cornerRadius(20)
+                            .padding(.horizontal, 32)
                         }
                     }
                     .padding(.vertical, 20)
@@ -1264,10 +1299,10 @@ struct PortfolioCoin: Codable {
 private func portfolioBackgroundColorForSymbol(_ symbol: String) -> Color {
     switch symbol.uppercased() {
     case "BTC": return .orange
-    case "ETH": return .blue
+    case "ETH": return Color(red: 0.4, green: 0.5, blue: 0.7)
     case "XRP": return .black
     case "USDT": return .green
-    case "SOL": return .purple
+    case "SOL": return .black
     case "USDC": return .blue
     case "TRX": return .red
     case "ADA": return .blue
@@ -1322,7 +1357,7 @@ struct CustomAssetRow: View {
                     .fill(Color.gray.opacity(0.3))
                     .frame(width: 32, height: 32)
             }
-            .frame(width: 40, height: 40)
+                    .frame(width: 40, height: 40)
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .fill(portfolioBackgroundColorForSymbol(symbol))
@@ -1355,9 +1390,10 @@ struct CustomAssetRow: View {
                     .foregroundColor(.white)
                 
                 HStack(spacing: 4) {
-                    Image(systemName: isPositive ? "arrow.up" : "arrow.down")
-                        .font(.system(size: 10, weight: .bold))
+                    Image(systemName: "triangle.fill")
+                        .font(.system(size: 8, weight: .bold))
                         .foregroundColor(isPositive ? .green : .red)
+                        .rotationEffect(.degrees(isPositive ? 0 : 180))
                     
                     Text(change)
                         .font(.custom("Satoshi-Medium", size: 14))
@@ -1386,103 +1422,153 @@ struct FavoriteAssetRow: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    .frame(width: 32, height: 32)
             } placeholder: {
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: 8)
                     .fill(Color.gray.opacity(0.3))
-                    .frame(width: 24, height: 24)
+                    .frame(width: 32, height: 32)
             }
-            .frame(width: 32, height: 32)
+            .frame(width: 40, height: 40)
             .background(
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: 8)
                     .fill(portfolioBackgroundColorForSymbol(symbol))
             )
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
             
             // Asset Info
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Text(name)
-                        .font(.custom("Satoshi-Bold", size: 14))
+                        .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                     
                     Image(systemName: "star.fill")
-                        .font(.system(size: 10))
+                        .font(.system(size: 12))
                         .foregroundColor(.yellow)
                 }
                 
                 Text(symbol)
-                    .font(.custom("Satoshi-Medium", size: 12))
+                    .font(.custom("Satoshi-Medium", size: 14))
                     .foregroundColor(.gray)
             }
             
             Spacer()
             
             // Value and Change
-            VStack(alignment: .trailing, spacing: 2) {
+            VStack(alignment: .trailing, spacing: 4) {
                 Text(value)
-                    .font(.custom("Satoshi-Bold", size: 14))
+                    .font(.custom("Satoshi-Bold", size: 16))
                     .foregroundColor(.white)
                 
                 HStack(spacing: 4) {
-                    Image(systemName: isPositive ? "arrow.up" : "arrow.down")
+                    Image(systemName: "triangle.fill")
                         .font(.system(size: 8, weight: .bold))
                         .foregroundColor(isPositive ? .green : .red)
+                        .rotationEffect(.degrees(isPositive ? 0 : 180))
                     
                     Text(change)
-                        .font(.custom("Satoshi-Medium", size: 12))
+                        .font(.custom("Satoshi-Medium", size: 14))
                         .foregroundColor(isPositive ? .green : .red)
                 }
             }
         }
-        .padding(.vertical, 6)
+        .padding(.vertical, 8)
     }
 }
 
-struct NewsItemRow: View {
-    let title: String
-    let snippet: String
-    let date: String
-    let views: String
-    let imageColor: Color
+struct PortfolioNewsCard: View {
+    let newsItem: NewsItem
     
     var body: some View {
-        HStack(spacing: 12) {
-            // News Image
-            RoundedRectangle(cornerRadius: 8)
-                .fill(imageColor)
-                .frame(width: 60, height: 60)
-                .overlay(
-                    Text("📰")
-                        .font(.system(size: 24))
-                )
+        HStack(alignment: .top, spacing: 12) {
+            // News Image - Left third
+            if let imageUrl = newsItem.imageUrl, !imageUrl.isEmpty {
+                Image(imageUrl)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 132)
+                    .cornerRadius(12)
+                    .clipped()
+            } else {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 100, height: 132)
+            }
             
-            // News Content
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.custom("Satoshi-Bold", size: 14))
+            // News Content - Right two thirds
+            VStack(alignment: .leading, spacing: 8) {
+                // Title with 3 lines
+                Text(newsItem.title)
+                    .font(.custom("Satoshi-Bold", size: 16))
                     .foregroundColor(.white)
-                    .lineLimit(2)
+                    .lineLimit(3)
+                    .multilineTextAlignment(.leading)
                 
-                Text(snippet)
-                    .font(.custom("Satoshi-Regular", size: 12))
+                // Description with ellipsis
+                Text(newsItem.description)
+                    .font(.custom("Satoshi-Medium", size: 12))
                     .foregroundColor(.gray)
                     .lineLimit(1)
+                    .truncationMode(.tail)
                 
-                HStack {
-                    Text(date)
+                Spacer()
+                
+                // Time and Views in separate shadowed boxes
+                HStack(spacing: 8) {
+                    // Time box
+                    HStack(spacing: 4) {
+                        Image("ClockCountdown")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 12, height: 12)
+                        Text(formatNewsDate(newsItem.publishedAt))
                         .font(.custom("Satoshi-Medium", size: 10))
                         .foregroundColor(.gray)
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(Color.black.opacity(0.3))
+                            .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 1)
+                    )
                     
-                    Spacer()
-                    
-                    Text("\(views) views")
+                    // Views box
+                    HStack(spacing: 4) {
+                        Image("Eye")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 12, height: 12)
+                        Text("1.2K")
                         .font(.custom("Satoshi-Medium", size: 10))
                         .foregroundColor(.gray)
                 }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(Color.black.opacity(0.3))
+                            .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 1)
+                    )
+                    
+                    Spacer()
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
+    }
+    
+    private func formatNewsDate(_ dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = "MMM d, yyyy"
+            return formatter.string(from: date)
+        }
+        
+        return dateString
     }
 }
 
