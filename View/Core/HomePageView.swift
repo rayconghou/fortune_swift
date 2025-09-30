@@ -14,6 +14,7 @@ struct HomePageView: View {
     @State private var hideSplashScreen = false
     @State private var isDegenSplashActive = false
     @State private var isExitingSplashActive = false
+    @State private var degenSplashOpacity = 0.0
     @State private var showDojo = false
     @State private var showLogo = false
     @State private var showBottomElements = false
@@ -228,8 +229,9 @@ struct HomePageView: View {
                 // Degen Mode Splash Screen
                 if isDegenSplashActive {
                     DegenSplashScreen()
-                        .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
-                        .animation(.easeInOut(duration: 1.5).delay(0.75), value: hideSplashScreen)
+                        .opacity(hideSplashScreen ? 0 : degenSplashOpacity)
+                        .animation(.easeInOut(duration: 0.5), value: hideSplashScreen)
+                        .animation(.easeInOut(duration: 0.8), value: degenSplashOpacity)
                         .ignoresSafeArea()
                 }
                 
@@ -347,24 +349,34 @@ struct HomePageView: View {
             showToolbar = false
         }
         
+        // Reset opacity and activate splash
+        degenSplashOpacity = 0.0
         isDegenSplashActive = true
+        
+        // Fade in the splash screen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            withAnimation(.easeInOut(duration: 0.8)) {
+                degenSplashOpacity = 1.0
+            }
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             showDegenMode = true
             currentMode = .degen
         }
         
-        // Start the slide-up animation after a short delay
+        // Start the fade-out animation after a short delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            withAnimation(.easeInOut(duration: 1.5)) {
+            withAnimation(.easeInOut(duration: 0.5)) {
                 hideSplashScreen = true
             }
         }
         
         // Wait for the full animation to complete before showing toolbar and content
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             isDegenSplashActive = false
             hideSplashScreen = false
+            degenSplashOpacity = 0.0
             // Show toolbar after splash screen animation fully completes
             withAnimation {
                 showToolbar = true
@@ -417,27 +429,29 @@ struct DegenEntryWarningView: View {
     var onAccept: () -> Void
     
     var body: some View {
-        VStack(spacing: 16) {
-            // Header with DegenWarningLogo and DEGEN MODE text
-            VStack(spacing: 20) {
-                Image("DegenWarningLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40)
-                
+        VStack(spacing: 0) {
+            // Warning icon
+            Image("DegenWarningLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+                .padding(.top, 4)
+                .padding(.bottom, 20) // More space between icon and title
+            
+            // Title and subtitle grouped together
+            VStack(spacing: 4) { // Very tight spacing between title and subtitle
                 Text("DEGEN MODE")
-                    .font(.custom("Korosu", size: 22))
+                    .font(.custom("Korosu", size: 28))
                     .foregroundColor(.white)
                     .shadow(color: .black, radius: 2, x: 1, y: 1)
+                
+                Text("You're entering high-risk trading territory")
+                    .font(.custom("Satoshi", size: 12))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .shadow(color: .black, radius: 1, x: 0.5, y: 0.5)
             }
-            .padding(.top, 16)
-            
-            // Warning text
-            Text("You're entering high-risk trading territory")
-                .font(.custom("Satoshi", size: 14))
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .shadow(color: .black, radius: 1, x: 0.5, y: 0.5)
+            .padding(.bottom, 8)
             
             // Risk bubbles
             VStack(spacing: 8) {
@@ -447,6 +461,8 @@ struct DegenEntryWarningView: View {
                 riskBubble(icon: "DegenBank", text: "Less regulated assets")
             }
             .padding(.horizontal, 24)
+            .padding(.top, 16) // More spacing above risk bubbles
+            .padding(.bottom, 16) // More spacing below risk bubbles
             
             // Risk acknowledgment text
             Text("By entering Degen Mode, you acknowledge that you understand these risks and are trading at your own discretion.")
@@ -454,6 +470,7 @@ struct DegenEntryWarningView: View {
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal, 28)
+                .padding(.bottom, 16) // Same spacing as risk bubbles
             
             // Buttons
             HStack(spacing: 12) {
@@ -531,10 +548,10 @@ struct DegenEntryWarningView: View {
             Image(icon)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 18, height: 18)
+                .frame(width: 24, height: 24)
             
             Text(text)
-                .font(.custom("Satoshi-Medium", size: 12))
+                .font(.custom("Satoshi-Medium", size: 14))
                 .foregroundColor(.white)
             
             Spacer()
