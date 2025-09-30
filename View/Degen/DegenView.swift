@@ -28,9 +28,9 @@ struct DegenView: View {
             // Dark background with casino-like vibe
             Color.black.edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(spacing: 0) {
                 // Top Header
-                headerView
+                DegenHeaderBar()
                 
                 // Main Content Based on Selected Tab
                 mainContentView
@@ -41,26 +41,6 @@ struct DegenView: View {
         }
     }
     
-    // MARK: - Header View
-    private var headerView: some View {
-        HStack {
-                Text("DEGEN MODE")
-                    .font(.custom("The Last Shuriken", size: 24))
-                .foregroundColor(.orange)
-            
-            Spacer()
-            
-            // Quick toggle or additional controls
-            Button(action: { isEnabled.toggle() }) {
-                Image(systemName: "bolt.fill")
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Color.orange.opacity(0.2))
-                    .cornerRadius(10)
-            }
-        }
-        .padding()
-    }
     
     // MARK: - Main Content View
     private var mainContentView: some View {

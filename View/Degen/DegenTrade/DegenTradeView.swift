@@ -41,7 +41,10 @@ struct DegenTradeView: View {
             backgroundColor.ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Header
+                // Degen Header Bar
+                DegenHeaderBar()
+                
+                // Search Header
                 headerView
                 
                 // Chain Selector

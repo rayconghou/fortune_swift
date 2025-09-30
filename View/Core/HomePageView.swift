@@ -54,7 +54,11 @@ struct HomePageView: View {
                         })
                         .tag(0)
                         .tabItem {
-                            Image(selectedTab == 0 ? "DarkTappedHome" : "DarkUntappedHome")
+                            VStack {
+                                Image(selectedTab == 0 ? "DarkTappedHome" : "DarkUntappedHome")
+                                Text("Home")
+                                    .font(.caption)
+                            }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -67,7 +71,11 @@ struct HomePageView: View {
                         })
                         .tag(1)
                         .tabItem {
-                            Image(selectedTab == 1 ? "DarkTappedIndexes" : "DarkUntappedIndexes")
+                            VStack {
+                                Image(selectedTab == 1 ? "DarkTappedIndexes" : "DarkUntappedIndexes")
+                                Text("Indexes")
+                                    .font(.caption)
+                            }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -80,7 +88,11 @@ struct HomePageView: View {
                         })
                         .tag(2)
                         .tabItem {
-                            Image(selectedTab == 2 ? "DarkTappedManeki" : "DarkUntappedManeki")
+                            VStack {
+                                Image(selectedTab == 2 ? "DarkTappedManeki" : "DarkUntappedManeki")
+                                Text("Maneki")
+                                    .font(.caption)
+                            }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -93,7 +105,11 @@ struct HomePageView: View {
                         })
                         .tag(3)
                         .tabItem {
-                            Image(selectedTab == 3 ? "DarkTappedPortfolio" : "DarkUntappedPortfolio")
+                            VStack {
+                                Image(selectedTab == 3 ? "DarkTappedPortfolio" : "DarkUntappedPortfolio")
+                                Text("Portfolio")
+                                    .font(.caption)
+                            }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -102,7 +118,12 @@ struct HomePageView: View {
                         Color.clear
                             .tag(degenEntryTabTag)
                             .tabItem {
-                                Image(systemName: "flame.fill")
+                                VStack {
+                                    Image(systemName: "flame.fill")
+                                        .foregroundColor(.gray)
+                                    Text("Degen")
+                                        .font(.caption)
+                                }
                             }
                     } else {
                         DegenTrendingView()

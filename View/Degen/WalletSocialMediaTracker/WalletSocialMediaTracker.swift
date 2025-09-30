@@ -55,6 +55,9 @@ struct ToggleableContentView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            // Degen Header Bar
+            DegenHeaderBar()
+            
             // Custom toggle selector at the top
             ModeToggleSelector(selectedMode: $selectedMode)
                 .padding(.horizontal)

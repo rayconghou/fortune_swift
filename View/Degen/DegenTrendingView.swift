@@ -43,6 +43,9 @@ struct DegenTrendingView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                // Degen Header Bar
+                DegenHeaderBar()
+                
                 // Toggle Bar
                 Picker("Filter", selection: $selectedFilter) {
                     ForEach(VerificationFilter.allCases, id: \ .self) { filter in

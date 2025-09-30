@@ -32,6 +32,7 @@
 		C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */; };
 		C319FA562D8619240058C4B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA552D8619240058C4B2 /* FirebaseAuth */; };
 		C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */; };
+		C319FA612D930C1F0058C4B2 /* DegenHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA602D930C1F0058C4B2 /* DegenHeaderBar.swift */; };
 		C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA622D99B7F50058C4B2 /* AuthManager.swift */; };
 		C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA642D99BC130058C4B2 /* AuthView.swift */; };
 		C319FA672D99C4D50058C4B2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA662D99C4D50058C4B2 /* AuthViewModel.swift */; };
@@ -99,6 +100,7 @@
 		C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrendCardView.swift; sourceTree = "<group>"; };
 		C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenSplashScreenView.swift; sourceTree = "<group>"; };
+		C319FA602D930C1F0058C4B2 /* DegenHeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenHeaderBar.swift; sourceTree = "<group>"; };
 		C319FA622D99B7F50058C4B2 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		C319FA642D99BC130058C4B2 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		C319FA662D99C4D50058C4B2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */,
+				C319FA602D930C1F0058C4B2 /* DegenHeaderBar.swift */,
 				C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */,
 				C319FA8B2D9B663F0058C4B2 /* DegenTrade */,
 				C319FA882D9B63F00058C4B2 /* SetupComplete */,
@@ -498,6 +501,7 @@
 				C319FA912DA0CB090058C4B2 /* KeychainHelper.swift in Sources */,
 				C319FA172D8113080058C4B2 /* Asset.swift in Sources */,
 				C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */,
+				C319FA612D930C1F0058C4B2 /* DegenHeaderBar.swift in Sources */,
 				C319FA872D9B63DB0058C4B2 /* BIometricSetupView.swift in Sources */,
 				C319FAA22DAD55BB0058C4B2 /* SecureSignInFlowView.swift in Sources */,
 				C319FA962DA71F420058C4B2 /* CreateIndexes.swift in Sources */,
