@@ -58,6 +58,7 @@ struct HomePageView: View {
                                 Image(selectedTab == 0 ? "DarkTappedHome" : "DarkUntappedHome")
                                 Text("Home")
                                     .font(.caption)
+                                    .foregroundColor(selectedTab == 0 ? .white : .gray)
                             }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
@@ -75,6 +76,7 @@ struct HomePageView: View {
                                 Image(selectedTab == 1 ? "DarkTappedIndexes" : "DarkUntappedIndexes")
                                 Text("Indexes")
                                     .font(.caption)
+                                    .foregroundColor(selectedTab == 1 ? .white : .gray)
                             }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
@@ -92,6 +94,7 @@ struct HomePageView: View {
                                 Image(selectedTab == 2 ? "DarkTappedManeki" : "DarkUntappedManeki")
                                 Text("Maneki")
                                     .font(.caption)
+                                    .foregroundColor(selectedTab == 2 ? .white : .gray)
                             }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
@@ -109,6 +112,7 @@ struct HomePageView: View {
                                 Image(selectedTab == 3 ? "DarkTappedPortfolio" : "DarkUntappedPortfolio")
                                 Text("Portfolio")
                                     .font(.caption)
+                                    .foregroundColor(selectedTab == 3 ? .white : .gray)
                             }
                         }
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
@@ -119,10 +123,10 @@ struct HomePageView: View {
                             .tag(degenEntryTabTag)
                             .tabItem {
                                 VStack {
-                                    Image(systemName: "flame.fill")
-                                        .foregroundColor(.gray)
+                                    Image("DarkDegenMode")
                                     Text("Degen")
                                         .font(.caption)
+                                        .foregroundColor(selectedTab == degenEntryTabTag ? .white : .gray)
                                 }
                             }
                     } else {
