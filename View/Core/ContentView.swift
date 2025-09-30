@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 import FirebaseAuth
-import AWSSQS
+// import AWSSQS // Temporarily disabled
 
 // MARK: - Font Utilities
 extension Font {

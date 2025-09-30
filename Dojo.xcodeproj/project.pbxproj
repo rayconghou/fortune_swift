@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C300AE652E84CF0900C63E96 /* AWSSQS in Frameworks */ = {isa = PBXBuildFile; productRef = C300AE642E84CF0900C63E96 /* AWSSQS */; };
 		C319FA172D8113080058C4B2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA132D8113070058C4B2 /* Asset.swift */; };
 		C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA142D8113070058C4B2 /* CoinGecko.swift */; };
 		C319FA192D8113080058C4B2 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA152D8113070058C4B2 /* AnyCodable.swift */; };
@@ -31,12 +30,7 @@
 		C319FA4B2D837C2B0058C4B2 /* CryptoMarketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4A2D837C2B0058C4B2 /* CryptoMarketFetcher.swift */; };
 		C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */; };
 		C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C319FA502D86088F0058C4B2 /* GoogleService-Info.plist */; };
-		C319FA542D8619240058C4B2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA532D8619240058C4B2 /* FirebaseAnalytics */; };
 		C319FA562D8619240058C4B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA552D8619240058C4B2 /* FirebaseAuth */; };
-		C319FA582D8619240058C4B2 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA572D8619240058C4B2 /* FirebaseAuthCombine-Community */; };
-		C319FA5A2D8619240058C4B2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA592D8619240058C4B2 /* FirebaseDatabase */; };
-		C319FA5C2D8619240058C4B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5B2D8619240058C4B2 /* FirebaseFirestore */; };
-		C319FA5E2D8619240058C4B2 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */; };
 		C319FA602D930C1E0058C4B2 /* DegenSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */; };
 		C319FA632D99B7F50058C4B2 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA622D99B7F50058C4B2 /* AuthManager.swift */; };
 		C319FA652D99BC130058C4B2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA642D99BC130058C4B2 /* AuthView.swift */; };
@@ -66,6 +60,7 @@
 		C319FAA42DAD64E70058C4B2 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA32DAD64E70058C4B2 /* BiometricAuthManager.swift */; };
 		C319FAA62DAD65E70058C4B2 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */; };
 		C38BADA12E85CD9500DF6FF2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C38BADA02E85CD9500DF6FF2 /* .gitignore */; };
+		C3ACF5672E8B80D600E7659F /* Korosu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3ACF5622E8B7C8C00E7659F /* Korosu.ttf */; };
 		C3EF602D2E87353900D18CB8 /* Satoshi-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602B2E87353900D18CB8 /* Satoshi-MediumItalic.ttf */; };
 		C3EF602E2E87353900D18CB8 /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602C2E87353900D18CB8 /* Satoshi-Regular.ttf */; };
 		C3EF602F2E87353900D18CB8 /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF602A2E87353900D18CB8 /* Satoshi-Medium.ttf */; };
@@ -76,7 +71,6 @@
 		C3EF60342E87353900D18CB8 /* Satoshi-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60282E87353900D18CB8 /* Satoshi-Light.ttf */; };
 		C3EF60352E87353900D18CB8 /* Satoshi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60262E87353900D18CB8 /* Satoshi-BoldItalic.ttf */; };
 		C3EF60362E87353900D18CB8 /* Satoshi-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60292E87353900D18CB8 /* Satoshi-LightItalic.ttf */; };
-		C3EF60382E87354F00D18CB8 /* Korosu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60372E87354F00D18CB8 /* Korosu.ttf */; };
 		C3EF603A2E87356100D18CB8 /* The Last Shuriken.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +128,7 @@
 		C319FAA52DAD65E70058C4B2 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		C388F8912D72437D003FFCFF /* Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38BADA02E85CD9500DF6FF2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C3ACF5622E8B7C8C00E7659F /* Korosu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Korosu.ttf; sourceTree = "<group>"; };
 		C3EF60232E87353900D18CB8 /* Satoshi-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.ttf"; sourceTree = "<group>"; };
 		C3EF60242E87353900D18CB8 /* Satoshi-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.ttf"; sourceTree = "<group>"; };
 		C3EF60252E87353900D18CB8 /* Satoshi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.ttf"; sourceTree = "<group>"; };
@@ -144,7 +139,6 @@
 		C3EF602A2E87353900D18CB8 /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
 		C3EF602B2E87353900D18CB8 /* Satoshi-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.ttf"; sourceTree = "<group>"; };
 		C3EF602C2E87353900D18CB8 /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
-		C3EF60372E87354F00D18CB8 /* Korosu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Korosu.ttf; sourceTree = "<group>"; };
 		C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Last Shuriken.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,12 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C319FA542D8619240058C4B2 /* FirebaseAnalytics in Frameworks */,
-				C319FA582D8619240058C4B2 /* FirebaseAuthCombine-Community in Frameworks */,
-				C300AE652E84CF0900C63E96 /* AWSSQS in Frameworks */,
-				C319FA5A2D8619240058C4B2 /* FirebaseDatabase in Frameworks */,
-				C319FA5E2D8619240058C4B2 /* FirebaseFirestoreCombine-Community in Frameworks */,
-				C319FA5C2D8619240058C4B2 /* FirebaseFirestore in Frameworks */,
 				C319FA562D8619240058C4B2 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				C319FA212D8113A80058C4B2 /* Assets.xcassets */,
+				C3ACF5622E8B7C8C00E7659F /* Korosu.ttf */,
 				C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */,
-				C3EF60372E87354F00D18CB8 /* Korosu.ttf */,
 				C3EF60232E87353900D18CB8 /* Satoshi-Black.ttf */,
 				C3EF60242E87353900D18CB8 /* Satoshi-BlackItalic.ttf */,
 				C3EF60252E87353900D18CB8 /* Satoshi-Bold.ttf */,
@@ -406,13 +394,7 @@
 			);
 			name = Dojo;
 			packageProductDependencies = (
-				C319FA532D8619240058C4B2 /* FirebaseAnalytics */,
 				C319FA552D8619240058C4B2 /* FirebaseAuth */,
-				C319FA572D8619240058C4B2 /* FirebaseAuthCombine-Community */,
-				C319FA592D8619240058C4B2 /* FirebaseDatabase */,
-				C319FA5B2D8619240058C4B2 /* FirebaseFirestore */,
-				C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */,
-				C300AE642E84CF0900C63E96 /* AWSSQS */,
 			);
 			productName = Dojo;
 			productReference = C388F8912D72437D003FFCFF /* Dojo.app */;
@@ -445,7 +427,6 @@
 			mainGroup = C388F8882D72437D003FFCFF;
 			packageReferences = (
 				C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
 			);
 			productRefGroup = C388F8922D72437D003FFCFF /* Products */;
 			projectDirPath = "";
@@ -472,9 +453,9 @@
 				C3EF60342E87353900D18CB8 /* Satoshi-Light.ttf in Resources */,
 				C3EF60352E87353900D18CB8 /* Satoshi-BoldItalic.ttf in Resources */,
 				C3EF60362E87353900D18CB8 /* Satoshi-LightItalic.ttf in Resources */,
-				C3EF60382E87354F00D18CB8 /* Korosu.ttf in Resources */,
 				C319FA242D8113A80058C4B2 /* Preview Content in Resources */,
 				C319FA232D8113A80058C4B2 /* Assets.xcassets in Resources */,
+				C3ACF5672E8B80D600E7659F /* Korosu.ttf in Resources */,
 				C319FA512D86088F0058C4B2 /* GoogleService-Info.plist in Resources */,
 				C3EF603A2E87356100D18CB8 /* The Last Shuriken.ttf in Resources */,
 			);
@@ -747,14 +728,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/awslabs/aws-sdk-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.49;
-			};
-		};
 		C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -766,40 +739,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C300AE642E84CF0900C63E96 /* AWSSQS */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C300AE632E84CE3800C63E96 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
-			productName = AWSSQS;
-		};
-		C319FA532D8619240058C4B2 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		C319FA552D8619240058C4B2 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
-		};
-		C319FA572D8619240058C4B2 /* FirebaseAuthCombine-Community */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseAuthCombine-Community";
-		};
-		C319FA592D8619240058C4B2 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		C319FA5B2D8619240058C4B2 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		C319FA5D2D8619240058C4B2 /* FirebaseFirestoreCombine-Community */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C319FA522D8619240058C4B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

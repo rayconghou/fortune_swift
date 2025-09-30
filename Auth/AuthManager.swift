@@ -1,6 +1,6 @@
 import Foundation
 import FirebaseAuth
-import AWSSQS
+// import AWSSQS // Temporarily disabled
 
 enum AuthError: Error {
     case noCurrentUserAfterCreatingUser
@@ -36,6 +36,10 @@ class AuthManager: ObservableObject {
     }
     
     func addUserToDB(firebase_uid: String, email: String, username: String) async {
+        // Temporarily disabled - AWS SDK removed for package resolution issues
+        // TODO: Re-enable when AWS SDK is added back
+        print("addUserToDB called but AWS SDK is temporarily disabled")
+        /*
         do {
             let config = try await SQSClient.SQSClientConfiguration(region: AuthManager.aws_region)
             let sqsClient = SQSClient(config: config)
@@ -51,6 +55,7 @@ class AuthManager: ObservableObject {
         } catch {
             print("Error: \(error)")
         }
+        */
     }
     
     func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {

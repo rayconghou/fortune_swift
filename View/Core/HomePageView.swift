@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+
 struct HomePageView: View {
     @State private var showSidebar = false
     @State private var hideHamburger = false
@@ -416,48 +417,46 @@ struct DegenEntryWarningView: View {
     var onAccept: () -> Void
     
     var body: some View {
-        VStack(spacing: 20) {
-            // Header with icon
-            HStack {
-                Image(systemName: "exclamationmark.triangle")
+        VStack(spacing: 16) {
+            // Header with DegenWarningLogo and DEGEN MODE text
+            VStack(spacing: 20) {
+                Image("DegenWarningLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
-                    .foregroundColor(Color.yellow)
+                    .frame(width: 40, height: 40)
                 
                 Text("DEGEN MODE")
-                    .font(.custom("Satoshi-Bold", size: 24))
-                    .foregroundColor(Color.yellow)
+                    .font(.custom("Korosu", size: 22))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 2, x: 1, y: 1)
             }
-            .padding(.top, 6)
+            .padding(.top, 16)
             
-            // Warning
+            // Warning text
             Text("You're entering high-risk trading territory")
-                .font(.custom("Satoshi-Bold", size: 18))
-                .foregroundColor(.white)
+                .font(.custom("Satoshi", size: 14))
+                .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
+                .shadow(color: .black, radius: 1, x: 0.5, y: 0.5)
             
-            // Risk information
-            VStack(alignment: .leading, spacing: 12) {
-                riskRow(icon: "chart.line.downtrend.xyaxis", text: "Higher market volatility")
-                riskRow(icon: "bolt.fill", text: "Rapid price movements")
-                riskRow(icon: "dollarsign.circle", text: "Potential for significant losses")
-                riskRow(icon: "tornado", text: "Less regulated assets")
+            // Risk bubbles
+            VStack(spacing: 8) {
+                riskBubble(icon: "DegenArrow", text: "Higher market volatility")
+                riskBubble(icon: "DegenCharge", text: "Rapid price movements")
+                riskBubble(icon: "DegenMoney", text: "Potential for significant losses")
+                riskBubble(icon: "DegenBank", text: "Less regulated assets")
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(Color.black.opacity(0.3))
-            .cornerRadius(12)
+            .padding(.horizontal, 24)
             
             // Risk acknowledgment text
             Text("By entering Degen Mode, you acknowledge that you understand these risks and are trading at your own discretion.")
-                .font(.custom("Satoshi-Bold", size: 14))
-                .foregroundColor(Color.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 5)
+                .font(.custom("Satoshi-Medium", size: 12))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.leading)
+                .padding(.horizontal, 28)
             
             // Buttons
-            HStack(spacing: 16) {
+            HStack(spacing: 12) {
                 Button(action: {
                     withAnimation(.spring()) {
                         isPresented = false
@@ -467,99 +466,87 @@ struct DegenEntryWarningView: View {
                         .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "2D3042"), Color(hex: "1E2132")]),
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                            )
+                        .padding(.vertical, 12)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
                         )
-                        .cornerRadius(12)
                 }
                 
-                Button(action: onAccept) {
-                    Text("Accept Risk")
-                        .font(.custom("Satoshi-Bold", size: 16))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color.yellow, Color.orange]),
-                                startPoint: .leading,
-                                endPoint: .trailing
+                    Button(action: onAccept) {
+                        Text("Accept Risk")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(
+                                LinearGradient(
+                                    colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE"), Color(hex: "F7B0FE")],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
                             )
-                        )
-                        .cornerRadius(12)
-                        .shadow(color: Color.orange.opacity(0.5), radius: 8, x: 0, y: 2)
-                }
+                            .cornerRadius(10)
+                            .shadow(color: Color(hex: "F7B0FE"), radius: 8, x: 0, y: 2)
+                            .shadow(color: Color(hex: "F7B0FE").opacity(0.6), radius: 16, x: 0, y: 4)
+                            .shadow(color: Color(hex: "F7B0FE").opacity(0.3), radius: 24, x: 0, y: 6)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(hex: "F7B0FE").opacity(0.8), lineWidth: 1.5)
+                            )
+                    }
             }
-            .padding(.horizontal, 5)
+            .padding(.horizontal, 24)
+            .padding(.bottom, 16)
         }
-        .padding(24)
+        .frame(maxWidth: 320, maxHeight: 500)
         .background(
             ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [Color(hex: "171D2B"), Color(hex: "0D1018")]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
+                // Solid dark background first
+                Color.black.opacity(0.9)
                 
-                // Subtle grid pattern
+                // DegenBackground asset overlay - positioned to show top section
                 GeometryReader { geometry in
-                    Path { path in
-                        let width = geometry.size.width
-                        let height = geometry.size.height
-                        let gridSize: CGFloat = 20
-                        
-                        for i in stride(from: 0, through: width, by: gridSize) {
-                            path.move(to: CGPoint(x: i, y: 0))
-                            path.addLine(to: CGPoint(x: i, y: height))
-                        }
-                        
-                        for i in stride(from: 0, through: height, by: gridSize) {
-                            path.move(to: CGPoint(x: 0, y: i))
-                            path.addLine(to: CGPoint(x: width, y: i))
-                        }
-                    }
-                    .stroke(Color.white.opacity(0.05), lineWidth: 0.5)
+                    Image("DegenBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 1.5)
+                        .offset(x: -geometry.size.width * 0.1, y: geometry.size.height * 0.2)
+                        .clipped()
                 }
             }
         )
+        .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(
-                    LinearGradient(
-                        gradient: Gradient(colors: [Color.yellow.opacity(0.7), Color.orange.opacity(0.3), Color.clear]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    lineWidth: 1
-                )
+                .stroke(Color.white.opacity(0.3), lineWidth: 1)
         )
-        .cornerRadius(20)
-        .shadow(color: Color.yellow.opacity(0.2), radius: 20, x: 0, y: 0)
         .padding(.horizontal, 24)
     }
     
-    private func riskRow(icon: String, text: String) -> some View {
-        HStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 16))
-                .foregroundColor(Color.yellow)
-                .frame(width: 24, height: 24)
+    private func riskBubble(icon: String, text: String) -> some View {
+        HStack(spacing: 8) {
+            Image(icon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 18, height: 18)
             
             Text(text)
-                .font(.custom("Satoshi-Bold", size: 14))
+                .font(.custom("Satoshi-Medium", size: 12))
                 .foregroundColor(.white)
             
             Spacer()
         }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color.clear)
+        .cornerRadius(8)
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color(hex: "352C55"), lineWidth: 1)
+        )
     }
 }
 
@@ -651,36 +638,14 @@ struct DegenExitConfirmationView: View {
                 }
             }
         }
-        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [Color(hex: "171D2B"), Color(hex: "0D1018")]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                
-                // Subtle pattern
-                GeometryReader { geometry in
-                    Path { path in
-                        let width = geometry.size.width
-                        let height = geometry.size.height
-                        let gridSize: CGFloat = 20
-                        
-                        for i in stride(from: 0, through: width, by: gridSize) {
-                            path.move(to: CGPoint(x: i, y: 0))
-                            path.addLine(to: CGPoint(x: i, y: height))
-                        }
-                        
-                        for i in stride(from: 0, through: height, by: gridSize) {
-                            path.move(to: CGPoint(x: 0, y: i))
-                            path.addLine(to: CGPoint(x: width, y: i))
-                        }
-                    }
-                    .stroke(Color.white.opacity(0.05), lineWidth: 0.5)
-                }
-            }
+            Image("DegenBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipped()
         )
+        .padding(24)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
                 .stroke(

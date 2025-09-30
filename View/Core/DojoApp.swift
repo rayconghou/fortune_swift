@@ -24,6 +24,11 @@ struct DojoApp: App {
             CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
         }
         
+        // Register Korosu font
+        if let fontURL = Bundle.main.url(forResource: "Korosu", withExtension: "ttf") {
+            CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+        }
+        
         // Register Satoshi fonts - all variants we're using
         let satoshiFonts = [
             "Satoshi-Black", "Satoshi-BlackItalic", 
