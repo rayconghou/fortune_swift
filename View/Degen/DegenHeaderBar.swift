@@ -125,16 +125,18 @@ struct DegenHeaderBar: View {
                 
                 // Portfolio Value Badge - Fixed 50px height, no wrapping
                 HStack(spacing: 7) { // 7px gap as per mockup
-                    // Dollar Icon
+                    // Dollar Icon with glow effect (same as wallet card)
                     ZStack {
+                        // Glow effect
                         Circle()
-                            .fill(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color(hex: "F3BA2F"), Color(hex: "F7CC5C")]),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
+                            .fill(Color(hex: "FFBE02"))
+                            .frame(width: 28, height: 28)
+                            .blur(radius: 4)
+                            .opacity(0.6)
+                        
+                        // Main icon - yellow circle with white dollar sign
+                        Circle()
+                            .fill(Color(hex: "FFBE02"))
                             .frame(width: 24, height: 24)
                         
                         Text("$")
@@ -142,7 +144,6 @@ struct DegenHeaderBar: View {
                             .foregroundColor(.white)
                             .lineLimit(1)
                     }
-                    .shadow(color: Color(hex: "F3BA2F").opacity(0.3), radius: 3, x: 0, y: 1)
                     
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Portfolio Value")

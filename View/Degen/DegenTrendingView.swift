@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
@@ -83,61 +84,61 @@ struct DegenTrendingView: View {
                             VStack(spacing: 12) {
                                 // TRENDING Title
                                 Text("TRENDING")
-                                    .font(.custom("Korosu", size: 20))
+                                    .font(.custom("Korosu", size: 24))
                                     .foregroundColor(.white)
                                     .shadow(color: .black, radius: 2, x: 1, y: 1)
                                 
                                 // Custom Segmented Control
                                 HStack(spacing: 0) {
-                                    // VERIFIED Button
-                                    Button(action: {
-                                        selectedFilter = .verified
-                                    }) {
-                                        Text("VERIFIED")
-                                            .font(.custom("Korosu", size: 12))
-                                            .foregroundColor(.white)
-                                            .frame(maxWidth: .infinity)
-                                            .padding(.vertical, 10)
-                                            .background(
-                                                selectedFilter == .verified ?
-                                                LinearGradient(
-                                                    gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
-                                                    startPoint: .leading,
-                                                    endPoint: .trailing
-                                                ) :
-                                                LinearGradient(
-                                                    gradient: Gradient(colors: [Color(hex: "1A1C2E"), Color(hex: "1A1C2E")]),
-                                                    startPoint: .leading,
-                                                    endPoint: .trailing
-                                                )
-                                            )
-                                            .cornerRadius(10, corners: [.topLeft, .bottomLeft])
-                                    }
-                                    
-                                    // UNVERIFIED Button
-                                    Button(action: {
-                                        selectedFilter = .unverified
-                                    }) {
-                                        Text("UNVERIFIED")
-                                            .font(.custom("Korosu", size: 12))
-                                            .foregroundColor(.white)
-                                            .frame(maxWidth: .infinity)
-                                            .padding(.vertical, 10)
-                                            .background(
-                                                selectedFilter == .unverified ?
-                                                LinearGradient(
-                                                    gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
-                                                    startPoint: .leading,
-                                                    endPoint: .trailing
-                                                ) :
-                                                LinearGradient(
-                                                    gradient: Gradient(colors: [Color(hex: "1A1C2E").opacity(0.3), Color(hex: "1A1C2E").opacity(0.3)]),
-                                                    startPoint: .leading,
-                                                    endPoint: .trailing
-                                                )
-                                            )
-                                            .cornerRadius(10, corners: [.topRight, .bottomRight])
-                                    }
+            // VERIFIED Button
+            Button(action: {
+                selectedFilter = .verified
+            }) {
+                Text("VERIFIED")
+                    .font(.custom("Korosu", size: 15))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(
+                        selectedFilter == .verified ?
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ) :
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "1A1C2E"), Color(hex: "1A1C2E")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(10, corners: [.topLeft, .bottomLeft])
+            }
+            
+            // UNVERIFIED Button
+            Button(action: {
+                selectedFilter = .unverified
+            }) {
+                Text("UNVERIFIED")
+                    .font(.custom("Korosu", size: 15))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(
+                        selectedFilter == .unverified ?
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ) :
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "1A1C2E").opacity(0.3), Color(hex: "1A1C2E").opacity(0.3)]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(10, corners: [.topRight, .bottomRight])
+            }
                                 }
                                 .background(
                                     RoundedRectangle(cornerRadius: 10)
@@ -145,7 +146,7 @@ struct DegenTrendingView: View {
                                 )
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(hex: "4F2FB6").opacity(0.6), lineWidth: 1)
+                                        .stroke(Color(hex: "22172F"), lineWidth: 1.5)
                                 )
                             }
                             .padding(.horizontal, 20)
@@ -179,11 +180,11 @@ struct DegenTrendingView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
-                                    .font(.system(size: 16))
+                        .font(.system(size: 16))
 
                     TextField("Search new tokens...", text: $searchText)
                         .foregroundColor(.white)
-                                        .font(.custom("Satoshi-Bold", size: 14))
+                        .font(.custom("Satoshi-Bold", size: 14))
 
                     if !searchText.isEmpty {
                         Button {
@@ -191,34 +192,34 @@ struct DegenTrendingView: View {
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.gray)
-                                            .font(.system(size: 16))
+                                .font(.system(size: 24))
                         }
                     }
                 }
-                            .padding(.vertical, 12)
-                .padding(.horizontal, 12)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(
-                                        LinearGradient(
-                                            gradient: Gradient(stops: [
-                                                .init(color: Color(hex: "130825"), location: 0.0),
-                                                .init(color: Color(hex: "4F2FB6").opacity(0.1), location: 1.0)
-                                            ]),
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        )
-                                    )
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color(hex: "4F2FB6").opacity(0.5), lineWidth: 1)
-                                    )
-                            )
+                .padding(.vertical, 12)
                 .padding(.horizontal, 16)
-                            .padding(.top, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(stops: [
+                                    .init(color: Color(hex: "130825"), location: 0.0),
+                                    .init(color: Color(hex: "4F2FB6").opacity(0.1), location: 1.0)
+                                ]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color(hex: "22172F"), lineWidth: 1.5)
+                        )
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
 
                 // Token List
-                            LazyVStack(spacing: 4) {
+                    LazyVStack(spacing: 16) {
                                 if filteredTokens.isEmpty && selectedFilter == .verified {
                                     // Show spot tokens when no verified tokens are available
                                     SpotTokenListView()
@@ -233,14 +234,15 @@ struct DegenTrendingView: View {
                     }
                             }
                             .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
+                            .padding(.top, 16)
+                            .padding(.bottom, 16)
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color(hex: "0C0519"))
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 16)
-                                        .stroke(Color(hex: "4F2FB6").opacity(0.6), lineWidth: 1)
+                                        .stroke(Color(hex: "22172F"), lineWidth: 1.5)
                                 )
                         )
                         .padding(.horizontal, 20)
@@ -341,7 +343,7 @@ struct DegenTrendingView: View {
                                             .shadow(color: Color(hex: "F7B0FE").opacity(0.4), radius: 4, x: 0, y: 0)
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 12)
-                                                    .stroke(Color.white.opacity(0.3), lineWidth: 1)
+                                                    .stroke(Color.white.opacity(0.3), lineWidth: 1.5)
                                             )
                                     }
                                 )
@@ -371,11 +373,11 @@ struct DegenTrendingView: View {
                                         )
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 12)
-                                                .stroke(Color(hex: "4F2FB6").opacity(0.6), lineWidth: 1)
+                                                .stroke(Color(hex: "22172F"), lineWidth: 1.5)
                                         )
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 12)
-                                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                                                .stroke(Color.white.opacity(0.2), lineWidth: 1.5)
                                         )
                                         .shadow(color: Color(hex: "4F2FB6").opacity(0.3), radius: 4, x: 0, y: 2)
                                 )
@@ -472,7 +474,7 @@ struct DegenTokenRow: View {
             TokenIconView(token: token)
 
             // Token Info - Left aligned (like SpotTokenRow)
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(token.tokenAddress.prefix(4).uppercased())
                     .font(.custom("Satoshi-Bold", size: 20))
                     .foregroundColor(.white)
@@ -489,7 +491,7 @@ struct DegenTokenRow: View {
                 .font(.system(size: 14, weight: .medium))
                 .foregroundColor(.gray)
         }
-        .padding(.vertical, 16)
+        .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -505,7 +507,7 @@ struct DegenTokenRow: View {
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color(hex: "4F2FB6").opacity(0.5), lineWidth: 1)
+                        .stroke(Color(hex: "22172F"), lineWidth: 1.5)
                 )
         )
         .onTapGesture {
@@ -595,7 +597,7 @@ struct SpotTokenListView: View {
     ]
     
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 12) {
             ForEach(spotTokens) { token in
                 SpotTokenRow(token: token)
             }
@@ -644,7 +646,7 @@ struct SpotTokenRow: View {
             SpotTokenIconView(token: token)
             
             // Token Info - Left aligned
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(token.symbol)
                     .font(.custom("Satoshi-Bold", size: 20))
                     .foregroundColor(.white)
@@ -661,7 +663,7 @@ struct SpotTokenRow: View {
                 .font(.system(size: 14, weight: .medium))
                 .foregroundColor(.gray)
         }
-        .padding(.vertical, 16)
+        .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -677,7 +679,7 @@ struct SpotTokenRow: View {
                         )
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color(hex: "4F2FB6").opacity(0.5), lineWidth: 1)
+                        .stroke(Color(hex: "22172F"), lineWidth: 1.5)
                 )
         )
         .onTapGesture {

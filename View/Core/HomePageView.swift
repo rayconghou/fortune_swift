@@ -56,11 +56,13 @@ struct HomePageView: View {
                         .tabItem {
                             VStack {
                                 Image(selectedTab == 0 ? "DarkTappedHome" : "DarkUntappedHome")
+                                    .foregroundColor(selectedTab == 0 ? .white : .gray)
                                 Text("Home")
                                     .font(.caption)
                                     .foregroundColor(selectedTab == 0 ? .white : .gray)
                             }
                         }
+                        .accentColor(.white)
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -74,11 +76,13 @@ struct HomePageView: View {
                         .tabItem {
                             VStack {
                                 Image(selectedTab == 1 ? "DarkTappedIndexes" : "DarkUntappedIndexes")
+                                    .foregroundColor(selectedTab == 1 ? .white : .gray)
                                 Text("Indexes")
                                     .font(.caption)
                                     .foregroundColor(selectedTab == 1 ? .white : .gray)
                             }
                         }
+                        .accentColor(.white)
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -92,11 +96,13 @@ struct HomePageView: View {
                         .tabItem {
                             VStack {
                                 Image(selectedTab == 2 ? "DarkTappedManeki" : "DarkUntappedManeki")
+                                    .foregroundColor(selectedTab == 2 ? .white : .gray)
                                 Text("Maneki")
                                     .font(.caption)
                                     .foregroundColor(selectedTab == 2 ? .white : .gray)
                             }
                         }
+                        .accentColor(.white)
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -110,11 +116,13 @@ struct HomePageView: View {
                         .tabItem {
                             VStack {
                                 Image(selectedTab == 3 ? "DarkTappedPortfolio" : "DarkUntappedPortfolio")
+                                    .foregroundColor(selectedTab == 3 ? .white : .gray)
                                 Text("Portfolio")
                                     .font(.caption)
                                     .foregroundColor(selectedTab == 3 ? .white : .gray)
                             }
                         }
+                        .accentColor(.white)
                         .scaleEffect(showSidebar ? 0.95 : 1.0)
                         .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                         .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -122,19 +130,22 @@ struct HomePageView: View {
                         Color.clear
                             .tag(degenEntryTabTag)
                             .tabItem {
-                                VStack {
-                                    Image("DarkDegenMode")
-                                    Text("Degen")
-                                        .font(.caption)
-                                        .foregroundColor(selectedTab == degenEntryTabTag ? .white : .gray)
-                                }
+                            VStack {
+                                Image("DarkDegenMode")
+                                    .foregroundColor(selectedTab == degenEntryTabTag ? .white : .gray)
+                                Text("Degen")
+                                    .font(.caption)
+                                    .foregroundColor(selectedTab == degenEntryTabTag ? .white : .gray)
                             }
+                            }
+                            .accentColor(.white)
                     } else {
                         DegenTrendingView()
                             .tag(0)
                             .tabItem {
                                 VStack {
                                     Image(selectedTab == 0 ? "DegenTappedTrending" : "DegenUntappedTrending")
+                                        .foregroundColor(selectedTab == 0 ? .white : .gray)
                                     Text("Trending")
                                         .font(.caption)
                                         .foregroundColor(selectedTab == 0 ? .white : .gray)
@@ -150,6 +161,7 @@ struct HomePageView: View {
                             .tabItem {
                                 VStack {
                                     Image(selectedTab == 1 ? "DegenTappedTracker" : "DegenUntappedTracker")
+                                        .foregroundColor(selectedTab == 1 ? .white : .gray)
                                     Text("Tracker")
                                         .font(.caption)
                                         .foregroundColor(selectedTab == 1 ? .white : .gray)
@@ -166,6 +178,7 @@ struct HomePageView: View {
                             .tabItem {
                                 VStack {
                                     Image(selectedTab == 2 ? "DegenTappedTrade" : "DegenUntappedSwap")
+                                        .foregroundColor(selectedTab == 2 ? .white : .gray)
                                     Text("Trade")
                                         .font(.caption)
                                         .foregroundColor(selectedTab == 2 ? .white : .gray)
@@ -185,6 +198,7 @@ struct HomePageView: View {
                             .tabItem {
                                 VStack {
                                     Image(selectedTab == 3 ? "DegenTappedFolder" : "DegenUntappedPortfolio")
+                                        .foregroundColor(selectedTab == 3 ? .white : .gray)
                                     Text("Portfolio")
                                         .font(.caption)
                                         .foregroundColor(selectedTab == 3 ? .white : .gray)
@@ -200,8 +214,8 @@ struct HomePageView: View {
                             .tabItem {
                                 VStack {
                                     ZStack {
-                                        // Purple rounded square background
-                                        RoundedRectangle(cornerRadius: 12)
+                                        // Rounded rectangle background for segment selector style
+                                        RoundedRectangle(cornerRadius: 8)
                                             .fill(
                                                 LinearGradient(
                                                     gradient: Gradient(stops: [
@@ -209,18 +223,18 @@ struct HomePageView: View {
                                                         .init(color: Color(hex: "9746F6"), location: 0.5),
                                                         .init(color: Color(hex: "F7B0FE"), location: 1.0)
                                                     ]),
-                                                    startPoint: .topLeading,
-                                                    endPoint: .bottomTrailing
+                                                    startPoint: .leading,
+                                                    endPoint: .trailing
                                                 )
                                             )
-                                            .frame(width: 32, height: 32)
+                                            .frame(width: 60, height: 30)
                                             .shadow(color: Color(hex: "4F2FB6").opacity(0.5), radius: 4, x: 0, y: 2)
                                         
                                         // DegenTappedIcon
                                         Image("DegenTappedIcon")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 20, height: 20)
+                                            .frame(width: 16, height: 16)
                                     }
                                     Text("Degen")
                                         .font(.caption)

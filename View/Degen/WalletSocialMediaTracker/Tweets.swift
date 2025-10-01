@@ -11,7 +11,7 @@ import SwiftUI
 /// Twitter-like card for sentiment analysis
 struct TweetCard: View {
     var asset: DegenAsset
-    var influencerType: SentimentAnalysisView.SentimentFilter
+    var influencerType: SentimentFilterSelector.SentimentFilter
     
     // Sample data
     private var influencerName: String {
@@ -205,39 +205,111 @@ struct SentimentBubble: View {
     }
 }
 
+/// Custom segment picker for Trending/Celebrities/Whales
+struct SentimentFilterSelector: View {
+    @Binding var selectedFilter: SentimentFilter
+    
+    enum SentimentFilter: String, CaseIterable {
+        case trending = "TRENDING"
+        case celebrities = "CELEBRITIES"
+        case whales = "WHALES"
+    }
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            // TRENDING Button
+            Button(action: {
+                selectedFilter = .trending
+            }) {
+                Text("TRENDING")
+                    .font(.custom("Korosu", size: 15))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(
+                        selectedFilter == .trending ?
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ) :
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "1A1C2E"), Color(hex: "1A1C2E")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(10, corners: [.topLeft, .bottomLeft])
+            }
+            
+            // CELEBRITIES Button
+            Button(action: {
+                selectedFilter = .celebrities
+            }) {
+                Text("CELEBRITIES")
+                    .font(.custom("Korosu", size: 15))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(
+                        selectedFilter == .celebrities ?
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ) :
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "1A1C2E").opacity(0.3), Color(hex: "1A1C2E").opacity(0.3)]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+            }
+            
+            // WHALES Button
+            Button(action: {
+                selectedFilter = .whales
+            }) {
+                Text("WHALES")
+                    .font(.custom("Korosu", size: 15))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(
+                        selectedFilter == .whales ?
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ) :
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: "1A1C2E").opacity(0.3), Color(hex: "1A1C2E").opacity(0.3)]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(10, corners: [.topRight, .bottomRight])
+            }
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color.clear) // Make transparent to show DegenBackground
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color(hex: "4F2FB6").opacity(0.6), lineWidth: 1)
+        )
+    }
+}
+
 /// The sentiment analysis view showing Twitter trends
 struct SentimentAnalysisView: View {
     @ObservedObject var viewModel: TradingWalletViewModel
     @Binding var selectedAsset: DegenAsset?
-    @State private var selectedFilter: SentimentFilter = .trending
-    
-    enum SentimentFilter: String, CaseIterable {
-        case trending = "Trending"
-        case celebrities = "Celebrities"
-        case whales = "Whales"
-    }
+    @Binding var selectedFilter: SentimentFilterSelector.SentimentFilter
     
     var body: some View {
         VStack(spacing: 0) {
-            // Filter tabs
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(SentimentFilter.allCases, id: \.self) { filter in
-                        FilterChip(
-                            title: filter.rawValue,
-                            isSelected: selectedFilter == filter,
-                            action: {
-                                withAnimation {
-                                    selectedFilter = filter
-                                }
-                            }
-                        )
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 12)
-            }
-            
             // Asset filter chip row
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
