@@ -133,8 +133,14 @@ struct HomePageView: View {
                         DegenTrendingView()
                             .tag(0)
                             .tabItem {
-                                Image(systemName: "flame")
+                                VStack {
+                                    Image(selectedTab == 0 ? "DegenTappedTrending" : "DegenUntappedTrending")
+                                    Text("Trending")
+                                        .font(.caption)
+                                        .foregroundColor(selectedTab == 0 ? .white : .gray)
+                                }
                             }
+                            .accentColor(.white)
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -142,8 +148,14 @@ struct HomePageView: View {
                         WalletSocialMediaTrackerView()
                             .tag(1)
                             .tabItem {
-                                Image(systemName: "wallet.pass")
+                                VStack {
+                                    Image(selectedTab == 1 ? "DegenTappedTracker" : "DegenUntappedTracker")
+                                    Text("Tracker")
+                                        .font(.caption)
+                                        .foregroundColor(selectedTab == 1 ? .white : .gray)
+                                }
                             }
+                            .accentColor(.white)
                             .environmentObject(tradingWalletViewModel)
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
@@ -152,8 +164,14 @@ struct HomePageView: View {
                         DegenTradeView()
                             .tag(2)
                             .tabItem {
-                                Image(systemName: "arrow.triangle.2.circlepath")
+                                VStack {
+                                    Image(selectedTab == 2 ? "DegenTappedTrade" : "DegenUntappedSwap")
+                                    Text("Trade")
+                                        .font(.caption)
+                                        .foregroundColor(selectedTab == 2 ? .white : .gray)
+                                }
                             }
+                            .accentColor(.white)
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -165,8 +183,14 @@ struct HomePageView: View {
                         })
                             .tag(3)
                             .tabItem {
-                                Image(systemName: "briefcase")
+                                VStack {
+                                    Image(selectedTab == 3 ? "DegenTappedFolder" : "DegenUntappedPortfolio")
+                                    Text("Portfolio")
+                                        .font(.caption)
+                                        .foregroundColor(selectedTab == 3 ? .white : .gray)
+                                }
                             }
+                            .accentColor(.white)
                             .scaleEffect(showSidebar ? 0.95 : 1.0)
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
@@ -174,8 +198,36 @@ struct HomePageView: View {
                         Color.clear
                             .tag(degenExitTabTag)
                             .tabItem {
-                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                                VStack {
+                                    ZStack {
+                                        // Purple rounded square background
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill(
+                                                LinearGradient(
+                                                    gradient: Gradient(stops: [
+                                                        .init(color: Color(hex: "4F2FB6"), location: 0.0),
+                                                        .init(color: Color(hex: "9746F6"), location: 0.5),
+                                                        .init(color: Color(hex: "F7B0FE"), location: 1.0)
+                                                    ]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
+                                            )
+                                            .frame(width: 32, height: 32)
+                                            .shadow(color: Color(hex: "4F2FB6").opacity(0.5), radius: 4, x: 0, y: 2)
+                                        
+                                        // DegenTappedIcon
+                                        Image("DegenTappedIcon")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                    }
+                                    Text("Degen")
+                                        .font(.caption)
+                                        .foregroundColor(.white)
+                                }
                             }
+                            .accentColor(.white)
                     }
                 }
                 .scaleEffect(showSidebar ? 0.95 : 1.0)
