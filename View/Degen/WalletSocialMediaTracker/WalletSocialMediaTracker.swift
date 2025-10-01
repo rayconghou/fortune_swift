@@ -63,7 +63,11 @@ struct ToggleableContentView: View {
             // SCROLLABLE CONTENT BELOW HEADERS
             ScrollView {
                 VStack(spacing: 0) {
-                    mainContentLayer
+                    if selectedMode == .sentiment {
+                        sentimentModeContent
+                    } else {
+                        mainContentLayer
+                    }
                     
                     // Add spacing for floating buttons
                     Spacer()
@@ -72,7 +76,13 @@ struct ToggleableContentView: View {
             }
         }
         .animation(.easeInOut(duration: 0.3), value: selectedMode)
-        .background(Color(hex: "0C0519"))
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(hex: "2D1B69"), Color(hex: "0C0519")]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
         .overlay(floatingButtonOverlay)
     }
     
@@ -84,6 +94,46 @@ struct ToggleableContentView: View {
             headerSection
             contentSection
         }
+    }
+    
+    private var sentimentModeContent: some View {
+        ZStack(alignment: .top) {
+            // Background and header section
+            ZStack(alignment: .top) {
+                catBackgroundImage
+                headerSection
+            }
+            
+            // Content overlaid on the background
+            VStack(spacing: 0) {
+                Spacer()
+                    .frame(height: 370) // Tiny adjustment to move content down a bit more
+                
+                // Segment picker overlaid on the asset
+                sentimentSegmentPicker
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                
+                // Add spacing between segment picker and tweet cards
+                Spacer()
+                    .frame(height: 16)
+                
+                // Sentiment content overlaid on the asset
+                VStack(spacing: 0) {
+                    sentimentContent
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
+                }
+                .background(contentBackground)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                
+                Spacer()
+            }
+        }
+    }
+    
+    private var sentimentSegmentPicker: some View {
+        SentimentFilterSelector(selectedFilter: $selectedSentimentFilter)
     }
     
     private var catBackgroundImage: some View {
@@ -121,6 +171,13 @@ struct ToggleableContentView: View {
                 .scaleEffect(x: -1, y: 1)
                 .offset(x: -geometry.size.width * 0.25, y: -geometry.size.height * 0.25)
                 .clipped()
+                .overlay(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color(hex: "2D1B69").opacity(0.3), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
         }
     }
     
@@ -146,10 +203,6 @@ struct ToggleableContentView: View {
     
     private var sentimentContent: some View {
         VStack(spacing: 0) {
-            SentimentFilterSelector(selectedFilter: $selectedSentimentFilter)
-                .padding(.horizontal, 20)
-                .padding(.top, 12)
-            
             SentimentAnalysisView(viewModel: viewModel, selectedAsset: $selectedAsset, selectedFilter: $selectedSentimentFilter)
         }
     }
@@ -159,7 +212,7 @@ struct ToggleableContentView: View {
             .fill(Color(hex: "0C0519"))
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color(hex: "22172F"), lineWidth: 1.5)
+                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
             )
     }
     
@@ -947,18 +1000,17 @@ struct AssetFilterChip: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.caption)
-                .fontWeight(isSelected ? .semibold : .regular)
-                .foregroundColor(isSelected ? .blue : Color(UIColor.secondaryLabel))
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(isSelected ? .black : .white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
                 .background(
                     Capsule()
-                        .fill(isSelected ? Color.blue.opacity(0.15) : Color("CardBackgroundDark", bundle: .main) ?? Color(UIColor.tertiarySystemBackground))
+                        .fill(isSelected ? Color.white : Color(hex: "160F23"))
                 )
                 .overlay(
                     Capsule()
-                        .stroke(isSelected ? Color.blue.opacity(0.5) : Color.gray.opacity(0.2), lineWidth: 1)
+                        .stroke(Color(hex: "3C2D44"), lineWidth: 1)
                 )
         }
     }
