@@ -189,11 +189,7 @@ struct HomePageView: View {
                             .offset(x: showSidebar ? UIScreen.main.bounds.width * 0.1 : 0)
                             .animation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0), value: showSidebar)
 
-                        PortfolioView(hamburgerAction: {
-                            withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 200, damping: 25, initialVelocity: 0)) {
-                                showSidebar.toggle()
-                            }
-                        })
+                        DegenPortfolioView()
                             .tag(3)
                             .tabItem {
                                 VStack {

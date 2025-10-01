@@ -73,9 +73,11 @@
 		C3EF60352E87353900D18CB8 /* Satoshi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60262E87353900D18CB8 /* Satoshi-BoldItalic.ttf */; };
 		C3EF60362E87353900D18CB8 /* Satoshi-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60292E87353900D18CB8 /* Satoshi-LightItalic.ttf */; };
 		C3EF603A2E87356100D18CB8 /* The Last Shuriken.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF60392E87356100D18CB8 /* The Last Shuriken.ttf */; };
+		DFB1F6B3A3864081B698D8AA /* DegenPortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71F3E93F4B4AD6855B5712 /* DegenPortfolioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B71F3E93F4B4AD6855B5712 /* DegenPortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenPortfolioView.swift; sourceTree = "<group>"; };
 		C319FA132D8113070058C4B2 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		C319FA142D8113070058C4B2 /* CoinGecko.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinGecko.swift; sourceTree = "<group>"; };
 		C319FA152D8113070058C4B2 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		C319FA2F2D8114020058C4B2 /* Degen */ = {
 			isa = PBXGroup;
 			children = (
+				0B71F3E93F4B4AD6855B5712 /* DegenPortfolioView.swift */,
 				C319FA5F2D930C1E0058C4B2 /* DegenSplashScreenView.swift */,
 				C319FA602D930C1F0058C4B2 /* DegenHeaderBar.swift */,
 				C319FA682D9B18390058C4B2 /* DegenTrendingView.swift */,
@@ -482,6 +485,7 @@
 				C319FA342D8114180058C4B2 /* IndexesView.swift in Sources */,
 				C319FA7B2D9B55920058C4B2 /* WalletSocialMediaTracker.swift in Sources */,
 				C319FA772D9B53660058C4B2 /* DegenTradeView.swift in Sources */,
+				DFB1F6B3A3864081B698D8AA /* DegenPortfolioView.swift in Sources */,
 				C319FA752D9B4B110058C4B2 /* DegenTrendingViewModel.swift in Sources */,
 				C319FA182D8113080058C4B2 /* CoinGecko.swift in Sources */,
 				C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */,

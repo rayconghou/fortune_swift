@@ -55,8 +55,7 @@ struct DegenView: View {
             case .trade:
                 DegenTradeView()
             case .portfolio:
-//                DegenPortfolioView()
-                PortfolioView()
+                DegenPortfolioView()
             case .walletTracker:
                 WalletSocialMediaTrackerView()
             }
