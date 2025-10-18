@@ -3,6 +3,7 @@ import SwiftUI
 struct DegenPortfolioView: View {
     @StateObject private var viewModel = DegenPortfolioViewModel()
     @State private var selectedAssetTab: AssetTab = .all
+    @State private var showBuyScreen = false
     @EnvironmentObject var authManager: AuthManager
     
     enum AssetTab: String, CaseIterable {
@@ -64,8 +65,7 @@ struct DegenPortfolioView: View {
                 HStack(spacing: 12) {
                     // BUY button (left)
                     Button(action: {
-                        // TODO: Implement buy action
-                        print("BUY tapped")
+                        showBuyScreen = true
                     }) {
                         Text("BUY")
                             .font(.custom("Korosu", size: 18))
@@ -155,6 +155,9 @@ struct DegenPortfolioView: View {
         .background(Color(hex: "0C0519"))
         .onAppear {
             viewModel.loadPortfolioData()
+        }
+        .fullScreenCover(isPresented: $showBuyScreen) {
+            BuyScreenView(coin: nil, asset: nil)
         }
     }
     
@@ -280,7 +283,7 @@ struct DegenPortfolioView: View {
             
             HStack(spacing: 4) {
                 Text(value)
-                    .font(.custom("The Last Shuriken", size: 16))
+                        .font(.custom("The Last Shuriken", size: 16))
                     .foregroundColor(isPositive ? Color(hex: "13E15A") : Color(hex: "F34747"))
                 
                 // Golden coin icon with glow (matching DegenHeaderBar design)
@@ -456,7 +459,7 @@ struct DegenAssetRow: View {
                     .foregroundColor(.white)
                 
                 Text(asset.changePercentage)
-                    .font(.custom("Satoshi-Medium", size: 10))
+                    .font(.custom("Satoshi-Medium", size: 14))
                     .foregroundColor(asset.isPositive ? .green : .red)
             }
             

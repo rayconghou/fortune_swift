@@ -59,6 +59,7 @@ struct CoinDetailModalView: View {
     let coin: Coin
     @ObservedObject var marketVM: CryptoMarketViewModel
     @State private var selectedTimeframe = 0
+    @State private var showBuyScreen = false
     @Environment(\.dismiss) private var dismiss
     
     let timeframes = ["1D", "1W", "1M", "1Y", "All"]
@@ -125,7 +126,9 @@ struct CoinDetailModalView: View {
                 Spacer()
                 HStack(spacing: 12) {
                     // Buy Button with blue gradient
-                    Button(action: {}) {
+                    Button(action: {
+                        showBuyScreen = true
+                    }) {
                         Text("Buy")
                             .font(.custom("Satoshi-Black", size: 18))
                             .foregroundColor(.white)
@@ -161,6 +164,9 @@ struct CoinDetailModalView: View {
         }
         .onAppear {
             marketVM.fetchCoinDetail(id: coin.id)
+        }
+        .fullScreenCover(isPresented: $showBuyScreen) {
+            BuyScreenView(coin: coin, asset: nil)
         }
     }
     

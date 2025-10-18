@@ -153,13 +153,13 @@ struct DegenTrendingView: View {
                             .padding(.vertical, 16)
                             .background(
                                 ZStack {
-                                    // DegenBackground asset - using GeometryReader for precise positioning
+                                    // DegenHeader asset - using GeometryReader for precise positioning
                                     GeometryReader { geometry in
-                                        Image("DegenBackground")
+                                        Image("DegenHeader")
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
                                             .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 1.5) // Make larger than container
-                                            .scaleEffect(x: -1, y: 1) // Flip horizontally
+                                            .scaleEffect(x: 1, y: 1) // Keep original orientation
                                             .offset(x: -geometry.size.width * 0.25, y: -geometry.size.height * 0.25) // Position to show top-right glow
                                             .clipped()
                                     }

@@ -33,6 +33,7 @@ struct PortfolioView: View {
     @State private var selectedNewsTab = "For You"
     @State private var selectedNewsItem: NewsItem?
     @State private var showNewsModal = false
+    @State private var showBuyScreen = false
     
     // Sample asset data
     private let allAssets = [
@@ -264,7 +265,11 @@ struct PortfolioView: View {
                             ActionButton(icon: "QrCode", title: "Receive", color: Color(hex: "141628"))
                             ActionButton(icon: "PaperPlane", title: "Send", color: Color(hex: "141628"))
                             ActionButton(icon: "Swap", title: "Swap", color: Color(hex: "141628"))
-                            ActionButton(icon: "ShoppingCart", title: "Buy", color: Color(hex: "141628"))
+                            Button(action: {
+                                showBuyScreen = true
+                            }) {
+                                ActionButton(icon: "ShoppingCart", title: "Buy", color: Color(hex: "141628"))
+                            }
                         }
                         .padding(.horizontal, 32)
                         .padding(.top, 8)
@@ -524,6 +529,9 @@ struct PortfolioView: View {
                     showNewsModal: $showNewsModal
                 )
             }
+        }
+        .fullScreenCover(isPresented: $showBuyScreen) {
+            BuyScreenView(coin: nil, asset: nil)
         }
     }
 }

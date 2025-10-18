@@ -164,11 +164,11 @@ struct ToggleableContentView: View {
     
     private var headerBackground: some View {
         GeometryReader { geometry in
-            Image("DegenBackground")
+            Image("DegenHeader")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 1.5)
-                .scaleEffect(x: -1, y: 1)
+                .scaleEffect(x: 1, y: 1)
                 .offset(x: -geometry.size.width * 0.25, y: -geometry.size.height * 0.25)
                 .clipped()
                 .overlay(

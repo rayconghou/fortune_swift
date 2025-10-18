@@ -24,6 +24,7 @@
 		C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3C2D81145A0058C4B2 /* SpotView.swift */; };
 		C319FA402D81145A0058C4B2 /* SellCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */; };
 		C319FA412D81145A0058C4B2 /* BuyCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */; };
+		C319FAA72DAD65E70058C4B2 /* BuyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FAA82DAD65E70058C4B2 /* BuyScreenView.swift */; };
 		C319FA442D836C2C0058C4B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA432D836C2C0058C4B2 /* UserProfile.swift */; };
 		C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA452D836C5A0058C4B2 /* ApplePay.swift */; };
 		C319FA492D836D120058C4B2 /* SharedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319FA482D836D120058C4B2 /* SharedUIView.swift */; };
@@ -95,6 +96,7 @@
 		C319FA3C2D81145A0058C4B2 /* SpotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
 		C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellCryptoView.swift; sourceTree = "<group>"; };
 		C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCryptoView.swift; sourceTree = "<group>"; };
+		C319FAA82DAD65E70058C4B2 /* BuyScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyScreenView.swift; sourceTree = "<group>"; };
 		C319FA432D836C2C0058C4B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C319FA452D836C5A0058C4B2 /* ApplePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
 		C319FA482D836D120058C4B2 /* SharedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUIView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				C319FA4C2D837C5E0058C4B2 /* CryptoTrendCardView.swift */,
 				C319FA3E2D81145A0058C4B2 /* BuyCryptoView.swift */,
+				C319FAA82DAD65E70058C4B2 /* BuyScreenView.swift */,
 				C319FA3D2D81145A0058C4B2 /* SellCryptoView.swift */,
 				C319FA3C2D81145A0058C4B2 /* SpotView.swift */,
 			);
@@ -476,6 +479,7 @@
 			files = (
 				C319FA3F2D81145A0058C4B2 /* SpotView.swift in Sources */,
 				C319FA4D2D837C5E0058C4B2 /* CryptoTrendCardView.swift in Sources */,
+				C319FAA72DAD65E70058C4B2 /* BuyScreenView.swift in Sources */,
 				C319FA732D9B4AE20058C4B2 /* DexScreenerTokenProfile.swift in Sources */,
 				C319FA462D836C5A0058C4B2 /* ApplePay.swift in Sources */,
 				C319FA8A2D9B63F90058C4B2 /* SetupCompleteView.swift in Sources */,

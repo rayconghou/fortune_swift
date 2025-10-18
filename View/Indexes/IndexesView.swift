@@ -1016,22 +1016,7 @@ struct BuyIndexSheet: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
-            Text("Buy \(index.name)")
-                .font(.custom("Satoshi-Bold", size: 20))
-                .foregroundColor(.white)
-                .padding()
-            
-            Spacer()
-            
-            Text("Buy functionality coming soon")
-                .font(.custom("Satoshi-Regular", size: 16))
-                .foregroundColor(.gray)
-            
-            Spacer()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: "050715"))
+        BuyScreenView(coin: nil, asset: nil)
     }
 }
 

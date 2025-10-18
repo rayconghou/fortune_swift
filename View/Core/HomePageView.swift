@@ -322,7 +322,7 @@ struct HomePageView: View {
                         .ignoresSafeArea()
                 }
                 
-                // Exit Splash Screen (using original splash screen logic)
+                // Exit Splash Screen (using original app login splash)
                 if isExitingSplashActive {
                     exitSplashScreen
                         .offset(y: hideSplashScreen ? -UIScreen.main.bounds.height : 0)
@@ -358,46 +358,31 @@ struct HomePageView: View {
         }
     }
     
-    // Exit Splash Screen View
+    // Exit Splash Screen View (using original app login splash)
     private var exitSplashScreen: some View {
         ZStack {
-            // Gradient background instead of flat black
-            LinearGradient(
-                gradient: Gradient(colors: [Color(hex: "121212"), Color(hex: "000000")]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
+            // Custom background color #050715
+            Color(hex: "050715")
+                .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 30) {
-                // Bottom elements with improved animations and layout
-                VStack(spacing: 24) {
-                    Divider()
-                        .frame(width: 120, height: 2)
-                        .background(Color.white.opacity(0.8))
-                    
-                    Image("SplashScreenBranding")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 220, height: 230)
-                }
-                .opacity(showBottomElements ? 1 : 0)
-                .offset(y: showBottomElements ? 0 : 30)
-                .animation(.spring(response: 0.7, dampingFraction: 0.8).delay(0.7), value: showBottomElements)
+            // NormalSplashBackground asset overlay
+            Image("NormalSplashBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 40) {
+                // DOJO Logo and Text from SplashScreenBranding asset
+                Image("SplashScreenBranding")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250, height: 250)
+                
             }
             .padding(.vertical, 50)
         }
         .onAppear {
-            // Sequence the animations
-            withAnimation {
-                showDojo = true
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                withAnimation {
-                    showBottomElements = true
-                }
-            }
+            // No animations - just show immediately
         }
     }
     
@@ -471,7 +456,7 @@ struct HomePageView: View {
         }
     }
     
-    // Method for Exit Splash
+    // Method for Exit Splash (using original app login splash animation)
     private func activateExitSplash() {
         // Hide toolbar before exit splash
         withAnimation {
@@ -501,6 +486,7 @@ struct HomePageView: View {
             isExitingSplashActive = false
             hideSplashScreen = false
             showDojo = false
+            showLogo = false
             showBottomElements = false
             // Show toolbar after splash screen animation fully completes
             withAnimation {
@@ -660,122 +646,128 @@ struct DegenExitConfirmationView: View {
     var onConfirm: () -> Void
     
     var body: some View {
-        VStack(spacing: 24) {
-            // Header with icon
-            HStack {
-                Image(systemName: "arrow.uturn.backward.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 28, height: 28)
-                    .foregroundColor(Color.blue.opacity(0.9))
-                
-                Text("Exit Degen Mode")
-                    .font(.custom("Satoshi-Bold", size: 20))
+        VStack(spacing: 0) {
+            // Exit icon
+            Image("DegenReturn")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+            .padding(.top, 4)
+            .padding(.bottom, 20)
+            
+            // Title and subtitle grouped together
+            VStack(spacing: 4) {
+                Text("EXIT DEGEN MODE")
+                    .font(.custom("Korosu", size: 28))
                     .foregroundColor(.white)
+                    .shadow(color: .black, radius: 2, x: 1, y: 1)
+                
+                Text("You're about to exit Degen Mode and return to the standard interface.")
+                    .font(.custom("Satoshi-Medium", size: 12))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .shadow(color: .black, radius: 1, x: 0.5, y: 0.5)
             }
-            .padding(.top, 8)
+            .padding(.bottom, 8)
             
-            Divider()
-                .background(LinearGradient(
-                    gradient: Gradient(colors: [Color.clear, Color.white.opacity(0.5), Color.clear]),
-                    startPoint: .leading,
-                    endPoint: .trailing
-                ))
-            
-            // Message
-            Text("You're about to exit Degen Mode and return to the standard interface.")
-                .font(.custom("Satoshi-Bold", size: 16))
-                .foregroundColor(.white.opacity(0.9))
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-            
-            // Additional info
-            VStack(alignment: .leading, spacing: 8) {
-                infoRow(icon: "checkmark.shield.fill", text: "Your portfolio data will remain intact")
-                infoRow(icon: "arrow.2.squarepath", text: "You can return to Degen Mode anytime")
+            // Info points
+            VStack(spacing: 8) {
+                infoRow(icon: "DegenExitIcon1", text: "Your portfolio data will remain intact")
+                infoRow(icon: "DegenExitIcon2", text: "You can return to Degen Mode anytime")
             }
-            .padding(12)
-            .background(Color.white.opacity(0.05))
-            .cornerRadius(8)
+            .padding(.horizontal, 24)
+            .padding(.top, 16)
+            .padding(.bottom, 16)
             
             // Buttons
-            HStack(spacing: 16) {
+            HStack(spacing: 12) {
                 Button(action: {
                     withAnimation(.spring()) {
                         isPresented = false
                     }
                 }) {
-                    Text("Stay")
+                    Text("Cancel")
                         .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "2D3042"), Color(hex: "1E2132")]),
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                            )
+                        .padding(.vertical, 12)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
                         )
-                        .cornerRadius(12)
                 }
                 
                 Button(action: onConfirm) {
-                    Text("Confirm Exit")
+                    Text("Confirm")
                         .font(.custom("Satoshi-Bold", size: 16))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
+                        .padding(.vertical, 12)
                         .background(
                             LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "3B82F6"), Color(hex: "2563EB")]),
+                                colors: [Color(hex: "4F2FB6"), Color(hex: "F7B0FE")],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
-                        .cornerRadius(12)
-                        .shadow(color: Color.blue.opacity(0.3), radius: 8, x: 0, y: 2)
+                        .cornerRadius(10)
+                        .shadow(color: Color(hex: "F7B0FE"), radius: 8, x: 0, y: 2)
+                        .shadow(color: Color(hex: "F7B0FE").opacity(0.6), radius: 16, x: 0, y: 4)
+                        .shadow(color: Color(hex: "F7B0FE").opacity(0.3), radius: 24, x: 0, y: 6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(hex: "F7B0FE").opacity(0.8), lineWidth: 1.5)
+                        )
                 }
             }
+            .padding(.horizontal, 24)
+            .padding(.bottom, 16)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: 320, maxHeight: 450)
         .background(
-            Image("DegenBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .clipped()
+            ZStack {
+                // Solid dark background first
+                Color.black.opacity(0.9)
+                
+                // DegenBackground asset overlay - positioned to show bottom section with glow
+                GeometryReader { geometry in
+                    Image("DegenBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 1.5)
+                        .offset(x: 0, y: -geometry.size.height * 0.7) // Move up a bit more
+                        .clipped()
+                }
+            }
         )
-        .padding(24)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
                 .stroke(
                     LinearGradient(
-                        gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.blue.opacity(0.2), Color.clear]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+                        gradient: Gradient(colors: [Color(hex: "4F2FB6").opacity(0.6), Color(hex: "F7B0FE").opacity(0.2), Color.clear]),
+                        startPoint: .bottomTrailing, // Changed from topLeading to bottomTrailing
+                        endPoint: .topLeading // Changed from bottomTrailing to topLeading
                     ),
                     lineWidth: 1
                 )
         )
         .cornerRadius(20)
-        .shadow(color: Color.blue.opacity(0.15), radius: 20, x: 0, y: 0)
+        .shadow(color: Color(hex: "F7B0FE").opacity(0.15), radius: 20, x: 0, y: 0)
         .padding(.horizontal, 24)
     }
     
     private func infoRow(icon: String, text: String) -> some View {
         HStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 14))
-                .foregroundColor(Color.blue.opacity(0.9))
-                .frame(width: 20, height: 20)
+            Image(icon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
             
             Text(text)
-                .font(.system(size: 14))
-                .foregroundColor(.white.opacity(0.9))
+                .font(.custom("Satoshi-Medium", size: 14))
+                .foregroundColor(.white)
             
             Spacer()
         }
